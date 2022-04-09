@@ -5,7 +5,7 @@ This project is for simulating two types of bubble conditions with and without p
 
 
 ### 1. Minimization of energy
-<img src="https://latex.codecogs.com/gif.latex?\Omega_{Total} = \{ \Omega_1, \Omega_2,...,\Omega_n \} " /> 
+<img src="https://latex.codecogs.com/gif.latex?\Omega_{Total}=\{\Omega_1,\Omega_2,...,\Omega_n\}" /> 
 Due to the surface tension in bubble films, bubble tries to contract towards its centre and hence minimizes its total length (or total surface area if we are considering 3D bubble). We can represent the total length of bubble as an energy term, and hence the problem reduces to the minimization of energy. Mathematically, it is to find a collection of bubbles <img src="https://latex.codecogs.com/gif.latex?O_t=\Omega_{Total} = \{ \Omega_1, \Omega_2,...,\Omega_n \} t " /> $'\Omega_{Total} = \{ \Omega_1, \Omega_2,...,\Omega_n \}'$ that fits $ min \sum_{\Omega_i} L(\Omega_i)$, where $\Omega_i$ represent bubble $i$, and $L(\Omega_i)$ represents the length of that bubble. 
 
 ### 2. With pressure difference
