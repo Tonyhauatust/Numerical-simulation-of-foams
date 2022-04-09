@@ -22,9 +22,17 @@ In this condition, our object is still to minimized the total length of bubbles.
 
 ### **4. Active Vertex Model**
 Active Vertex Model describes a mathematical model to simulate real cell movements. Particularly, we define an energy term for a cell as <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20E_{cell}=\sum_i^{N_{face}}[\frac{K_i}{2}(A_i-A_i^o)^2+\frac{\Gamma_i}{2}P_i^2]+\sum_{\mu,\nu}\Lambda_{\mu,\nu}l_{\mu,\nu}" />
-reference: ....
 
-Basically, the intuitive idea of the above equation is that cell is allowed to move free by inserting an area energy term<img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\frac{K_i}{2}(A_i-A_i^o)^2" />, and energy is related to the total length of cells(second term) and the cohesive force exerted by neighbouring cells(third term)
+Basically, the intuitive idea of the above equation is that cell is allowed to move free by inserting an area energy term <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\frac{K_i}{2}(A_i-A_i^o)^2" />, and energy is related to the total length of cells<img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\frac{\Gamma_i}{2}P_i^2]" /> and the cohesive force exerted by neighbouring cells <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\sum_{\mu,\nu}\Lambda_{\mu,\nu}l_{\mu,\nu}" />
+
+In addition, we also consider the motion of cell as 
+<img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\gamma\frac{d\vec r_{i}}{dt}=\alpha\vec n_{i}+\vec F_{i}+\vec\nu_{i}(t)" />
+
+Intuitively, the first term on the left hand side is a frictional force term propotional to the velocity of cell, the first term on the right hand side is a self propulsion term that simulates the ability for cell to move on its own, the second term is the gradient of the <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20E_{cell}" />(remember that force is the gradient of potential energy), and the last term is the random white Gaussian noise on the position of cell to simulate random thermal energy.
+
+The goal of the Active Vertex Model is thus to find a cell configuration that minimizes <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20E_{cell}" />, subject to the equation of motion <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\gamma\frac{d\vec r_{i}}{dt}=\alpha\vec n_{i}+\vec F_{i}+\vec\nu_{i}(t)" />.
+
+reference: https://github.com/sknepneklab/SAMoS
 ## **Simulation result**
 
 ### **1. Bubble simulation with uniform pressure**
@@ -32,10 +40,15 @@ Basically, the intuitive idea of the above equation is that cell is allowed to m
 
 As we can see, the resulting configuration is a hexagonal honey-comb shape. There is a slight contraction of the whole configuration because the streched bubbles are returning to their native areas.
 
+The above simulation is made successful by deleting the area term and the cohesion term in <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20E_{cell}=\sum_i^{N_{face}}[\frac{K_i}{2}(A_i-A_i^o)^2+\frac{\Gamma_i}{2}P_i^2]+\sum_{\mu,\nu}\Lambda_{\mu,\nu}l_{\mu,\nu}" />, and the white gaussian noise and the self-propulsion term in the equation of motion in Active Vertex Model
+
 ### **2. Bubble simulation with pressure difference**
 ![pressure_difference](output_pressure_difference.gif)
 
-In this simulation, the author of the paper in the below referenced link has 
+In this simulation, the author of the paper in the below referenced link has used grandient descent method to find a minimized total length of bubble configuration, subject to von Neumann's law of diffusion and Plateau's Law of 120 degree.
 
 
 reference: https://raw.githubusercontent.com/erleben/FOAM/master/doc/bondorf.17.master_thesis.pdf
+
+## **Running the simulation and input parameters**
+To run the first simulation with uniform pressure, 
