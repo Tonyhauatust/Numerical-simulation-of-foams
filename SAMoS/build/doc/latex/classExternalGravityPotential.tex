@@ -1,0 +1,76 @@
+\doxysection{External\+Gravity\+Potential Class Reference}
+\label{classExternalGravityPotential}\index{ExternalGravityPotential@{ExternalGravityPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{External\+Gravity\+Potential}{p.}{classExternalGravityPotential} handles external gravitational potential that is for simplicity assumed to act in the z-\/direction (downwards). In other words, $ V_{grav}\left(r\right) = g z $ and the force is $ \vec F = - m g \vec e_z $, where $ g $ is gravitational acceleration. 
+
+Definition at line 42 of file external\+\_\+gravity\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ External\+Gravity\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classExternalGravityPotential_a4ebbad499eb34059dbfb512fffc6336b}} 
+void \textbf{ set\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classExternalGravityPotential_a2683cd7bfda635a0d8dd9d1da131c12a}} 
+double \textbf{ m\+\_\+g}
+\begin{DoxyCompactList}\small\item\em strength of external gravitational potential \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classExternalGravityPotential_a552e2b1f8967ea3a151c0e82e7a38b3a}} 
+\index{ExternalGravityPotential@{ExternalGravityPotential}!ExternalGravityPotential@{ExternalGravityPotential}}
+\index{ExternalGravityPotential@{ExternalGravityPotential}!ExternalGravityPotential@{ExternalGravityPotential}}
+\doxysubsubsection{ExternalGravityPotential()}
+{\footnotesize\ttfamily \textbf{ External\+Gravity\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters (gravity strength) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file external\+\_\+gravity\+\_\+potential.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classExternalGravityPotential_a4993c97a669fa259c6574a18d547c117}} 
+\index{ExternalGravityPotential@{ExternalGravityPotential}!compute@{compute}}
+\index{compute@{compute}!ExternalGravityPotential@{ExternalGravityPotential}}
+\doxysubsubsection{compute()}
+{\footnotesize\ttfamily void compute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes potentials and forces for all particles. 
+
+Apply external gravitational potential to all particles 
+
+Implements \textbf{ External\+Potential} \doxyref{}{p.}{classExternalPotential_afa05c5b5b569afc655e786c460f0042c}.
+
+
+
+Definition at line 33 of file external\+\_\+gravity\+\_\+potential.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ external\+\_\+gravity\+\_\+potential.\+hpp}\item 
+\textbf{ external\+\_\+gravity\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

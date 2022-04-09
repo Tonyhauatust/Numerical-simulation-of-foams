@@ -1,0 +1,63 @@
+\doxysection{Angle Struct Reference}
+\label{structAngle}\index{Angle@{Angle}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Angle}{p.}{structAngle} structure This is a basic data structure that hold information about angle in the system. This is used to model bending rigidity in chain-\/like molecules, such as polymers. \doxyref{Angle}{p.}{structAngle} holds three indices, i, j and k which are id\textquotesingle{}s of particles that are bonded. It also includes bond type, which is a positive integer. 
+
+Definition at line 44 of file angle.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Angle} (int \textbf{ id}, int \textbf{ type}, int \textbf{ i}, int \textbf{ j}, int \textbf{ k})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{structAngle_a7441ef0865bcb3db9b8064dd7375c1ea}} 
+int \textbf{ id}
+\begin{DoxyCompactList}\small\item\em Unique id of a bond. \end{DoxyCompactList}\item 
+\mbox{\label{structAngle_ac765329451135abec74c45e1897abf26}} 
+int \textbf{ type}
+\begin{DoxyCompactList}\small\item\em \doxyref{Angle}{p.}{structAngle} type. \end{DoxyCompactList}\item 
+\mbox{\label{structAngle_acb559820d9ca11295b4500f179ef6392}} 
+int \textbf{ i}
+\begin{DoxyCompactList}\small\item\em Id of the first (left) particle. \end{DoxyCompactList}\item 
+\mbox{\label{structAngle_a37d972ae0b47b9099e30983131d31916}} 
+int \textbf{ j}
+\begin{DoxyCompactList}\small\item\em Id of the second (middle) particle. \end{DoxyCompactList}\item 
+\mbox{\label{structAngle_ab66ed8e0098c0a86b458672a55a9cca9}} 
+int \textbf{ k}
+\begin{DoxyCompactList}\small\item\em If of the third (right) particle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{structAngle_a1c85256fd3582cead3abecc9f01267f7}} 
+\index{Angle@{Angle}!Angle@{Angle}}
+\index{Angle@{Angle}!Angle@{Angle}}
+\doxysubsubsection{Angle()}
+{\footnotesize\ttfamily \textbf{ Angle} (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{type,  }\item[{int}]{i,  }\item[{int}]{j,  }\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a angle object 
+\begin{DoxyParams}{Parameters}
+{\em id} & Unique id of the bond \\
+\hline
+{\em i} & Id of the first (left) particle \\
+\hline
+{\em j} & Id of the second (middle) particle \\
+\hline
+{\em k} & If of the third (right) particle \\
+\hline
+{\em type} & \doxyref{Bond}{p.}{structBond} type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file angle.\+hpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ angle.\+hpp}\end{DoxyCompactItemize}

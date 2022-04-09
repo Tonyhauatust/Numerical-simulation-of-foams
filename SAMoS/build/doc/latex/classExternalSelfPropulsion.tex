@@ -1,0 +1,79 @@
+\doxysection{External\+Self\+Propulsion Class Reference}
+\label{classExternalSelfPropulsion}\index{ExternalSelfPropulsion@{ExternalSelfPropulsion}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{External\+Self\+Propulsion}{p.}{classExternalSelfPropulsion} handles active motion where each particle receives a force equal to $ \vec F_i = \alpha \vec n_i $, where $ \alpha $ is the activity and $ \vec n_i $ is the director (polarisation). \begin{DoxyNote}{Note}
+This is not a potential, but to avoid code bloating we place it in the same class structure as regular external potential. 
+\end{DoxyNote}
+
+
+Definition at line 43 of file external\+\_\+self\+\_\+propulsion.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ External\+Self\+Propulsion} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classExternalSelfPropulsion_a4ebbad499eb34059dbfb512fffc6336b}} 
+void \textbf{ set\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classExternalSelfPropulsion_abc4e2a8e4e5c6923f00d9d20a7786312}} 
+double \textbf{ m\+\_\+alpha}
+\begin{DoxyCompactList}\small\item\em activity \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classExternalSelfPropulsion_a1179ae3aaa2a8ed819340fd768dae428}} 
+\index{ExternalSelfPropulsion@{ExternalSelfPropulsion}!ExternalSelfPropulsion@{ExternalSelfPropulsion}}
+\index{ExternalSelfPropulsion@{ExternalSelfPropulsion}!ExternalSelfPropulsion@{ExternalSelfPropulsion}}
+\doxysubsubsection{ExternalSelfPropulsion()}
+{\footnotesize\ttfamily \textbf{ External\+Self\+Propulsion} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters (gravity strength) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file external\+\_\+self\+\_\+propulsion.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classExternalSelfPropulsion_a4993c97a669fa259c6574a18d547c117}} 
+\index{ExternalSelfPropulsion@{ExternalSelfPropulsion}!compute@{compute}}
+\index{compute@{compute}!ExternalSelfPropulsion@{ExternalSelfPropulsion}}
+\doxysubsubsection{compute()}
+{\footnotesize\ttfamily void compute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes forces for all particles. 
+
+Apply self propulsion to all particles 
+
+Implements \textbf{ External\+Potential} \doxyref{}{p.}{classExternalPotential_afa05c5b5b569afc655e786c460f0042c}.
+
+
+
+Definition at line 33 of file external\+\_\+self\+\_\+propulsion.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ external\+\_\+self\+\_\+propulsion.\+hpp}\item 
+\textbf{ external\+\_\+self\+\_\+propulsion.\+cpp}\end{DoxyCompactItemize}

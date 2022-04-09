@@ -1,0 +1,72 @@
+\doxysection{Pair\+Yukawa\+Potential Class Reference}
+\label{classPairYukawaPotential}\index{PairYukawaPotential@{PairYukawaPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Yukawa\+Potential}{p.}{classPairYukawaPotential} implements standard Yukawa potential. \doxyref{Potential}{p.}{classPotential} is given as $ U_{Yukawa}\left(r_{ij}\right) = g\frac{e^{-\kappa r_{ij}}}{r_{ij}} $, where $ g $ is the potential strength, $ \kappa $ is the inverse potentail range and $ r_{ij} $ is the interparticle distance. 
+
+Definition at line 53 of file pair\+\_\+yukawa\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Yukawa\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairYukawaPotential_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairYukawaPotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns false since Yukawa potential does not need neighbour list. \end{DoxyCompactList}\item 
+\mbox{\label{classPairYukawaPotential_a60f70115b851e412fc0973176c3226b1}} 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairYukawaPotential_a2683cd7bfda635a0d8dd9d1da131c12a}} 
+double \textbf{ m\+\_\+g}
+\begin{DoxyCompactList}\small\item\em potential strength \end{DoxyCompactList}\item 
+\mbox{\label{classPairYukawaPotential_a23a29857799b0ff929d39d3df05469ba}} 
+double \textbf{ m\+\_\+kappa}
+\begin{DoxyCompactList}\small\item\em inverse potential range \end{DoxyCompactList}\item 
+\mbox{\label{classPairYukawaPotential_a53535f3d09f76a200e4a0b7f0909950d}} 
+double \textbf{ m\+\_\+rcut}
+\begin{DoxyCompactList}\small\item\em cutoff distance \end{DoxyCompactList}\item 
+\mbox{\label{classPairYukawaPotential_a32ea8d0d687e38deb024693d278ba83f}} 
+\textbf{ Yukawa\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairYukawaPotential_a1cc7758c85e83e3ceec79b3252a29466}} 
+\index{PairYukawaPotential@{PairYukawaPotential}!PairYukawaPotential@{PairYukawaPotential}}
+\index{PairYukawaPotential@{PairYukawaPotential}!PairYukawaPotential@{PairYukawaPotential}}
+\doxysubsubsection{PairYukawaPotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+Yukawa\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in) \\
+\hline
+{\em param} & Contains information about all parameters (alpha and sigma) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file pair\+\_\+yukawa\+\_\+potential.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+yukawa\+\_\+potential.\+hpp}\item 
+\textbf{ pair\+\_\+yukawa\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

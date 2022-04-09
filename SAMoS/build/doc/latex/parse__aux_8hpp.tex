@@ -1,0 +1,96 @@
+\doxysection{parse\+\_\+aux.\+hpp File Reference}
+\label{parse__aux_8hpp}\index{parse\_aux.hpp@{parse\_aux.hpp}}
+
+
+Auxiliary structures for parsing command lines.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ distinct\+\_\+spec$<$ Tail $>$}
+\item 
+struct \textbf{ char\+\_\+spec$<$ String $>$}
+\begin{DoxyCompactList}\small\item\em Metafunction allowing to get the type of any ascii\+::char\+\_\+(...) construct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ traits}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \textbf{ traits\+::char\+\_\+spec}$<$ std\+::string $>$\+::type \textbf{ charset\+\_\+tag\+\_\+type}
+\item 
+\mbox{\label{parse__aux_8hpp_a9025a6e926a2ed50bbbb5d6930960374}} 
+typedef \textbf{ traits\+::distinct\+\_\+spec}$<$ \textbf{ charset\+\_\+tag\+\_\+type} $>$\+::type {\bfseries keyword\+\_\+tag\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Tail $>$ }\\\textbf{ traits\+::distinct\+\_\+spec}$<$ Tail $>$\+::type \textbf{ distinct\+\_\+spec} (Tail const \&tail)
+\item 
+{\footnotesize template$<$typename String $>$ }\\\textbf{ traits\+::char\+\_\+spec}$<$ String $>$\+::type \textbf{ char\+\_\+spec} (String const \&str)
+\item 
+const std\+::string \textbf{ keyword\+\_\+spec} (\char`\"{}0-\/9a-\/zA-\/Z\+\_\+\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{parse__aux_8hpp_a1f238d1269749e443fb06f8761e04a73}} 
+const keyword\+\_\+tag\+\_\+type {\bfseries keyword} = \textbf{ distinct\+\_\+spec}(\textbf{ char\+\_\+spec}(\textbf{ keyword\+\_\+spec}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Auxiliary structures for parsing command lines. 
+
+\begin{DoxyAuthor}{Author}
+Rastko Sknepnek, {\texttt{ sknepnek@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+21-\/Oct-\/2013 
+\end{DoxyDate}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\label{parse__aux_8hpp_a06e9efe6ee0c3ccb91fc7fbcb017b1c6}} 
+\index{parse\_aux.hpp@{parse\_aux.hpp}!charset\_tag\_type@{charset\_tag\_type}}
+\index{charset\_tag\_type@{charset\_tag\_type}!parse\_aux.hpp@{parse\_aux.hpp}}
+\doxysubsubsection{charset\_tag\_type}
+{\footnotesize\ttfamily typedef \textbf{ traits\+::char\+\_\+spec}$<$std\+::string$>$\+::type \textbf{ charset\+\_\+tag\+\_\+type}}
+
+The following constructs the type of a distinct\+\_\+spec holding a charset(\char`\"{}0-\/9a-\/z\+A-\/\+Z\+\_\+\char`\"{}) as its tail parser 
+
+Definition at line 98 of file parse\+\_\+aux.\+hpp.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{parse__aux_8hpp_a30917b2d4a0885c08268c559635b193f}} 
+\index{parse\_aux.hpp@{parse\_aux.hpp}!char\_spec@{char\_spec}}
+\index{char\_spec@{char\_spec}!parse\_aux.hpp@{parse\_aux.hpp}}
+\doxysubsubsection{char\_spec()}
+{\footnotesize\ttfamily \textbf{ traits\+::char\+\_\+spec}$<$String$>$\+::type char\+\_\+spec (\begin{DoxyParamCaption}\item[{String const \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Define a helper function allowing to create a ascii\+::char\+\_\+() construct from an arbitrary string representation 
+
+Definition at line 91 of file parse\+\_\+aux.\+hpp.
+
+\mbox{\label{parse__aux_8hpp_a57a1010a184d88a2bea4051234156a77}} 
+\index{parse\_aux.hpp@{parse\_aux.hpp}!distinct\_spec@{distinct\_spec}}
+\index{distinct\_spec@{distinct\_spec}!parse\_aux.hpp@{parse\_aux.hpp}}
+\doxysubsubsection{distinct\_spec()}
+{\footnotesize\ttfamily \textbf{ traits\+::distinct\+\_\+spec}$<$Tail$>$\+::type distinct\+\_\+spec (\begin{DoxyParamCaption}\item[{Tail const \&}]{tail }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Define a helper function allowing to create a distinct() construct from an arbitrary tail parser 
+
+Definition at line 82 of file parse\+\_\+aux.\+hpp.
+
+\mbox{\label{parse__aux_8hpp_abbd578a4046377ee98e29d81bd108635}} 
+\index{parse\_aux.hpp@{parse\_aux.hpp}!keyword\_spec@{keyword\_spec}}
+\index{keyword\_spec@{keyword\_spec}!parse\_aux.hpp@{parse\_aux.hpp}}
+\doxysubsubsection{keyword\_spec()}
+{\footnotesize\ttfamily const std\+::string keyword\+\_\+spec (\begin{DoxyParamCaption}\item[{\char`\"{}0-\/9a-\/zA-\/Z\+\_\+\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+Define a new Qi \textquotesingle{}keyword\textquotesingle{} directive usable as a shortcut for a repository\+::distinct(char\+\_\+(std\+::string(\char`\"{}0-\/9a-\/z\+A-\/\+Z\+\_\+\char`\"{}))) 

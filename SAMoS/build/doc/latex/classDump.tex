@@ -1,0 +1,389 @@
+\doxysection{Dump Class Reference}
+\label{classDump}\index{Dump@{Dump}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Dump}{p.}{classDump} class handles output of system\textquotesingle{}s state, such as particle coordinates, velocities, forces, etc. It supports number of formats that can be used for subsequent data analysis and visualization. 
+
+Definition at line 87 of file dump.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dump} (System\+Ptr, Messenger\+Ptr, Neighbour\+List\+Ptr, const string \&, \textbf{ pairs\+\_\+type} \&)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_aa7d15f496cebdcca7f7e27d799512631}} 
+\textbf{ $\sim$\+Dump} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \textbf{ dump} (int)
+\begin{DoxyCompactList}\small\item\em Do actual dump. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ dump\+\_\+dcd} ()
+\begin{DoxyCompactList}\small\item\em D\+CD dump. \end{DoxyCompactList}\item 
+void \textbf{ dump\+\_\+xyz} ()
+\begin{DoxyCompactList}\small\item\em X\+YZ dump (X\+YZ file format) \end{DoxyCompactList}\item 
+void \textbf{ dump\+\_\+data} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} a selected list of parameters. \end{DoxyCompactList}\item 
+void \textbf{ dump\+\_\+input} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} input format for restarts. \end{DoxyCompactList}\item 
+void \textbf{ dump\+\_\+velocity} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} velocities. \end{DoxyCompactList}\item 
+void \textbf{ dump\+\_\+director} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} director. \end{DoxyCompactList}\item 
+void \textbf{ dump\+\_\+xyzv} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} X\+Y\+ZV file format for visualization with Sim\+Re\+Play. \end{DoxyCompactList}\item 
+void \textbf{ dump\+\_\+xyzc} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} X\+Y\+ZC file format for visualization with Sim\+Re\+Play. \end{DoxyCompactList}\item 
+void \textbf{ dump\+\_\+mol2} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} M\+O\+L2 file format for visualization with V\+MD. \end{DoxyCompactList}\item 
+void \textbf{ dump\+\_\+contact} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} contact network for further analysis. \end{DoxyCompactList}\item 
+void \textbf{ dump\+\_\+faces} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} faces based on the contact network. \end{DoxyCompactList}\item 
+void \textbf{ dump\+\_\+mesh} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} mesh (for tissues) \end{DoxyCompactList}\item 
+void \textbf{ dump\+\_\+boundary} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} boundary (for restarting tissue simulations) \end{DoxyCompactList}\item 
+void \textbf{ dump\+\_\+ajm} (int)
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} A\+JM (dump dual lattice that can be used as input for tissue simulation with Active Junction Model) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classDump_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Pointer to the \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles system wide messages. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_a4e781f6afa8a44060341e9cc7428415c}} 
+Neighbour\+List\+Ptr \textbf{ m\+\_\+nlist}
+\begin{DoxyCompactList}\small\item\em Pointer to the global neighbour list. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_a597ef8e0e2e42196a8b4ab100365a8d0}} 
+string \textbf{ m\+\_\+file\+\_\+name}
+\begin{DoxyCompactList}\small\item\em Base file name for the output file. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_a287512da6c9a2259f6f9fdd0273494e9}} 
+\textbf{ pairs\+\_\+type} \textbf{ m\+\_\+params}
+\begin{DoxyCompactList}\small\item\em Control parameters. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_ae58a1bb12757db082738ce9f69f2de1d}} 
+string \textbf{ m\+\_\+ext}
+\begin{DoxyCompactList}\small\item\em File name extension. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_a3f1022dafa2637c8d9a3ddff71003422}} 
+ofstream \textbf{ m\+\_\+file}
+\begin{DoxyCompactList}\small\item\em Output file stream with the file. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_accb10d6e4098b4c788c2d1491ef887d9}} 
+bo\+::filtering\+\_\+ostream \textbf{ m\+\_\+out}
+\begin{DoxyCompactList}\small\item\em Filters data through a compressor. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_a3b26a98aedd0e19190f27a803cdf72e2}} 
+int \textbf{ m\+\_\+start}
+\begin{DoxyCompactList}\small\item\em First time step of the dump. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_a0f9a3de1773381f5d03ddb0a8a1dc38b}} 
+int \textbf{ m\+\_\+freq}
+\begin{DoxyCompactList}\small\item\em Frequency with which to dump data. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_af37842c84ea262dacb13efaf64605273}} 
+int \textbf{ m\+\_\+time\+\_\+step\+\_\+offset}
+\begin{DoxyCompactList}\small\item\em Offset time step when printing data. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_a3943efc4f9e4b55685f914753985f169}} 
+bool \textbf{ m\+\_\+multi\+\_\+print}
+\begin{DoxyCompactList}\small\item\em Print to multiple files. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_acddc8456764420dc34ef01dc5bd70b66}} 
+bool \textbf{ m\+\_\+print\+\_\+header}
+\begin{DoxyCompactList}\small\item\em If true, print header line on some file types. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_aa1b5a67e7758611872b4c0a6d23cd01d}} 
+bool \textbf{ m\+\_\+print\+\_\+keys}
+\begin{DoxyCompactList}\small\item\em If true, print column keys. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_ae3eb294df365acc6b7465df91dfa863f}} 
+string \textbf{ m\+\_\+type}
+\begin{DoxyCompactList}\small\item\em File format for the dump. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_afafc0f0afc976f9885e26848a7d588b0}} 
+bool \textbf{ m\+\_\+no\+\_\+header}
+\begin{DoxyCompactList}\small\item\em Do not print header in some files. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_aa831fcc2738aff81f6edf7850b897183}} 
+double \textbf{ m\+\_\+r\+\_\+cut}
+\begin{DoxyCompactList}\small\item\em Cutoff distance for the contact network. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_afa4e8f6a47a77e1dd29f387b408a2326}} 
+bool \textbf{ m\+\_\+compress}
+\begin{DoxyCompactList}\small\item\em Compress output data using gzip compression. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_a644538e72ad145af6648144e6b25b1f9}} 
+bool \textbf{ m\+\_\+output\+\_\+dual}
+\begin{DoxyCompactList}\small\item\em Outputs dual mesh for tissue simulations. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_a89b45791e6587e6ebd35b07b5e080b16}} 
+bool \textbf{ m\+\_\+dual\+\_\+boundary}
+\begin{DoxyCompactList}\small\item\em If true, output dual faces that belog to the boundary vertices. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_a2aaec5db370cf1f149b915518c6f66e4}} 
+bool \textbf{ m\+\_\+include\+\_\+bonds}
+\begin{DoxyCompactList}\small\item\em If true, output bonds between particles. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_a0f28d0cae0e1927ae39e62cdd42346f3}} 
+bool \textbf{ m\+\_\+include\+\_\+mesh}
+\begin{DoxyCompactList}\small\item\em If true, output mesh ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classDump_a96783abc05091e837cb7c4893dd73a65}} 
+string \textbf{ m\+\_\+group}
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} this group. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_a37fc829ccfd0c19ae9788babd7217f57}} 
+string \textbf{ m\+\_\+directory}
+\begin{DoxyCompactList}\small\item\em Directory in which to redirect output. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_aa203021559cb0cb7e33e47d441b8b948}} 
+map$<$ string, string $>$ \textbf{ m\+\_\+type\+\_\+ext}
+\begin{DoxyCompactList}\small\item\em Hold extension for a given data type. \end{DoxyCompactList}\item 
+\mbox{\label{classDump_a732b6da4960a750e1dcc890299de30ac}} 
+vector$<$ string $>$ \textbf{ m\+\_\+to\+\_\+print}
+\begin{DoxyCompactList}\small\item\em List of quantities to dump (e.\+g., particle type, id, coordinate, velocity, etc.) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classDump_a3f62eb62301b4d97293e32920f4abdef}} 
+\index{Dump@{Dump}!Dump@{Dump}}
+\index{Dump@{Dump}!Dump@{Dump}}
+\doxysubsubsection{Dump()}
+{\footnotesize\ttfamily \textbf{ Dump} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{const string \&}]{filename,  }\item[{\textbf{ pairs\+\_\+type} \&}]{params }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Construct a specific dump object 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to a \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Handles system wide messages \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em filename} & Base file name for the output \\
+\hline
+{\em params} & list of parameters that control dump (e.\+g., frequency, output type, etc.) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file dump.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classDump_a4854e275809c835ef682b4276b1db862}} 
+\index{Dump@{Dump}!dump@{dump}}
+\index{dump@{dump}!Dump@{Dump}}
+\doxysubsubsection{dump()}
+{\footnotesize\ttfamily void dump (\begin{DoxyParamCaption}\item[{int}]{step }\end{DoxyParamCaption})}
+
+
+
+Do actual dump. 
+
+Do actual dump. 
+\begin{DoxyParams}{Parameters}
+{\em step} & current time step \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 351 of file dump.\+cpp.
+
+\mbox{\label{classDump_a9c2463702154eda8012577ded2f252b8}} 
+\index{Dump@{Dump}!dump\_ajm@{dump\_ajm}}
+\index{dump\_ajm@{dump\_ajm}!Dump@{Dump}}
+\doxysubsubsection{dump\_ajm()}
+{\footnotesize\ttfamily void dump\+\_\+ajm (\begin{DoxyParamCaption}\item[{int}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxyref{Dump}{p.}{classDump} A\+JM (dump dual lattice that can be used as input for tissue simulation with Active Junction Model) 
+
+\doxyref{Dump}{p.}{classDump} three files (vertices, faces and boundary) ~\newline
+ This is to be used to for simulations with the Active Junction Model ~\newline
+ 
+
+Definition at line 955 of file dump.\+cpp.
+
+\mbox{\label{classDump_a1523a7441b78383e550388718ddda8fc}} 
+\index{Dump@{Dump}!dump\_boundary@{dump\_boundary}}
+\index{dump\_boundary@{dump\_boundary}!Dump@{Dump}}
+\doxysubsubsection{dump\_boundary()}
+{\footnotesize\ttfamily void dump\+\_\+boundary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxyref{Dump}{p.}{classDump} boundary (for restarting tissue simulations) 
+
+\doxyref{Dump}{p.}{classDump} vertices that are on the boundary This is primarily used to for restarting tissue simulations. ~\newline
+ 
+
+Definition at line 943 of file dump.\+cpp.
+
+\mbox{\label{classDump_a67af4f2407bf49fac85a78a4e6c79df1}} 
+\index{Dump@{Dump}!dump\_contact@{dump\_contact}}
+\index{dump\_contact@{dump\_contact}!Dump@{Dump}}
+\doxysubsubsection{dump\_contact()}
+{\footnotesize\ttfamily void dump\+\_\+contact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxyref{Dump}{p.}{classDump} contact network for further analysis. 
+
+\doxyref{Dump}{p.}{classDump} contact network for particles Format is a simple text file with 3 columns Column 1\+: contact id (starting with 0) Column 2\+: id of the first particle in the contact (lower of the two ids) Column 3\+: id of the second particle in the contact (larger of the two ids) 
+
+Definition at line 828 of file dump.\+cpp.
+
+\mbox{\label{classDump_a5b3a6892b038b8473206672ba86f7fd1}} 
+\index{Dump@{Dump}!dump\_data@{dump\_data}}
+\index{dump\_data@{dump\_data}!Dump@{Dump}}
+\doxysubsubsection{dump\_data()}
+{\footnotesize\ttfamily void dump\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxyref{Dump}{p.}{classDump} a selected list of parameters. 
+
+\doxyref{Dump}{p.}{classDump} selected set of data. 
+
+Definition at line 504 of file dump.\+cpp.
+
+\mbox{\label{classDump_a3280da994d6be4ba6396c45ba5a70890}} 
+\index{Dump@{Dump}!dump\_dcd@{dump\_dcd}}
+\index{dump\_dcd@{dump\_dcd}!Dump@{Dump}}
+\doxysubsubsection{dump\_dcd()}
+{\footnotesize\ttfamily void dump\+\_\+dcd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+D\+CD dump. 
+
+\doxyref{Dump}{p.}{classDump} coordinated in a D\+CD file. 
+
+Definition at line 419 of file dump.\+cpp.
+
+\mbox{\label{classDump_aa90edff4e35120a2c552f37a753d33b0}} 
+\index{Dump@{Dump}!dump\_director@{dump\_director}}
+\index{dump\_director@{dump\_director}!Dump@{Dump}}
+\doxysubsubsection{dump\_director()}
+{\footnotesize\ttfamily void dump\+\_\+director (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxyref{Dump}{p.}{classDump} director. 
+
+Dumps director vectors in a format suitable for visualization with G\+N\+U\+Plot If scale is present, all vectors are rescales by a given factor. 
+
+Definition at line 720 of file dump.\+cpp.
+
+\mbox{\label{classDump_a3759544cafc4c64e6f1ffe4d23ad38d9}} 
+\index{Dump@{Dump}!dump\_faces@{dump\_faces}}
+\index{dump\_faces@{dump\_faces}!Dump@{Dump}}
+\doxysubsubsection{dump\_faces()}
+{\footnotesize\ttfamily void dump\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxyref{Dump}{p.}{classDump} faces based on the contact network. 
+
+\doxyref{Dump}{p.}{classDump} faces based on the contact network for particles Format is a simple text file with f+1 columns, where f in the number of vertices in a face Column 1\+: contact id (starting with 0) 
+
+Definition at line 894 of file dump.\+cpp.
+
+\mbox{\label{classDump_add46905a1d8fc517d68534b447685d9b}} 
+\index{Dump@{Dump}!dump\_input@{dump\_input}}
+\index{dump\_input@{dump\_input}!Dump@{Dump}}
+\doxysubsubsection{dump\_input()}
+{\footnotesize\ttfamily void dump\+\_\+input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxyref{Dump}{p.}{classDump} input format for restarts. 
+
+\doxyref{Dump}{p.}{classDump} format suitable for input. 
+
+Definition at line 676 of file dump.\+cpp.
+
+\mbox{\label{classDump_a7e9a858f09a5a2fb0e2cb317f2316949}} 
+\index{Dump@{Dump}!dump\_mesh@{dump\_mesh}}
+\index{dump\_mesh@{dump\_mesh}!Dump@{Dump}}
+\doxysubsubsection{dump\_mesh()}
+{\footnotesize\ttfamily void dump\+\_\+mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxyref{Dump}{p.}{classDump} mesh (for tissues) 
+
+\doxyref{Dump}{p.}{classDump} mesh, that is dual of the particle position network This will be done in the O\+FF format 
+
+Definition at line 919 of file dump.\+cpp.
+
+\mbox{\label{classDump_a3f04b68f1874428c95d3a27bef9497e2}} 
+\index{Dump@{Dump}!dump\_mol2@{dump\_mol2}}
+\index{dump\_mol2@{dump\_mol2}!Dump@{Dump}}
+\doxysubsubsection{dump\_mol2()}
+{\footnotesize\ttfamily void dump\+\_\+mol2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxyref{Dump}{p.}{classDump} M\+O\+L2 file format for visualization with V\+MD. 
+
+\doxyref{Dump}{p.}{classDump} particle coordinates and bonds in the common M\+O\+L2 format suitable for visualization with V\+MD 
+
+Definition at line 801 of file dump.\+cpp.
+
+\mbox{\label{classDump_a82e02ba150df448c578e5273bd4ab473}} 
+\index{Dump@{Dump}!dump\_velocity@{dump\_velocity}}
+\index{dump\_velocity@{dump\_velocity}!Dump@{Dump}}
+\doxysubsubsection{dump\_velocity()}
+{\footnotesize\ttfamily void dump\+\_\+velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxyref{Dump}{p.}{classDump} velocities. 
+
+Dumps velocities in a format suitable for visualization with G\+N\+U\+Plot If scale is present, all velocities are rescales by a given factor. 
+
+Definition at line 696 of file dump.\+cpp.
+
+\mbox{\label{classDump_afa8c65d6a1760db60181c82ab99bdc4e}} 
+\index{Dump@{Dump}!dump\_xyz@{dump\_xyz}}
+\index{dump\_xyz@{dump\_xyz}!Dump@{Dump}}
+\doxysubsubsection{dump\_xyz()}
+{\footnotesize\ttfamily void dump\+\_\+xyz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+X\+YZ dump (X\+YZ file format) 
+
+\doxyref{Dump}{p.}{classDump} particle coordinates in the common X\+YZ format. 
+
+Definition at line 490 of file dump.\+cpp.
+
+\mbox{\label{classDump_a4d4951e18ede6c4d6adc165d89e80e76}} 
+\index{Dump@{Dump}!dump\_xyzc@{dump\_xyzc}}
+\index{dump\_xyzc@{dump\_xyzc}!Dump@{Dump}}
+\doxysubsubsection{dump\_xyzc()}
+{\footnotesize\ttfamily void dump\+\_\+xyzc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxyref{Dump}{p.}{classDump} X\+Y\+ZC file format for visualization with Sim\+Re\+Play. 
+
+\doxyref{Dump}{p.}{classDump} particle coordinates in the common X\+Y\+ZC format suitable for visualization with Sim\+Re\+Play toolkit 
+
+Definition at line 773 of file dump.\+cpp.
+
+\mbox{\label{classDump_ae4489d73503e6289f3287a6560ef0151}} 
+\index{Dump@{Dump}!dump\_xyzv@{dump\_xyzv}}
+\index{dump\_xyzv@{dump\_xyzv}!Dump@{Dump}}
+\doxysubsubsection{dump\_xyzv()}
+{\footnotesize\ttfamily void dump\+\_\+xyzv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxyref{Dump}{p.}{classDump} X\+Y\+ZV file format for visualization with Sim\+Re\+Play. 
+
+\doxyref{Dump}{p.}{classDump} particle coordinates in the common X\+Y\+ZV format suitable for visualization with Sim\+Re\+Play toolkit 
+
+Definition at line 744 of file dump.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ dump.\+hpp}\item 
+\textbf{ dump.\+cpp}\end{DoxyCompactItemize}

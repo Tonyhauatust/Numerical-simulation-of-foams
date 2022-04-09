@@ -1,0 +1,97 @@
+\doxysection{Pair\+Soft\+Attractive\+Potential Class Reference}
+\label{classPairSoftAttractivePotential}\index{PairSoftAttractivePotential@{PairSoftAttractivePotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Soft\+Attractive\+Potential}{p.}{classPairSoftAttractivePotential} implements the pair interaction which is soft in nature with an attractive part and soft repulsive core. \doxyref{Potential}{p.}{classPotential} is given as $ U_{soft}\left(r_{ij}\right) = \frac{k}{2} \left(r_{ij} - r_e \right)^2 $, if $ r_{ij} \le r_{tunr} $, $ U_{soft} = -\frac{k}{2} \left(r_{ij} - r_f \right)^2 $ (with $ r_f = 2 r_{turn} - r_e $)if $ r_e < r_{ij} < r_f $ and zero otherwise. $ k $ is the potential strength. Often, it is convenient to set $ r_e = a_i + a_j $, with $ a_i $ and $ a_j $ being the radii of the two particles. Finally, $ r_{ij} $ is the Euclidean interparticle distance. $ r_{turn} = fr_e $, where $ f $ is a parameter given by the user. 
+
+Definition at line 58 of file pair\+\_\+soft\+\_\+attractive\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Soft\+Attractive\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairSoftAttractivePotential_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairSoftAttractivePotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since soft potential needs neighbour list. \end{DoxyCompactList}\item 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairSoftAttractivePotential_aa7b89576372abc4d0bbf496467e872f7}} 
+double \textbf{ m\+\_\+k}
+\begin{DoxyCompactList}\small\item\em potential strength \end{DoxyCompactList}\item 
+\mbox{\label{classPairSoftAttractivePotential_a9c41cdb9725c9ef90a5ef62f86390762}} 
+double \textbf{ m\+\_\+a}
+\begin{DoxyCompactList}\small\item\em potential range \end{DoxyCompactList}\item 
+\mbox{\label{classPairSoftAttractivePotential_a8d881c4652121d7a834f2d0211097e4d}} 
+double \textbf{ m\+\_\+fact}
+\begin{DoxyCompactList}\small\item\em factor determining position of the potential turn r\+\_\+turn \end{DoxyCompactList}\item 
+\mbox{\label{classPairSoftAttractivePotential_a19e2e1737fcfeef8c3810b8d6775c296}} 
+\textbf{ Soft\+Attractive\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairSoftAttractivePotential_a94acf52d5d58b64a77dbd36634455844}} 
+\index{PairSoftAttractivePotential@{PairSoftAttractivePotential}!PairSoftAttractivePotential@{PairSoftAttractivePotential}}
+\index{PairSoftAttractivePotential@{PairSoftAttractivePotential}!PairSoftAttractivePotential@{PairSoftAttractivePotential}}
+\doxysubsubsection{PairSoftAttractivePotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+Soft\+Attractive\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in) \\
+\hline
+{\em param} & Contains information about all parameters (k) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file pair\+\_\+soft\+\_\+attractive\+\_\+potential.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPairSoftAttractivePotential_a60f70115b851e412fc0973176c3226b1}} 
+\index{PairSoftAttractivePotential@{PairSoftAttractivePotential}!compute@{compute}}
+\index{compute@{compute}!PairSoftAttractivePotential@{PairSoftAttractivePotential}}
+\doxysubsubsection{compute()}
+{\footnotesize\ttfamily void compute (\begin{DoxyParamCaption}\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes potentials and forces for all particles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & time step sent by the integrator \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Pair\+Potential} \doxyref{}{p.}{classPairPotential_a47b59507485f0050f21b676fac26c071}.
+
+
+
+Definition at line 33 of file pair\+\_\+soft\+\_\+attractive\+\_\+potential.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+soft\+\_\+attractive\+\_\+potential.\+hpp}\item 
+\textbf{ pair\+\_\+soft\+\_\+attractive\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

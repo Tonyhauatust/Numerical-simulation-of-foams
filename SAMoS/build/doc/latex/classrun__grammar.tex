@@ -1,0 +1,37 @@
+\doxysection{run\+\_\+grammar Class Reference}
+\label{classrun__grammar}\index{run\_grammar@{run\_grammar}}
+
+
+\doxysubsection{Detailed Description}
+This is a parser for parsing command that contain number of simulation steps to run the simulation for.
+
+For example\+:
+
+run 100000
+
+This parser will return number of steps (100000 in this case)
+
+\begin{DoxyNote}{Note}
+Based on {\texttt{ http\+://www.\+boost.\+org/doc/libs/1\+\_\+53\+\_\+0/libs/spirit/repository/test/qi/distinct.\+cpp}} 
+\end{DoxyNote}
+
+
+Definition at line 52 of file parse\+\_\+run.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classrun__grammar_af27532b6fa100e01d8e2b728495cd34d}} 
+{\bfseries run\+\_\+grammar} (\textbf{ Run\+Data} \&run\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classrun__grammar_ad9289df63ee38e80cea32ce2656d28e6}} 
+qi\+::rule$<$ std\+::string\+::iterator, qi\+::space\+\_\+type $>$ \textbf{ run}
+\begin{DoxyCompactList}\small\item\em Rule for parsing run lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ parse\+\_\+run.\+hpp}\end{DoxyCompactItemize}

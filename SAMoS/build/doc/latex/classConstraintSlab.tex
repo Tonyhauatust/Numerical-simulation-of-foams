@@ -1,0 +1,95 @@
+\doxysection{Constraint\+Slab Class Reference}
+\label{classConstraintSlab}\index{ConstraintSlab@{ConstraintSlab}}
+
+
+\doxysubsection{Detailed Description}
+Enforces all particles to lay in a slab between $ z_{low} $ and $ z_{hi} $. We assume reflective boundary at the top and the bottom 
+
+Definition at line 46 of file constraint\+\_\+slab.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Constraint\+Slab} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ enforce} (\textbf{ Particle} \&)
+\begin{DoxyCompactList}\small\item\em Enforce constraint. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintSlab_a70e697a789a4617d47f0731b3ac43348}} 
+void \textbf{ rotate\+\_\+director} (\textbf{ Particle} \&p, double phi)
+\begin{DoxyCompactList}\small\item\em Rotate director around normal vector to the slab (z axis) \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintSlab_a1ccbd95c2e880f41105f9591fd86f743}} 
+void \textbf{ rotate\+\_\+velocity} (\textbf{ Particle} \&p, double phi)
+\begin{DoxyCompactList}\small\item\em Rotate velocity around normal vector to the slab (z axis) \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintSlab_afc4b487e5fb55574ae81ec2fb6b156bc}} 
+double \textbf{ project\+\_\+torque} (\textbf{ Particle} \&p)
+\begin{DoxyCompactList}\small\item\em Project torque onto normal vector to the slab (z axis) and return rotation angle change. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintSlab_a456cac7812f6819d976dca1e1c2ff45c}} 
+void \textbf{ compute\+\_\+normal} (\textbf{ Particle} \&p, double \&Nx, double \&Ny, double \&Nz)
+\begin{DoxyCompactList}\small\item\em Computes normal to the surface. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintSlab_a13e6067db87c4027f0e009da846451cf}} 
+void {\bfseries compute\+\_\+gradient} (\textbf{ Particle} \&p, double \&gx, double \&gy, double \&gz)
+\item 
+\mbox{\label{classConstraintSlab_aa3a67c1e6b300198e6830d66084b8af7}} 
+double {\bfseries constraint\+\_\+value} (\textbf{ Particle} \&p)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classConstraintSlab_a401aa5ed4049de885d9e61706593a9a8}} 
+double \textbf{ m\+\_\+z\+\_\+lo}
+\begin{DoxyCompactList}\small\item\em Lower boundary of the slab. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintSlab_ad34fce7e04eee6d6d9879cf050cbb657}} 
+double \textbf{ m\+\_\+z\+\_\+hi}
+\begin{DoxyCompactList}\small\item\em Upper boundary of the slab. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classConstraintSlab_a3f9db2a2e43c37a773e7ab7b2d282681}} 
+\index{ConstraintSlab@{ConstraintSlab}!ConstraintSlab@{ConstraintSlab}}
+\index{ConstraintSlab@{ConstraintSlab}!ConstraintSlab@{ConstraintSlab}}
+\doxysubsubsection{ConstraintSlab()}
+{\footnotesize\ttfamily \textbf{ Constraint\+Slab} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em id} & unique constraint id \\
+\hline
+{\em sys} & pointer to the system object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & parameters that define the manifolds (e.\+g., sphere radius) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file constraint\+\_\+slab.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classConstraintSlab_a9ed7e5d3cc625a705ba7d5677d649ced}} 
+\index{ConstraintSlab@{ConstraintSlab}!enforce@{enforce}}
+\index{enforce@{enforce}!ConstraintSlab@{ConstraintSlab}}
+\doxysubsubsection{enforce()}
+{\footnotesize\ttfamily void enforce (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Enforce constraint. 
+
+Force all particles to be confined move between planes at $ z = z_{lo} $ and $ z = z_{hi} $. 
+
+Reimplemented from \textbf{ Constraint} \doxyref{}{p.}{classConstraint_a9ed7e5d3cc625a705ba7d5677d649ced}.
+
+
+
+Definition at line 35 of file constraint\+\_\+slab.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ constraint\+\_\+slab.\+hpp}\item 
+\textbf{ constraint\+\_\+slab.\+cpp}\end{DoxyCompactItemize}

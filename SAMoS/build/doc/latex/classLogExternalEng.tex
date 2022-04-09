@@ -1,0 +1,76 @@
+\doxysection{Log\+External\+Eng Class Reference}
+\label{classLogExternalEng}\index{LogExternalEng@{LogExternalEng}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Log\+External\+Eng}{p.}{classLogExternalEng} class. 
+
+Logs different types of pair energies 
+
+Definition at line 39 of file log\+\_\+external\+\_\+eng.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Log\+External\+Eng} (System\+Ptr sys, Messenger\+Ptr msg, Potential\+Ptr pot, Aligner\+Ptr align, const string \&type)
+\item 
+string \textbf{ operator()} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classLogExternalEng_ae3eb294df365acc6b7465df91dfa863f}} 
+string \textbf{ m\+\_\+type}
+\begin{DoxyCompactList}\small\item\em External energy type to log. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classLogExternalEng_af95ecbe7aa54e9f573e0d598cb4619b2}} 
+\index{LogExternalEng@{LogExternalEng}!LogExternalEng@{LogExternalEng}}
+\index{LogExternalEng@{LogExternalEng}!LogExternalEng@{LogExternalEng}}
+\doxysubsubsection{LogExternalEng()}
+{\footnotesize\ttfamily \textbf{ Log\+External\+Eng} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align,  }\item[{const string \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct \doxyref{Log}{p.}{classLog} object 
+\begin{DoxyParams}{Parameters}
+{\em sys} & pointer to a system object \\
+\hline
+{\em compute} & pointer to a compute object \\
+\hline
+{\em pot} & Interaction handler object \\
+\hline
+{\em align} & Alignment handler object \\
+\hline
+{\em type} & Type of the pair energy to log (should match the pair\+\_\+potential type) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file log\+\_\+external\+\_\+eng.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classLogExternalEng_a01cb7c8a5c573716a3ec79172f86a34a}} 
+\index{LogExternalEng@{LogExternalEng}!operator()@{operator()}}
+\index{operator()@{operator()}!LogExternalEng@{LogExternalEng}}
+\doxysubsubsection{operator()()}
+{\footnotesize\ttfamily string operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+current time step 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Log} \doxyref{}{p.}{classLog_ae3a376c50b5cd27cd9f7b850068b7dee}.
+
+
+
+Definition at line 54 of file log\+\_\+external\+\_\+eng.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ log\+\_\+external\+\_\+eng.\+hpp}\end{DoxyCompactItemize}

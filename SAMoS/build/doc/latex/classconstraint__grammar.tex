@@ -1,0 +1,75 @@
+\doxysection{constraint\+\_\+grammar Class Reference}
+\label{classconstraint__grammar}\index{constraint\_grammar@{constraint\_grammar}}
+
+
+\doxysubsection{Detailed Description}
+This is a parser for parsing command that contain imposed constraint
+
+For example\+:
+
+constraint sphere \{ R = 10.\+0 \}
+
+This parser will extract the constraint type (in this case \char`\"{}sphere\char`\"{}) and return the rest of the line for post-\/processing.
+
+\begin{DoxyNote}{Note}
+Based on {\texttt{ http\+://www.\+boost.\+org/doc/libs/1\+\_\+53\+\_\+0/libs/spirit/repository/test/qi/distinct.\+cpp}} 
+\end{DoxyNote}
+
+
+Definition at line 55 of file parse\+\_\+constraint.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ constraint\+\_\+grammar} (\textbf{ Constraintl\+Data} \&constraint\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classconstraint__grammar_a8b02f86e2231841d9797a8dde5eca446}} 
+qi\+::rule$<$ std\+::string\+::iterator, qi\+::space\+\_\+type $>$ \textbf{ constraint}
+\begin{DoxyCompactList}\small\item\em Rule for parsing external potential lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classconstraint__grammar_a8806f4f0b4275cc3d9014ee361c9fe88}} 
+\index{constraint\_grammar@{constraint\_grammar}!constraint\_grammar@{constraint\_grammar}}
+\index{constraint\_grammar@{constraint\_grammar}!constraint\_grammar@{constraint\_grammar}}
+\doxysubsubsection{constraint\_grammar()}
+{\footnotesize\ttfamily \textbf{ constraint\+\_\+grammar} (\begin{DoxyParamCaption}\item[{\textbf{ Constraintl\+Data} \&}]{constraint\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Handles constraint on a sphere
+
+Handles constraint on a plane
+
+Handles plane walls constraints
+
+Handles constraint on a cylinder
+
+Handles constraint on a peanut
+
+Handles constraint on a torus
+
+Handles constraint on an ellipsoid
+
+Handles constraint on a gyroid
+
+Handles constraint actomyo
+
+Handles constraint on a hourglass
+
+Handles constraint on a Gaussian bump
+
+Handles dummy constraint
+
+Handles constraint on a tetrahedral surface
+
+Handles constraint to a slab
+
+Definition at line 58 of file parse\+\_\+constraint.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ parse\+\_\+constraint.\+hpp}\end{DoxyCompactItemize}

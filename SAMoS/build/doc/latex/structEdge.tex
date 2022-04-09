@@ -1,0 +1,123 @@
+\doxysection{Edge Struct Reference}
+\label{structEdge}\index{Edge@{Edge}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Edge}{p.}{structEdge} class keeps track of the edge information in the mesh. Edges are directed, so this data structure implement a half-\/edge. 
+
+Definition at line 45 of file edge.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Edge} (int \textbf{ id}, int i, int j)
+\item 
+bool \textbf{ vert\+\_\+in} (int v)
+\item 
+int \textbf{ other\+\_\+vert} (int v)
+\item 
+bool \textbf{ operator==} (int val)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{structEdge_a7441ef0865bcb3db9b8064dd7375c1ea}} 
+int \textbf{ id}
+\begin{DoxyCompactList}\small\item\em \doxyref{Edge}{p.}{structEdge} id. \end{DoxyCompactList}\item 
+\mbox{\label{structEdge_a16d981023742d3bd53f1385790714190}} 
+int \textbf{ from}
+\begin{DoxyCompactList}\small\item\em Id of vertex half-\/edge starts at. \end{DoxyCompactList}\item 
+\mbox{\label{structEdge_ac0ed249f3db34b8135fd2717bda56844}} 
+int \textbf{ to}
+\begin{DoxyCompactList}\small\item\em Id of vertex half-\/edge points to. \end{DoxyCompactList}\item 
+\mbox{\label{structEdge_a142a1b51e133e50c0a72b175958ac412}} 
+int \textbf{ next}
+\begin{DoxyCompactList}\small\item\em Index of the next edge in the face. \end{DoxyCompactList}\item 
+\mbox{\label{structEdge_a9582c650f117a06449b5ee368b6762ef}} 
+int \textbf{ face}
+\begin{DoxyCompactList}\small\item\em Id of the face (to the left) this half-\/edge belongs to. N\+O\+\_\+\+F\+A\+CE if none, i.\+e. boundary edge. \end{DoxyCompactList}\item 
+\mbox{\label{structEdge_a1df99df902f5f6e81ec3e21e9c07360e}} 
+bool \textbf{ visited}
+\begin{DoxyCompactList}\small\item\em If true, edge visited while building faces. \end{DoxyCompactList}\item 
+\mbox{\label{structEdge_a445dda6e9f39b6c67632eb4263ec2e6f}} 
+int \textbf{ pair}
+\begin{DoxyCompactList}\small\item\em Id of the other half of the half-\/edge pair. \end{DoxyCompactList}\item 
+\mbox{\label{structEdge_a68f61635b8b4afe606ebf818e5b4b6d6}} 
+bool \textbf{ boundary}
+\begin{DoxyCompactList}\small\item\em \doxyref{Edge}{p.}{structEdge} is boundary if its face is a hole. \end{DoxyCompactList}\item 
+\mbox{\label{structEdge_a0c9bfc1df9004d16e82437c0ad11c83c}} 
+int \textbf{ dual}
+\begin{DoxyCompactList}\small\item\em Id of the dual vertex (-\/1 if none) \end{DoxyCompactList}\item 
+\mbox{\label{structEdge_a3a44f79c59ec2e6a681d19ec829f0b4b}} 
+bool \textbf{ attempted\+\_\+removal}
+\begin{DoxyCompactList}\small\item\em If true, edge removal has been attempted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{structEdge_a56716afa4886b7a60da661f718b9ae4b}} 
+\index{Edge@{Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!Edge@{Edge}}
+\doxysubsubsection{Edge()}
+{\footnotesize\ttfamily \textbf{ Edge} (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a \doxyref{Edge}{p.}{structEdge} object 
+\begin{DoxyParams}{Parameters}
+{\em id} & edge id \\
+\hline
+{\em i} & id of 1st vertex \\
+\hline
+{\em j} & id of 2nd vertex \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file edge.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{structEdge_aeff34242dbf0c8900d649ca11dde77a7}} 
+\index{Edge@{Edge}!operator==@{operator==}}
+\index{operator==@{operator==}!Edge@{Edge}}
+\doxysubsubsection{operator==()}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compare if the id of the edge is equal to an integer value \textbackslash{}val edge index 
+
+Definition at line 77 of file edge.\+hpp.
+
+\mbox{\label{structEdge_a7bd2a3b1cb6ea0a2fb34b6e81637bfe3}} 
+\index{Edge@{Edge}!other\_vert@{other\_vert}}
+\index{other\_vert@{other\_vert}!Edge@{Edge}}
+\doxysubsubsection{other\_vert()}
+{\footnotesize\ttfamily int other\+\_\+vert (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the other vertex on the face (-\/1 if not part of this edge) 
+\begin{DoxyParams}{Parameters}
+{\em v} & vertex index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 69 of file edge.\+hpp.
+
+\mbox{\label{structEdge_a5769e31342222fc128abaddb9f4bab50}} 
+\index{Edge@{Edge}!vert\_in@{vert\_in}}
+\index{vert\_in@{vert\_in}!Edge@{Edge}}
+\doxysubsubsection{vert\_in()}
+{\footnotesize\ttfamily bool vert\+\_\+in (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if vertex belongs to the edge 
+\begin{DoxyParams}{Parameters}
+{\em v} & vertex id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file edge.\+hpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ edge.\+hpp}\end{DoxyCompactItemize}

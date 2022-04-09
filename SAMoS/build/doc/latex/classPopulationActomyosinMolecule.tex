@@ -1,0 +1,106 @@
+\doxysection{Population\+Actomyosin\+Molecule Class Reference}
+\label{classPopulationActomyosinMolecule}\index{PopulationActomyosinMolecule@{PopulationActomyosinMolecule}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Population\+Actomyosin\+Molecule}{p.}{classPopulationActomyosinMolecule} class handles unbinding of the entire myosin molecule form the rest of the system. If any of the beads is in the attached state all head groups detach. This detachment is done with a given probability. This is to model experiments of Christoph Schmidt. 
+
+Definition at line 52 of file population\+\_\+actomyosin\+\_\+molecule.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Population\+Actomyosin\+Molecule} (System\+Ptr sys, const Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ divide} (int)
+\begin{DoxyCompactList}\small\item\em This function controls attachment (note\+: function name derives from the initial intent of the population classes to use to treat cell division) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationActomyosinMolecule_adf9b6188c8a543f82a7f5c02ee539008}} 
+void \textbf{ remove} (int)
+\begin{DoxyCompactList}\small\item\em This function controls detachment. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationActomyosinMolecule_a5934f681769b45fdb507ff6de08ba66d}} 
+void \textbf{ add} (int t)
+\begin{DoxyCompactList}\small\item\em Not used here. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationActomyosinMolecule_a67f03cc5a7b9c63b9a7bb825fac4d943}} 
+void \textbf{ grow} (int time)
+\begin{DoxyCompactList}\small\item\em Not used here. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationActomyosinMolecule_af5d8f68d62cfe61b7b4b272d49351f95}} 
+void \textbf{ elongate} (int time)
+\begin{DoxyCompactList}\small\item\em Not used here. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPopulationActomyosinMolecule_aaba456a057071541006327fc2025f5df}} 
+R\+N\+G\+Ptr \textbf{ m\+\_\+rng}
+\begin{DoxyCompactList}\small\item\em Actomyosin number generator. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationActomyosinMolecule_a563effc46deb8b1f55c7ad9577281fb7}} 
+double \textbf{ m\+\_\+detach\+\_\+rate}
+\begin{DoxyCompactList}\small\item\em Rate of detachment, defined per particle. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationActomyosinMolecule_a7f4bb0f6e22be0b11243759aaf26e108}} 
+int \textbf{ m\+\_\+type\+\_\+d}
+\begin{DoxyCompactList}\small\item\em Type when detached. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationActomyosinMolecule_a8a0d3a8babf866c1e22ed58cb4b70119}} 
+int \textbf{ m\+\_\+type\+\_\+a}
+\begin{DoxyCompactList}\small\item\em Type when attached. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationActomyosinMolecule_afbb36d29c5705fb5e09b4c93ffbcd33a}} 
+int \textbf{ m\+\_\+type\+\_\+actin}
+\begin{DoxyCompactList}\small\item\em Type of the actin beads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPopulationActomyosinMolecule_a29157cd6c866867e18e4f4c27614ea25}} 
+\index{PopulationActomyosinMolecule@{PopulationActomyosinMolecule}!PopulationActomyosinMolecule@{PopulationActomyosinMolecule}}
+\index{PopulationActomyosinMolecule@{PopulationActomyosinMolecule}!PopulationActomyosinMolecule@{PopulationActomyosinMolecule}}
+\doxysubsubsection{PopulationActomyosinMolecule()}
+{\footnotesize\ttfamily \textbf{ Population\+Actomyosin\+Molecule} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{const Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct \doxyref{Population\+Actomyosin\+Molecule}{p.}{classPopulationActomyosinMolecule} object 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Reference to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Reference to the system wide messenger \\
+\hline
+{\em param} & Reference to the parameters that control given population control \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file population\+\_\+actomyosin\+\_\+molecule.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPopulationActomyosinMolecule_a73a018d19708663b546d15956d5c861a}} 
+\index{PopulationActomyosinMolecule@{PopulationActomyosinMolecule}!divide@{divide}}
+\index{divide@{divide}!PopulationActomyosinMolecule@{PopulationActomyosinMolecule}}
+\doxysubsubsection{divide()}
+{\footnotesize\ttfamily void divide (\begin{DoxyParamCaption}\item[{int}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This function controls attachment (note\+: function name derives from the initial intent of the population classes to use to treat cell division) 
+
+This function controls detachment of the entire myosin molecule. This is a achieved via changing types of myosin head groups from attached (type \char`\"{}\+A\char`\"{}) to detached (type \char`\"{}\+D\char`\"{}) a and vice versa.
+
+\begin{DoxyNote}{Note}
+In order to avoid head groups, e.\+g. changing their type from \char`\"{}\+A\char`\"{} to \char`\"{}\+D\char`\"{} and back to \char`\"{}\+A\char`\"{} in the single time step, we implement both processes in the same function using lists of indices. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em t} & current time step \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Population} \doxyref{}{p.}{classPopulation_a4ab1abe64fa0f7d0e8e6893bcf49a31c}.
+
+
+
+Definition at line 42 of file population\+\_\+actomyosin\+\_\+molecule.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ population\+\_\+actomyosin\+\_\+molecule.\+hpp}\item 
+population\+\_\+actomyosin\+\_\+molecule.\+cpp\end{DoxyCompactItemize}

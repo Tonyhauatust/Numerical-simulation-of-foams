@@ -1,0 +1,95 @@
+\doxysection{Cell Class Reference}
+\label{classCell}\index{Cell@{Cell}}
+
+
+\doxysubsection{Detailed Description}
+This class handles single element (cell) of the cell list 
+
+Definition at line 39 of file cell.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Cell} (int idx)
+\item 
+void \textbf{ add\+\_\+particle} (int idx)
+\item 
+\mbox{\label{classCell_ab44e54e90af1dc424377e6c9ff9609b4}} 
+vector$<$ int $>$ \& \textbf{ get\+\_\+particles} ()
+\begin{DoxyCompactList}\small\item\em Returns vector with all particles in the cell. \end{DoxyCompactList}\item 
+\mbox{\label{classCell_a740e8597529bdf29d83df11d9aebeaa5}} 
+void \textbf{ wipe} ()
+\begin{DoxyCompactList}\small\item\em Wipes particles vector (used for cell list rebuilds) \end{DoxyCompactList}\item 
+void \textbf{ add\+\_\+neighbour} (int idx)
+\item 
+\mbox{\label{classCell_a3c95c16e72a1e979edbecc26bd046a99}} 
+vector$<$ int $>$ \& \textbf{ get\+\_\+neighbours} ()
+\begin{DoxyCompactList}\small\item\em Returns list of all neighbours. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classCell_aad966617e7e050bedbead762727808a5}} 
+int \textbf{ m\+\_\+id}
+\begin{DoxyCompactList}\small\item\em Unique id (index) of the cell. \end{DoxyCompactList}\item 
+\mbox{\label{classCell_a8916ae10b2960e062c1539391de45401}} 
+vector$<$ int $>$ \textbf{ m\+\_\+particles}
+\begin{DoxyCompactList}\small\item\em Stores indices of particles belonging to this cell. \end{DoxyCompactList}\item 
+\mbox{\label{classCell_ac0b3b8c93ff064f355481b244abd6e71}} 
+vector$<$ int $>$ \textbf{ m\+\_\+neigh}
+\begin{DoxyCompactList}\small\item\em Stores indices of neighbouring cells. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classCell_ae5af4b95e442b218a8c80c46e0ac2f58}} 
+\index{Cell@{Cell}!Cell@{Cell}}
+\index{Cell@{Cell}!Cell@{Cell}}
+\doxysubsubsection{Cell()}
+{\footnotesize\ttfamily \textbf{ Cell} (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a single empty cell 
+\begin{DoxyParams}{Parameters}
+{\em idx} & cell index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file cell.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classCell_a624d065e703285292d4eba139efddcac}} 
+\index{Cell@{Cell}!add\_neighbour@{add\_neighbour}}
+\index{add\_neighbour@{add\_neighbour}!Cell@{Cell}}
+\doxysubsubsection{add\_neighbour()}
+{\footnotesize\ttfamily void add\+\_\+neighbour (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds index of the neighbouring cell 
+\begin{DoxyParams}{Parameters}
+{\em idx} & particle index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file cell.\+hpp.
+
+\mbox{\label{classCell_a5893608dec1cd4ded62e673ab4283d12}} 
+\index{Cell@{Cell}!add\_particle@{add\_particle}}
+\index{add\_particle@{add\_particle}!Cell@{Cell}}
+\doxysubsubsection{add\_particle()}
+{\footnotesize\ttfamily void add\+\_\+particle (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds particle to the cell 
+\begin{DoxyParams}{Parameters}
+{\em idx} & particle index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file cell.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ cell.\+hpp}\end{DoxyCompactItemize}

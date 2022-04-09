@@ -1,0 +1,69 @@
+\doxysection{Pair\+Active\+Potential Class Reference}
+\label{classPairActivePotential}\index{PairActivePotential@{PairActivePotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Active\+Potential}{p.}{classPairActivePotential} implements, what we call active potential, while this is actually not a potential. The idea behind this is to emulate contractile and extensile forces in active systems. Force is given as $ \vec F_{active} = \frac {1}{2}\alpha\left(\vec n_i-\vec n_j \right)\vec n_i \cdot \vec n_j $ if $ \vec n_i \cdot \vec n_j < 0 $, where $ \alpha $ is a parameter that determines if the force is contractile ( $ \alpha < 0 $) or extensile ( $ \alpha < 0 $). $ \vec n $ is the director vector. 
+
+Definition at line 49 of file pair\+\_\+active\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Active\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairActivePotential_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairActivePotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since active potential needs neighbour list. \end{DoxyCompactList}\item 
+\mbox{\label{classPairActivePotential_a60f70115b851e412fc0973176c3226b1}} 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairActivePotential_abc4e2a8e4e5c6923f00d9d20a7786312}} 
+double \textbf{ m\+\_\+alpha}
+\begin{DoxyCompactList}\small\item\em contractile/extensile stress strength \end{DoxyCompactList}\item 
+\mbox{\label{classPairActivePotential_a53535f3d09f76a200e4a0b7f0909950d}} 
+double \textbf{ m\+\_\+rcut}
+\begin{DoxyCompactList}\small\item\em cutoff distance \end{DoxyCompactList}\item 
+\mbox{\label{classPairActivePotential_a650db43a770672f4ad773c668bac16e9}} 
+\textbf{ Active\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairActivePotential_a998cab8fb41bd7b2a676e354968bd96d}} 
+\index{PairActivePotential@{PairActivePotential}!PairActivePotential@{PairActivePotential}}
+\index{PairActivePotential@{PairActivePotential}!PairActivePotential@{PairActivePotential}}
+\doxysubsubsection{PairActivePotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+Active\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in) \\
+\hline
+{\em param} & Contains information about all parameters (alpha, sigma, and rcut) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file pair\+\_\+active\+\_\+potential.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+active\+\_\+potential.\+hpp}\item 
+\textbf{ pair\+\_\+active\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

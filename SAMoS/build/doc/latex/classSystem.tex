@@ -1,0 +1,884 @@
+\doxysection{System Class Reference}
+\label{classSystem}\index{System@{System}}
+
+
+\doxysubsection{Detailed Description}
+This class handles collection of all particles, i.\+e. the entire system. 
+
+Definition at line 81 of file system.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ System} (const string \&, Messenger\+Ptr, Box\+Ptr)
+\begin{DoxyCompactList}\small\item\em Construct the system. \end{DoxyCompactList}\item 
+\textbf{ Particle} \& \textbf{ get\+\_\+particle} (int i)
+\item 
+\textbf{ Bond} \& \textbf{ get\+\_\+bond} (int i)
+\item 
+\textbf{ Angle} \& \textbf{ get\+\_\+angle} (int i)
+\item 
+\mbox{\label{classSystem_a532613972484883b0e1bb2d77b6a6f78}} 
+Box\+Ptr \textbf{ get\+\_\+box} ()
+\begin{DoxyCompactList}\small\item\em Get simulation box. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_aba28ea822710a963b3f6151705550e68}} 
+\textbf{ Mesh} \& \textbf{ get\+\_\+mesh} ()
+\begin{DoxyCompactList}\small\item\em Get mesh. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_acf0f665d0c558594c99d3bd51ed37599}} 
+bool \textbf{ get\+\_\+periodic} ()
+\begin{DoxyCompactList}\small\item\em Get the value of periodic boundary conditions flag. \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+step} (int step)
+\item 
+void \textbf{ set\+\_\+run\+\_\+step} (int step)
+\item 
+\mbox{\label{classSystem_ae38e9e0b0e23f915c3e08a7f3a54d456}} 
+void \textbf{ reset\+\_\+forces} ()
+\begin{DoxyCompactList}\small\item\em Reset all forces to zero. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a478c341d91eddaed61cd1eee4833d867}} 
+void \textbf{ reset\+\_\+torques} ()
+\begin{DoxyCompactList}\small\item\em Reset all torques to zero. \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+periodic} (bool periodic)
+\item 
+Group\+Ptr \textbf{ get\+\_\+group} (const string name)
+\item 
+\mbox{\label{classSystem_a1a84a17ac5fb322433b499b79b431e13}} 
+bool \textbf{ get\+\_\+force\+\_\+nlist\+\_\+rebuild} ()
+\begin{DoxyCompactList}\small\item\em Check is neighbour list needs forced rebuild (like after adding or removing particles. \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+force\+\_\+nlist\+\_\+rebuild} (bool val)
+\item 
+void \textbf{ make\+\_\+group} (const string, \textbf{ pairs\+\_\+type} \&)
+\begin{DoxyCompactList}\small\item\em Generate a group of particles. \end{DoxyCompactList}\item 
+bool \textbf{ has\+\_\+group} (const string name)
+\item 
+\mbox{\label{classSystem_a0e075b119b49f74f195b0ed4bc3ab595}} 
+int \textbf{ get\+\_\+ntypes} () const
+\begin{DoxyCompactList}\small\item\em Get the number of particle types. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a4e00aa66b65362aabc2cc618901d3933}} 
+int \textbf{ get\+\_\+n\+\_\+bond\+\_\+types} () const
+\begin{DoxyCompactList}\small\item\em Get the number of bond types. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a5f643a4047ab680903eb105b9a380a01}} 
+int \textbf{ get\+\_\+n\+\_\+angle\+\_\+types} () const
+\begin{DoxyCompactList}\small\item\em Get the number of angle types. \end{DoxyCompactList}\item 
+void \textbf{ add\+\_\+particle} (\textbf{ Particle} \&)
+\begin{DoxyCompactList}\small\item\em Add particle to the system. \end{DoxyCompactList}\item 
+void \textbf{ remove\+\_\+particle} (int)
+\begin{DoxyCompactList}\small\item\em Remove particle from the system. \end{DoxyCompactList}\item 
+void \textbf{ change\+\_\+group} (int, const string \&, const string \&)
+\begin{DoxyCompactList}\small\item\em Move particle from one group to the other. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a9b78139495676c19b6c1932887d0c7f0}} 
+void \textbf{ enable\+\_\+per\+\_\+particle\+\_\+eng} ()
+\begin{DoxyCompactList}\small\item\em Enable per particle energy tracking. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a5d47df53a83722f640ec52cce3bfc90a}} 
+void \textbf{ disable\+\_\+per\+\_\+particle\+\_\+eng} ()
+\begin{DoxyCompactList}\small\item\em disable per particle energy tracking \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_abae4b875f689764af920254ba45ee2b0}} 
+bool \textbf{ compute\+\_\+per\+\_\+particle\+\_\+energy} ()
+\begin{DoxyCompactList}\small\item\em Compute per particle energy. \end{DoxyCompactList}\item 
+void \textbf{ zero\+\_\+cm\+\_\+momentum} (const string \&)
+\begin{DoxyCompactList}\small\item\em Zero centre of mass momentum. \end{DoxyCompactList}\item 
+void \textbf{ read\+\_\+bonds} (const string \&)
+\begin{DoxyCompactList}\small\item\em Read in all bonds from the bonds file. \end{DoxyCompactList}\item 
+void \textbf{ read\+\_\+angles} (const string \&)
+\begin{DoxyCompactList}\small\item\em Read in all angles from the angles file. \end{DoxyCompactList}\item 
+void \textbf{ read\+\_\+boundary\+\_\+neighbours} (const string \&)
+\begin{DoxyCompactList}\small\item\em Read in all boundary neighbours in tissue simulations. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \& \textbf{ get\+\_\+exclusions} (int i)
+\item 
+\mbox{\label{classSystem_aa47691f511934b3b674377aa25723a3c}} 
+bool \textbf{ has\+\_\+exclusions} ()
+\begin{DoxyCompactList}\small\item\em Return true is there are exclusions in the system. \end{DoxyCompactList}\item 
+bool \textbf{ in\+\_\+exclusion} (int i, int j)
+\item 
+void \textbf{ compute\+\_\+tangent} (int, double \&, double \&, double \&)
+\begin{DoxyCompactList}\small\item\em Compute tangent in the direction of the neighbour with the smallest index. \end{DoxyCompactList}\item 
+double \textbf{ compute\+\_\+area} ()
+\begin{DoxyCompactList}\small\item\em Computes total system area for cell systems. \end{DoxyCompactList}\item 
+double \textbf{ compute\+\_\+average\+\_\+perimeter} ()
+\begin{DoxyCompactList}\small\item\em Computes average perimeter of all cells. \end{DoxyCompactList}\item 
+void \textbf{ apply\+\_\+periodic} (double \&, double \&, double \&)
+\begin{DoxyCompactList}\small\item\em Apply period boundary conditions on a quantity. \end{DoxyCompactList}\item 
+bool \textbf{ group\+\_\+ok} (const string \&)
+\begin{DoxyCompactList}\small\item\em Make sure that all group information on particles matches group information in the lists. \end{DoxyCompactList}\item 
+void \textbf{ enforce\+\_\+periodic} (\textbf{ Particle} \&)
+\begin{DoxyCompactList}\small\item\em enforce period boundary conditions \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+nlist\+\_\+rescale} (double scale)
+\item 
+\mbox{\label{classSystem_acf43995e7b9b749c277bfcf4f4b3b3d2}} 
+double \textbf{ get\+\_\+nlist\+\_\+rescale} ()
+\begin{DoxyCompactList}\small\item\em Get value of the n\+\_\+list rescale parameter. \end{DoxyCompactList}\item 
+void \textbf{ update\+\_\+mesh} ()
+\begin{DoxyCompactList}\small\item\em Update mesh information for tissue simulations. \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+integrator\+\_\+step} (double dt)
+\item 
+\mbox{\label{classSystem_a4f7f244fe310b46e4b4d243e43bb0af9}} 
+double \textbf{ get\+\_\+integrator\+\_\+step} ()
+\begin{DoxyCompactList}\small\item\em Get the value of the integrator time step. \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+max\+\_\+mesh\+\_\+iterations} (int iter)
+\item 
+void \textbf{ set\+\_\+boundary\+\_\+type} (int type)
+\item 
+\mbox{\label{classSystem_aca9b6572fdf6848e0bc79d3f4e372a3e}} 
+vector$<$ int $>$ \& \textbf{ get\+\_\+boundary} ()
+\begin{DoxyCompactList}\small\item\em Get list of all boundary particles. \end{DoxyCompactList}\item 
+void \textbf{ add\+\_\+boundary} (int id)
+\item 
+\mbox{\label{classSystem_aa4bd6dc4802b331944d2a95ab607403e}} 
+bool \textbf{ has\+\_\+boundary\+\_\+neighbours} ()
+\begin{DoxyCompactList}\small\item\em Return true if system has boundary neighbours. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \& \textbf{ get\+\_\+mol\+\_\+particles} (int mol\+\_\+id)
+\item 
+\mbox{\label{classSystem_afc9d9fb05827dc9865ab20ef22b1490a}} 
+int \textbf{ number\+\_\+of\+\_\+molecules} ()
+\begin{DoxyCompactList}\small\item\em Return total number of molecules in the system. \end{DoxyCompactList}\item 
+void \textbf{ molecule\+\_\+cm} (int, double \&, double \&, double \&)
+\item 
+void \textbf{ set\+\_\+record\+\_\+force\+\_\+type} (bool flag)
+\item 
+\mbox{\label{classSystem_a2baf402ce91299ce44a0bde470cde084}} 
+bool \textbf{ record\+\_\+force\+\_\+type} ()
+\begin{DoxyCompactList}\small\item\em Get value of the record\+\_\+force\+\_\+type flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classSystem_a76f8c8f8f2f4dd90766bd6fcd6792dbe}} 
+vector$<$ \textbf{ Particle} $>$ \textbf{ m\+\_\+particles}
+\begin{DoxyCompactList}\small\item\em Contains all particle in the system. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a6e99fe8508b9a4aa1376bfc51ff68b5c}} 
+vector$<$ \textbf{ Bond} $>$ \textbf{ m\+\_\+bonds}
+\begin{DoxyCompactList}\small\item\em Contains all bonds in the system. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a540293224e0b23ebb9b7b7dc7bf71dba}} 
+vector$<$ \textbf{ Angle} $>$ \textbf{ m\+\_\+angles}
+\begin{DoxyCompactList}\small\item\em Contains all angles in the system. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles messages sent to output. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a9d1fbc907034abb1785dd7c0a2d48298}} 
+Box\+Ptr \textbf{ m\+\_\+box}
+\begin{DoxyCompactList}\small\item\em Simulation box object. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a34c3b41240cfbb9c840ff48e0225c102}} 
+map$<$ string, Group\+Ptr $>$ \textbf{ m\+\_\+group}
+\begin{DoxyCompactList}\small\item\em All groups in the system. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a7e5f0904437429955cd2af7437e8cebb}} 
+\textbf{ Mesh} \textbf{ m\+\_\+mesh}
+\begin{DoxyCompactList}\small\item\em \doxyref{Mesh}{p.}{classMesh} is the data structure that holds tessallation infomration for tissue simulations. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a9c410fba51652497beb4b424ebf8aecc}} 
+bool \textbf{ m\+\_\+periodic}
+\begin{DoxyCompactList}\small\item\em If true, we use periodic boundary conditions. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_ac822c62722906b571d8193a3abe30c70}} 
+int \textbf{ m\+\_\+time\+\_\+step}
+\begin{DoxyCompactList}\small\item\em Current time step. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_ae6663d8c4cf2f9ac3d0d65777cb35c9e}} 
+int \textbf{ m\+\_\+run\+\_\+step}
+\begin{DoxyCompactList}\small\item\em Time step for the current run. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a3416495534e3f0dc45403dd09e4022a7}} 
+bool \textbf{ m\+\_\+compute\+\_\+per\+\_\+particle\+\_\+eng}
+\begin{DoxyCompactList}\small\item\em If true, compute per particle potential and alignment energy (we need to be able to turn it on and off since it is slow -\/ S\+TL map in the inner loop!) \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a596b6903e38c71fd2c406faf123a4b8c}} 
+int \textbf{ m\+\_\+num\+\_\+groups}
+\begin{DoxyCompactList}\small\item\em Total number of groups in the system. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a9520104ae6bd008860627837c7212acb}} 
+bool \textbf{ m\+\_\+force\+\_\+nlist\+\_\+rebuild}
+\begin{DoxyCompactList}\small\item\em Forced rebuilding of neighbour list. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_aa15489ae35f8e1ce9d2e9e772a38ac5b}} 
+double \textbf{ m\+\_\+nlist\+\_\+rescale}
+\begin{DoxyCompactList}\small\item\em Rescale neighbour list cutoff by this much. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a967e9d4ed961b18c4548bb90165ce220}} 
+int \textbf{ m\+\_\+n\+\_\+types}
+\begin{DoxyCompactList}\small\item\em Number of different particle types (used to set pair parameters) \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_af675d973fc87ed4e8dc1cf8d3a52341e}} 
+int \textbf{ m\+\_\+n\+\_\+bond\+\_\+types}
+\begin{DoxyCompactList}\small\item\em Number of different bond types. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_ae51f9afa0c986d8209401d21cabcf27d}} 
+int \textbf{ m\+\_\+n\+\_\+angle\+\_\+types}
+\begin{DoxyCompactList}\small\item\em Number of different angle types. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a4643647bc22a98698f36c62d0584c670}} 
+int \textbf{ m\+\_\+current\+\_\+particle\+\_\+flag}
+\begin{DoxyCompactList}\small\item\em Keeps track of the last particle flag (distinct immutable id) of all particles. For bookkeeping. Clumsy as hell! ~\newline
+ \end{DoxyCompactList}\item 
+double \textbf{ m\+\_\+dt}
+\begin{DoxyCompactList}\small\item\em This is a global integrator step used by all integrators (. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_aa0e73c59628d3930cefc5b0d73a0c2a1}} 
+bool \textbf{ m\+\_\+has\+\_\+exclusions}
+\begin{DoxyCompactList}\small\item\em If true, there are bonded interactions in the system and therefore those are accompanied with exclusions. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_ac7e0a04fb68b3863559c88cf0bfd889a}} 
+int \textbf{ m\+\_\+max\+\_\+mesh\+\_\+iter}
+\begin{DoxyCompactList}\small\item\em Maximum number of iterations when cleaning up boundaries in the tissue simulations. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a6885b2b2922264f065509f837e5c82ce}} 
+vector$<$ vector$<$ int $>$ $>$ \textbf{ m\+\_\+exclusions}
+\begin{DoxyCompactList}\small\item\em Which particles to be excluded from computing non bonded interactions (basically everything in bonds and angles) \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a30fe3c7a298fbbf98c4e8b982f0a1bfc}} 
+vector$<$ int $>$ \textbf{ m\+\_\+boundary}
+\begin{DoxyCompactList}\small\item\em Contains all particles that belong to the boundary (for tissue simulations) \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_ac53e4d5b06d878f09452d5df975b44ae}} 
+int \textbf{ m\+\_\+boundary\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Type of the boundary particles that are added for cell simulations. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a8280305d3e3f466e9da4afe04ce7080b}} 
+bool \textbf{ m\+\_\+has\+\_\+boundary\+\_\+neighbours}
+\begin{DoxyCompactList}\small\item\em If true, systems contains boundary neighbours (used in cells simulations) \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_af1a683c076498d981b5ff42f49f78891}} 
+vector$<$ vector$<$ int $>$ $>$ \textbf{ m\+\_\+molecules}
+\begin{DoxyCompactList}\small\item\em List of all particles ids in a given molecule. \end{DoxyCompactList}\item 
+\mbox{\label{classSystem_a2278615a2f049830924f4206797e3026}} 
+bool \textbf{ m\+\_\+record\+\_\+force\+\_\+type}
+\begin{DoxyCompactList}\small\item\em If true, for each particle record each force type that acts on it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classSystem_a483d2c46c99f9d33193778f3764e6709}} 
+\index{System@{System}!System@{System}}
+\index{System@{System}!System@{System}}
+\doxysubsubsection{System()}
+{\footnotesize\ttfamily \textbf{ System} (\begin{DoxyParamCaption}\item[{const string \&}]{input\+\_\+filename,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Box\+Ptr}]{box }\end{DoxyParamCaption})}
+
+
+
+Construct the system. 
+
+\doxyref{System}{p.}{classSystem} constructor The constructor reads in coordinates from a file. If there is an error, an exception will be thrown.
+
+File format\+:
+\begin{DoxyEnumerate}
+\item Any line starting with \# sign is a comment and is ignored
+\end{DoxyEnumerate}
+
+Otherwise, information about each particle is stored in a one
+\begin{DoxyEnumerate}
+\item \doxyref{Particle}{p.}{classParticle} ids should be stored in the incremental order
+\item \doxyref{Particle}{p.}{classParticle} line [id] [type] [radius] [x] [y] [z] [vx] [vy] [vz] [omega]
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+filename} & name of coordinate file \\
+\hline
+{\em msg} & Pointer to the \doxyref{Messenger}{p.}{classMessenger} object \\
+\hline
+{\em box} & Pointer to the simulation box object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file system.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classSystem_a576d13ea259ee8000e74aaaa8a0bc8fe}} 
+\index{System@{System}!add\_boundary@{add\_boundary}}
+\index{add\_boundary@{add\_boundary}!System@{System}}
+\doxysubsubsection{add\_boundary()}
+{\footnotesize\ttfamily void add\+\_\+boundary (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add particle to the list of boundary particles 
+\begin{DoxyParams}{Parameters}
+{\em id} & particle id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 306 of file system.\+hpp.
+
+\mbox{\label{classSystem_aadbdea570600205775429172275440de}} 
+\index{System@{System}!add\_particle@{add\_particle}}
+\index{add\_particle@{add\_particle}!System@{System}}
+\doxysubsubsection{add\_particle()}
+{\footnotesize\ttfamily void add\+\_\+particle (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Add particle to the system. 
+
+Add particle to the system 
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxyref{Particle}{p.}{classParticle} to add \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 578 of file system.\+cpp.
+
+\mbox{\label{classSystem_a2630f3a44ed05ebc9e409c7aefef7189}} 
+\index{System@{System}!apply\_periodic@{apply\_periodic}}
+\index{apply\_periodic@{apply\_periodic}!System@{System}}
+\doxysubsubsection{apply\_periodic()}
+{\footnotesize\ttfamily void apply\+\_\+periodic (\begin{DoxyParamCaption}\item[{double \&}]{dx,  }\item[{double \&}]{dy,  }\item[{double \&}]{dz }\end{DoxyParamCaption})}
+
+
+
+Apply period boundary conditions on a quantity. 
+
+Apply period boundary conditions on three coordinate 
+\begin{DoxyParams}{Parameters}
+{\em dx} & x value too apply periodic boundary to (will be overwritten) \\
+\hline
+{\em dy} & y value too apply periodic boundary to (will be overwritten) \\
+\hline
+{\em dz} & z value too apply periodic boundary to (will be overwritten) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1083 of file system.\+cpp.
+
+\mbox{\label{classSystem_a84b3257066da7b822ccd49dc1e5c279a}} 
+\index{System@{System}!change\_group@{change\_group}}
+\index{change\_group@{change\_group}!System@{System}}
+\doxysubsubsection{change\_group()}
+{\footnotesize\ttfamily void change\+\_\+group (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{const string \&}]{old\+\_\+group,  }\item[{const string \&}]{new\+\_\+group }\end{DoxyParamCaption})}
+
+
+
+Move particle from one group to the other. 
+
+Change group of the particle 
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxyref{Particle}{p.}{classParticle} whose group we want to change \\
+\hline
+{\em old\+\_\+group} & Old group \\
+\hline
+{\em new\+\_\+group} & New group \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 672 of file system.\+cpp.
+
+\mbox{\label{classSystem_a407dc914b012d32d72ab44bdecd742e8}} 
+\index{System@{System}!compute\_area@{compute\_area}}
+\index{compute\_area@{compute\_area}!System@{System}}
+\doxysubsubsection{compute\_area()}
+{\footnotesize\ttfamily double compute\+\_\+area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Computes total system area for cell systems. 
+
+Compute system area by adding up areas of all cells (makes sense only for cell systems) 
+
+Definition at line 1037 of file system.\+cpp.
+
+\mbox{\label{classSystem_a640b96f4fe155c9c622c07027b10e7ec}} 
+\index{System@{System}!compute\_average\_perimeter@{compute\_average\_perimeter}}
+\index{compute\_average\_perimeter@{compute\_average\_perimeter}!System@{System}}
+\doxysubsubsection{compute\_average\_perimeter()}
+{\footnotesize\ttfamily double compute\+\_\+average\+\_\+perimeter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Computes average perimeter of all cells. 
+
+Compute average perimeter of cells in a cell system. 
+
+Definition at line 1058 of file system.\+cpp.
+
+\mbox{\label{classSystem_acbb7fd5d5b2d74f23ae053f0788b127e}} 
+\index{System@{System}!compute\_tangent@{compute\_tangent}}
+\index{compute\_tangent@{compute\_tangent}!System@{System}}
+\doxysubsubsection{compute\_tangent()}
+{\footnotesize\ttfamily void compute\+\_\+tangent (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{double \&}]{tx,  }\item[{double \&}]{ty,  }\item[{double \&}]{tz }\end{DoxyParamCaption})}
+
+
+
+Compute tangent in the direction of the neighbour with the smallest index. 
+
+Compute tangent in the direction of the neighbour with the smallest index Used for simulation of actomyosin 
+\begin{DoxyParams}{Parameters}
+{\em i} & particle at which we want to compute tangent vector \\
+\hline
+{\em tx} & x component of the tangent vector (returned) \\
+\hline
+{\em ty} & y component of the tangent vector (returned) \\
+\hline
+{\em tz} & z component of the tangent vector (returned) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1010 of file system.\+cpp.
+
+\mbox{\label{classSystem_a3e7c686c6298d860d16b95452e51210f}} 
+\index{System@{System}!enforce\_periodic@{enforce\_periodic}}
+\index{enforce\_periodic@{enforce\_periodic}!System@{System}}
+\doxysubsubsection{enforce\_periodic()}
+{\footnotesize\ttfamily void enforce\+\_\+periodic (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+enforce period boundary conditions 
+
+Enforce period boundary conditions onto a particle 
+\begin{DoxyParams}{Parameters}
+{\em p} & reference to the particle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1119 of file system.\+cpp.
+
+\mbox{\label{classSystem_a8441e04b0f3768f1549e4de71e0409ec}} 
+\index{System@{System}!get\_angle@{get\_angle}}
+\index{get\_angle@{get\_angle}!System@{System}}
+\doxysubsubsection{get\_angle()}
+{\footnotesize\ttfamily \textbf{ Angle}\& get\+\_\+angle (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get an angle 
+\begin{DoxyParams}{Parameters}
+{\em i} & index of the angle to return ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 109 of file system.\+hpp.
+
+\mbox{\label{classSystem_aeed02a5f94eece52b2d1cffc8d568060}} 
+\index{System@{System}!get\_bond@{get\_bond}}
+\index{get\_bond@{get\_bond}!System@{System}}
+\doxysubsubsection{get\_bond()}
+{\footnotesize\ttfamily \textbf{ Bond}\& get\+\_\+bond (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a bond 
+\begin{DoxyParams}{Parameters}
+{\em i} & index of the bond to return \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file system.\+hpp.
+
+\mbox{\label{classSystem_a1356ae50659dbe60b9d882659842beba}} 
+\index{System@{System}!get\_exclusions@{get\_exclusions}}
+\index{get\_exclusions@{get\_exclusions}!System@{System}}
+\doxysubsubsection{get\_exclusions()}
+{\footnotesize\ttfamily vector$<$int$>$\& get\+\_\+exclusions (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get list of exclusions for a given particle 
+\begin{DoxyParams}{Parameters}
+{\em i} & particle index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 243 of file system.\+hpp.
+
+\mbox{\label{classSystem_a7b6bec69858a7290eff1f3e8cd9aa791}} 
+\index{System@{System}!get\_group@{get\_group}}
+\index{get\_group@{get\_group}!System@{System}}
+\doxysubsubsection{get\_group()}
+{\footnotesize\ttfamily Group\+Ptr get\+\_\+group (\begin{DoxyParamCaption}\item[{const string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get particle group 
+\begin{DoxyParams}{Parameters}
+{\em name} & \doxyref{Group}{p.}{classGroup} name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 173 of file system.\+hpp.
+
+\mbox{\label{classSystem_ac12571dc993e99fe784d4e81f00a951e}} 
+\index{System@{System}!get\_mol\_particles@{get\_mol\_particles}}
+\index{get\_mol\_particles@{get\_mol\_particles}!System@{System}}
+\doxysubsubsection{get\_mol\_particles()}
+{\footnotesize\ttfamily vector$<$int$>$\& get\+\_\+mol\+\_\+particles (\begin{DoxyParamCaption}\item[{int}]{mol\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return list (vector) of all particles in a given molecule 
+\begin{DoxyParams}{Parameters}
+{\em mol\+\_\+id} & id of the molecule \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 313 of file system.\+hpp.
+
+\mbox{\label{classSystem_ace51392cc70aaf924a10852858344e0e}} 
+\index{System@{System}!get\_particle@{get\_particle}}
+\index{get\_particle@{get\_particle}!System@{System}}
+\doxysubsubsection{get\_particle()}
+{\footnotesize\ttfamily \textbf{ Particle}\& get\+\_\+particle (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get particle 
+\begin{DoxyParams}{Parameters}
+{\em i} & index of the particle to return ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file system.\+hpp.
+
+\mbox{\label{classSystem_a5d0986ac923d48ac8c125094e9d1b124}} 
+\index{System@{System}!group\_ok@{group\_ok}}
+\index{group\_ok@{group\_ok}!System@{System}}
+\doxysubsubsection{group\_ok()}
+{\footnotesize\ttfamily bool group\+\_\+ok (\begin{DoxyParamCaption}\item[{const string \&}]{group }\end{DoxyParamCaption})}
+
+
+
+Make sure that all group information on particles matches group information in the lists. 
+
+Make sure that all group information on particles matches group information in the lists 
+\begin{DoxyParams}{Parameters}
+{\em group} & group name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1098 of file system.\+cpp.
+
+\mbox{\label{classSystem_a4992a147f43d8b1a69cdb998964338b7}} 
+\index{System@{System}!has\_group@{has\_group}}
+\index{has\_group@{has\_group}!System@{System}}
+\doxysubsubsection{has\_group()}
+{\footnotesize\ttfamily bool has\+\_\+group (\begin{DoxyParamCaption}\item[{const string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if a group exists 
+\begin{DoxyParams}{Parameters}
+{\em name} & \doxyref{Group}{p.}{classGroup} name ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 195 of file system.\+hpp.
+
+\mbox{\label{classSystem_afcc1f7c6ccfccf5c799115ea8503a9e4}} 
+\index{System@{System}!in\_exclusion@{in\_exclusion}}
+\index{in\_exclusion@{in\_exclusion}!System@{System}}
+\doxysubsubsection{in\_exclusion()}
+{\footnotesize\ttfamily bool in\+\_\+exclusion (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if a particle j is in the exclusion list of particle i 
+\begin{DoxyParams}{Parameters}
+{\em i} & particle whose exclusions to check \\
+\hline
+{\em j} & check if this particle is in the exclusion list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 251 of file system.\+hpp.
+
+\mbox{\label{classSystem_a236d617c98676791f26254d38a99e38e}} 
+\index{System@{System}!make\_group@{make\_group}}
+\index{make\_group@{make\_group}!System@{System}}
+\doxysubsubsection{make\_group()}
+{\footnotesize\ttfamily void make\+\_\+group (\begin{DoxyParamCaption}\item[{const string}]{name,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})}
+
+
+
+Generate a group of particles. 
+
+Generate a group of particles 
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the group \\
+\hline
+{\em param} & Contains information about all parameters\\
+\hline
+\end{DoxyParams}
+Groups can be generated based on a number of criteria For example base on the particle type, particle size (radius), position, etc. 
+
+Definition at line 462 of file system.\+cpp.
+
+\mbox{\label{classSystem_aa454d50c2d15c72ee9b66bf08b1b9d8a}} 
+\index{System@{System}!molecule\_cm@{molecule\_cm}}
+\index{molecule\_cm@{molecule\_cm}!System@{System}}
+\doxysubsubsection{molecule\_cm()}
+{\footnotesize\ttfamily void molecule\+\_\+cm (\begin{DoxyParamCaption}\item[{int}]{mol\+\_\+id,  }\item[{double \&}]{xcm,  }\item[{double \&}]{ycm,  }\item[{double \&}]{zcm }\end{DoxyParamCaption})}
+
+Compute centre of mass for a molecule 
+\begin{DoxyParams}{Parameters}
+{\em mol\+\_\+id} & id of the molecule \\
+\hline
+{\em xcm} & x-\/coordinate of the centre of mass \\
+\hline
+{\em ycm} & y-\/coordinate of the centre of mass \\
+\hline
+{\em zcm} & z-\/coordinate of the centre of mass \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1219 of file system.\+cpp.
+
+\mbox{\label{classSystem_a410dc9265b97a089c693a88e941b04b1}} 
+\index{System@{System}!read\_angles@{read\_angles}}
+\index{read\_angles@{read\_angles}!System@{System}}
+\doxysubsubsection{read\_angles()}
+{\footnotesize\ttfamily void read\+\_\+angles (\begin{DoxyParamCaption}\item[{const string \&}]{angle\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Read in all angles from the angles file. 
+
+Read in angle information from the angles file. Angles file has the following structure \doxysubsection{-\/ comments}\label{classSystem_autotoc_md1}
+id type i j k where id is unique angle id (starts with 0) type is angle type (positive integer) i is the index of first (left) particle j is the index of second (middle) particle k is the index of the third (right) particle
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle\+\_\+file} & name of the file containing angles information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 840 of file system.\+cpp.
+
+\mbox{\label{classSystem_a823115436804bb9164c71ab10927a45b}} 
+\index{System@{System}!read\_bonds@{read\_bonds}}
+\index{read\_bonds@{read\_bonds}!System@{System}}
+\doxysubsubsection{read\_bonds()}
+{\footnotesize\ttfamily void read\+\_\+bonds (\begin{DoxyParamCaption}\item[{const string \&}]{bond\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Read in all bonds from the bonds file. 
+
+Read in bond information from the bonds file. Bonds file has the following structure \doxysubsection{-\/ comments}\label{classSystem_autotoc_md0}
+id type i j where id is unique bond id (starts with 0) type is bond type (positive integer) i is the index of first particle in the bond (also indexed from zero) j is the index of second particle in the bond (indexed from zero)
+
+
+\begin{DoxyParams}{Parameters}
+{\em bond\+\_\+file} & name of the file containing bonds information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 748 of file system.\+cpp.
+
+\mbox{\label{classSystem_ae38c32b43ad29c701eaeca5aaae5f159}} 
+\index{System@{System}!read\_boundary\_neighbours@{read\_boundary\_neighbours}}
+\index{read\_boundary\_neighbours@{read\_boundary\_neighbours}!System@{System}}
+\doxysubsubsection{read\_boundary\_neighbours()}
+{\footnotesize\ttfamily void read\+\_\+boundary\+\_\+neighbours (\begin{DoxyParamCaption}\item[{const string \&}]{bound\+\_\+neigh\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Read in all boundary neighbours in tissue simulations. 
+
+Read in connectivity information for boundary particles in tissue simulations Boundary neighbours file has the following structure \doxysubsection{-\/ comments}\label{classSystem_autotoc_md2}
+id i j where id is unique bond id (starts with 0) i is the index of boundary particle j is the index of its neighbour \begin{DoxyNote}{Note}
+only one pair has to be specified, the other one is set atomatically
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em bound\+\_\+neigh\+\_\+file} & name of the file containing boundary connectivity information \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 943 of file system.\+cpp.
+
+\mbox{\label{classSystem_a3f0b8ee8f27b9bd90463ba19f9e1d58d}} 
+\index{System@{System}!remove\_particle@{remove\_particle}}
+\index{remove\_particle@{remove\_particle}!System@{System}}
+\doxysubsubsection{remove\_particle()}
+{\footnotesize\ttfamily void remove\+\_\+particle (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Remove particle from the system. 
+
+Remove particle from the system 
+\begin{DoxyParams}{Parameters}
+{\em id} & Id of particle to remove \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 597 of file system.\+cpp.
+
+\mbox{\label{classSystem_a7ee6443d02fc27e82531e1e697f24ad2}} 
+\index{System@{System}!set\_boundary\_type@{set\_boundary\_type}}
+\index{set\_boundary\_type@{set\_boundary\_type}!System@{System}}
+\doxysubsubsection{set\_boundary\_type()}
+{\footnotesize\ttfamily void set\+\_\+boundary\+\_\+type (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set value of the boundary type of particles in cell simulations 
+\begin{DoxyParams}{Parameters}
+{\em type} & boundary particle type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 299 of file system.\+hpp.
+
+\mbox{\label{classSystem_a3ec5a1b7e4eb3f1716e83f13a1a5da82}} 
+\index{System@{System}!set\_force\_nlist\_rebuild@{set\_force\_nlist\_rebuild}}
+\index{set\_force\_nlist\_rebuild@{set\_force\_nlist\_rebuild}!System@{System}}
+\doxysubsubsection{set\_force\_nlist\_rebuild()}
+{\footnotesize\ttfamily void set\+\_\+force\+\_\+nlist\+\_\+rebuild (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the force\+\_\+nlist\+\_\+rebuild flag 
+\begin{DoxyParams}{Parameters}
+{\em val} & new value of the flag \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 188 of file system.\+hpp.
+
+\mbox{\label{classSystem_a84f13d054938a694321b473d1eebb205}} 
+\index{System@{System}!set\_integrator\_step@{set\_integrator\_step}}
+\index{set\_integrator\_step@{set\_integrator\_step}!System@{System}}
+\doxysubsubsection{set\_integrator\_step()}
+{\footnotesize\ttfamily void set\+\_\+integrator\+\_\+step (\begin{DoxyParamCaption}\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the value of the integrator time step 
+\begin{DoxyParams}{Parameters}
+{\em dt} & step size \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 288 of file system.\+hpp.
+
+\mbox{\label{classSystem_a24ad73dd51463250f09e639e09962774}} 
+\index{System@{System}!set\_max\_mesh\_iterations@{set\_max\_mesh\_iterations}}
+\index{set\_max\_mesh\_iterations@{set\_max\_mesh\_iterations}!System@{System}}
+\doxysubsubsection{set\_max\_mesh\_iterations()}
+{\footnotesize\ttfamily void set\+\_\+max\+\_\+mesh\+\_\+iterations (\begin{DoxyParamCaption}\item[{int}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the number of mesh iteration 
+\begin{DoxyParams}{Parameters}
+{\em iter} & number of iteration ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 295 of file system.\+hpp.
+
+\mbox{\label{classSystem_a28f2acf8f5052cc5501e8b9dd8f5c346}} 
+\index{System@{System}!set\_nlist\_rescale@{set\_nlist\_rescale}}
+\index{set\_nlist\_rescale@{set\_nlist\_rescale}!System@{System}}
+\doxysubsubsection{set\_nlist\_rescale()}
+{\footnotesize\ttfamily void set\+\_\+nlist\+\_\+rescale (\begin{DoxyParamCaption}\item[{double}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the neighbour list cutoff rescale parameter 
+\begin{DoxyParams}{Parameters}
+{\em scale} & scale parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 278 of file system.\+hpp.
+
+\mbox{\label{classSystem_a3d3a63ca25b38509717d7f62ee87514c}} 
+\index{System@{System}!set\_periodic@{set\_periodic}}
+\index{set\_periodic@{set\_periodic}!System@{System}}
+\doxysubsubsection{set\_periodic()}
+{\footnotesize\ttfamily void set\+\_\+periodic (\begin{DoxyParamCaption}\item[{bool}]{periodic }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the periodic boundary conditions flag 
+\begin{DoxyParams}{Parameters}
+{\em periodic} & value of the periodic boundary conditions flag \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 162 of file system.\+hpp.
+
+\mbox{\label{classSystem_a6fd603ac4cea89c7c858ef46a23b2ddc}} 
+\index{System@{System}!set\_record\_force\_type@{set\_record\_force\_type}}
+\index{set\_record\_force\_type@{set\_record\_force\_type}!System@{System}}
+\doxysubsubsection{set\_record\_force\_type()}
+{\footnotesize\ttfamily void set\+\_\+record\+\_\+force\+\_\+type (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & new value of the record\+\_\+force\+\_\+type flag \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 323 of file system.\+hpp.
+
+\mbox{\label{classSystem_a3ab2f1669607eca5571d9429546d281f}} 
+\index{System@{System}!set\_run\_step@{set\_run\_step}}
+\index{set\_run\_step@{set\_run\_step}!System@{System}}
+\doxysubsubsection{set\_run\_step()}
+{\footnotesize\ttfamily void set\+\_\+run\+\_\+step (\begin{DoxyParamCaption}\item[{int}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set current run step 
+\begin{DoxyParams}{Parameters}
+{\em step} & current run step \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file system.\+hpp.
+
+\mbox{\label{classSystem_aa84a724344a983832279fe13f047b52d}} 
+\index{System@{System}!set\_step@{set\_step}}
+\index{set\_step@{set\_step}!System@{System}}
+\doxysubsubsection{set\_step()}
+{\footnotesize\ttfamily void set\+\_\+step (\begin{DoxyParamCaption}\item[{int}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set current time step 
+\begin{DoxyParams}{Parameters}
+{\em step} & current time step \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 123 of file system.\+hpp.
+
+\mbox{\label{classSystem_a2c605f25520559589b40d3f807f2c975}} 
+\index{System@{System}!update\_mesh@{update\_mesh}}
+\index{update\_mesh@{update\_mesh}!System@{System}}
+\doxysubsubsection{update\_mesh()}
+{\footnotesize\ttfamily void update\+\_\+mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Update mesh information for tissue simulations. 
+
+Update mesh for tissue simulations. 
+
+Definition at line 1157 of file system.\+cpp.
+
+\mbox{\label{classSystem_a10cfe143f235bf3adcbe852c5f422ad1}} 
+\index{System@{System}!zero\_cm\_momentum@{zero\_cm\_momentum}}
+\index{zero\_cm\_momentum@{zero\_cm\_momentum}!System@{System}}
+\doxysubsubsection{zero\_cm\_momentum()}
+{\footnotesize\ttfamily void zero\+\_\+cm\+\_\+momentum (\begin{DoxyParamCaption}\item[{const string \&}]{group }\end{DoxyParamCaption})}
+
+
+
+Zero centre of mass momentum. 
+
+Kill off any non-\/zero momentum and angular momentum that a group of particles might have pick up if the 3d-\/\+Newton\textquotesingle{}s law breaking m\+\_\+limit was enabled. 
+\begin{DoxyParams}{Parameters}
+{\em group} & \doxyref{Group}{p.}{classGroup} name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 703 of file system.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classSystem_a67f6cc7fa80c9e446737863bd4fdc2d5}} 
+\index{System@{System}!m\_dt@{m\_dt}}
+\index{m\_dt@{m\_dt}!System@{System}}
+\doxysubsubsection{m\_dt}
+{\footnotesize\ttfamily double m\+\_\+dt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This is a global integrator step used by all integrators (. 
+
+\begin{DoxyNote}{Note}
+\+: it can be overwritten by a specific integrator) 
+\end{DoxyNote}
+
+
+Definition at line 348 of file system.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ system.\+hpp}\item 
+\textbf{ system.\+cpp}\end{DoxyCompactItemize}

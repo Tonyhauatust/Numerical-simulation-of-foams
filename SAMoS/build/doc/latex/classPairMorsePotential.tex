@@ -1,0 +1,75 @@
+\doxysection{Pair\+Morse\+Potential Class Reference}
+\label{classPairMorsePotential}\index{PairMorsePotential@{PairMorsePotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Morse\+Potential}{p.}{classPairMorsePotential} implements standard M\+Orse potential $ U_{Morse}\left(r_{ij}\right) = D \left(1 - e^{-a(r-r_e)} \right)^2 $, where $ D $ is the depth of the potential, $ a $ controls its width and $ r_e $ is the the position of the minimum 
+
+Definition at line 52 of file pair\+\_\+morse\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Morse\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairMorsePotential_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairMorsePotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since Morse potential needs neighbour list. \end{DoxyCompactList}\item 
+\mbox{\label{classPairMorsePotential_a60f70115b851e412fc0973176c3226b1}} 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairMorsePotential_a523b66d0bf9315c625eb9921e3ba1a9e}} 
+double \textbf{ m\+\_\+D}
+\begin{DoxyCompactList}\small\item\em potential depth \end{DoxyCompactList}\item 
+\mbox{\label{classPairMorsePotential_a9c41cdb9725c9ef90a5ef62f86390762}} 
+double \textbf{ m\+\_\+a}
+\begin{DoxyCompactList}\small\item\em potential well depth parameter \end{DoxyCompactList}\item 
+\mbox{\label{classPairMorsePotential_aaed33defa971f8a6c4f90a07133f27cf}} 
+double \textbf{ m\+\_\+re}
+\begin{DoxyCompactList}\small\item\em position of the potential minimum \end{DoxyCompactList}\item 
+\mbox{\label{classPairMorsePotential_a53535f3d09f76a200e4a0b7f0909950d}} 
+double \textbf{ m\+\_\+rcut}
+\begin{DoxyCompactList}\small\item\em cutoff distance \end{DoxyCompactList}\item 
+\mbox{\label{classPairMorsePotential_adfe14b3b6d59211aff997ed46f192539}} 
+\textbf{ Morse\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairMorsePotential_ad67686c1e8fbe84f1bbda29af558285b}} 
+\index{PairMorsePotential@{PairMorsePotential}!PairMorsePotential@{PairMorsePotential}}
+\index{PairMorsePotential@{PairMorsePotential}!PairMorsePotential@{PairMorsePotential}}
+\doxysubsubsection{PairMorsePotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+Morse\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in) \\
+\hline
+{\em param} & Contains information about all parameters (epsilon, sigma, and rcut) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file pair\+\_\+morse\+\_\+potential.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+morse\+\_\+potential.\+hpp}\item 
+\textbf{ pair\+\_\+morse\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

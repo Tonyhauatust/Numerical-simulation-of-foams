@@ -1,0 +1,104 @@
+\doxysection{Pair\+Motor\+Potential Class Reference}
+\label{classPairMotorPotential}\index{PairMotorPotential@{PairMotorPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Motor\+Potential}{p.}{classPairMotorPotential} is a rather crude attempt to model effects of molecular motors acting between two filaments (e.\+g., actin cables) in a particle based model. The idea here is to introduce an additional force that acts on a pair of particles if their directors ( $ \vec n $), roughly speaking, point in opposite directions. More precisely, for a pair of particles $ i $ and $ j $ within distance $ a $, if $ \zeta = \vec n_i \cdot \vec n_j < 0 $, each particle receives a force of magnitude $ \alpha |\zeta| $. Force on each particle points in the direction of the corresponding director. We note that this is quite artificial as it introduces motion of the centre of mass of the pair. ~\newline
+ 
+
+Definition at line 66 of file pair\+\_\+motor\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Motor\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairMotorPotential_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairMotorPotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since motor potential needs neighbour list. \end{DoxyCompactList}\item 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairMotorPotential_abc4e2a8e4e5c6923f00d9d20a7786312}} 
+double \textbf{ m\+\_\+alpha}
+\begin{DoxyCompactList}\small\item\em activity for filaments pointing in opposite direction \end{DoxyCompactList}\item 
+\mbox{\label{classPairMotorPotential_a18c413a52e6391d131cff0bc1bd92a58}} 
+double \textbf{ m\+\_\+beta}
+\begin{DoxyCompactList}\small\item\em activity for filaments pointing in same direction (defaults to 0) \end{DoxyCompactList}\item 
+\mbox{\label{classPairMotorPotential_a981207d115d7b0b6e2ddd1506ac7ae8e}} 
+bool \textbf{ m\+\_\+allpairpush}
+\begin{DoxyCompactList}\small\item\em Whether to implement pushing also between parallel filaments (with strength beta, defaults to false) \end{DoxyCompactList}\item 
+\mbox{\label{classPairMotorPotential_a9c41cdb9725c9ef90a5ef62f86390762}} 
+double \textbf{ m\+\_\+a}
+\begin{DoxyCompactList}\small\item\em potential range \end{DoxyCompactList}\item 
+\mbox{\label{classPairMotorPotential_a83738cfd82b983fdb6659da30b01fd4b}} 
+vector$<$ \textbf{ Centre\+Of\+Mass} $>$ \textbf{ m\+\_\+fil\+\_\+cm}
+\begin{DoxyCompactList}\small\item\em holds centres of mass of all filaments \end{DoxyCompactList}\item 
+\mbox{\label{classPairMotorPotential_a17f17e375b9aacd9446df72d075e046b}} 
+\textbf{ Motor\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairMotorPotential_a6ebf48fa0406ffdbdbdd977ce283a0ab}} 
+\index{PairMotorPotential@{PairMotorPotential}!PairMotorPotential@{PairMotorPotential}}
+\index{PairMotorPotential@{PairMotorPotential}!PairMotorPotential@{PairMotorPotential}}
+\doxysubsubsection{PairMotorPotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+Motor\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in) \\
+\hline
+{\em param} & Contains information about all parameters (k) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file pair\+\_\+motor\+\_\+potential.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPairMotorPotential_a60f70115b851e412fc0973176c3226b1}} 
+\index{PairMotorPotential@{PairMotorPotential}!compute@{compute}}
+\index{compute@{compute}!PairMotorPotential@{PairMotorPotential}}
+\doxysubsubsection{compute()}
+{\footnotesize\ttfamily void compute (\begin{DoxyParamCaption}\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes potentials and forces for all particles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & time step sent by the integrator \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Pair\+Potential} \doxyref{}{p.}{classPairPotential_a47b59507485f0050f21b676fac26c071}.
+
+
+
+Definition at line 33 of file pair\+\_\+motor\+\_\+potential.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+motor\+\_\+potential.\+hpp}\item 
+\textbf{ pair\+\_\+motor\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

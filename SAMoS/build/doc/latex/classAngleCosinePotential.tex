@@ -1,0 +1,59 @@
+\doxysection{Angle\+Cosine\+Potential Class Reference}
+\label{classAngleCosinePotential}\index{AngleCosinePotential@{AngleCosinePotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Angle\+Cosine\+Potential}{p.}{classAngleCosinePotential} implements standard cosine angle potential \doxyref{Potential}{p.}{classPotential} is given as $ U_{cos}\left(\theta\right) = k_\theta\left(1+cos\theta\right) $, where $ k_\theta $ is the stiffness, $ \theta $ is the angle between two bonds originating from the particle
+
+Definition at line 52 of file angle\+\_\+cosine\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Angle\+Cosine\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classAngleCosinePotential_a7e55935a87e1becf64e52f6f8298a25d}} 
+void \textbf{ set\+\_\+angle\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&angle\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set parameters data for specific angle type ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classAngleCosinePotential_a4993c97a669fa259c6574a18d547c117}} 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classAngleCosinePotential_aa7b89576372abc4d0bbf496467e872f7}} 
+double \textbf{ m\+\_\+k}
+\begin{DoxyCompactList}\small\item\em stiffness \end{DoxyCompactList}\item 
+\mbox{\label{classAngleCosinePotential_a2ca056f55b21e2f859f89d1b07674ced}} 
+\textbf{ Angle\+Cosine\+Parameters} $\ast$ \textbf{ m\+\_\+angle\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific angle parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classAngleCosinePotential_a398c96394c00089e176ec53767f2fec5}} 
+\index{AngleCosinePotential@{AngleCosinePotential}!AngleCosinePotential@{AngleCosinePotential}}
+\index{AngleCosinePotential@{AngleCosinePotential}!AngleCosinePotential@{AngleCosinePotential}}
+\doxysubsubsection{AngleCosinePotential()}
+{\footnotesize\ttfamily \textbf{ Angle\+Cosine\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters (k and t0) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file angle\+\_\+cosine\+\_\+potential.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ angle\+\_\+cosine\+\_\+potential.\+hpp}\item 
+\textbf{ angle\+\_\+cosine\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

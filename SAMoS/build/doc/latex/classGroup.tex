@@ -1,0 +1,108 @@
+\doxysection{Group Class Reference}
+\label{classGroup}\index{Group@{Group}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Group}{p.}{classGroup} class This class defines groups of particles that have same behaviour under integration. For example, they can all be integrated with the N\+VE integrator 
+
+Definition at line 51 of file group.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Group} (int id, const string name)
+\item 
+void \textbf{ add\+\_\+particle} (int id)
+\item 
+void \textbf{ remove\+\_\+particle} (int id)
+\item 
+void \textbf{ shift} (int id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classGroup_aad966617e7e050bedbead762727808a5}} 
+int \textbf{ m\+\_\+id}
+\begin{DoxyCompactList}\small\item\em Unique id. \end{DoxyCompactList}\item 
+\mbox{\label{classGroup_ab76434042ddfc9d5e703e038f0ad0b1f}} 
+string \textbf{ m\+\_\+name}
+\begin{DoxyCompactList}\small\item\em Name of the group. \end{DoxyCompactList}\item 
+\mbox{\label{classGroup_a012b2bfbef5380cc57296def37a49a27}} 
+int \textbf{ m\+\_\+size}
+\begin{DoxyCompactList}\small\item\em Number of particles in the group. \end{DoxyCompactList}\item 
+\mbox{\label{classGroup_a8916ae10b2960e062c1539391de45401}} 
+vector$<$ int $>$ \textbf{ m\+\_\+particles}
+\begin{DoxyCompactList}\small\item\em Contains indices of all particles in the group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classGroup_a3912530e89c4a69f69500f398b7596c3}} 
+\index{Group@{Group}!Group@{Group}}
+\index{Group@{Group}!Group@{Group}}
+\doxysubsubsection{Group()}
+{\footnotesize\ttfamily \textbf{ Group} (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{const string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a \doxyref{Particle}{p.}{classParticle} object 
+\begin{DoxyParams}{Parameters}
+{\em id} & group id \\
+\hline
+{\em name} & group name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file group.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classGroup_af14a8ffebf76badc081f285faecd86ec}} 
+\index{Group@{Group}!add\_particle@{add\_particle}}
+\index{add\_particle@{add\_particle}!Group@{Group}}
+\doxysubsubsection{add\_particle()}
+{\footnotesize\ttfamily void add\+\_\+particle (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add particle to a group 
+\begin{DoxyParams}{Parameters}
+{\em id} & particle id to add \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file group.\+hpp.
+
+\mbox{\label{classGroup_a4936b228e1a090da3c0664a7f2c0cd4c}} 
+\index{Group@{Group}!remove\_particle@{remove\_particle}}
+\index{remove\_particle@{remove\_particle}!Group@{Group}}
+\doxysubsubsection{remove\_particle()}
+{\footnotesize\ttfamily void remove\+\_\+particle (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Remove particle from group 
+\begin{DoxyParams}{Parameters}
+{\em id} & particle id to add \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 88 of file group.\+hpp.
+
+\mbox{\label{classGroup_a828ac0f485f4f04dbfccd3b637001074}} 
+\index{Group@{Group}!shift@{shift}}
+\index{shift@{shift}!Group@{Group}}
+\doxysubsubsection{shift()}
+{\footnotesize\ttfamily void shift (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Shift indices When a particle is removed from the system, we need to shift down all indices that are larger than its original value 
+\begin{DoxyParams}{Parameters}
+{\em id} & if of the removed particle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 103 of file group.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ group.\+hpp}\end{DoxyCompactItemize}

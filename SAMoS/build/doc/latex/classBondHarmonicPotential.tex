@@ -1,0 +1,62 @@
+\doxysection{Bond\+Harmonic\+Potential Class Reference}
+\label{classBondHarmonicPotential}\index{BondHarmonicPotential@{BondHarmonicPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Bond\+Harmonic\+Potential}{p.}{classBondHarmonicPotential} implements standard harmonic bond potential \doxyref{Potential}{p.}{classPotential} is given as $ U_{harm}\left(r_{ij}\right) = \frac{1}{2}k\left(\left|\vec r_{ij}\right|-l_0\right)^2 $, where $ k $ is the spring constant, $ l_0 $ is the the rest length and $ \vec r_{ij} = \vec r_i - \vec r_j $. 
+
+Definition at line 51 of file bond\+\_\+harmonic\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bond\+Harmonic\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classBondHarmonicPotential_a76015764bf09014d6a44bd67cf0037cd}} 
+void \textbf{ set\+\_\+bond\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&bond\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set parameters data for specific bond type ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classBondHarmonicPotential_a4993c97a669fa259c6574a18d547c117}} 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classBondHarmonicPotential_aa7b89576372abc4d0bbf496467e872f7}} 
+double \textbf{ m\+\_\+k}
+\begin{DoxyCompactList}\small\item\em spring constant \end{DoxyCompactList}\item 
+\mbox{\label{classBondHarmonicPotential_a2f04fc367e8a4444985634cf5e9be12b}} 
+double \textbf{ m\+\_\+l0}
+\begin{DoxyCompactList}\small\item\em rest length \end{DoxyCompactList}\item 
+\mbox{\label{classBondHarmonicPotential_ab17d50c3162374af1e9fb86993f2acdc}} 
+\textbf{ Bond\+Harmonic\+Parameters} $\ast$ \textbf{ m\+\_\+bond\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific bond parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classBondHarmonicPotential_a40a8b894a16a1a5e5cccb004d84a1cc8}} 
+\index{BondHarmonicPotential@{BondHarmonicPotential}!BondHarmonicPotential@{BondHarmonicPotential}}
+\index{BondHarmonicPotential@{BondHarmonicPotential}!BondHarmonicPotential@{BondHarmonicPotential}}
+\doxysubsubsection{BondHarmonicPotential()}
+{\footnotesize\ttfamily \textbf{ Bond\+Harmonic\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters (k and l0) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file bond\+\_\+harmonic\+\_\+potential.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ bond\+\_\+harmonic\+\_\+potential.\+hpp}\item 
+\textbf{ bond\+\_\+harmonic\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

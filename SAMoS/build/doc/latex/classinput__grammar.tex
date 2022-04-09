@@ -1,0 +1,39 @@
+\doxysection{input\+\_\+grammar Class Reference}
+\label{classinput__grammar}\index{input\_grammar@{input\_grammar}}
+
+
+\doxysubsection{Detailed Description}
+This is a parser for parsing command that contain input file generator seed.
+
+For example\+:
+
+input test.\+dat
+
+This parser will return the file name (\textquotesingle{}test.\+dat\textquotesingle{} in this case)
+
+\begin{DoxyNote}{Note}
+We use the same parser to parse internal messages command such as in messages terminal
+
+Based on {\texttt{ http\+://www.\+boost.\+org/doc/libs/1\+\_\+53\+\_\+0/libs/spirit/repository/test/qi/distinct.\+cpp}} 
+\end{DoxyNote}
+
+
+Definition at line 57 of file parse\+\_\+input.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classinput__grammar_aa32da9e6f37c1599a1e5e6e17605778a}} 
+{\bfseries input\+\_\+grammar} (\textbf{ Input\+Data} \&input\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classinput__grammar_ad5d4a6da828e946c0a4c534855d51f51}} 
+qi\+::rule$<$ std\+::string\+::iterator, qi\+::space\+\_\+type $>$ \textbf{ input}
+\begin{DoxyCompactList}\small\item\em Rule for input filename line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ parse\+\_\+input.\+hpp}\end{DoxyCompactItemize}

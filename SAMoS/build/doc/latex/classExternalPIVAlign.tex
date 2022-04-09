@@ -1,0 +1,118 @@
+\doxysection{External\+P\+I\+V\+Align Class Reference}
+\label{classExternalPIVAlign}\index{ExternalPIVAlign@{ExternalPIVAlign}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{External\+P\+I\+V\+Align}{p.}{classExternalPIVAlign} implements the alignment to the velocity field obtained from experiments in embryos. Given a local vector vector $ \vec v_i $. Torque on particle $ i $ is then $ \vec \tau_i = \gamma \vec v_i \times \vec n_i $, where $ \gamma $ is a constant. We note that valued of $ \vec v_i $ are interpolated between two consecutive time steps (current and the one ahead). All cells are binned into boxes (given by the P\+IV resolution). Each cell is aligned to the vector $ \vec v_i $ of the box it falls into. \begin{DoxyNote}{Note}
+\+: One could do a more sophisticaed spatial and temporal interpolation. 
+\end{DoxyNote}
+
+
+Definition at line 72 of file external\+\_\+piv\+\_\+aligner.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ External\+P\+I\+V\+Align} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classExternalPIVAlign_a14df1e61054fb4091e9c480b4f4dfe57}} 
+void \textbf{ set\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&self\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for self alignment ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classExternalPIVAlign_a4993c97a669fa259c6574a18d547c117}} 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes \char`\"{}torques\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classExternalPIVAlign_a0ed191bd24bf7bcd7d44ecd76f51f9be}} 
+void {\bfseries \+\_\+\+\_\+read\+\_\+csv} (const string \&, \textbf{ P\+I\+V\+Data} \&)
+\item 
+\mbox{\label{classExternalPIVAlign_a94bc85948cc5aaf429cc40a168ffbc16}} 
+void {\bfseries \+\_\+\+\_\+get\+\_\+file\+\_\+list} (const string \&, vector$<$ string $>$ \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classExternalPIVAlign_afe40ef7f4364c14bb1cc9e339627a6bf}} 
+double {\bfseries m\+\_\+xlow}
+\item 
+\mbox{\label{classExternalPIVAlign_af2ab8b4739f8b9710e59b97b0c1bc37c}} 
+double {\bfseries m\+\_\+xhi}
+\item 
+\mbox{\label{classExternalPIVAlign_a3b05565b1cd1eaf1d028b772d9d99f96}} 
+double {\bfseries m\+\_\+ylow}
+\item 
+\mbox{\label{classExternalPIVAlign_afa4527d71af7a47dc1254844c4d4398f}} 
+double {\bfseries m\+\_\+yhi}
+\item 
+\mbox{\label{classExternalPIVAlign_a2fbd4f92481d6d37c4dc3ed01491e7a2}} 
+int {\bfseries m\+\_\+nx}
+\item 
+\mbox{\label{classExternalPIVAlign_a94ababe1632d44aa0e54a4a285ec1430}} 
+int {\bfseries m\+\_\+ny}
+\item 
+\mbox{\label{classExternalPIVAlign_adb51dbb671f950fa6600dc35ed8a1673}} 
+string {\bfseries m\+\_\+path}
+\item 
+\mbox{\label{classExternalPIVAlign_ae58a1bb12757db082738ce9f69f2de1d}} 
+string {\bfseries m\+\_\+ext}
+\item 
+\mbox{\label{classExternalPIVAlign_a09d2fcb49467d135dbc40c9cb2d99aca}} 
+int {\bfseries m\+\_\+n\+\_\+piv\+\_\+steps}
+\item 
+\mbox{\label{classExternalPIVAlign_aa3c3eec832a698fc7c858f71994e381b}} 
+vector$<$ \textbf{ P\+I\+V\+Data} $>$ {\bfseries m\+\_\+u}
+\item 
+\mbox{\label{classExternalPIVAlign_acff5d77082e5c50d457108f924e26ce4}} 
+vector$<$ \textbf{ P\+I\+V\+Data} $>$ {\bfseries m\+\_\+v}
+\item 
+\mbox{\label{classExternalPIVAlign_ab45222959562c16aaed7d9a8a444212b}} 
+int {\bfseries m\+\_\+max\+\_\+time}
+\item 
+\mbox{\label{classExternalPIVAlign_ab1a08c42238b8a02b74341e673fedbc8}} 
+int {\bfseries m\+\_\+step\+\_\+gap}
+\item 
+\mbox{\label{classExternalPIVAlign_a50241d462577efe591bbd456d0c0b015}} 
+double {\bfseries m\+\_\+gamma}
+\item 
+\mbox{\label{classExternalPIVAlign_af466266d015c578e497ea79f7f02c87d}} 
+int {\bfseries m\+\_\+piv\+\_\+frame\+\_\+counter}
+\item 
+\mbox{\label{classExternalPIVAlign_ab89d32e6d979cbf25efad85730b59746}} 
+int {\bfseries m\+\_\+step\+\_\+counter}
+\item 
+\mbox{\label{classExternalPIVAlign_a87ae51b42c1bb615cf9bc1a007f575c9}} 
+\textbf{ P\+I\+V\+Align\+Parameters} $\ast$ \textbf{ m\+\_\+type\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific alignment ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classExternalPIVAlign_aa4ad123b870791b070309759be76c585}} 
+\index{ExternalPIVAlign@{ExternalPIVAlign}!ExternalPIVAlign@{ExternalPIVAlign}}
+\index{ExternalPIVAlign@{ExternalPIVAlign}!ExternalPIVAlign@{ExternalPIVAlign}}
+\doxysubsubsection{ExternalPIVAlign()}
+{\footnotesize\ttfamily \textbf{ External\+P\+I\+V\+Align} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file external\+\_\+piv\+\_\+aligner.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ external\+\_\+piv\+\_\+aligner.\+hpp}\item 
+\textbf{ external\+\_\+piv\+\_\+aligner.\+cpp}\end{DoxyCompactItemize}

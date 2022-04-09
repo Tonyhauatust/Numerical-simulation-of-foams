@@ -1,0 +1,44 @@
+# * *************************************************************
+# *  
+# *   Soft Active Mater on Surfaces (SAMoS)
+# *   
+# *   Author: Rastko Sknepnek
+# *  
+# *   Division of Physics
+# *   School of Engineering, Physics and Mathematics
+# *   University of Dundee
+# *   
+# *   (c) 2013, 2014
+# * 
+# *   School of Science and Engineering
+# *   School of Life Sciences 
+# *   University of Dundee
+# * 
+# *   (c) 2015
+# * 
+# *   Author: Silke Henkes
+# * 
+# *   Department of Physics 
+# *   Institute for Complex Systems and Mathematical Biology
+# *   University of Aberdeen  
+# * 
+# *   (c) 2014, 2015
+# *  
+# *   This program cannot be used, copied, or modified without
+# *   explicit written permission of the authors.
+# * 
+# * ************************************************************** 
+
+#################################
+## Setup default CXXFLAGS
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  message(STATUS "Setting build type to 'Release' as none was specified.")
+  set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
+  set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release"
+    "MinSizeRel" "RelWithDebInfo")
+endif()
+
+# manually enable flags
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}" CACHE STRING "compile flags" FORCE)
+#set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -funroll-loops -ffast-math -DNDEBUG " CACHE STRING "Flags used by the compiler during release builds." FORCE)
+#set(PASSED_FIRST_CONFIGURE ON CACHE INTERNAL "First configure has run: CXX_FLAGS have had their defaults changed" FORCE)

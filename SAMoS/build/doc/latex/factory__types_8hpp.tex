@@ -1,0 +1,81 @@
+\doxysection{factory\+\_\+types.\+hpp File Reference}
+\label{factory__types_8hpp}\index{factory\_types.hpp@{factory\_types.hpp}}
+
+
+Define class factory data types.  
+
+
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{factory__types_8hpp_a6d7a254c674fcf684686d50218416ffb}} 
+typedef std\+::function$<$ \textbf{ Constraint\+Ptr}(System\+Ptr, Messenger\+Ptr, \textbf{ pairs\+\_\+type} \&) $>$ \textbf{ constraint\+\_\+factory}
+\begin{DoxyCompactList}\small\item\em Type that handles all constraints. \end{DoxyCompactList}\item 
+\mbox{\label{factory__types_8hpp_af01ca16151e02b18373e550152c65d9f}} 
+typedef std\+::function$<$ Pair\+Potential\+Ptr(System\+Ptr, Messenger\+Ptr, Neighbour\+List\+Ptr, Value\+Ptr, \textbf{ pairs\+\_\+type} \&) $>$ \textbf{ pair\+\_\+potential\+\_\+factory}
+\begin{DoxyCompactList}\small\item\em Type that handles all pair potentials. \end{DoxyCompactList}\item 
+\mbox{\label{factory__types_8hpp_a4dcd7cf3afec181506c6e16f045209cb}} 
+typedef std\+::function$<$ External\+Potential\+Ptr(System\+Ptr, Messenger\+Ptr, \textbf{ pairs\+\_\+type} \&) $>$ \textbf{ external\+\_\+potential\+\_\+factory}
+\begin{DoxyCompactList}\small\item\em Type that handles all external potentials. \end{DoxyCompactList}\item 
+\mbox{\label{factory__types_8hpp_ae2b956d0f0411a025d12cea77ae02333}} 
+typedef std\+::function$<$ Integrator\+Ptr(System\+Ptr, Messenger\+Ptr, Potential\+Ptr, Aligner\+Ptr, Neighbour\+List\+Ptr, Constrainer\+Ptr, Value\+Ptr, \textbf{ pairs\+\_\+type} \&) $>$ \textbf{ integrator\+\_\+factory}
+\begin{DoxyCompactList}\small\item\em Type that handles all integrators. \end{DoxyCompactList}\item 
+\mbox{\label{factory__types_8hpp_a47bafdb42e063c4d3cebe8b3c68a211b}} 
+typedef std\+::function$<$ Pair\+Align\+Ptr(System\+Ptr, Messenger\+Ptr, Neighbour\+List\+Ptr, \textbf{ pairs\+\_\+type} \&) $>$ \textbf{ pair\+\_\+aligner\+\_\+factory}
+\begin{DoxyCompactList}\small\item\em Type that handles all pairwise alignment. \end{DoxyCompactList}\item 
+\mbox{\label{factory__types_8hpp_a9d364d4bc2b7408b9bcc58fa8de5ccd8}} 
+typedef std\+::function$<$ External\+Align\+Ptr(System\+Ptr, Messenger\+Ptr, \textbf{ pairs\+\_\+type} \&) $>$ \textbf{ external\+\_\+aligner\+\_\+factory}
+\begin{DoxyCompactList}\small\item\em Type that handles all external alignment. \end{DoxyCompactList}\item 
+\mbox{\label{factory__types_8hpp_aaa7d411cc8525f8c42c9f0f4c5b6e32b}} 
+typedef std\+::function$<$ Population\+Ptr(System\+Ptr, Messenger\+Ptr, \textbf{ pairs\+\_\+type} \&) $>$ \textbf{ population\+\_\+factory}
+\begin{DoxyCompactList}\small\item\em Type that handles all populations. \end{DoxyCompactList}\item 
+\mbox{\label{factory__types_8hpp_aeb80ca50b00b7423242283bd658370fc}} 
+typedef std\+::function$<$ Bond\+Potential\+Ptr(System\+Ptr, Messenger\+Ptr, \textbf{ pairs\+\_\+type} \&) $>$ \textbf{ bond\+\_\+potential\+\_\+factory}
+\begin{DoxyCompactList}\small\item\em Type that handles all bond potentials. \end{DoxyCompactList}\item 
+\mbox{\label{factory__types_8hpp_a846cb6bca4180d7d517f5cdd83de7262}} 
+typedef std\+::function$<$ Angle\+Potential\+Ptr(System\+Ptr, Messenger\+Ptr, \textbf{ pairs\+\_\+type} \&) $>$ \textbf{ angle\+\_\+potential\+\_\+factory}
+\begin{DoxyCompactList}\small\item\em Type that handles all angle potentials. \end{DoxyCompactList}\item 
+\mbox{\label{factory__types_8hpp_a0adb698122fa13a8be83927bc789cd68}} 
+typedef std\+::function$<$ Value\+Ptr(Messenger\+Ptr, \textbf{ pairs\+\_\+type} \&) $>$ \textbf{ value\+\_\+factory}
+\begin{DoxyCompactList}\small\item\em Type that handles all value control objects. \end{DoxyCompactList}\item 
+\mbox{\label{factory__types_8hpp_aed816d46fda13c752672dd29a43b6977}} 
+typedef std\+::map$<$ std\+::string, \textbf{ constraint\+\_\+factory} $>$ {\bfseries Constraint\+Map}
+\item 
+\mbox{\label{factory__types_8hpp_a6a4e0d9043ae2ca570ccb20e60458ec5}} 
+typedef std\+::map$<$ std\+::string, \textbf{ pair\+\_\+potential\+\_\+factory} $>$ {\bfseries Pair\+Potential\+Map}
+\item 
+\mbox{\label{factory__types_8hpp_a3ed830d6b92532c366d75f4a0fa83d9b}} 
+typedef std\+::map$<$ std\+::string, \textbf{ external\+\_\+potential\+\_\+factory} $>$ {\bfseries External\+Potential\+Map}
+\item 
+\mbox{\label{factory__types_8hpp_a93e8f069035e290ff021c05bc655edce}} 
+typedef std\+::map$<$ std\+::string, \textbf{ integrator\+\_\+factory} $>$ {\bfseries Integrator\+Map}
+\item 
+\mbox{\label{factory__types_8hpp_a923975b912abf3673e91edbffa11886e}} 
+typedef std\+::map$<$ std\+::string, \textbf{ pair\+\_\+aligner\+\_\+factory} $>$ {\bfseries Pair\+Aligner\+Map}
+\item 
+\mbox{\label{factory__types_8hpp_ae1db15c54f1443f9438cec400b9dbecd}} 
+typedef std\+::map$<$ std\+::string, \textbf{ external\+\_\+aligner\+\_\+factory} $>$ {\bfseries External\+Aligner\+Map}
+\item 
+\mbox{\label{factory__types_8hpp_ac43ae311e29a34a15afc739c27ea6796}} 
+typedef std\+::map$<$ std\+::string, \textbf{ population\+\_\+factory} $>$ {\bfseries Population\+Map}
+\item 
+\mbox{\label{factory__types_8hpp_a27de5d4e7168f6126c89dd00c668aa93}} 
+typedef std\+::map$<$ std\+::string, \textbf{ bond\+\_\+potential\+\_\+factory} $>$ {\bfseries Bond\+Potential\+Map}
+\item 
+\mbox{\label{factory__types_8hpp_a7dbd6829a73a5cd6352ca218b7c41d44}} 
+typedef std\+::map$<$ std\+::string, \textbf{ angle\+\_\+potential\+\_\+factory} $>$ {\bfseries Angle\+Potential\+Map}
+\item 
+\mbox{\label{factory__types_8hpp_aebe11902cdea1eac49d01dc9574a37ac}} 
+typedef std\+::map$<$ std\+::string, \textbf{ value\+\_\+factory} $>$ {\bfseries Value\+Map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define class factory data types. 
+
+\begin{DoxyAuthor}{Author}
+Rastko Sknepnek, {\texttt{ sknepnek@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+03-\/Mar-\/2015 
+\end{DoxyDate}

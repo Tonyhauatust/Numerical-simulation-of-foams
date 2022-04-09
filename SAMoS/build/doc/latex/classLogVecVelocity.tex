@@ -1,0 +1,68 @@
+\doxysection{Log\+Vec\+Velocity Class Reference}
+\label{classLogVecVelocity}\index{LogVecVelocity@{LogVecVelocity}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Log\+Vec\+Velocity}{p.}{classLogVecVelocity} class. 
+
+Logs magnitude of total velocity calculated as $ v = \frac{1}{N}\left|\sum_i \vec v_i\right| $. It is related to the Vicsek order parameters by dividing this quantity by $ v_0 $. 
+
+Definition at line 45 of file log\+\_\+vec\+\_\+velocity.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Log\+Vec\+Velocity} (System\+Ptr sys, Messenger\+Ptr msg, Potential\+Ptr pot, Aligner\+Ptr align)
+\item 
+string \textbf{ operator()} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classLogVecVelocity_a092291ea99c9aa1f51a252f234724dc7}} 
+\index{LogVecVelocity@{LogVecVelocity}!LogVecVelocity@{LogVecVelocity}}
+\index{LogVecVelocity@{LogVecVelocity}!LogVecVelocity@{LogVecVelocity}}
+\doxysubsubsection{LogVecVelocity()}
+{\footnotesize\ttfamily \textbf{ Log\+Vec\+Velocity} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct \doxyref{Log}{p.}{classLog} object 
+\begin{DoxyParams}{Parameters}
+{\em sys} & pointer to a system object \\
+\hline
+{\em compute} & pointer to a compute object \\
+\hline
+{\em pot} & Interaction handler object \\
+\hline
+{\em align} & Alignment handler object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file log\+\_\+vec\+\_\+velocity.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classLogVecVelocity_a01cb7c8a5c573716a3ec79172f86a34a}} 
+\index{LogVecVelocity@{LogVecVelocity}!operator()@{operator()}}
+\index{operator()@{operator()}!LogVecVelocity@{LogVecVelocity}}
+\doxysubsubsection{operator()()}
+{\footnotesize\ttfamily string operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+current time step 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Log} \doxyref{}{p.}{classLog_ae3a376c50b5cd27cd9f7b850068b7dee}.
+
+
+
+Definition at line 59 of file log\+\_\+vec\+\_\+velocity.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ log\+\_\+vec\+\_\+velocity.\+hpp}\end{DoxyCompactItemize}

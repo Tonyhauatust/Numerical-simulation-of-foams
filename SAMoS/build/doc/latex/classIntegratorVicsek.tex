@@ -1,0 +1,92 @@
+\doxysection{Integrator\+Vicsek Class Reference}
+\label{classIntegratorVicsek}\index{IntegratorVicsek@{IntegratorVicsek}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Integrator\+Vicsek}{p.}{classIntegratorVicsek} class handles dynamics of Vicsek model. 
+
+Definition at line 42 of file integrator\+\_\+vicsek.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Integrator\+Vicsek} (System\+Ptr sys, Messenger\+Ptr msg, Potential\+Ptr pot, Aligner\+Ptr align, Neighbour\+List\+Ptr nlist, Constrainer\+Ptr cons, Value\+Ptr temp, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ integrate} ()
+\begin{DoxyCompactList}\small\item\em Propagate system for a time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classIntegratorVicsek_aaba456a057071541006327fc2025f5df}} 
+R\+N\+G\+Ptr \textbf{ m\+\_\+rng}
+\begin{DoxyCompactList}\small\item\em Random number generator. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorVicsek_a3bfbc94ebd85deef89dbeecba5dd9239}} 
+double \textbf{ m\+\_\+eta}
+\begin{DoxyCompactList}\small\item\em Random noise distribution width. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorVicsek_a0db1e4ef851bba28f70d9d9b94b6b788}} 
+double \textbf{ m\+\_\+mu}
+\begin{DoxyCompactList}\small\item\em Mobility. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorVicsek_a5f5e53325038c9f6de8371f20b1a3037}} 
+double \textbf{ m\+\_\+v0}
+\begin{DoxyCompactList}\small\item\em velocity magnitude \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classIntegratorVicsek_abd35fe2c38f9e9c08b353fcd8bf4c5d9}} 
+\index{IntegratorVicsek@{IntegratorVicsek}!IntegratorVicsek@{IntegratorVicsek}}
+\index{IntegratorVicsek@{IntegratorVicsek}!IntegratorVicsek@{IntegratorVicsek}}
+\doxysubsubsection{IntegratorVicsek()}
+{\footnotesize\ttfamily \textbf{ Integrator\+Vicsek} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Constrainer\+Ptr}]{cons,  }\item[{Value\+Ptr}]{temp,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to a \doxyref{System}{p.}{classSystem} object containing all particles \\
+\hline
+{\em msg} & Internal message handler \\
+\hline
+{\em pot} & Pairwise and external interaction handler \\
+\hline
+{\em align} & Pairwise and external alignment handler \\
+\hline
+{\em nlist} & Neighbour list object \\
+\hline
+{\em cons} & Enforces constraints to the manifold surface \\
+\hline
+{\em temp} & Temperature control object \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file integrator\+\_\+vicsek.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classIntegratorVicsek_a611ba68b85e9a65f5d842f706de335fd}} 
+\index{IntegratorVicsek@{IntegratorVicsek}!integrate@{integrate}}
+\index{integrate@{integrate}!IntegratorVicsek@{IntegratorVicsek}}
+\doxysubsubsection{integrate()}
+{\footnotesize\ttfamily void integrate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Propagate system for a time step. 
+
+This function integrates equations of motion as introduced in Vicsek model see, e.\+g., Eqs. (13) and (14) in T. Vicsek, A. Zafeiris, Phys. Reports 517 (2012) p. 71-\/140. Actual equations are a bit modified in order to introduce spacial interaction term $ \vec F_i = \sum_{i\neq j}\vec F_{ij} $. $ \vec v_i(t+1) = v_0\frac{\langle\vec v_j(t)\rangle}{\left|\langle\vec v_j(t)\rangle\right|} + \mu \sum_{i\neq j}\vec F_{ij} + \mathrm{noise} $ and $ \vec r_i(t+1) = \vec r_i(t) + \vec v_i(t+1) $. $ \langle\vec v_j(t)\rangle $ is the average velocity of the neighbouring particles in some radius and $ v_0 $ is magnitude of the velocity. $ \mu $ is the mobility. We note that Viscek model has no explicit time step, i.\+e. it is set to one. Noise term is essentially a random rotation of the particle\textquotesingle{}s velocity around its normal vector by angle $ \delta\vartheta $ where $ \delta\vartheta $ is a random variable drawn uniformly from the interval $ [-\eta\pi\dots\eta\pi] $, where $ \eta $ is a constant. 
+
+Implements \textbf{ Integrator} \doxyref{}{p.}{classIntegrator_aafcdca198ea2dca2a77c7d48486e1a87}.
+
+
+
+Definition at line 44 of file integrator\+\_\+vicsek.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ integrator\+\_\+vicsek.\+hpp}\item 
+\textbf{ integrator\+\_\+vicsek.\+cpp}\end{DoxyCompactItemize}

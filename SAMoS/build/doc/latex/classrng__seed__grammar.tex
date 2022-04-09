@@ -1,0 +1,37 @@
+\doxysection{rng\+\_\+seed\+\_\+grammar Class Reference}
+\label{classrng__seed__grammar}\index{rng\_seed\_grammar@{rng\_seed\_grammar}}
+
+
+\doxysubsection{Detailed Description}
+This is a parser for parsing command that contain random number generator seed.
+
+For example\+:
+
+seed 11
+
+This parser will return the seed (11 in this case)
+
+\begin{DoxyNote}{Note}
+Based on {\texttt{ http\+://www.\+boost.\+org/doc/libs/1\+\_\+53\+\_\+0/libs/spirit/repository/test/qi/distinct.\+cpp}} 
+\end{DoxyNote}
+
+
+Definition at line 52 of file parse\+\_\+rng\+\_\+seed.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classrng__seed__grammar_a8907243bc2288fc5fb0bb7c87d6d242b}} 
+{\bfseries rng\+\_\+seed\+\_\+grammar} (\textbf{ Rng\+Seed\+Data} \&rng\+\_\+seed\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classrng__seed__grammar_a661a05938b8f413878269cd172a98937}} 
+qi\+::rule$<$ std\+::string\+::iterator, qi\+::space\+\_\+type $>$ \textbf{ rng\+\_\+seed}
+\begin{DoxyCompactList}\small\item\em Rule for parsing integrator lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ parse\+\_\+rng\+\_\+seed.\+hpp}\end{DoxyCompactItemize}

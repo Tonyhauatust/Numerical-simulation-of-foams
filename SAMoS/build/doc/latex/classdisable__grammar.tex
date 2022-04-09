@@ -1,0 +1,61 @@
+\doxysection{disable\+\_\+grammar Class Reference}
+\label{classdisable__grammar}\index{disable\_grammar@{disable\_grammar}}
+
+
+\doxysubsection{Detailed Description}
+This is a parser for parsing command that disable a given integrator.
+
+for example\+:
+
+disable nvt \{ group = all \}
+
+This parser disable integrator of a given type (in this case \char`\"{}nvt\char`\"{})
+
+\begin{DoxyNote}{Note}
+Based on {\texttt{ http\+://www.\+boost.\+org/doc/libs/1\+\_\+53\+\_\+0/libs/spirit/repository/test/qi/distinct.\+cpp}} 
+\end{DoxyNote}
+
+
+Definition at line 54 of file parse\+\_\+disable.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ disable\+\_\+grammar} (\textbf{ Disable\+Data} \&disable\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classdisable__grammar_a57ce7c3b2d53a8d821df0a3d282c28e8}} 
+qi\+::rule$<$ std\+::string\+::iterator, qi\+::space\+\_\+type $>$ \textbf{ disable}
+\begin{DoxyCompactList}\small\item\em Rule for parsing disable integrator lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classdisable__grammar_a71d908bd0eb9045f0c29738d941930f4}} 
+\index{disable\_grammar@{disable\_grammar}!disable\_grammar@{disable\_grammar}}
+\index{disable\_grammar@{disable\_grammar}!disable\_grammar@{disable\_grammar}}
+\doxysubsubsection{disable\_grammar()}
+{\footnotesize\ttfamily \textbf{ disable\+\_\+grammar} (\begin{DoxyParamCaption}\item[{\textbf{ Disable\+Data} \&}]{disable\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Disables N\+VE integrator
+
+Disables N\+VT integrator
+
+Disables stochastic integrator
+
+Disables Vicsek integrator
+
+Disables nematic integrator
+
+Disables brownian\+\_\+pos integrator
+
+Disables brownian\+\_\+rod integrator
+
+Definition at line 57 of file parse\+\_\+disable.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ parse\+\_\+disable.\+hpp}\end{DoxyCompactItemize}

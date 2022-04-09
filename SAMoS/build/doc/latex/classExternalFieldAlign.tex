@@ -1,0 +1,66 @@
+\doxysection{External\+Field\+Align Class Reference}
+\label{classExternalFieldAlign}\index{ExternalFieldAlign@{ExternalFieldAlign}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{External\+Field\+Align}{p.}{classExternalFieldAlign} implements the alignment to the external field given as constant vector $ \vec H $. Torque on particle $ i $ is then $ \vec \tau_i = \vec H \times \vec n_i $. 
+
+Definition at line 53 of file external\+\_\+field\+\_\+aligner.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ External\+Field\+Align} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classExternalFieldAlign_a14df1e61054fb4091e9c480b4f4dfe57}} 
+void \textbf{ set\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&self\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for self alignment ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classExternalFieldAlign_a4993c97a669fa259c6574a18d547c117}} 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes \char`\"{}torques\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classExternalFieldAlign_a275f61d71c4583467e51486e41b93818}} 
+double \textbf{ m\+\_\+hx}
+\begin{DoxyCompactList}\small\item\em x component of the external field \end{DoxyCompactList}\item 
+\mbox{\label{classExternalFieldAlign_aec28ec4306c756261fdcfc11b79ddbc1}} 
+double \textbf{ m\+\_\+hy}
+\begin{DoxyCompactList}\small\item\em y component of the external field \end{DoxyCompactList}\item 
+\mbox{\label{classExternalFieldAlign_aa48fd3117bca2266454e0ddbf3efbf1d}} 
+double \textbf{ m\+\_\+hz}
+\begin{DoxyCompactList}\small\item\em z component of the external field \end{DoxyCompactList}\item 
+\mbox{\label{classExternalFieldAlign_a10b98439d6b44f4c65377fead0d556fe}} 
+\textbf{ Field\+Align\+Parameters} $\ast$ \textbf{ m\+\_\+type\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classExternalFieldAlign_add367f5c14174f3f067a4ce234707fe8}} 
+\index{ExternalFieldAlign@{ExternalFieldAlign}!ExternalFieldAlign@{ExternalFieldAlign}}
+\index{ExternalFieldAlign@{ExternalFieldAlign}!ExternalFieldAlign@{ExternalFieldAlign}}
+\doxysubsubsection{ExternalFieldAlign()}
+{\footnotesize\ttfamily \textbf{ External\+Field\+Align} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file external\+\_\+field\+\_\+aligner.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ external\+\_\+field\+\_\+aligner.\+hpp}\item 
+\textbf{ external\+\_\+field\+\_\+aligner.\+cpp}\end{DoxyCompactItemize}

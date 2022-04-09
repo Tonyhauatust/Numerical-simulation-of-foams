@@ -1,0 +1,107 @@
+\doxysection{Box Struct Reference}
+\label{structBox}\index{Box@{Box}}
+
+
+\doxysubsection{Detailed Description}
+Simulation box data. 
+
+Defines a rectangular simulation box. For closed surfaces this is completely ignored. For systems in the plane this is important to enforce proper boundary conditions. 
+
+Definition at line 45 of file box.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Box} (double lx, double ly, double lz)
+\begin{DoxyCompactList}\small\item\em Construct the box. \end{DoxyCompactList}\item 
+\mbox{\label{structBox_a7324b7a656c102c1fec128585a25b3a5}} 
+{\bfseries Box} (double X\+LO, double X\+HI, double Y\+LO, double Y\+HI, double Z\+LO, double Z\+HI)
+\item 
+void \textbf{ rescale} (double a)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{structBox_aa3661de0d4c6a3b00ffb41a5cbe8e4c3}} 
+double \textbf{ xlo}
+\begin{DoxyCompactList}\small\item\em low value of the x-\/coordinates of the box \end{DoxyCompactList}\item 
+\mbox{\label{structBox_a04db0810325587a7ba02fef95adcbbff}} 
+double \textbf{ xhi}
+\begin{DoxyCompactList}\small\item\em high value of the x-\/coordinates of the box \end{DoxyCompactList}\item 
+\mbox{\label{structBox_a71a2265a8fa5bcbd411730b1ed1754b2}} 
+double \textbf{ ylo}
+\begin{DoxyCompactList}\small\item\em low value of the y-\/coordinates of the box \end{DoxyCompactList}\item 
+\mbox{\label{structBox_ab6d4df4171af3cd07554d4924c3342bf}} 
+double \textbf{ yhi}
+\begin{DoxyCompactList}\small\item\em high value of the y-\/coordinates of the box \end{DoxyCompactList}\item 
+\mbox{\label{structBox_a0d432ac556c6aba29ec5072ab9bfdafc}} 
+double \textbf{ zlo}
+\begin{DoxyCompactList}\small\item\em low value of the z-\/coordinates of the box \end{DoxyCompactList}\item 
+\mbox{\label{structBox_a722102d5a9dca6fb1b6b97caf474cde4}} 
+double \textbf{ zhi}
+\begin{DoxyCompactList}\small\item\em high value of the z-\/coordinates of the box \end{DoxyCompactList}\item 
+\mbox{\label{structBox_ad538aa77abb694f8faf437a41e3e8037}} 
+double \textbf{ Lx}
+\begin{DoxyCompactList}\small\item\em box length in x direction \end{DoxyCompactList}\item 
+\mbox{\label{structBox_a9b3d111ccf7f82fb80aeb6f8b229c21b}} 
+double \textbf{ Ly}
+\begin{DoxyCompactList}\small\item\em box length in y direction \end{DoxyCompactList}\item 
+\mbox{\label{structBox_aca5546164a9496b15d9ec38f2086d0e5}} 
+double \textbf{ Lz}
+\begin{DoxyCompactList}\small\item\em box length in z direction \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{structBox_aac077ff2339de07a70d85b5d4af6272b}} 
+\index{Box@{Box}!Box@{Box}}
+\index{Box@{Box}!Box@{Box}}
+\doxysubsubsection{Box()}
+{\footnotesize\ttfamily \textbf{ Box} (\begin{DoxyParamCaption}\item[{double}]{lx,  }\item[{double}]{ly,  }\item[{double}]{lz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct the box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X\+LO} & x-\/coordinate of the low corner \\
+\hline
+{\em X\+HI} & x-\/coordinate of the high corner \\
+\hline
+{\em Y\+LO} & y-\/coordinate of the low corner \\
+\hline
+{\em Y\+HI} & y-\/coordinate of the high corner \\
+\hline
+{\em Z\+LO} & z-\/coordinate of the low corner \\
+\hline
+{\em Z\+HI} & z-\/coordinate of the high corner ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file box.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{structBox_af55833c292a39130454e56aec5c1a895}} 
+\index{Box@{Box}!rescale@{rescale}}
+\index{rescale@{rescale}!Box@{Box}}
+\doxysubsubsection{rescale()}
+{\footnotesize\ttfamily void rescale (\begin{DoxyParamCaption}\item[{double}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Rescale \doxyref{Box}{p.}{structBox} 
+\begin{DoxyParams}{Parameters}
+{\em a} & amount by which to rescale box \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 72 of file box.\+hpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ box.\+hpp}\end{DoxyCompactItemize}

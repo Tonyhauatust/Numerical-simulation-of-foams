@@ -1,0 +1,72 @@
+\doxysection{Pair\+L\+J\+Potential Class Reference}
+\label{classPairLJPotential}\index{PairLJPotential@{PairLJPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+L\+J\+Potential}{p.}{classPairLJPotential} implements standard Lennard Jones potential $ U_{LJ}\left(r_{ij}\right) = 4\varepsilon \left[\left(\frac \sigma r_{ij}\right)^{12}-\left(\frac \sigma r_{ij}\right)^6)\right] $, where $ \varepsilon $ is the potential strength, $ \sigma $ is the particle diameter and $ r_{ij} $ is the interparticle distance. 
+
+Definition at line 51 of file pair\+\_\+lj\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+L\+J\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairLJPotential_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairLJPotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since Lennard-\/\+Jones potential needs neighbour list. \end{DoxyCompactList}\item 
+\mbox{\label{classPairLJPotential_a60f70115b851e412fc0973176c3226b1}} 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairLJPotential_a194bfbf4c4a82d973acdc661c041e7a5}} 
+double \textbf{ m\+\_\+eps}
+\begin{DoxyCompactList}\small\item\em potential depth \end{DoxyCompactList}\item 
+\mbox{\label{classPairLJPotential_ac3dd97777097643fc2d2a4222085bb53}} 
+double \textbf{ m\+\_\+sigma}
+\begin{DoxyCompactList}\small\item\em particle diameter \end{DoxyCompactList}\item 
+\mbox{\label{classPairLJPotential_a53535f3d09f76a200e4a0b7f0909950d}} 
+double \textbf{ m\+\_\+rcut}
+\begin{DoxyCompactList}\small\item\em cutoff distance \end{DoxyCompactList}\item 
+\mbox{\label{classPairLJPotential_a5bae7b3138a811538e7873b67e20decb}} 
+\textbf{ L\+J\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairLJPotential_aeea187efe4a3ef71b16c8ee1cd9c799e}} 
+\index{PairLJPotential@{PairLJPotential}!PairLJPotential@{PairLJPotential}}
+\index{PairLJPotential@{PairLJPotential}!PairLJPotential@{PairLJPotential}}
+\doxysubsubsection{PairLJPotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+L\+J\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in) \\
+\hline
+{\em param} & Contains information about all parameters (epsilon, sigma, and rcut) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file pair\+\_\+lj\+\_\+potential.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+lj\+\_\+potential.\+hpp}\item 
+\textbf{ pair\+\_\+lj\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

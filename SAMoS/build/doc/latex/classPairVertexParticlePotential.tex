@@ -1,0 +1,114 @@
+\doxysection{Pair\+Vertex\+Particle\+Potential Class Reference}
+\label{classPairVertexParticlePotential}\index{PairVertexParticlePotential@{PairVertexParticlePotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Vertex\+Particle\+Potential}{p.}{classPairVertexParticlePotential} implements the vertex-\/particle model for an active tissue model. \begin{DoxyRefDesc}{Todo}
+\item[\textbf{ Todo}]Document the force. \end{DoxyRefDesc}
+
+
+Definition at line 51 of file pair\+\_\+vertex\+\_\+particle\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Vertex\+Particle\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairVertexParticlePotential_a8ae624e02958174a29812ef91dc8c671}} 
+void \textbf{ set\+\_\+type\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set type parameters data for individual particles. \end{DoxyCompactList}\item 
+\mbox{\label{classPairVertexParticlePotential_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairVertexParticlePotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since vertex-\/particle potential needs neighbour list. \end{DoxyCompactList}\item 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairVertexParticlePotential_aef63cad73763b7023542fbc0146691b6}} 
+double \textbf{ m\+\_\+K}
+\begin{DoxyCompactList}\small\item\em cell area stiffness \end{DoxyCompactList}\item 
+\mbox{\label{classPairVertexParticlePotential_a50241d462577efe591bbd456d0c0b015}} 
+double \textbf{ m\+\_\+gamma}
+\begin{DoxyCompactList}\small\item\em cell perimeter stiffness \end{DoxyCompactList}\item 
+\mbox{\label{classPairVertexParticlePotential_a8199c2743878137e6dd88386d45eb156}} 
+double \textbf{ m\+\_\+lambda}
+\begin{DoxyCompactList}\small\item\em cell contact stiffness \end{DoxyCompactList}\item 
+\mbox{\label{classPairVertexParticlePotential_aa1902b5321b8dd0a4d8b168b50a37b29}} 
+bool \textbf{ m\+\_\+has\+\_\+part\+\_\+params}
+\begin{DoxyCompactList}\small\item\em true if type specific particle parameters are given \end{DoxyCompactList}\item 
+\mbox{\label{classPairVertexParticlePotential_aeea2c2d6d70ca7afa4f1197370c3763b}} 
+int \textbf{ m\+\_\+mesh\+\_\+update\+\_\+steps}
+\begin{DoxyCompactList}\small\item\em number of time steps between mesh (tessalation) recalculation \end{DoxyCompactList}\item 
+\mbox{\label{classPairVertexParticlePotential_a181a891437ee47c85e1a950ee506a5ff}} 
+bool \textbf{ m\+\_\+include\+\_\+boundary}
+\begin{DoxyCompactList}\small\item\em if true, include boudary terms in force calculation \end{DoxyCompactList}\item 
+\mbox{\label{classPairVertexParticlePotential_a19676b675e6828257405009db4be22b7}} 
+\textbf{ Vertex\+Particle\+Parameters} $\ast$ \textbf{ m\+\_\+particle\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific particle parameters \end{DoxyCompactList}\item 
+\mbox{\label{classPairVertexParticlePotential_adfb0c769211733a7ba2bcfc249f14b58}} 
+\textbf{ Vertex\+Particle\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairVertexParticlePotential_a8e1479ef8cd6475a9810cf23bd2fd9fa}} 
+\index{PairVertexParticlePotential@{PairVertexParticlePotential}!PairVertexParticlePotential@{PairVertexParticlePotential}}
+\index{PairVertexParticlePotential@{PairVertexParticlePotential}!PairVertexParticlePotential@{PairVertexParticlePotential}}
+\doxysubsubsection{PairVertexParticlePotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+Vertex\+Particle\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in) \\
+\hline
+{\em param} & Contains information about all parameters (k) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file pair\+\_\+vertex\+\_\+particle\+\_\+potential.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPairVertexParticlePotential_a60f70115b851e412fc0973176c3226b1}} 
+\index{PairVertexParticlePotential@{PairVertexParticlePotential}!compute@{compute}}
+\index{compute@{compute}!PairVertexParticlePotential@{PairVertexParticlePotential}}
+\doxysubsubsection{compute()}
+{\footnotesize\ttfamily void compute (\begin{DoxyParamCaption}\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes potentials and forces for all particles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & time step sent by the integrator \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Pair\+Potential} \doxyref{}{p.}{classPairPotential_a47b59507485f0050f21b676fac26c071}.
+
+
+
+Definition at line 45 of file pair\+\_\+vertex\+\_\+particle\+\_\+potential.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+vertex\+\_\+particle\+\_\+potential.\+hpp}\item 
+\textbf{ pair\+\_\+vertex\+\_\+particle\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

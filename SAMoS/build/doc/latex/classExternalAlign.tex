@@ -1,0 +1,66 @@
+\doxysection{External\+Align Class Reference}
+\label{classExternalAlign}\index{ExternalAlign@{ExternalAlign}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{External\+Align}{p.}{classExternalAlign} is the base class (abstract) that handles all calls to the external alignment evaluations. Children of this class will implement actual external alignment. 
+
+Definition at line 52 of file external\+\_\+aligner.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ External\+Align} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classExternalAlign_a516249ae98f65a870fa8d606924f15b3}} 
+virtual void \textbf{ set\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&)=0
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for external alignment. \end{DoxyCompactList}\item 
+\mbox{\label{classExternalAlign_afa05c5b5b569afc655e786c460f0042c}} 
+virtual void \textbf{ compute} ()=0
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classExternalAlign_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Pointer to the \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classExternalAlign_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles messages sent to output. \end{DoxyCompactList}\item 
+\mbox{\label{classExternalAlign_a28fbcbc375864eb44125c34b5a2ada34}} 
+\textbf{ pairs\+\_\+type} \textbf{ m\+\_\+param}
+\begin{DoxyCompactList}\small\item\em Handles global alignment parameters. \end{DoxyCompactList}\item 
+\mbox{\label{classExternalAlign_ab2dfd3cdc2eeac52d6dea0b4f02af5a5}} 
+Extern\+Align\+Data \textbf{ m\+\_\+type\+\_\+params}
+\begin{DoxyCompactList}\small\item\em Handles specific parameters for a given particle type. \end{DoxyCompactList}\item 
+\mbox{\label{classExternalAlign_aa0adf545a325030f4e9629524878c35d}} 
+bool \textbf{ m\+\_\+has\+\_\+params}
+\begin{DoxyCompactList}\small\item\em Flag that controls if pair parameters are set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classExternalAlign_a9fb65c449af068b5c7ebe007da8ac0bb}} 
+\index{ExternalAlign@{ExternalAlign}!ExternalAlign@{ExternalAlign}}
+\index{ExternalAlign@{ExternalAlign}!ExternalAlign@{ExternalAlign}}
+\doxysubsubsection{ExternalAlign()}
+{\footnotesize\ttfamily \textbf{ External\+Align} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file external\+\_\+aligner.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ external\+\_\+aligner.\+hpp}\end{DoxyCompactItemize}

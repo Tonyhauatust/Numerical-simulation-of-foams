@@ -1,0 +1,194 @@
+\doxysection{Messenger Class Reference}
+\label{classMessenger}\index{Messenger@{Messenger}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Messenger}{p.}{classMessenger} class handles all sort of messages that can either be sent to the terminal or to a file. 
+
+Definition at line 65 of file messenger.\+hpp.
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ M\+S\+G\+\_\+\+T\+Y\+PE} \{ \textbf{ I\+N\+FO}, 
+\textbf{ W\+A\+R\+N\+I\+NG}, 
+\textbf{ E\+R\+R\+OR}
+ \}
+\begin{DoxyCompactList}\small\item\em Message types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Messenger} (const string \&)
+\begin{DoxyCompactList}\small\item\em Construct \doxyref{Messenger}{p.}{classMessenger} object. \end{DoxyCompactList}\item 
+\mbox{\label{classMessenger_a169f18285d6810f35dd60ffc31d827f9}} 
+\textbf{ $\sim$\+Messenger} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \textbf{ add\+\_\+config\+\_\+file} (const string \&filename, const string \&type)
+\item 
+void \textbf{ write\+\_\+config} (const string \&key, const string \&val)
+\item 
+void \textbf{ add\+\_\+config} (const string \&key, const string \&val)
+\item 
+void \textbf{ msg} (const \textbf{ Messenger\+::\+M\+S\+G\+\_\+\+T\+Y\+PE} \&, const string \&)
+\begin{DoxyCompactList}\small\item\em Output message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classMessenger_a8aa7877d61b56f67926beb3e6acf3652}} 
+ofstream \textbf{ m\+\_\+out}
+\begin{DoxyCompactList}\small\item\em Output stream to which to send output. \end{DoxyCompactList}\item 
+\mbox{\label{classMessenger_a597ef8e0e2e42196a8b4ab100365a8d0}} 
+string \textbf{ m\+\_\+file\+\_\+name}
+\begin{DoxyCompactList}\small\item\em \doxyref{Messenger}{p.}{classMessenger} file name. \end{DoxyCompactList}\item 
+\mbox{\label{classMessenger_acccd2c9ef520b3858eedd38ac390ebcd}} 
+map$<$ const \textbf{ Messenger\+::\+M\+S\+G\+\_\+\+T\+Y\+PE}, string $>$ \textbf{ m\+\_\+msg\+\_\+type}
+\begin{DoxyCompactList}\small\item\em maps message types to appropriate strings \end{DoxyCompactList}\item 
+\mbox{\label{classMessenger_aad807dcf45f21cd48dd3a414b09e057d}} 
+bool \textbf{ m\+\_\+to\+\_\+terminal}
+\begin{DoxyCompactList}\small\item\em If true send output to terminal. \end{DoxyCompactList}\item 
+\mbox{\label{classMessenger_a9b66ba7b3276923ca69d8c9e236285a4}} 
+bool \textbf{ m\+\_\+has\+\_\+config}
+\begin{DoxyCompactList}\small\item\em If true store configuration parameters. \end{DoxyCompactList}\item 
+\mbox{\label{classMessenger_ac3bd49ab93d3e83c435c152e32a9a883}} 
+string \textbf{ m\+\_\+config\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Type of the file to store configuration into. \end{DoxyCompactList}\item 
+\mbox{\label{classMessenger_a9ecba1e21901815597b67dd203092d0b}} 
+string \textbf{ m\+\_\+config\+\_\+file}
+\begin{DoxyCompactList}\small\item\em File name to store configuration into. \end{DoxyCompactList}\item 
+\mbox{\label{classMessenger_ab5d6ff6750b3a2fda9e9a52a76034e0b}} 
+pt\+::ptree \textbf{ m\+\_\+config}
+\begin{DoxyCompactList}\small\item\em Boost property tree storing configuration parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\label{classMessenger_acbbd5f70828660265bd996e23b58ce0b}} 
+\index{Messenger@{Messenger}!MSG\_TYPE@{MSG\_TYPE}}
+\index{MSG\_TYPE@{MSG\_TYPE}!Messenger@{Messenger}}
+\doxysubsubsection{MSG\_TYPE}
+{\footnotesize\ttfamily enum \textbf{ M\+S\+G\+\_\+\+T\+Y\+PE}}
+
+
+
+Message types. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INFO@{INFO}!Messenger@{Messenger}}\index{Messenger@{Messenger}!INFO@{INFO}}}\mbox{\label{classMessenger_acbbd5f70828660265bd996e23b58ce0ba748005382152808a72b1a9177d9dc806}} 
+I\+N\+FO&Basic information \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WARNING@{WARNING}!Messenger@{Messenger}}\index{Messenger@{Messenger}!WARNING@{WARNING}}}\mbox{\label{classMessenger_acbbd5f70828660265bd996e23b58ce0ba984de77c680eaff141ec910e25568a81}} 
+W\+A\+R\+N\+I\+NG&Warning \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR@{ERROR}!Messenger@{Messenger}}\index{Messenger@{Messenger}!ERROR@{ERROR}}}\mbox{\label{classMessenger_acbbd5f70828660265bd996e23b58ce0ba2fd6f336d08340583bd620a7f5694c90}} 
+E\+R\+R\+OR&Error message \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 70 of file messenger.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classMessenger_a827b95339b679c6c255b51ad64c991d2}} 
+\index{Messenger@{Messenger}!Messenger@{Messenger}}
+\index{Messenger@{Messenger}!Messenger@{Messenger}}
+\doxysubsubsection{Messenger()}
+{\footnotesize\ttfamily \textbf{ Messenger} (\begin{DoxyParamCaption}\item[{const string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Construct \doxyref{Messenger}{p.}{classMessenger} object. 
+
+Construct \doxyref{Messenger}{p.}{classMessenger} object 
+\begin{DoxyParams}{Parameters}
+{\em name} & file name to which to send messages or \char`\"{}terminal\char`\"{} to send it to terminal \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 34 of file messenger.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classMessenger_a998047944a61d00e227e88c7d9d07c33}} 
+\index{Messenger@{Messenger}!add\_config@{add\_config}}
+\index{add\_config@{add\_config}!Messenger@{Messenger}}
+\doxysubsubsection{add\_config()}
+{\footnotesize\ttfamily void add\+\_\+config (\begin{DoxyParamCaption}\item[{const string \&}]{key,  }\item[{const string \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a node to the configuration file (does not overwrite) 
+\begin{DoxyParams}{Parameters}
+{\em key} & name of the node to write \\
+\hline
+{\em val} & value to write \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file messenger.\+hpp.
+
+\mbox{\label{classMessenger_a49c2aaba0462e73c341d4ea0d01f3131}} 
+\index{Messenger@{Messenger}!add\_config\_file@{add\_config\_file}}
+\index{add\_config\_file@{add\_config\_file}!Messenger@{Messenger}}
+\doxysubsubsection{add\_config\_file()}
+{\footnotesize\ttfamily void add\+\_\+config\+\_\+file (\begin{DoxyParamCaption}\item[{const string \&}]{filename,  }\item[{const string \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add configuration file handling 
+\begin{DoxyParams}{Parameters}
+{\em filename} & configuration file \\
+\hline
+{\em type} & type of the configuration file (X\+ML or J\+S\+ON) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 86 of file messenger.\+hpp.
+
+\mbox{\label{classMessenger_a2ee3ab295b8c4d8715e1ce007d871cd4}} 
+\index{Messenger@{Messenger}!msg@{msg}}
+\index{msg@{msg}!Messenger@{Messenger}}
+\doxysubsubsection{msg()}
+{\footnotesize\ttfamily void msg (\begin{DoxyParamCaption}\item[{const \textbf{ Messenger\+::\+M\+S\+G\+\_\+\+T\+Y\+PE} \&}]{type,  }\item[{const string \&}]{m }\end{DoxyParamCaption})}
+
+
+
+Output message. 
+
+output message Message format\+: T\+Y\+PE\+: D\+A\+TE T\+I\+ME\+: M\+E\+S\+S\+A\+GE 
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of the message (I\+N\+FO, W\+A\+R\+N\+I\+NG, or E\+R\+R\+OR) \\
+\hline
+{\em m} & The message to print \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file messenger.\+cpp.
+
+\mbox{\label{classMessenger_a02ce96fc79333b018e867ebb1dccd987}} 
+\index{Messenger@{Messenger}!write\_config@{write\_config}}
+\index{write\_config@{write\_config}!Messenger@{Messenger}}
+\doxysubsubsection{write\_config()}
+{\footnotesize\ttfamily void write\+\_\+config (\begin{DoxyParamCaption}\item[{const string \&}]{key,  }\item[{const string \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Writes a node to the configuration file 
+\begin{DoxyParams}{Parameters}
+{\em key} & name of the node to write \\
+\hline
+{\em val} & value to write \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 96 of file messenger.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ messenger.\+hpp}\item 
+\textbf{ messenger.\+cpp}\end{DoxyCompactItemize}

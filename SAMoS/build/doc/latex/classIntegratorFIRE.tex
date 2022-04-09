@@ -1,0 +1,120 @@
+\doxysection{Integrator\+F\+I\+RE Class Reference}
+\label{classIntegratorFIRE}\index{IntegratorFIRE@{IntegratorFIRE}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Integrator\+F\+I\+RE}{p.}{classIntegratorFIRE} class handles F\+I\+RE minimization. \begin{DoxyNote}{Note}
+No activity. Just minimization. 
+\end{DoxyNote}
+
+
+Definition at line 45 of file integrator\+\_\+fire.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Integrator\+F\+I\+RE} (System\+Ptr sys, Messenger\+Ptr msg, Potential\+Ptr pot, Aligner\+Ptr align, Neighbour\+List\+Ptr nlist, Constrainer\+Ptr cons, Value\+Ptr temp, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ integrate} ()
+\begin{DoxyCompactList}\small\item\em Propagate system for a time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classIntegratorFIRE_abc4e2a8e4e5c6923f00d9d20a7786312}} 
+double \textbf{ m\+\_\+alpha}
+\begin{DoxyCompactList}\small\item\em alpha factor in the F\+I\+RE minimizer \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorFIRE_a0e77927b2ecec95df2d3bd454cd31e3a}} 
+double \textbf{ m\+\_\+\+F\+\_\+tol}
+\begin{DoxyCompactList}\small\item\em Force tolerance for checking convergence. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorFIRE_adaf5f1e68e42cc1ca0bf2a5c251480ea}} 
+double \textbf{ m\+\_\+\+E\+\_\+tol}
+\begin{DoxyCompactList}\small\item\em Energy tolerance for checking convergence. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorFIRE_ab98022799058a560e663ba74321ae282}} 
+int \textbf{ m\+\_\+\+N\+\_\+min}
+\begin{DoxyCompactList}\small\item\em Number of steps energy change is negative before allowing m\+\_\+alpha and m\+\_\+dt to adapt. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorFIRE_a162cb3c093bd073d304d768a08ad9ec0}} 
+double \textbf{ m\+\_\+f\+\_\+inc}
+\begin{DoxyCompactList}\small\item\em Increase factor for m\+\_\+dt. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorFIRE_a6f794d68e5f82cc035baf2c47d1549b2}} 
+double \textbf{ m\+\_\+f\+\_\+dec}
+\begin{DoxyCompactList}\small\item\em Decrease factor for m\+\_\+dt. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorFIRE_a7262649dace573327da64d3110a95217}} 
+double \textbf{ m\+\_\+alpha\+\_\+init}
+\begin{DoxyCompactList}\small\item\em Initial value for m\+\_\+alpha. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorFIRE_ad402876f87e171cdf6261fc4b4a6dba6}} 
+double \textbf{ m\+\_\+f\+\_\+alpha}
+\begin{DoxyCompactList}\small\item\em Decrease alpha by this much. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorFIRE_a7f74880ce9947f0000f153e1377222dc}} 
+int \textbf{ m\+\_\+last\+\_\+neg}
+\begin{DoxyCompactList}\small\item\em Last time (in terms of step number when force.\+velocity was negative. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorFIRE_ab3276179e0bec7b2bb752e53a4e08ed7}} 
+double \textbf{ m\+\_\+old\+\_\+energy}
+\begin{DoxyCompactList}\small\item\em Old value of energy. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorFIRE_a033e71360d8f2f448643b675b09983bf}} 
+bool \textbf{ m\+\_\+converged}
+\begin{DoxyCompactList}\small\item\em Flag which tests if the method has converged. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorFIRE_a834dc1f6162aecdade668164c091af30}} 
+double \textbf{ m\+\_\+dt\+\_\+max}
+\begin{DoxyCompactList}\small\item\em Maximum time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classIntegratorFIRE_aacfb33492698fc966e8304f199ca6aab}} 
+\index{IntegratorFIRE@{IntegratorFIRE}!IntegratorFIRE@{IntegratorFIRE}}
+\index{IntegratorFIRE@{IntegratorFIRE}!IntegratorFIRE@{IntegratorFIRE}}
+\doxysubsubsection{IntegratorFIRE()}
+{\footnotesize\ttfamily \textbf{ Integrator\+F\+I\+RE} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Constrainer\+Ptr}]{cons,  }\item[{Value\+Ptr}]{temp,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to a \doxyref{System}{p.}{classSystem} object containing all particles \\
+\hline
+{\em msg} & Internal message handler \\
+\hline
+{\em pot} & Pairwise and external interaction handler \\
+\hline
+{\em align} & Pairwise and external alignment handler \\
+\hline
+{\em nlist} & Neighbour list object \\
+\hline
+{\em cons} & Enforces constraints to the manifold surface \\
+\hline
+{\em temp} & Temperature control object \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file integrator\+\_\+fire.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classIntegratorFIRE_a611ba68b85e9a65f5d842f706de335fd}} 
+\index{IntegratorFIRE@{IntegratorFIRE}!integrate@{integrate}}
+\index{integrate@{integrate}!IntegratorFIRE@{IntegratorFIRE}}
+\doxysubsubsection{integrate()}
+{\footnotesize\ttfamily void integrate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Propagate system for a time step. 
+
+This is the F\+I\+RE minimiser. ~\newline
+ 
+
+Implements \textbf{ Integrator} \doxyref{}{p.}{classIntegrator_aafcdca198ea2dca2a77c7d48486e1a87}.
+
+
+
+Definition at line 34 of file integrator\+\_\+fire.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ integrator\+\_\+fire.\+hpp}\item 
+\textbf{ integrator\+\_\+fire.\+cpp}\end{DoxyCompactItemize}

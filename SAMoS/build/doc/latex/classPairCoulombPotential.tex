@@ -1,0 +1,69 @@
+\doxysection{Pair\+Coulomb\+Potential Class Reference}
+\label{classPairCoulombPotential}\index{PairCoulombPotential@{PairCoulombPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Coulomb\+Potential}{p.}{classPairCoulombPotential} implements standard Coulomb potential with a LJ repulsive part to avoid diverging forces and interaction strengths for collapsing particles. \doxyref{Potential}{p.}{classPotential} is given as $ U_{Coul}\left(r_{ij}\right) = \frac{\alpha}{r_{ij}} + 4\left|\alpha\right|\left(\frac \sigma r_{ij}\right)^{12} $, where $ \alpha $ is the potential strength, $ \sigma $ is the particle diameter and $ r_{ij} $ is the interparticle distance. 
+
+Definition at line 53 of file pair\+\_\+coulomb\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Coulomb\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairCoulombPotential_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairCoulombPotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns false since Coulomb potential does not need neighbour list. \end{DoxyCompactList}\item 
+\mbox{\label{classPairCoulombPotential_a60f70115b851e412fc0973176c3226b1}} 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairCoulombPotential_abc4e2a8e4e5c6923f00d9d20a7786312}} 
+double \textbf{ m\+\_\+alpha}
+\begin{DoxyCompactList}\small\item\em potential strength \end{DoxyCompactList}\item 
+\mbox{\label{classPairCoulombPotential_ac3dd97777097643fc2d2a4222085bb53}} 
+double \textbf{ m\+\_\+sigma}
+\begin{DoxyCompactList}\small\item\em particle diameter \end{DoxyCompactList}\item 
+\mbox{\label{classPairCoulombPotential_a052915cb6bfd5f94e851909397aeac1f}} 
+\textbf{ Coulomb\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairCoulombPotential_aad53cd119200aab9b4610aafcfa507b5}} 
+\index{PairCoulombPotential@{PairCoulombPotential}!PairCoulombPotential@{PairCoulombPotential}}
+\index{PairCoulombPotential@{PairCoulombPotential}!PairCoulombPotential@{PairCoulombPotential}}
+\doxysubsubsection{PairCoulombPotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+Coulomb\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in) \\
+\hline
+{\em param} & Contains information about all parameters (alpha and sigma) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file pair\+\_\+coulomb\+\_\+potential.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+coulomb\+\_\+potential.\+hpp}\item 
+\textbf{ pair\+\_\+coulomb\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

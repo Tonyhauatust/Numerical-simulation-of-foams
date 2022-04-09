@@ -1,0 +1,67 @@
+\doxysection{Angle\+Potential Class Reference}
+\label{classAnglePotential}\index{AnglePotential@{AnglePotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Angle\+Potential}{p.}{classAnglePotential} is the base class (abstract) that handles all calls to the angle potential evaluations. Children of this class will implement actual force fields. 
+
+Definition at line 51 of file angle\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Angle\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classAnglePotential_a731baab5b0a01f15bb04567e7393b21a}} 
+virtual \textbf{ $\sim$\+Angle\+Potential} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\label{classAnglePotential_a900f4be1506665fe8537a7f80d5a5ae9}} 
+virtual void \textbf{ set\+\_\+angle\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&)=0
+\begin{DoxyCompactList}\small\item\em Set angle parameters ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classAnglePotential_afa05c5b5b569afc655e786c460f0042c}} 
+virtual void \textbf{ compute} ()=0
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classAnglePotential_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Pointer to the \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classAnglePotential_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles messages sent to output. \end{DoxyCompactList}\item 
+\mbox{\label{classAnglePotential_a2766efa23879ab93890133264287f694}} 
+bool \textbf{ m\+\_\+has\+\_\+angle\+\_\+params}
+\begin{DoxyCompactList}\small\item\em Flag that controls if angle parameters are set. \end{DoxyCompactList}\item 
+\mbox{\label{classAnglePotential_a20a4fa47856dfecbae0d29f4d552f35e}} 
+double \textbf{ m\+\_\+potential\+\_\+energy}
+\begin{DoxyCompactList}\small\item\em Total potential energy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classAnglePotential_a0a0fb069cbfb823169437330e52eda63}} 
+\index{AnglePotential@{AnglePotential}!AnglePotential@{AnglePotential}}
+\index{AnglePotential@{AnglePotential}!AnglePotential@{AnglePotential}}
+\doxysubsubsection{AnglePotential()}
+{\footnotesize\ttfamily \textbf{ Angle\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file angle\+\_\+potential.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ angle\+\_\+potential.\+hpp}\end{DoxyCompactItemize}

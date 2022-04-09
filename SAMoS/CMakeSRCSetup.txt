@@ -1,0 +1,69 @@
+# * *************************************************************
+# *  
+# *   Soft Active Mater on Surfaces (SAMoS)
+# *   
+# *   Author: Rastko Sknepnek
+# *  
+# *   Division of Physics
+# *   School of Engineering, Physics and Mathematics
+# *   University of Dundee
+# *   
+# *   (c) 2013, 2014
+# * 
+# *   School of Science and Engineering
+# *   School of Life Sciences 
+# *   University of Dundee
+# * 
+# *   (c) 2015
+# * 
+# *   Author: Silke Henkes
+# * 
+# *   Department of Physics 
+# *   Institute for Complex Systems and Mathematical Biology
+# *   University of Aberdeen  
+# * 
+# *   (c) 2014, 2015
+# *  
+# *   This program cannot be used, copied, or modified without
+# *   explicit written permission of the authors.
+# * 
+# * ************************************************************** 
+
+#################################
+## Setup include directories and file lists for sub directories
+include_directories($ENV{GSL_DIR}/include
+                    ${SAMoS_SOURCE_DIR}/src/constraints
+                    ${SAMoS_SOURCE_DIR}/src/dump
+                    ${SAMoS_SOURCE_DIR}/src/log
+                    ${SAMoS_SOURCE_DIR}/src/integrators
+                    ${SAMoS_SOURCE_DIR}/src/messenger
+                    ${SAMoS_SOURCE_DIR}/src/parser
+                    ${SAMoS_SOURCE_DIR}/src/potentials
+                    ${SAMoS_SOURCE_DIR}/src/potentials/external
+                    ${SAMoS_SOURCE_DIR}/src/potentials/pair
+                    ${SAMoS_SOURCE_DIR}/src/potentials/bond
+                    ${SAMoS_SOURCE_DIR}/src/potentials/angle
+                    ${SAMoS_SOURCE_DIR}/src/system
+                    ${SAMoS_SOURCE_DIR}/src/utils
+                    ${SAMoS_SOURCE_DIR}/src/aligner
+                    ${SAMoS_SOURCE_DIR}/src/aligner/pair
+                    ${SAMoS_SOURCE_DIR}/src/aligner/external
+                    ${SAMoS_SOURCE_DIR}/src/population
+                    ${SAMoS_SOURCE_DIR}/src
+                    )
+
+# list of all sources in various source directories
+#file(GLOB SAMoS_SRCS ${SAMoS_SOURCE_DIR}/src/*.cpp ${SAMoS_SOURCE_DIR}/src/*.hpp)
+file(GLOB INITIAL_CONFIGURATION_BUILDER_SRC ${SAMoS_SOURCE_DIR}/utils)
+
+#######################
+## Configure the version info header file
+
+
+# handle linux/mac and windows dates differently
+if (NOT WIN32)
+	exec_program("date" OUTPUT_VARIABLE COMPILE_DATE)
+else(NOT WIN32)
+	exec_program("cmd" ARGS "/c date /T" OUTPUT_VARIABLE COMPILE_DATE)
+endif (NOT WIN32)
+

@@ -1,0 +1,157 @@
+\doxysection{Population\+Density Class Reference}
+\label{classPopulationDensity}\index{PopulationDensity@{PopulationDensity}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Population\+Density}{p.}{classPopulationDensity} class handles density dependant particle division and death. We set division rate and death rate. Particles are divided based on their local density and removed based on the their age, by a random event.
+
+Particles are always divided along the direction of the orientation vector n. 
+
+Definition at line 53 of file population\+\_\+density.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Population\+Density} (System\+Ptr sys, const Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ divide} (int)
+\begin{DoxyCompactList}\small\item\em \doxyref{Particle}{p.}{classParticle} division (emulates cell division) \end{DoxyCompactList}\item 
+void \textbf{ remove} (int)
+\begin{DoxyCompactList}\small\item\em Remove particle (emulates cell death) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_a5934f681769b45fdb507ff6de08ba66d}} 
+void \textbf{ add} (int t)
+\begin{DoxyCompactList}\small\item\em Add particle (has no direct biological application) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_a67f03cc5a7b9c63b9a7bb825fac4d943}} 
+void \textbf{ grow} (int time)
+\begin{DoxyCompactList}\small\item\em Change particle radius. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_af5d8f68d62cfe61b7b4b272d49351f95}} 
+void \textbf{ elongate} (int time)
+\begin{DoxyCompactList}\small\item\em Change particle length. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPopulationDensity_aaba456a057071541006327fc2025f5df}} 
+R\+N\+G\+Ptr \textbf{ m\+\_\+rng}
+\begin{DoxyCompactList}\small\item\em Density number generator. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_a6b73a8f24ba3853a2043c3b1f1ab53c7}} 
+double \textbf{ m\+\_\+div\+\_\+rate}
+\begin{DoxyCompactList}\small\item\em Rate of division. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_a780b020737c5bf614ea40fed3ce23cf9}} 
+double \textbf{ m\+\_\+death\+\_\+rate}
+\begin{DoxyCompactList}\small\item\em Rate of death. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_a1ee0f400f6df55f2617977aa189202c2}} 
+double \textbf{ m\+\_\+type\+\_\+change\+\_\+prob\+\_\+1}
+\begin{DoxyCompactList}\small\item\em Probability with which the particle type can change (particle 1, that is original particle) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_afd405d1fc911a04cee71ca06db4a1a5a}} 
+double \textbf{ m\+\_\+type\+\_\+change\+\_\+prob\+\_\+2}
+\begin{DoxyCompactList}\small\item\em Probability with which the particle type can change (particle 2, that is new particle) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_a96692e9445cbaafb90cbc42ce8e34b05}} 
+int \textbf{ m\+\_\+new\+\_\+type}
+\begin{DoxyCompactList}\small\item\em What is type of the new particle (0 no type change) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_a0174cf44d40e8a4d54630020f9f22b35}} 
+double \textbf{ m\+\_\+new\+\_\+radius}
+\begin{DoxyCompactList}\small\item\em What is radius of new particle (0.\+0 no radius change) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_abd291595f23ae8173d922afcb5e307c1}} 
+string \textbf{ m\+\_\+old\+\_\+group}
+\begin{DoxyCompactList}\small\item\em What is old group of the particle (where to change from) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_a3430d370ce6d604c3e85f08bd04a2483}} 
+string \textbf{ m\+\_\+new\+\_\+group}
+\begin{DoxyCompactList}\small\item\em What is group of new particle (what to change to) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_a54dbf28d28d92eed5e95d11e194f8a92}} 
+double \textbf{ m\+\_\+split\+\_\+distance}
+\begin{DoxyCompactList}\small\item\em Fraction of the particle radius to split after the division. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_a0ee509209c86af9704293653551ed95c}} 
+double \textbf{ m\+\_\+rho\+\_\+max}
+\begin{DoxyCompactList}\small\item\em Maximum local density where division rate decays. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_abc4e2a8e4e5c6923f00d9d20a7786312}} 
+double \textbf{ m\+\_\+alpha}
+\begin{DoxyCompactList}\small\item\em When dividing particles, move new one to alpha$\ast$m\+\_\+split\+\_\+distance and the old one to (1-\/alpha)$\ast$split\+\_\+distance. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationDensity_ae0917a0bdfd544459b7efe8817762a86}} 
+double \textbf{ m\+\_\+poly}
+\begin{DoxyCompactList}\small\item\em When dividing particles, give the daughter a radius of m\+\_\+new\+\_\+radius with polydispersity poly. To avoid selecting for small radii. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPopulationDensity_ac9a287978674eff77587486295f7daff}} 
+\index{PopulationDensity@{PopulationDensity}!PopulationDensity@{PopulationDensity}}
+\index{PopulationDensity@{PopulationDensity}!PopulationDensity@{PopulationDensity}}
+\doxysubsubsection{PopulationDensity()}
+{\footnotesize\ttfamily \textbf{ Population\+Density} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{const Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct \doxyref{Population\+Density}{p.}{classPopulationDensity} object 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Reference to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Reference to the system wide messenger \\
+\hline
+{\em param} & Reference to the parameters that control given population control \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file population\+\_\+density.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPopulationDensity_a73a018d19708663b546d15956d5c861a}} 
+\index{PopulationDensity@{PopulationDensity}!divide@{divide}}
+\index{divide@{divide}!PopulationDensity@{PopulationDensity}}
+\doxysubsubsection{divide()}
+{\footnotesize\ttfamily void divide (\begin{DoxyParamCaption}\item[{int}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxyref{Particle}{p.}{classParticle} division (emulates cell division) 
+
+Divide particles according to their age. We draw a uniform random number between 0 and 1 if this number is less than particle age divided by the division rate, split particle.
+
+\doxyref{Particle}{p.}{classParticle} is split along the direction vector n New particles are placed one radius apart. Original particle is pushed back by 1/2r and the new one is placed at 1/2r.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & current time step \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Population} \doxyref{}{p.}{classPopulation_a4ab1abe64fa0f7d0e8e6893bcf49a31c}.
+
+
+
+Definition at line 46 of file population\+\_\+density.\+cpp.
+
+\mbox{\label{classPopulationDensity_adf9b6188c8a543f82a7f5c02ee539008}} 
+\index{PopulationDensity@{PopulationDensity}!remove@{remove}}
+\index{remove@{remove}!PopulationDensity@{PopulationDensity}}
+\doxysubsubsection{remove()}
+{\footnotesize\ttfamily void remove (\begin{DoxyParamCaption}\item[{int}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Remove particle (emulates cell death) 
+
+Remove particle.
+
+In biological systems all cells die. Here we assume that the death is random, but proportional to the particles age.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & current time step \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Population} \doxyref{}{p.}{classPopulation_aca9c16a0b1878f93ea5f10f9d61f2b9c}.
+
+
+
+Definition at line 160 of file population\+\_\+density.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ population\+\_\+density.\+hpp}\item 
+\textbf{ population\+\_\+density.\+cpp}\end{DoxyCompactItemize}

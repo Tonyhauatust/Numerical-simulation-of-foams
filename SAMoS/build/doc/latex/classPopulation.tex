@@ -1,0 +1,107 @@
+\doxysection{Population Class Reference}
+\label{classPopulation}\index{Population@{Population}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Population}{p.}{classPopulation} class is the abstract parent class that handles all population control mechanism (division and death/removal of particles). 
+
+Definition at line 52 of file population.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Population} (System\+Ptr sys, const Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ set\+\_\+nlist} (Neighbour\+List\+Ptr nlist)
+\item 
+\mbox{\label{classPopulation_acaca8a9fb63b760b401d014ccfdd2b57}} 
+string {\bfseries get\+\_\+group} ()
+\item 
+\mbox{\label{classPopulation_a4ab1abe64fa0f7d0e8e6893bcf49a31c}} 
+virtual void \textbf{ divide} (int)=0
+\begin{DoxyCompactList}\small\item\em \doxyref{Particle}{p.}{classParticle} division (emulates cell division) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulation_aca9c16a0b1878f93ea5f10f9d61f2b9c}} 
+virtual void \textbf{ remove} (int)=0
+\begin{DoxyCompactList}\small\item\em Remove particle (emulates cell death) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulation_afc81b498a992f0f4a0bf88cf68d96f8f}} 
+virtual void \textbf{ add} (int)=0
+\begin{DoxyCompactList}\small\item\em Add particle (has no direct biological application) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulation_a7efdf285bda5b59152f03200f8eaa7a3}} 
+virtual void \textbf{ grow} (int)=0
+\begin{DoxyCompactList}\small\item\em Change particle radius. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulation_afce7a6b3bd50502a81bb0b02c71c7cf0}} 
+virtual void \textbf{ elongate} (int)=0
+\begin{DoxyCompactList}\small\item\em Change particle length. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPopulation_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Contains pointer to the \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulation_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles messages sent to output. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulation_a4e781f6afa8a44060341e9cc7428415c}} 
+Neighbour\+List\+Ptr \textbf{ m\+\_\+nlist}
+\begin{DoxyCompactList}\small\item\em Handles \doxyref{Neighbour\+List}{p.}{classNeighbourList} object. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulation_ac4f55b6ecfdaa526270a15c815b25ff2}} 
+string \textbf{ m\+\_\+group\+\_\+name}
+\begin{DoxyCompactList}\small\item\em Name of the group to apply this population to. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulation_a0f9a3de1773381f5d03ddb0a8a1dc38b}} 
+int \textbf{ m\+\_\+freq}
+\begin{DoxyCompactList}\small\item\em Frequency (in the number of time steps) with which to attempt population control. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulation_a06be57fe5001d66425514c6b5fce13a7}} 
+double \textbf{ m\+\_\+l\+\_\+rescale}
+\begin{DoxyCompactList}\small\item\em Rescale particle length by total of this amount. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulation_a81e2b85a11bd01df4c5de78bdd298e2b}} 
+int \textbf{ m\+\_\+l\+\_\+rescale\+\_\+steps}
+\begin{DoxyCompactList}\small\item\em Rescale particle length over this many steps. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulation_aa35d7dfd2105709ea772e53cce302317}} 
+double \textbf{ m\+\_\+l\+\_\+scale}
+\begin{DoxyCompactList}\small\item\em Rescale particle length by this much in each step (=m\+\_\+l\+\_\+rescale$\ast$$\ast$(m\+\_\+grow\+\_\+l\+\_\+freq/m\+\_\+l\+\_\+rescale\+\_\+steps)) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulation_a7f67494bc3c64b13098c7ad3f7ba8737}} 
+bool \textbf{ m\+\_\+has\+\_\+nlist}
+\begin{DoxyCompactList}\small\item\em If true, population has neighbour list set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPopulation_a07925a88be0c1171a7e2f14344115b7a}} 
+\index{Population@{Population}!Population@{Population}}
+\index{Population@{Population}!Population@{Population}}
+\doxysubsubsection{Population()}
+{\footnotesize\ttfamily \textbf{ Population} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{const Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct \doxyref{Population}{p.}{classPopulation} object 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Reference to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Reference to the system wide messenger \\
+\hline
+{\em param} & Reference to the parameters that control given population control \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file population.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPopulation_a067594b2c89b1347b81e5e5315885b32}} 
+\index{Population@{Population}!set\_nlist@{set\_nlist}}
+\index{set\_nlist@{set\_nlist}!Population@{Population}}
+\doxysubsubsection{set\_nlist()}
+{\footnotesize\ttfamily void set\+\_\+nlist (\begin{DoxyParamCaption}\item[{Neighbour\+List\+Ptr}]{nlist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set neighbour list. \begin{DoxyNote}{Note}
+Neighbour list is not set in the contructor because some models do not require it. This is a bit clumsy but gives us more flexibility 
+\end{DoxyNote}
+
+
+Definition at line 88 of file population.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ population.\+hpp}\end{DoxyCompactItemize}

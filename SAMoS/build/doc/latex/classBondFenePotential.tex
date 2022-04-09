@@ -1,0 +1,62 @@
+\doxysection{Bond\+Fene\+Potential Class Reference}
+\label{classBondFenePotential}\index{BondFenePotential@{BondFenePotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Bond\+Fene\+Potential}{p.}{classBondFenePotential} implements standard F\+E\+ME bond potential \doxyref{Potential}{p.}{classPotential} is given as $ U_{fene}\left(r_{ij}\right) = -\frac{1}{2}kr_0^2\log\left[1-\left(\frac{\left|\vec r_{ij}\right|}{r_0}\right)^2\right] + WCA(r_{ij})$, where $ k $ is the spring constant, $ r_0 $ is the the maximum bond length and $ \vec r_{ij} = \vec r_i - \vec r_j $. W\+CA is the repulsive part of Lennard-\/\+Jones potential (so called, Weeks-\/\+Chandler-\/\+Andersen potential), which is {\itshape N\+OT} included here. Therfore, the user has to make sure to disable exclusions in bonds in order to properly treat the short-\/range part of the potential. 
+
+Definition at line 53 of file bond\+\_\+fene\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bond\+Fene\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classBondFenePotential_a76015764bf09014d6a44bd67cf0037cd}} 
+void \textbf{ set\+\_\+bond\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&bond\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set parameters data for specific bond type ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classBondFenePotential_a4993c97a669fa259c6574a18d547c117}} 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classBondFenePotential_aa7b89576372abc4d0bbf496467e872f7}} 
+double \textbf{ m\+\_\+k}
+\begin{DoxyCompactList}\small\item\em spring constant \end{DoxyCompactList}\item 
+\mbox{\label{classBondFenePotential_a0e441c101508acf0fb485f184d7a07b5}} 
+double \textbf{ m\+\_\+r0}
+\begin{DoxyCompactList}\small\item\em maximum bond length \end{DoxyCompactList}\item 
+\mbox{\label{classBondFenePotential_a129ef289c12d59c7186539c7f055d211}} 
+\textbf{ Bond\+Fene\+Parameters} $\ast$ \textbf{ m\+\_\+bond\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific bond parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classBondFenePotential_a3a8e8b41525f5b81da3a40d9d5648bfe}} 
+\index{BondFenePotential@{BondFenePotential}!BondFenePotential@{BondFenePotential}}
+\index{BondFenePotential@{BondFenePotential}!BondFenePotential@{BondFenePotential}}
+\doxysubsubsection{BondFenePotential()}
+{\footnotesize\ttfamily \textbf{ Bond\+Fene\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters (k and l0) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file bond\+\_\+fene\+\_\+potential.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ bond\+\_\+fene\+\_\+potential.\+hpp}\item 
+\textbf{ bond\+\_\+fene\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

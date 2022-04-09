@@ -1,0 +1,70 @@
+\doxysection{External\+Radial\+Align Class Reference}
+\label{classExternalRadialAlign}\index{ExternalRadialAlign@{ExternalRadialAlign}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{External\+Radial\+Align}{p.}{classExternalRadialAlign} implements the alignment to the external field that points radially towards a centre at attraction. This alignment is intended for wound healing simulations and we implicitly assume radial symmetry (i.\+e., that we have a planar system). Alignment filed is given as $ \vec H = J\vec e_r $, where $ \vec e_r $ is the radius vector pointing from the user-\/specified centre $ \vec r_c $ towards the particle $ \vec r_i $. In this case, torque is $ \vec \tau_i = \vec H \times \vec n_i $. User can specify that the centre of attraction follows the centre of mass. 
+
+Definition at line 59 of file external\+\_\+radial\+\_\+aligner.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ External\+Radial\+Align} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classExternalRadialAlign_a14df1e61054fb4091e9c480b4f4dfe57}} 
+void \textbf{ set\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&self\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for self alignment ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classExternalRadialAlign_a4993c97a669fa259c6574a18d547c117}} 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes \char`\"{}torques\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classExternalRadialAlign_a9717caa31dfc2c4735c6a3926ebd17c9}} 
+double {\bfseries m\+\_\+J}
+\item 
+\mbox{\label{classExternalRadialAlign_a19e41ec7f3f362a81338e4ec72ece5dc}} 
+double \textbf{ m\+\_\+pos\+\_\+x}
+\begin{DoxyCompactList}\small\item\em x component of the offset of the centre of attraction \end{DoxyCompactList}\item 
+\mbox{\label{classExternalRadialAlign_a4baced60bf2403ca3e650466eb42b41a}} 
+double \textbf{ m\+\_\+pos\+\_\+y}
+\begin{DoxyCompactList}\small\item\em y component of the offset of the centre of attraction \end{DoxyCompactList}\item 
+\mbox{\label{classExternalRadialAlign_a03c23ec420e609f416a47db81b539d1f}} 
+bool \textbf{ m\+\_\+use\+\_\+cm}
+\begin{DoxyCompactList}\small\item\em offset relative to the geometirc centre of the system \end{DoxyCompactList}\item 
+\mbox{\label{classExternalRadialAlign_a4bdc5aab739a744d04a46a71c40e27e3}} 
+\textbf{ Radial\+Align\+Parameters} $\ast$ \textbf{ m\+\_\+type\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific alignment ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classExternalRadialAlign_a355aacb3ce373168cffc0b9ac989ffbb}} 
+\index{ExternalRadialAlign@{ExternalRadialAlign}!ExternalRadialAlign@{ExternalRadialAlign}}
+\index{ExternalRadialAlign@{ExternalRadialAlign}!ExternalRadialAlign@{ExternalRadialAlign}}
+\doxysubsubsection{ExternalRadialAlign()}
+{\footnotesize\ttfamily \textbf{ External\+Radial\+Align} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file external\+\_\+radial\+\_\+aligner.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ external\+\_\+radial\+\_\+aligner.\+hpp}\item 
+\textbf{ external\+\_\+radial\+\_\+aligner.\+cpp}\end{DoxyCompactItemize}

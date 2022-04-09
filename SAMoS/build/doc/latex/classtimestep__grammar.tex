@@ -1,0 +1,37 @@
+\doxysection{timestep\+\_\+grammar Class Reference}
+\label{classtimestep__grammar}\index{timestep\_grammar@{timestep\_grammar}}
+
+
+\doxysubsection{Detailed Description}
+This is a parser for parsing command that contain number of global step size for all integrators
+
+For example\+:
+
+timestep 0.\+001
+
+This parser will return the size of the integrator step (0.\+001 in this case)
+
+\begin{DoxyNote}{Note}
+Based on {\texttt{ http\+://www.\+boost.\+org/doc/libs/1\+\_\+53\+\_\+0/libs/spirit/repository/test/qi/distinct.\+cpp}} 
+\end{DoxyNote}
+
+
+Definition at line 52 of file parse\+\_\+timestep.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classtimestep__grammar_aca52cb34a488ab2a181930a5fb8114c9}} 
+{\bfseries timestep\+\_\+grammar} (\textbf{ Time\+Step\+Data} \&timestep\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classtimestep__grammar_ac0641454c3886876d3a379855677e52d}} 
+qi\+::rule$<$ std\+::string\+::iterator, qi\+::space\+\_\+type $>$ \textbf{ timestep}
+\begin{DoxyCompactList}\small\item\em Rule for parsing timestep lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ parse\+\_\+timestep.\+hpp}\end{DoxyCompactItemize}

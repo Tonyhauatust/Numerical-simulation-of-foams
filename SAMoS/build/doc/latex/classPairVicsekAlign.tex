@@ -1,0 +1,80 @@
+\doxysection{Pair\+Vicsek\+Align Class Reference}
+\label{classPairVicsekAlign}\index{PairVicsekAlign@{PairVicsekAlign}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Vicsek\+Align}{p.}{classPairVicsekAlign} is an alignment rule that computes the average direction of the velocity averaged over a certain neighbourhood of the particle. $ \langle \vec v_i\rangle = \sum_{\mathrm{j n.n i}} \vec v_j $ 
+
+Definition at line 44 of file pair\+\_\+vicsek\+\_\+aligner.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Vicsek\+Align} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\item 
+\mbox{\label{classPairVicsekAlign_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since Vicsek potential needs neighbour list. \end{DoxyCompactList}\item 
+\mbox{\label{classPairVicsekAlign_a4993c97a669fa259c6574a18d547c117}} 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes \char`\"{}torques\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairVicsekAlign_a53535f3d09f76a200e4a0b7f0909950d}} 
+double \textbf{ m\+\_\+rcut}
+\begin{DoxyCompactList}\small\item\em Cutoff distance (has to be less than neighbour list cutoff) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairVicsekAlign_a8474a0891895c4fb3d06c11a9309d9e6}} 
+\index{PairVicsekAlign@{PairVicsekAlign}!PairVicsekAlign@{PairVicsekAlign}}
+\index{PairVicsekAlign@{PairVicsekAlign}!PairVicsekAlign@{PairVicsekAlign}}
+\doxysubsubsection{PairVicsekAlign()}
+{\footnotesize\ttfamily \textbf{ Pair\+Vicsek\+Align} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em param} & Contains information about all parameters (k) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 53 of file pair\+\_\+vicsek\+\_\+aligner.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPairVicsekAlign_a0302c78366bdd6fb3c88fffbac99e453}} 
+\index{PairVicsekAlign@{PairVicsekAlign}!set\_pair\_parameters@{set\_pair\_parameters}}
+\index{set\_pair\_parameters@{set\_pair\_parameters}!PairVicsekAlign@{PairVicsekAlign}}
+\doxysubsubsection{set\_pair\_parameters()}
+{\footnotesize\ttfamily void set\+\_\+pair\+\_\+parameters (\begin{DoxyParamCaption}\item[{\textbf{ pairs\+\_\+type} \&}]{pair\+\_\+param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Set pair parameters data for pairwise interactions ~\newline
+ \begin{DoxyNote}{Note}
+It makes no sense to distinguish different pair parameters! 
+\end{DoxyNote}
+
+
+Implements \textbf{ Pair\+Align} \doxyref{}{p.}{classPairAlign_a754ef8deaf209da35ddfbb97484af90a}.
+
+
+
+Definition at line 69 of file pair\+\_\+vicsek\+\_\+aligner.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+vicsek\+\_\+aligner.\+hpp}\item 
+\textbf{ pair\+\_\+vicsek\+\_\+aligner.\+cpp}\end{DoxyCompactItemize}

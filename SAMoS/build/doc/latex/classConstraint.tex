@@ -1,0 +1,205 @@
+\doxysection{Constraint Class Reference}
+\label{classConstraint}\index{Constraint@{Constraint}}
+
+
+\doxysubsection{Detailed Description}
+Base class for a generic constraint \begin{DoxyNote}{Note}
+This is not a constraint (such as fixed volume, or bond lengths) in the sense as it is usually defined in standard texts on molecular dynamics, but it represents an enforcement for the particles to sit on the surface of a manifold (e.\+g., sphere) and velocities to be tangent to the manifold at every given point. 
+\end{DoxyNote}
+
+
+Definition at line 47 of file constraint.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Constraint} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+virtual void \textbf{ enforce} (\textbf{ Particle} \&)
+\begin{DoxyCompactList}\small\item\em Enforce constraint. \end{DoxyCompactList}\item 
+virtual void \textbf{ rotate\+\_\+director} (\textbf{ Particle} \&, double)
+\begin{DoxyCompactList}\small\item\em Rotate director around normal vector to the surface. \end{DoxyCompactList}\item 
+virtual void \textbf{ rotate\+\_\+velocity} (\textbf{ Particle} \&, double)
+\begin{DoxyCompactList}\small\item\em Rotate velocity around normal vector to the surface. \end{DoxyCompactList}\item 
+virtual double \textbf{ project\+\_\+torque} (\textbf{ Particle} \&)
+\begin{DoxyCompactList}\small\item\em Project torque onto normal vector and return rotation angle change. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraint_afc39476dfa8d0d838cb2591f9706ad68}} 
+virtual void \textbf{ compute\+\_\+normal} (\textbf{ Particle} \&, double \&, double \&, double \&)=0
+\begin{DoxyCompactList}\small\item\em Computes normal to the surface. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraint_a22906557549e6b5c51eefee0d779b6f4}} 
+virtual void {\bfseries compute\+\_\+gradient} (\textbf{ Particle} \&, double \&, double \&, double \&)=0
+\item 
+\mbox{\label{classConstraint_a2357150e993b30db04b6eaf88340353a}} 
+virtual double {\bfseries constraint\+\_\+value} (\textbf{ Particle} \&)=0
+\item 
+\mbox{\label{classConstraint_a61e6ed79c03e7836af76951f86fa45d8}} 
+virtual bool {\bfseries rescale} ()
+\item 
+\mbox{\label{classConstraint_acaca8a9fb63b760b401d014ccfdd2b57}} 
+string \textbf{ get\+\_\+group} ()
+\begin{DoxyCompactList}\small\item\em Return the constraint group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classConstraint_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Pointer to the system object. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraint_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles internal messages. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraint_aee0e60fbdf0756b8b27aaef7d73df138}} 
+int \textbf{ m\+\_\+max\+\_\+iter}
+\begin{DoxyCompactList}\small\item\em Maximum number of iterations to enforce the constraint. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraint_a2402f2d959a5d011a8369fd32712405c}} 
+double \textbf{ m\+\_\+tol}
+\begin{DoxyCompactList}\small\item\em Tolerance for the constraint to be satisfied. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraint_a5d799e43f8852ddab3525d7402569a58}} 
+double \textbf{ m\+\_\+rescale}
+\begin{DoxyCompactList}\small\item\em Rescale the constraint (e.\+g., sphere radius) by this much in total. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraint_aacd5f3e4be2e804f47d15cfaac47f3cc}} 
+int \textbf{ m\+\_\+rescale\+\_\+steps}
+\begin{DoxyCompactList}\small\item\em Rescale constrain over this many step. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraint_a689760772cc22912faf70afb7a16ec14}} 
+int \textbf{ m\+\_\+rescale\+\_\+freq}
+\begin{DoxyCompactList}\small\item\em Skip this many steps between rescaling constrain. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraint_aafb45512d1c0be65bb0c659adbb24b30}} 
+double \textbf{ m\+\_\+scale}
+\begin{DoxyCompactList}\small\item\em Rescale the constraint (e.\+g., sphere radius) by this much in each step (=m\+\_\+rescale$\ast$$\ast$(m\+\_\+rescale\+\_\+freq/m\+\_\+rescale\+\_\+steps)) \end{DoxyCompactList}\item 
+\mbox{\label{classConstraint_a96783abc05091e837cb7c4893dd73a65}} 
+string \textbf{ m\+\_\+group}
+\begin{DoxyCompactList}\small\item\em Apply constraint only to particles in this group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classConstraint_a1cfd17a830837a6240119914b04ef079}} 
+\index{Constraint@{Constraint}!Constraint@{Constraint}}
+\index{Constraint@{Constraint}!Constraint@{Constraint}}
+\doxysubsubsection{Constraint()}
+{\footnotesize\ttfamily \textbf{ Constraint} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em id} & unique constraint id \\
+\hline
+{\em sys} & pointer to the system object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & parameters that define the manifolds (e.\+g., sphere radius) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file constraint.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classConstraint_a9ed7e5d3cc625a705ba7d5677d649ced}} 
+\index{Constraint@{Constraint}!enforce@{enforce}}
+\index{enforce@{enforce}!Constraint@{Constraint}}
+\doxysubsubsection{enforce()}
+{\footnotesize\ttfamily void enforce (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Enforce constraint. 
+
+Force particle to be confined to the constraining surface and its velocity to be tangent to it. We assume that during the integration step particles do not move to much away from the surface and we project them down to the surface. This is a generic iterative method. Some constraints, like sphere override this method to make it faster. 
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxyref{Particle}{p.}{classParticle} which is to be projected onto the constraint \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \textbf{ Constraint\+None} \doxyref{}{p.}{classConstraintNone_aa1ace9fafb06330b419e24d4c814125b}, \textbf{ Constraint\+Plane} \doxyref{}{p.}{classConstraintPlane_a9ed7e5d3cc625a705ba7d5677d649ced}, \textbf{ Constraint\+Slab} \doxyref{}{p.}{classConstraintSlab_a9ed7e5d3cc625a705ba7d5677d649ced}, \textbf{ Constraint\+Plane\+Walls} \doxyref{}{p.}{classConstraintPlaneWalls_a9ed7e5d3cc625a705ba7d5677d649ced}, \textbf{ Constraint\+Cylinder} \doxyref{}{p.}{classConstraintCylinder_a9ed7e5d3cc625a705ba7d5677d649ced}, \textbf{ Constraint\+Sphere} \doxyref{}{p.}{classConstraintSphere_a9ed7e5d3cc625a705ba7d5677d649ced}, and \textbf{ Constraint\+Actomyo} \doxyref{}{p.}{classConstraintActomyo_a9ed7e5d3cc625a705ba7d5677d649ced}.
+
+
+
+Definition at line 40 of file constraint.\+cpp.
+
+\mbox{\label{classConstraint_adf6535b1237c4ff7de92ab8d5402dd02}} 
+\index{Constraint@{Constraint}!project\_torque@{project\_torque}}
+\index{project\_torque@{project\_torque}!Constraint@{Constraint}}
+\doxysubsubsection{project\_torque()}
+{\footnotesize\ttfamily double project\+\_\+torque (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Project torque onto normal vector and return rotation angle change. 
+
+Project particle torque onto the normal vector. The assumption here is that the particle\textquotesingle{}s director and velocity are all already in the tangent plane and that it is constrained to the surface. 
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxyref{Particle}{p.}{classParticle} whose torque to project \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \textbf{ Constraint\+Slab} \doxyref{}{p.}{classConstraintSlab_afc4b487e5fb55574ae81ec2fb6b156bc}, \textbf{ Constraint\+None} \doxyref{}{p.}{classConstraintNone_afc4b487e5fb55574ae81ec2fb6b156bc}, \textbf{ Constraint\+Plane} \doxyref{}{p.}{classConstraintPlane_adf6535b1237c4ff7de92ab8d5402dd02}, \textbf{ Constraint\+Plane\+Walls} \doxyref{}{p.}{classConstraintPlaneWalls_adf6535b1237c4ff7de92ab8d5402dd02}, and \textbf{ Constraint\+Actomyo} \doxyref{}{p.}{classConstraintActomyo_adf6535b1237c4ff7de92ab8d5402dd02}.
+
+
+
+Definition at line 158 of file constraint.\+cpp.
+
+\mbox{\label{classConstraint_afdcfa5fdcb29b99970d30f0690dcf3d2}} 
+\index{Constraint@{Constraint}!rotate\_director@{rotate\_director}}
+\index{rotate\_director@{rotate\_director}!Constraint@{Constraint}}
+\doxysubsubsection{rotate\_director()}
+{\footnotesize\ttfamily void rotate\+\_\+director (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p,  }\item[{double}]{phi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Rotate director around normal vector to the surface. 
+
+Rotate director of a particle around the normal vector \begin{DoxyNote}{Note}
+This function assumes that the particle has already been projected onto the surface and that its director is laying in the tangent plane. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxyref{Particle}{p.}{classParticle} whose director to rotate \\
+\hline
+{\em phi} & angle by which to rotate it \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \textbf{ Constraint\+Slab} \doxyref{}{p.}{classConstraintSlab_a70e697a789a4617d47f0731b3ac43348}, \textbf{ Constraint\+None} \doxyref{}{p.}{classConstraintNone_a70e697a789a4617d47f0731b3ac43348}, \textbf{ Constraint\+Plane} \doxyref{}{p.}{classConstraintPlane_afdcfa5fdcb29b99970d30f0690dcf3d2}, \textbf{ Constraint\+Plane\+Walls} \doxyref{}{p.}{classConstraintPlaneWalls_afdcfa5fdcb29b99970d30f0690dcf3d2}, and \textbf{ Constraint\+Actomyo} \doxyref{}{p.}{classConstraintActomyo_afdcfa5fdcb29b99970d30f0690dcf3d2}.
+
+
+
+Definition at line 96 of file constraint.\+cpp.
+
+\mbox{\label{classConstraint_a2f5a47e9f95b0b06cbdb887b9e58d2dc}} 
+\index{Constraint@{Constraint}!rotate\_velocity@{rotate\_velocity}}
+\index{rotate\_velocity@{rotate\_velocity}!Constraint@{Constraint}}
+\doxysubsubsection{rotate\_velocity()}
+{\footnotesize\ttfamily void rotate\+\_\+velocity (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p,  }\item[{double}]{phi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Rotate velocity around normal vector to the surface. 
+
+Rotate velocity of a particle around the normal vector \begin{DoxyNote}{Note}
+This function assumes that the particle has already been projected onto the surface and that its velocity is laying in the tangent plane. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxyref{Particle}{p.}{classParticle} whose velocity to rotate \\
+\hline
+{\em phi} & angle by which to rotate it \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \textbf{ Constraint\+Slab} \doxyref{}{p.}{classConstraintSlab_a1ccbd95c2e880f41105f9591fd86f743}, \textbf{ Constraint\+None} \doxyref{}{p.}{classConstraintNone_a1ccbd95c2e880f41105f9591fd86f743}, \textbf{ Constraint\+Plane} \doxyref{}{p.}{classConstraintPlane_a2f5a47e9f95b0b06cbdb887b9e58d2dc}, \textbf{ Constraint\+Plane\+Walls} \doxyref{}{p.}{classConstraintPlaneWalls_a2f5a47e9f95b0b06cbdb887b9e58d2dc}, and \textbf{ Constraint\+Actomyo} \doxyref{}{p.}{classConstraintActomyo_a2f5a47e9f95b0b06cbdb887b9e58d2dc}.
+
+
+
+Definition at line 128 of file constraint.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ constraint.\+hpp}\item 
+\textbf{ constraint.\+cpp}\end{DoxyCompactItemize}

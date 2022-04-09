@@ -1,0 +1,104 @@
+\doxysection{Pair\+Rod\+Potential Class Reference}
+\label{classPairRodPotential}\index{PairRodPotential@{PairRodPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Rod\+Potential}{p.}{classPairRodPotential} implements the anisotropic soft repulsion between rods of length $ l $ and radius $ \sigma $. Details of the interaction potential, force and torques are straightforward to derive, but lengthy. They are given in a separate set of notes in the docs directory.
+
+\begin{DoxyNote}{Note}
+Rod length is encoded within the potential and not as a part of the \doxyref{Particle}{p.}{classParticle} class as for the time being we would like to keep the core of the code work with spherical objects only. If the anisotropy turns out to be important, this may change and the \doxyref{Particle}{p.}{classParticle} class might start carrying quaternion describing its orientation. This would allow of a uniform interface for implementing arbitrary anisotropic potentials.
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\textbf{ Todo}]Add brief description of the model here. \end{DoxyRefDesc}
+
+
+Definition at line 62 of file pair\+\_\+rod\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Rod\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairRodPotential_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairRodPotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since rod potential needs neighbour list. \end{DoxyCompactList}\item 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairRodPotential_aa7b89576372abc4d0bbf496467e872f7}} 
+double \textbf{ m\+\_\+k}
+\begin{DoxyCompactList}\small\item\em potential strength \end{DoxyCompactList}\item 
+\mbox{\label{classPairRodPotential_a4cd18b0a9c8faaecb6a6aa94dd45f2e0}} 
+double \textbf{ m\+\_\+push}
+\begin{DoxyCompactList}\small\item\em overlap push factor \end{DoxyCompactList}\item 
+\mbox{\label{classPairRodPotential_a1629a4449bec152f61f30be70edd7494}} 
+string \textbf{ m\+\_\+model}
+\begin{DoxyCompactList}\small\item\em soft potential or Hertzian model \end{DoxyCompactList}\item 
+\mbox{\label{classPairRodPotential_acc495b4513813de47e5bbc2729bf406f}} 
+\textbf{ Rod\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairRodPotential_ad50954c0be7c3d8e1a38f81e3d3062a3}} 
+\index{PairRodPotential@{PairRodPotential}!PairRodPotential@{PairRodPotential}}
+\index{PairRodPotential@{PairRodPotential}!PairRodPotential@{PairRodPotential}}
+\doxysubsubsection{PairRodPotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+Rod\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in) \\
+\hline
+{\em param} & Contains information about all parameters (k) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 72 of file pair\+\_\+rod\+\_\+potential.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPairRodPotential_a60f70115b851e412fc0973176c3226b1}} 
+\index{PairRodPotential@{PairRodPotential}!compute@{compute}}
+\index{compute@{compute}!PairRodPotential@{PairRodPotential}}
+\doxysubsubsection{compute()}
+{\footnotesize\ttfamily void compute (\begin{DoxyParamCaption}\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes potentials and forces for all particles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & time step sent by the integrator \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Pair\+Potential} \doxyref{}{p.}{classPairPotential_a47b59507485f0050f21b676fac26c071}.
+
+
+
+Definition at line 33 of file pair\+\_\+rod\+\_\+potential.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+rod\+\_\+potential.\+hpp}\item 
+\textbf{ pair\+\_\+rod\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

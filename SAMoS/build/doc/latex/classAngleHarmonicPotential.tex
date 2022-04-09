@@ -1,0 +1,62 @@
+\doxysection{Angle\+Harmonic\+Potential Class Reference}
+\label{classAngleHarmonicPotential}\index{AngleHarmonicPotential@{AngleHarmonicPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Angle\+Harmonic\+Potential}{p.}{classAngleHarmonicPotential} implements standard harmonic angle potential \doxyref{Potential}{p.}{classPotential} is given as $ U_{harm}\left(\theta\right) = k_\theta\left(\theta-\theta_0\right)^2 $, where $ k_\theta $ is the stiffness, $ \theta $ is the angle between two bonds originating from the particle and $ \theta_0 $ is the rest (equilibrium) value of the angle. Note that we absorbed usual prefactor of $ 1/2 $ into the definition of $ k_\theta $. 
+
+Definition at line 54 of file angle\+\_\+harmonic\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Angle\+Harmonic\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classAngleHarmonicPotential_a7e55935a87e1becf64e52f6f8298a25d}} 
+void \textbf{ set\+\_\+angle\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&angle\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set parameters data for specific angle type ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classAngleHarmonicPotential_a4993c97a669fa259c6574a18d547c117}} 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classAngleHarmonicPotential_aa7b89576372abc4d0bbf496467e872f7}} 
+double \textbf{ m\+\_\+k}
+\begin{DoxyCompactList}\small\item\em stiffness \end{DoxyCompactList}\item 
+\mbox{\label{classAngleHarmonicPotential_a172d36b662440995a23f0cb0adfd6c05}} 
+double \textbf{ m\+\_\+t0}
+\begin{DoxyCompactList}\small\item\em equilibrium angle \end{DoxyCompactList}\item 
+\mbox{\label{classAngleHarmonicPotential_a5ccf5e1a491b6e3b2452460b5295d76d}} 
+\textbf{ Angle\+Harmoic\+Parameters} $\ast$ \textbf{ m\+\_\+angle\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific angle parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classAngleHarmonicPotential_a554421d059a5216fe4420db55978054f}} 
+\index{AngleHarmonicPotential@{AngleHarmonicPotential}!AngleHarmonicPotential@{AngleHarmonicPotential}}
+\index{AngleHarmonicPotential@{AngleHarmonicPotential}!AngleHarmonicPotential@{AngleHarmonicPotential}}
+\doxysubsubsection{AngleHarmonicPotential()}
+{\footnotesize\ttfamily \textbf{ Angle\+Harmonic\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters (k and t0) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file angle\+\_\+harmonic\+\_\+potential.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ angle\+\_\+harmonic\+\_\+potential.\+hpp}\item 
+\textbf{ angle\+\_\+harmonic\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

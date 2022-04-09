@@ -1,0 +1,107 @@
+\doxysection{Logger Class Reference}
+\label{classLogger}\index{Logger@{Logger}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Logger}{p.}{classLogger} class handles output of various measurements, such as average velocity, energies, etc. It is a regular text file with different quantities printed as separate columns. 
+
+Definition at line 73 of file logger.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Logger} (System\+Ptr, Messenger\+Ptr, Potential\+Ptr, Aligner\+Ptr, const string \&, \textbf{ pairs\+\_\+type} \&)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\label{classLogger_a0d77f27eb95c246d555904aaf08018eb}} 
+\textbf{ $\sim$\+Logger} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \textbf{ log} ()
+\begin{DoxyCompactList}\small\item\em Do actual logging. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classLogger_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Pointer to the \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classLogger_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles system wide messages. \end{DoxyCompactList}\item 
+\mbox{\label{classLogger_a3564f52971277ca80a168760d59c0862}} 
+Potential\+Ptr \textbf{ m\+\_\+potential}
+\begin{DoxyCompactList}\small\item\em Handles all interactions. \end{DoxyCompactList}\item 
+\mbox{\label{classLogger_ae00b1bd3e53e4cee65705f63a4d594c5}} 
+Aligner\+Ptr \textbf{ m\+\_\+aligner}
+\begin{DoxyCompactList}\small\item\em Handles all alignment interactions. \end{DoxyCompactList}\item 
+\mbox{\label{classLogger_a597ef8e0e2e42196a8b4ab100365a8d0}} 
+string \textbf{ m\+\_\+file\+\_\+name}
+\begin{DoxyCompactList}\small\item\em Base file name for the output file. \end{DoxyCompactList}\item 
+\mbox{\label{classLogger_a287512da6c9a2259f6f9fdd0273494e9}} 
+\textbf{ pairs\+\_\+type} \textbf{ m\+\_\+params}
+\begin{DoxyCompactList}\small\item\em Control parameters. \end{DoxyCompactList}\item 
+\mbox{\label{classLogger_a0f9a3de1773381f5d03ddb0a8a1dc38b}} 
+int \textbf{ m\+\_\+freq}
+\begin{DoxyCompactList}\small\item\em Frequency with which to dump data. \end{DoxyCompactList}\item 
+\mbox{\label{classLogger_a8aa7877d61b56f67926beb3e6acf3652}} 
+ofstream \textbf{ m\+\_\+out}
+\begin{DoxyCompactList}\small\item\em Output stream to which to send output. \end{DoxyCompactList}\item 
+\mbox{\label{classLogger_a486d2c91a4e21409cc7d14e502f4415d}} 
+map$<$ string, Log\+Ptr $>$ \textbf{ m\+\_\+logger}
+\begin{DoxyCompactList}\small\item\em Contains all logger objects. \end{DoxyCompactList}\item 
+\mbox{\label{classLogger_ab0d1f3b2a6b4b31de46df1cccc2a7959}} 
+list$<$ string $>$ \textbf{ m\+\_\+to\+\_\+log}
+\begin{DoxyCompactList}\small\item\em Holds quantities to be logged. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classLogger_ae0394ca5bbc50d770be7755d15a1fb69}} 
+\index{Logger@{Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Logger@{Logger}}
+\doxysubsubsection{Logger()}
+{\footnotesize\ttfamily \textbf{ Logger} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align,  }\item[{const string \&}]{file\+\_\+name,  }\item[{\textbf{ pairs\+\_\+type} \&}]{params }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Constructor for a logger object (multiple different logger can be present). 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Global system-\/wide messenger \\
+\hline
+{\em pot} & Pointer to the interaction handler \\
+\hline
+{\em align} & Pointer to the alignment handler \\
+\hline
+{\em file\+\_\+name} & Name of the file to for this log \\
+\hline
+{\em params} & Various control parameters (e.\+g., output frequency) passed by the parser \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file logger.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classLogger_aa5af53510557e77a03906c5016ebe66f}} 
+\index{Logger@{Logger}!log@{log}}
+\index{log@{log}!Logger@{Logger}}
+\doxysubsubsection{log()}
+{\footnotesize\ttfamily void log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Do actual logging. 
+
+Does actual logging 
+
+Definition at line 126 of file logger.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ logger.\+hpp}\item 
+\textbf{ logger.\+cpp}\end{DoxyCompactItemize}

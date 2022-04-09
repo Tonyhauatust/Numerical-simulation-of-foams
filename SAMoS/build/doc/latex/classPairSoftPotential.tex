@@ -1,0 +1,94 @@
+\doxysection{Pair\+Soft\+Potential Class Reference}
+\label{classPairSoftPotential}\index{PairSoftPotential@{PairSoftPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Soft\+Potential}{p.}{classPairSoftPotential} implements the soft repulsive force between particles. \doxyref{Potential}{p.}{classPotential} is given as $ U_{soft}\left(r_{ij}\right) = \frac{k}{2} \left(a_i + a_j - r_{ij}\right)^2 $, if $ r_{ij} \le a_i + a_j $ or $ U_{soft} = 0 $ if $ r_{ij} > a_i + a_j $. $ k $ is the potential strength, $ a_i $ and $ a_j $ are radii of the two particles and $ r_{ij} $ is the interparticle distance. 
+
+Definition at line 53 of file pair\+\_\+soft\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Soft\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairSoftPotential_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairSoftPotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since soft potential needs neighbour list. \end{DoxyCompactList}\item 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairSoftPotential_aa7b89576372abc4d0bbf496467e872f7}} 
+double \textbf{ m\+\_\+k}
+\begin{DoxyCompactList}\small\item\em potential strength \end{DoxyCompactList}\item 
+\mbox{\label{classPairSoftPotential_a9c41cdb9725c9ef90a5ef62f86390762}} 
+double \textbf{ m\+\_\+a}
+\begin{DoxyCompactList}\small\item\em potential range \end{DoxyCompactList}\item 
+\mbox{\label{classPairSoftPotential_a8320dccbde18a8f622f7051497c21037}} 
+\textbf{ Soft\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairSoftPotential_a5df495aecb9ba9987f758361ca8b2204}} 
+\index{PairSoftPotential@{PairSoftPotential}!PairSoftPotential@{PairSoftPotential}}
+\index{PairSoftPotential@{PairSoftPotential}!PairSoftPotential@{PairSoftPotential}}
+\doxysubsubsection{PairSoftPotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+Soft\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in) \\
+\hline
+{\em param} & Contains information about all parameters (k) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file pair\+\_\+soft\+\_\+potential.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPairSoftPotential_a60f70115b851e412fc0973176c3226b1}} 
+\index{PairSoftPotential@{PairSoftPotential}!compute@{compute}}
+\index{compute@{compute}!PairSoftPotential@{PairSoftPotential}}
+\doxysubsubsection{compute()}
+{\footnotesize\ttfamily void compute (\begin{DoxyParamCaption}\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes potentials and forces for all particles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & time step sent by the integrator \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Pair\+Potential} \doxyref{}{p.}{classPairPotential_a47b59507485f0050f21b676fac26c071}.
+
+
+
+Definition at line 33 of file pair\+\_\+soft\+\_\+potential.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+soft\+\_\+potential.\+hpp}\item 
+\textbf{ pair\+\_\+soft\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

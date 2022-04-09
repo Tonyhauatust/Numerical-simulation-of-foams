@@ -1,0 +1,176 @@
+\doxysection{Aligner Class Reference}
+\label{classAligner}\index{Aligner@{Aligner}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Aligner}{p.}{classAligner} class handles all director aligners (pairwise and external field type) present in the system. All aligners are stored in two S\+TL maps which both have strings as keys while items are pointers (boost shared\+\_\+ptr) to the \doxyref{Pair\+Align}{p.}{classPairAlign} and \doxyref{External\+Align}{p.}{classExternalAlign} abstract classes, respectively. The integrator part of the code calls member functions of this class to perform actual alignment computation. 
+
+Definition at line 54 of file aligner.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Aligner} (System\+Ptr sys, const Messenger\+Ptr msg)
+\item 
+\mbox{\label{classAligner_ab93205b00c66ff6aa8473e1ad4bbcdb7}} 
+\textbf{ $\sim$\+Aligner} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \textbf{ add\+\_\+pair\+\_\+align} (const string \&name, Pair\+Align\+Ptr align)
+\item 
+void \textbf{ add\+\_\+external\+\_\+align} (const string \&name, External\+Align\+Ptr align)
+\item 
+void \textbf{ add\+\_\+pair\+\_\+align\+\_\+parameters} (const string \&name, \textbf{ pairs\+\_\+type} \&params)
+\item 
+void \textbf{ add\+\_\+external\+\_\+align\+\_\+parameters} (const string \&name, \textbf{ pairs\+\_\+type} \&params)
+\item 
+double \textbf{ compute\+\_\+pair\+\_\+alignment\+\_\+energy\+\_\+of\+\_\+type} (const string \&type)
+\item 
+\mbox{\label{classAligner_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true if any of the potentials need neighbour list. \end{DoxyCompactList}\item 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Compute all alignments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classAligner_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Contains pointer to the \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classAligner_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles messages sent to output. \end{DoxyCompactList}\item 
+\mbox{\label{classAligner_a4a9a60fbe16b9e17ea41f87698ad83be}} 
+Pair\+Align\+Type \textbf{ m\+\_\+pair\+\_\+align}
+\begin{DoxyCompactList}\small\item\em Contains information about all pair alignment. \end{DoxyCompactList}\item 
+\mbox{\label{classAligner_a38b99ee8e3eb69d2d5998a009a472150}} 
+Extern\+Align\+Type \textbf{ m\+\_\+external\+\_\+align}
+\begin{DoxyCompactList}\small\item\em Contains information about all external alignment. \end{DoxyCompactList}\item 
+\mbox{\label{classAligner_aa7ba9e816498a8b77d66bc83e6f51321}} 
+bool \textbf{ m\+\_\+need\+\_\+nlist}
+\begin{DoxyCompactList}\small\item\em If true, there are potentials that need neighbour list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classAligner_a230ef03a6a5bba218e82436737a8385f}} 
+\index{Aligner@{Aligner}!Aligner@{Aligner}}
+\index{Aligner@{Aligner}!Aligner@{Aligner}}
+\doxysubsubsection{Aligner()}
+{\footnotesize\ttfamily \textbf{ Aligner} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{const Messenger\+Ptr}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct \doxyref{Aligner}{p.}{classAligner} object 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Reference to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Reference to the system wide messenger \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file aligner.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classAligner_a26685a2d1589153a0669539215dc2d45}} 
+\index{Aligner@{Aligner}!add\_external\_align@{add\_external\_align}}
+\index{add\_external\_align@{add\_external\_align}!Aligner@{Aligner}}
+\doxysubsubsection{add\_external\_align()}
+{\footnotesize\ttfamily void add\+\_\+external\+\_\+align (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{External\+Align\+Ptr}]{align }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add external alignment to the list of all external alignments 
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique name of the aligner \\
+\hline
+{\em align} & Pointer to the external alignment object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 85 of file aligner.\+hpp.
+
+\mbox{\label{classAligner_a1259bc086f840586ef568e4c7063e56d}} 
+\index{Aligner@{Aligner}!add\_external\_align\_parameters@{add\_external\_align\_parameters}}
+\index{add\_external\_align\_parameters@{add\_external\_align\_parameters}!Aligner@{Aligner}}
+\doxysubsubsection{add\_external\_align\_parameters()}
+{\footnotesize\ttfamily void add\+\_\+external\+\_\+align\+\_\+parameters (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{\textbf{ pairs\+\_\+type} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add external aligner parameters 
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique name of the aligner \\
+\hline
+{\em params} & maps with new aligner parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file aligner.\+hpp.
+
+\mbox{\label{classAligner_a42a730b03f16c7e88570e3a26a55c3a8}} 
+\index{Aligner@{Aligner}!add\_pair\_align@{add\_pair\_align}}
+\index{add\_pair\_align@{add\_pair\_align}!Aligner@{Aligner}}
+\doxysubsubsection{add\_pair\_align()}
+{\footnotesize\ttfamily void add\+\_\+pair\+\_\+align (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{Pair\+Align\+Ptr}]{align }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add pairwise alignment to the list of all pair alignments 
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique name of the aligner \\
+\hline
+{\em align} & Pointer to the pairwise alignment object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file aligner.\+hpp.
+
+\mbox{\label{classAligner_a50c690ec7e0eadc6ac0daf239184078a}} 
+\index{Aligner@{Aligner}!add\_pair\_align\_parameters@{add\_pair\_align\_parameters}}
+\index{add\_pair\_align\_parameters@{add\_pair\_align\_parameters}!Aligner@{Aligner}}
+\doxysubsubsection{add\_pair\_align\_parameters()}
+{\footnotesize\ttfamily void add\+\_\+pair\+\_\+align\+\_\+parameters (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{\textbf{ pairs\+\_\+type} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add pairwise alignment parameters 
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique name of the aligner \\
+\hline
+{\em params} & maps with new aligner parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 94 of file aligner.\+hpp.
+
+\mbox{\label{classAligner_a4993c97a669fa259c6574a18d547c117}} 
+\index{Aligner@{Aligner}!compute@{compute}}
+\index{compute@{compute}!Aligner@{Aligner}}
+\doxysubsubsection{compute()}
+{\footnotesize\ttfamily void compute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Compute all alignments. 
+
+Iterate over all pair and external aligners and compute torques 
+
+Definition at line 35 of file aligner.\+cpp.
+
+\mbox{\label{classAligner_a268a1e42bee1681b940658be1e68d26b}} 
+\index{Aligner@{Aligner}!compute\_pair\_alignment\_energy\_of\_type@{compute\_pair\_alignment\_energy\_of\_type}}
+\index{compute\_pair\_alignment\_energy\_of\_type@{compute\_pair\_alignment\_energy\_of\_type}!Aligner@{Aligner}}
+\doxysubsubsection{compute\_pair\_alignment\_energy\_of\_type()}
+{\footnotesize\ttfamily double compute\+\_\+pair\+\_\+alignment\+\_\+energy\+\_\+of\+\_\+type (\begin{DoxyParamCaption}\item[{const string \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compute total pair alignment energy of a given type (for measurement) 
+\begin{DoxyParams}{Parameters}
+{\em type} & pair alignment type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 109 of file aligner.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ aligner.\+hpp}\item 
+\textbf{ aligner.\+cpp}\end{DoxyCompactItemize}

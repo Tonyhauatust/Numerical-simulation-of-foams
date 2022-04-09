@@ -1,0 +1,90 @@
+\doxysection{Integrator\+Brownian\+Pos Class Reference}
+\label{classIntegratorBrownianPos}\index{IntegratorBrownianPos@{IntegratorBrownianPos}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Integrator\+Brownian}{p.}{classIntegratorBrownian} class implements Brownian dynamics for the particle position. \doxyref{Particle}{p.}{classParticle} director will not be integrated. 
+
+Definition at line 43 of file integrator\+\_\+brownian\+\_\+pos.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Integrator\+Brownian\+Pos} (System\+Ptr sys, Messenger\+Ptr msg, Potential\+Ptr pot, Aligner\+Ptr align, Neighbour\+List\+Ptr nlist, Constrainer\+Ptr cons, Value\+Ptr temp, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ integrate} ()
+\begin{DoxyCompactList}\small\item\em Propagate system for a time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classIntegratorBrownianPos_aaba456a057071541006327fc2025f5df}} 
+R\+N\+G\+Ptr \textbf{ m\+\_\+rng}
+\begin{DoxyCompactList}\small\item\em Random number generator. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorBrownianPos_a0db1e4ef851bba28f70d9d9b94b6b788}} 
+double \textbf{ m\+\_\+mu}
+\begin{DoxyCompactList}\small\item\em Mobility. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classIntegratorBrownianPos_a96945021d0d2c1c9d79424dd46a8cf1c}} 
+\index{IntegratorBrownianPos@{IntegratorBrownianPos}!IntegratorBrownianPos@{IntegratorBrownianPos}}
+\index{IntegratorBrownianPos@{IntegratorBrownianPos}!IntegratorBrownianPos@{IntegratorBrownianPos}}
+\doxysubsubsection{IntegratorBrownianPos()}
+{\footnotesize\ttfamily \textbf{ Integrator\+Brownian\+Pos} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Constrainer\+Ptr}]{cons,  }\item[{Value\+Ptr}]{temp,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to a \doxyref{System}{p.}{classSystem} object containing all particles \\
+\hline
+{\em msg} & Internal message handler \\
+\hline
+{\em pot} & Pairwise and external interaction handler \\
+\hline
+{\em align} & Pairwise and external alignment handler \\
+\hline
+{\em nlist} & Neighbour list object \\
+\hline
+{\em cons} & Enforces constraints to the manifold surface \\
+\hline
+{\em temp} & Temperature control object \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file integrator\+\_\+brownian\+\_\+pos.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classIntegratorBrownianPos_a611ba68b85e9a65f5d842f706de335fd}} 
+\index{IntegratorBrownianPos@{IntegratorBrownianPos}!integrate@{integrate}}
+\index{integrate@{integrate}!IntegratorBrownianPos@{IntegratorBrownianPos}}
+\doxysubsubsection{integrate()}
+{\footnotesize\ttfamily void integrate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Propagate system for a time step. 
+
+Integrates equation of motion in the over-\/damped limit using a first order scheme. \begin{DoxyNote}{Note}
+This integrator applies only to the particle position and does not implement activity. In order to use activity, you should define, e.\+g. external self propulsion. ~\newline
+ 
+\end{DoxyNote}
+
+
+Implements \textbf{ Integrator} \doxyref{}{p.}{classIntegrator_aafcdca198ea2dca2a77c7d48486e1a87}.
+
+
+
+Definition at line 37 of file integrator\+\_\+brownian\+\_\+pos.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ integrator\+\_\+brownian\+\_\+pos.\+hpp}\item 
+\textbf{ integrator\+\_\+brownian\+\_\+pos.\+cpp}\end{DoxyCompactItemize}

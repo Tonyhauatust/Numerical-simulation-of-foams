@@ -1,0 +1,98 @@
+\doxysection{Integrator\+Brownian\+Align Class Reference}
+\label{classIntegratorBrownianAlign}\index{IntegratorBrownianAlign@{IntegratorBrownianAlign}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Integrator\+Brownian\+Align}{p.}{classIntegratorBrownianAlign} class handles Brownian dynamics. 
+
+Definition at line 42 of file integrator\+\_\+brownian\+\_\+align.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Integrator\+Brownian\+Align} (System\+Ptr sys, Messenger\+Ptr msg, Potential\+Ptr pot, Aligner\+Ptr align, Neighbour\+List\+Ptr nlist, Constrainer\+Ptr cons, Value\+Ptr temp, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ integrate} ()
+\begin{DoxyCompactList}\small\item\em Propagate system for a time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classIntegratorBrownianAlign_aaba456a057071541006327fc2025f5df}} 
+R\+N\+G\+Ptr \textbf{ m\+\_\+rng}
+\begin{DoxyCompactList}\small\item\em Random number generator. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorBrownianAlign_aed2963578a7e6c08fb27c0dcdfc9c627}} 
+double \textbf{ m\+\_\+nu}
+\begin{DoxyCompactList}\small\item\em Rotational diffusion. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorBrownianAlign_a34ca4cd55d13ccbe4aa9e67ba213f255}} 
+double \textbf{ m\+\_\+mur}
+\begin{DoxyCompactList}\small\item\em Rotational mobility. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorBrownianAlign_a349917c962b1bd3860cbfed6541108f5}} 
+double \textbf{ m\+\_\+stoch\+\_\+coeff}
+\begin{DoxyCompactList}\small\item\em Factor for the stochastic part of the equation of motion ( $ = \nu \sqrt{dt} $) \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorBrownianAlign_aab2c5c19ce0129c00668a81878067d53}} 
+bool \textbf{ m\+\_\+nematic}
+\begin{DoxyCompactList}\small\item\em If true; assume that the system is nematic, and the velocity will switch direction randomly. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorBrownianAlign_aab221f1017e8431da2653dcdd348ed64}} 
+double \textbf{ m\+\_\+tau}
+\begin{DoxyCompactList}\small\item\em Time scale for the direction flip for nematic systems (flip with probability dt/tau) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classIntegratorBrownianAlign_a007b3c1ec590781d82fbeb1c62ef78c3}} 
+\index{IntegratorBrownianAlign@{IntegratorBrownianAlign}!IntegratorBrownianAlign@{IntegratorBrownianAlign}}
+\index{IntegratorBrownianAlign@{IntegratorBrownianAlign}!IntegratorBrownianAlign@{IntegratorBrownianAlign}}
+\doxysubsubsection{IntegratorBrownianAlign()}
+{\footnotesize\ttfamily \textbf{ Integrator\+Brownian\+Align} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Constrainer\+Ptr}]{cons,  }\item[{Value\+Ptr}]{temp,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to a \doxyref{System}{p.}{classSystem} object containing all particles \\
+\hline
+{\em msg} & Internal message handler \\
+\hline
+{\em pot} & Pairwise and external interaction handler \\
+\hline
+{\em align} & Pairwise and external alignment handler \\
+\hline
+{\em nlist} & Neighbour list object \\
+\hline
+{\em cons} & Enforces constraints to the manifold surface \\
+\hline
+{\em temp} & Temperature control object \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file integrator\+\_\+brownian\+\_\+align.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classIntegratorBrownianAlign_a611ba68b85e9a65f5d842f706de335fd}} 
+\index{IntegratorBrownianAlign@{IntegratorBrownianAlign}!integrate@{integrate}}
+\index{integrate@{integrate}!IntegratorBrownianAlign@{IntegratorBrownianAlign}}
+\doxysubsubsection{integrate()}
+{\footnotesize\ttfamily void integrate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Propagate system for a time step. 
+
+This function integrates equations of motion as introduced in the Eq. (1b) of Y. Fily, et al., ar\+Xiv\+:1309.\+3714 $ \partial_t \vartheta_i = \eta_i(t) $, where $ \mu $ is the mobility, $ \vartheta_i $ defines orientation of the velocity in the tangent plane, $ \hat{\vec n}_i = \left(\cos\vartheta_i,\sin\vartheta_i\right) $, and $ \eta_i(t) $ is the Gaussian white noise with zero mean and delta function correlations, $ \left<\eta_i(t)\eta_j(t\textnormal{\textquotesingle})\right> = 2\nu_r\delta_{ij}\delta\left(t-t\textnormal{\textquotesingle}\right) $, with $ \nu_r $ being the rotational diffusion rate. 
+
+Implements \textbf{ Integrator} \doxyref{}{p.}{classIntegrator_aafcdca198ea2dca2a77c7d48486e1a87}.
+
+
+
+Definition at line 41 of file integrator\+\_\+brownian\+\_\+align.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ integrator\+\_\+brownian\+\_\+align.\+hpp}\item 
+\textbf{ integrator\+\_\+brownian\+\_\+align.\+cpp}\end{DoxyCompactItemize}

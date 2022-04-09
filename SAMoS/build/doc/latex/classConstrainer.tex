@@ -1,0 +1,106 @@
+\doxysection{Constrainer Class Reference}
+\label{classConstrainer}\index{Constrainer@{Constrainer}}
+
+
+\doxysubsection{Detailed Description}
+Constainer class handles all constraints presnt in the system. All constraints are stored in a S\+TL vector. The integrator part of the code calls member functions of this class to apply actual constraints. 
+
+Definition at line 48 of file constrainer.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Constrainer} (System\+Ptr sys, const Messenger\+Ptr msg)
+\item 
+\mbox{\label{classConstrainer_abfed220ef10f6b2ba2bcc14c1037a995}} 
+\textbf{ $\sim$\+Constrainer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \textbf{ add\+\_\+constraint} (const string \&name, \textbf{ Constraint\+Ptr} constraint)
+\item 
+\mbox{\label{classConstrainer_aa1ace9fafb06330b419e24d4c814125b}} 
+void \textbf{ enforce} (\textbf{ Particle} \&p)
+\begin{DoxyCompactList}\small\item\em Apply all constaints. \end{DoxyCompactList}\item 
+\mbox{\label{classConstrainer_a70e697a789a4617d47f0731b3ac43348}} 
+void \textbf{ rotate\+\_\+director} (\textbf{ Particle} \&p, double phi)
+\begin{DoxyCompactList}\small\item\em Rotate director around normal vector to the surface. \end{DoxyCompactList}\item 
+\mbox{\label{classConstrainer_a1ccbd95c2e880f41105f9591fd86f743}} 
+void \textbf{ rotate\+\_\+velocity} (\textbf{ Particle} \&p, double phi)
+\begin{DoxyCompactList}\small\item\em Rotate velocity around normal vector to the surface. \end{DoxyCompactList}\item 
+\mbox{\label{classConstrainer_afc4b487e5fb55574ae81ec2fb6b156bc}} 
+double \textbf{ project\+\_\+torque} (\textbf{ Particle} \&p)
+\begin{DoxyCompactList}\small\item\em Project torque onto normal vector and return rotation angle change. \end{DoxyCompactList}\item 
+void \textbf{ compute\+\_\+normal} (\textbf{ Particle} \&p, double \&Nx, double \&Ny, double \&Nz)
+\item 
+\mbox{\label{classConstrainer_ac9709d92eab82a813488f353afc83e3f}} 
+bool {\bfseries rescale} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classConstrainer_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Contains pointer to the \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classConstrainer_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles messages sent to output. \end{DoxyCompactList}\item 
+\mbox{\label{classConstrainer_a5914a3b856d720a681db389ed58be918}} 
+vector$<$ \textbf{ Constraint\+Ptr} $>$ \textbf{ m\+\_\+constraints}
+\begin{DoxyCompactList}\small\item\em List of all constraints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classConstrainer_afc255482fe72956d2dee436c1a20968f}} 
+\index{Constrainer@{Constrainer}!Constrainer@{Constrainer}}
+\index{Constrainer@{Constrainer}!Constrainer@{Constrainer}}
+\doxysubsubsection{Constrainer()}
+{\footnotesize\ttfamily \textbf{ Constrainer} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{const Messenger\+Ptr}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct \doxyref{Constrainer}{p.}{classConstrainer} object 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Reference to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Reference to the system wide messenger \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file constrainer.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classConstrainer_a2b90e040ec04c006baaf2693fc7cc883}} 
+\index{Constrainer@{Constrainer}!add\_constraint@{add\_constraint}}
+\index{add\_constraint@{add\_constraint}!Constrainer@{Constrainer}}
+\doxysubsubsection{add\_constraint()}
+{\footnotesize\ttfamily void add\+\_\+constraint (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{\textbf{ Constraint\+Ptr}}]{constraint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add constraint to the list of all constraints 
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique name of the constraint \\
+\hline
+{\em constraint} & Pointer to the constraint \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 66 of file constrainer.\+hpp.
+
+\mbox{\label{classConstrainer_a456cac7812f6819d976dca1e1c2ff45c}} 
+\index{Constrainer@{Constrainer}!compute\_normal@{compute\_normal}}
+\index{compute\_normal@{compute\_normal}!Constrainer@{Constrainer}}
+\doxysubsubsection{compute\_normal()}
+{\footnotesize\ttfamily void compute\+\_\+normal (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p,  }\item[{double \&}]{Nx,  }\item[{double \&}]{Ny,  }\item[{double \&}]{Nz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Computes normal to the surface \begin{DoxyNote}{Note}
+That way thing are set up know only the normal to last constraint will be applied 
+\end{DoxyNote}
+
+
+Definition at line 104 of file constrainer.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ constrainer.\+hpp}\end{DoxyCompactItemize}

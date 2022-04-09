@@ -1,0 +1,94 @@
+\doxysection{Pair\+Line\+Tension\+Potential Class Reference}
+\label{classPairLineTensionPotential}\index{PairLineTensionPotential@{PairLineTensionPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Line\+Tension\+Potential}{p.}{classPairLineTensionPotential} implements the line tension term in the model for an active tissue model. Force only exists along boundary edges and is proportional to the length of the edge, i.\+e., $ \vec f_i = \lambda \left|\vec r_{ij}\right|\hat{\vec r}_{ij} $ and $ \vec f_j = -\lambda \left|\vec r_{ij}\right|\hat{\vec r}_{ij} $, where $ \vec r_{ij} $ if the vector along the edge connecting vertices belong to it. 
+
+Definition at line 52 of file pair\+\_\+line\+\_\+tension\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Line\+Tension\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairLineTensionPotential_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairLineTensionPotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since vertex-\/particle potential needs neighbour list. \end{DoxyCompactList}\item 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairLineTensionPotential_a8199c2743878137e6dd88386d45eb156}} 
+double \textbf{ m\+\_\+lambda}
+\begin{DoxyCompactList}\small\item\em line tension \end{DoxyCompactList}\item 
+\mbox{\label{classPairLineTensionPotential_a2f04fc367e8a4444985634cf5e9be12b}} 
+double \textbf{ m\+\_\+l0}
+\begin{DoxyCompactList}\small\item\em rest lenght (optimal distance) between neigbouring cells \end{DoxyCompactList}\item 
+\mbox{\label{classPairLineTensionPotential_adb52b2c8bb3cdc511070ae86fef8e162}} 
+\textbf{ Line\+Tension\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairLineTensionPotential_ad68a9b40438f2830e12eec2d3e48d9d6}} 
+\index{PairLineTensionPotential@{PairLineTensionPotential}!PairLineTensionPotential@{PairLineTensionPotential}}
+\index{PairLineTensionPotential@{PairLineTensionPotential}!PairLineTensionPotential@{PairLineTensionPotential}}
+\doxysubsubsection{PairLineTensionPotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+Line\+Tension\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in) \\
+\hline
+{\em param} & Contains information about all parameters (k) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file pair\+\_\+line\+\_\+tension\+\_\+potential.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPairLineTensionPotential_a60f70115b851e412fc0973176c3226b1}} 
+\index{PairLineTensionPotential@{PairLineTensionPotential}!compute@{compute}}
+\index{compute@{compute}!PairLineTensionPotential@{PairLineTensionPotential}}
+\doxysubsubsection{compute()}
+{\footnotesize\ttfamily void compute (\begin{DoxyParamCaption}\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes potentials and forces for all particles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & time step sent by the integrator \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Pair\+Potential} \doxyref{}{p.}{classPairPotential_a47b59507485f0050f21b676fac26c071}.
+
+
+
+Definition at line 34 of file pair\+\_\+line\+\_\+tension\+\_\+potential.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+line\+\_\+tension\+\_\+potential.\+hpp}\item 
+\textbf{ pair\+\_\+line\+\_\+tension\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

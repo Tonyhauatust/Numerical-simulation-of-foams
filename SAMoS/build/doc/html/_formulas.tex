@@ -1,0 +1,483 @@
+\documentclass{article}
+\usepackage{ifthen}
+\usepackage{epsfig}
+\usepackage[utf8]{inputenc}
+\usepackage{newunicodechar}
+  \newunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \newunicodechar{²}{${}^{2}$}% Superscript two
+  \newunicodechar{³}{${}^{3}$}% Superscript three
+
+\pagestyle{empty}
+\begin{document}
+$ \vec \tau_i = -1/tau \vec n_i\times\vec v_i $
+\pagebreak
+
+$ tau $
+\pagebreak
+
+$ \vec v_i $
+\pagebreak
+
+$ \vec H $
+\pagebreak
+
+$ i $
+\pagebreak
+
+$ \vec \tau_i = \vec H \times \vec n_i $
+\pagebreak
+
+$ \vec \tau_i = \gamma \vec v_i \times \vec n_i $
+\pagebreak
+
+$ \gamma $
+\pagebreak
+
+$ \vec H = J\vec e_r $
+\pagebreak
+
+$ \vec e_r $
+\pagebreak
+
+$ \vec r_c $
+\pagebreak
+
+$ \vec r_i $
+\pagebreak
+
+$ \vec \tau_i = -J \vec n_i\times\vec a_i $
+\pagebreak
+
+$ J $
+\pagebreak
+
+$ \vec a_i $
+\pagebreak
+
+$ \vec \tau_i = -1/tau \sum_j\vec n_i\times\vec b_{ij} $
+\pagebreak
+
+$ \vec b_{ij} $
+\pagebreak
+
+$ j $
+\pagebreak
+
+$ r_{cut} \left(\leq r_{nl}\right) $
+\pagebreak
+
+$ r_{nl} $
+\pagebreak
+
+$ \vec \tau_i = 2 J \sum_j \left(\vec n_i\cdot\vec n_j\right)\vec n_i\times\vec n_j $
+\pagebreak
+
+$ \vec n_j $
+\pagebreak
+
+$ \vec \tau_i = 2 J \sum_j \vec n_i\times\vec n_j $
+\pagebreak
+
+$ \vec \tau_i = 2 J \sum_j \left(\vec v_i\cdot\vec v_j\right)\vec v_i\times\vec v_j $
+\pagebreak
+
+$ \vec \tau_i = 2 J \sum_j \vec v_i\times\vec v_j $
+\pagebreak
+
+$ \vec v_j $
+\pagebreak
+
+$ \langle \vec v_i\rangle = \sum_{\mathrm{j n.n i}} \vec v_j $
+\pagebreak
+
+$ g_x = \frac{2x}{a^2}, $
+\pagebreak
+
+$ g_y = \frac{2y}{b^2}, $
+\pagebreak
+
+$ g_z = \frac{2z}{c^2}. $
+\pagebreak
+
+$ a $
+\pagebreak
+
+$ b $
+\pagebreak
+
+$ c $
+\pagebreak
+
+$ g_x = -\frac{2 A x e^{-\frac{x^2}{a^2}-\frac{y^2}{b^2}}}{a^2}, $
+\pagebreak
+
+$ g_y = -\frac{2 A y e^{-\frac{x^2}{a^2}-\frac{y^2}{b^2}}}{b^2}, $
+\pagebreak
+
+$ g_z = -1. $
+\pagebreak
+
+$ z(x,y)=A \exp\left(-\frac{x^2}{a^2}\right)\exp\left(-\frac{y^2}{b^2}\right) $
+\pagebreak
+
+$ A $
+\pagebreak
+
+$ g_x = \frac{2 \pi \left(\cos \left(\frac{2 \pi x}{lx}\right) \cos \left(\frac{2 \pi z}{lz}\right)-\sin \left(\frac{2 \pi x}{lx}\right) \sin \left(\frac{2 \pi y}{ly}\right)\right)}{lx}, $
+\pagebreak
+
+$ g_y = \frac{2 \pi \left(\cos \left(\frac{2 \pi x}{lx}\right) \cos \left(\frac{2 \pi y}{ly}\right)-\sin \left(\frac{2 \pi y}{ly}\right) \sin \left(\frac{2 \pi z}{lz}\right)\right)}{ly}, $
+\pagebreak
+
+$ g_z = \frac{2 \pi \left(\cos \left(\frac{2 \pi y}{ly}\right) \cos \left(\frac{2 \pi z}{lz}\right)-\sin \left(\frac{2 \pi x}{lx}\right) \sin \left(\frac{2 \pi z}{lz}\right)\right)}{lz}. $
+\pagebreak
+
+$ \cos \left(\frac{2 \pi x}{lx}\right) \sin \left(\frac{2 \pi y}{ly}\right)+\sin \left(\frac{2 \pi x}{lx}\right) \cos \left(\frac{2 \pi z}{lz}\right)+\cos \left(\frac{2 \pi y}{ly}\right) \sin \left(\frac{2 \pi z}{lz}\right) = 0. $
+\pagebreak
+
+$ f(x,y,z) = (x^2+y^2+z^2)^2 - 2a^2(x^2-y^2-z^2)+a^4-b^4 $
+\pagebreak
+
+$ a < b $
+\pagebreak
+
+$ v_x = 0 $
+\pagebreak
+
+$ z = z_{lo} $
+\pagebreak
+
+$ z = z_{hi} $
+\pagebreak
+
+$ z_{low} $
+\pagebreak
+
+$ z_{hi} $
+\pagebreak
+
+$ V(\vec r) = \sum_{i=1}^{4}\frac{1}{|\vec r - \vec a_i|} $
+\pagebreak
+
+$ g_x = -\frac{2x\left(c-\sqrt{x^2+y^2}\right)}{\sqrt{x^2+y^2}}, $
+\pagebreak
+
+$ g_y = -\frac{2y\left(c-\sqrt{x^2+y^2}\right)}{\sqrt{x^2+y^2}}, $
+\pagebreak
+
+$ g_z = 2z. $
+\pagebreak
+
+$ \vec F_m \cdot \vec \tau > 0 $
+\pagebreak
+
+$ \vec F_m $
+\pagebreak
+
+$ \tau $
+\pagebreak
+
+$ F_a $
+\pagebreak
+
+$ = \nu \sqrt{dt} $
+\pagebreak
+
+$ \partial_t \vec r_i = v_0 \hat{\vec n_i} + \mu \sum_{i\neq j}\vec F_{ij} $
+\pagebreak
+
+$ \partial_t \vartheta_i = \eta_i(t) $
+\pagebreak
+
+$ \mu $
+\pagebreak
+
+$ \vartheta_i $
+\pagebreak
+
+$ \hat{\vec n}_i = \left(\cos\vartheta_i,\sin\vartheta_i\right) $
+\pagebreak
+
+$ \eta_i(t) $
+\pagebreak
+
+$ \left<\eta_i(t)\eta_j(t')\right> = 2\nu_r\delta_{ij}\delta\left(t-t'\right) $
+\pagebreak
+
+$ \nu_r $
+\pagebreak
+
+$ \partial_t \vec r_i = d_0 \kappa_i(t) \hat{\vec n_i} $
+\pagebreak
+
+$ d_0 $
+\pagebreak
+
+$ \kappa_i(t) $
+\pagebreak
+
+$ -1 $
+\pagebreak
+
+$ +1 $
+\pagebreak
+
+$ \vec F_i = \sum_{i\neq j}\vec F_{ij} $
+\pagebreak
+
+$ \vec v_i(t+1) = v_0\frac{\langle\vec v_j(t)\rangle}{\left|\langle\vec v_j(t)\rangle\right|} + \mu \sum_{i\neq j}\vec F_{ij} + \mathrm{noise} $
+\pagebreak
+
+$ \vec r_i(t+1) = \vec r_i(t) + \vec v_i(t+1) $
+\pagebreak
+
+$ \langle\vec v_j(t)\rangle $
+\pagebreak
+
+$ v_0 $
+\pagebreak
+
+$ \delta\vartheta $
+\pagebreak
+
+$ [-\eta\pi\dots\eta\pi] $
+\pagebreak
+
+$ \eta $
+\pagebreak
+
+$ v = \frac{1}{N}\left|\sum_i \vec v_i\right| $
+\pagebreak
+
+$ \zeta $
+\pagebreak
+
+$ \zeta < \exp\left(\gamma(A_i-A_0)\right) $
+\pagebreak
+
+$ A_i $
+\pagebreak
+
+$ A_0 $
+\pagebreak
+
+$ U_{cos}\left(\theta\right) = k_\theta\left(1+cos\theta\right) $
+\pagebreak
+
+$ k_\theta $
+\pagebreak
+
+$ \theta $
+\pagebreak
+
+$ U_{harm}\left(\theta\right) = k_\theta\left(\theta-\theta_0\right)^2 $
+\pagebreak
+
+$ \theta_0 $
+\pagebreak
+
+$ 1/2 $
+\pagebreak
+
+$ \vec F^{(i)}_{active} = f\vec\tau_i $
+\pagebreak
+
+$ f $
+\pagebreak
+
+$ \tau_i = (\vec r_{i+1} - \vec r_i)/|\vec r_{i+1} - \vec r_i| $
+\pagebreak
+
+$ r_{i+j} $
+\pagebreak
+
+$ U_{fene}\left(r_{ij}\right) = -\frac{1}{2}kr_0^2\log\left[1-\left(\frac{\left|\vec r_{ij}\right|}{r_0}\right)^2\right] + WCA(r_{ij})$
+\pagebreak
+
+$ k $
+\pagebreak
+
+$ r_0 $
+\pagebreak
+
+$ \vec r_{ij} = \vec r_i - \vec r_j $
+\pagebreak
+
+$ U_{harm}\left(r_{ij}\right) = \frac{1}{2}k\left(\left|\vec r_{ij}\right|-l_0\right)^2 $
+\pagebreak
+
+$ l_0 $
+\pagebreak
+
+$ V_{grav}\left(r\right) = g z $
+\pagebreak
+
+$ \vec F = - m g \vec e_z $
+\pagebreak
+
+$ g $
+\pagebreak
+
+$ V_{harm}\left(r\right) = \frac{1}{2} k (z-z0)^2 $
+\pagebreak
+
+$ \vec F = - k (z - z0) \vec e_z $
+\pagebreak
+
+$ z_0 $
+\pagebreak
+
+$ \vec F_i = \alpha \vec n_i $
+\pagebreak
+
+$ \alpha $
+\pagebreak
+
+$ \vec n_i $
+\pagebreak
+
+$ \vec F_{active} = \frac {1}{2}\alpha\left(\vec n_i-\vec n_j \right)\vec n_i \cdot \vec n_j $
+\pagebreak
+
+$ \vec n_i \cdot \vec n_j < 0 $
+\pagebreak
+
+$ \alpha < 0 $
+\pagebreak
+
+$ \vec n $
+\pagebreak
+
+$ U_{Coul}\left(r_{ij}\right) = \frac{\alpha}{r_{ij}} + 4\left|\alpha\right|\left(\frac \sigma r_{ij}\right)^{12} $
+\pagebreak
+
+$ \sigma $
+\pagebreak
+
+$ r_{ij} $
+\pagebreak
+
+$ U_{Gauss}\left(r_{ij}\right) = A e^{-\alpha(r-r_A)^2} + B e^{-\beta(r-r_B)} $
+\pagebreak
+
+$ B $
+\pagebreak
+
+$ \beta $
+\pagebreak
+
+$ r_A $
+\pagebreak
+
+$ r_b $
+\pagebreak
+
+$ \vec f_i = \lambda \left|\vec r_{ij}\right|\hat{\vec r}_{ij} $
+\pagebreak
+
+$ \vec f_j = -\lambda \left|\vec r_{ij}\right|\hat{\vec r}_{ij} $
+\pagebreak
+
+$ \vec r_{ij} $
+\pagebreak
+
+$ U_{LJ}\left(r_{ij}\right) = 4\varepsilon \left[\left(\frac \sigma r_{ij}\right)^{12}-\left(\frac \sigma r_{ij}\right)^6)\right] $
+\pagebreak
+
+$ \varepsilon $
+\pagebreak
+
+$ l $
+\pagebreak
+
+$ U_{Morse}\left(r_{ij}\right) = D \left(1 - e^{-a(r-r_e)} \right)^2 $
+\pagebreak
+
+$ D $
+\pagebreak
+
+$ r_e $
+\pagebreak
+
+$ \zeta = \vec n_i \cdot \vec n_j < 0 $
+\pagebreak
+
+$ \alpha |\zeta| $
+\pagebreak
+
+$ U_{soft}\left(r_{ij}\right) = \frac{k}{2} \left(r_{ij} - r_e \right)^2 $
+\pagebreak
+
+$ r_{ij} \le r_{tunr} $
+\pagebreak
+
+$ U_{soft} = -\frac{k}{2} \left(r_{ij} - r_f \right)^2 $
+\pagebreak
+
+$ r_f = 2 r_{turn} - r_e $
+\pagebreak
+
+$ r_e < r_{ij} < r_f $
+\pagebreak
+
+$ r_e = a_i + a_j $
+\pagebreak
+
+$ a_i $
+\pagebreak
+
+$ a_j $
+\pagebreak
+
+$ r_{turn} = fr_e $
+\pagebreak
+
+$ U_{soft}\left(r_{ij}\right) = \frac{k}{2} \left(a_i + a_j - r_{ij}\right)^2 $
+\pagebreak
+
+$ r_{ij} \le a_i + a_j $
+\pagebreak
+
+$ U_{soft} = 0 $
+\pagebreak
+
+$ r_{ij} > a_i + a_j $
+\pagebreak
+
+$ U_{Yukawa}\left(r_{ij}\right) = g\frac{e^{-\kappa r_{ij}}}{r_{ij}} $
+\pagebreak
+
+$ \kappa $
+\pagebreak
+
+$ A_i = \frac{1}{2}\sum_{\mu}\left(\vec r_\mu\times\vec r_{\mu+1}\right)\cdot\vec n_i $
+\pagebreak
+
+$ \vec r_\mu $
+\pagebreak
+
+$ l_i = \sum_{\mu}\left|\vec r_\mu-\vec r_{\mu+1}\right| $
+\pagebreak
+
+$ \mathbf{A} $
+\pagebreak
+
+$ \mathbf{B} $
+\pagebreak
+
+$ \mathbf{C} $
+\pagebreak
+
+$ \mathbf{a} = \mathbf{A}-\mathbf{C}, $
+\pagebreak
+
+$ \mathbf{b} = \mathbf{B}-\mathbf{C}. $
+\pagebreak
+
+$ p_0 = \frac{(\left\|\mathbf{a}\right\|^2\mathbf{b}-\left\|\mathbf{b}\right\|^2\mathbf{a}) \times (\mathbf{a} \times \mathbf{b})} {2 \left\|\mathbf{a}\times\mathbf{b}\right\|^2} + \mathbf{C} $
+\pagebreak
+
+$ \phi $
+\pagebreak
+
+\end{document}

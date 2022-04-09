@@ -1,0 +1,70 @@
+\doxysection{External\+Tangent\+Align Class Reference}
+\label{classExternalTangentAlign}\index{ExternalTangentAlign@{ExternalTangentAlign}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{External\+Tangent\+Align}{p.}{classExternalTangentAlign} implements the alignment of the director to the tangent to polymer. For a bead in the polymer chain we compute torque as $ \vec \tau_i = -1/tau \sum_j\vec n_i\times\vec b_{ij} $, where $ tau $ is the coupling alignment time and $ \vec b_{ij} $ is the unit-\/length vector pointing along the bond connecting partiles $ i $ and $ j $. \begin{DoxyNote}{Note}
+For this alignment to work, bonds have to be defined. User has to supply properly ordered bonds in order to ensure that computed torques have desirable behaviour, e.\+g., to align the director in the local direction of the polymer. ~\newline
+ 
+\end{DoxyNote}
+
+
+Definition at line 58 of file external\+\_\+tangent\+\_\+aligner.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ External\+Tangent\+Align} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classExternalTangentAlign_a0ac41824c6c617579c9282c5ff65cdac}} 
+virtual \textbf{ $\sim$\+External\+Tangent\+Align} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\label{classExternalTangentAlign_a14df1e61054fb4091e9c480b4f4dfe57}} 
+void \textbf{ set\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&self\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for self alignment ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classExternalTangentAlign_a4993c97a669fa259c6574a18d547c117}} 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes \char`\"{}torques\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classExternalTangentAlign_aab221f1017e8431da2653dcdd348ed64}} 
+double \textbf{ m\+\_\+tau}
+\begin{DoxyCompactList}\small\item\em Coupling constant. \end{DoxyCompactList}\item 
+\mbox{\label{classExternalTangentAlign_a4d88c0943dd0b462e12a59833fe4021b}} 
+bool \textbf{ m\+\_\+normalise}
+\begin{DoxyCompactList}\small\item\em Whether to normalise the velocity in the alignment term. \end{DoxyCompactList}\item 
+\mbox{\label{classExternalTangentAlign_a61f12ce93c3153ec65ca169b33cd2c74}} 
+\textbf{ Tangent\+Align\+Parameters} $\ast$ \textbf{ m\+\_\+type\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classExternalTangentAlign_a14ab3096a89704104646256a2e758931}} 
+\index{ExternalTangentAlign@{ExternalTangentAlign}!ExternalTangentAlign@{ExternalTangentAlign}}
+\index{ExternalTangentAlign@{ExternalTangentAlign}!ExternalTangentAlign@{ExternalTangentAlign}}
+\doxysubsubsection{ExternalTangentAlign()}
+{\footnotesize\ttfamily \textbf{ External\+Tangent\+Align} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 66 of file external\+\_\+tangent\+\_\+aligner.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ external\+\_\+tangent\+\_\+aligner.\+hpp}\item 
+\textbf{ external\+\_\+tangent\+\_\+aligner.\+cpp}\end{DoxyCompactItemize}

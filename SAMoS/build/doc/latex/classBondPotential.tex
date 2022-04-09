@@ -1,0 +1,70 @@
+\doxysection{Bond\+Potential Class Reference}
+\label{classBondPotential}\index{BondPotential@{BondPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Bond\+Potential}{p.}{classBondPotential} is the base class (abstract) that handles all calls to the bond potential evaluations. Children of this class will implement actual force fields. 
+
+Definition at line 51 of file bond\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bond\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classBondPotential_aa4d4a5da8aa096b2155c7d3f5761cc09}} 
+virtual \textbf{ $\sim$\+Bond\+Potential} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\label{classBondPotential_a87720c994f306e1c3c74f81a3c551e8d}} 
+virtual void \textbf{ set\+\_\+bond\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&)=0
+\begin{DoxyCompactList}\small\item\em Set bond parameters ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classBondPotential_afa05c5b5b569afc655e786c460f0042c}} 
+virtual void \textbf{ compute} ()=0
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classBondPotential_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Pointer to the \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classBondPotential_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles messages sent to output. \end{DoxyCompactList}\item 
+\mbox{\label{classBondPotential_aa87c8304f0b50418e5e9de3973e53d7b}} 
+bool \textbf{ m\+\_\+has\+\_\+bond\+\_\+params}
+\begin{DoxyCompactList}\small\item\em Flag that controls if bond parameters are set. \end{DoxyCompactList}\item 
+\mbox{\label{classBondPotential_a20a4fa47856dfecbae0d29f4d552f35e}} 
+double \textbf{ m\+\_\+potential\+\_\+energy}
+\begin{DoxyCompactList}\small\item\em Total potential energy. \end{DoxyCompactList}\item 
+\mbox{\label{classBondPotential_af0f9f3ef2234435a49825eb36825e258}} 
+bool \textbf{ m\+\_\+use\+\_\+particle\+\_\+radii}
+\begin{DoxyCompactList}\small\item\em If true, base native bond length on particle radii. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classBondPotential_a9584bb28fc243d55b150de8d60fa477c}} 
+\index{BondPotential@{BondPotential}!BondPotential@{BondPotential}}
+\index{BondPotential@{BondPotential}!BondPotential@{BondPotential}}
+\doxysubsubsection{BondPotential()}
+{\footnotesize\ttfamily \textbf{ Bond\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file bond\+\_\+potential.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ bond\+\_\+potential.\+hpp}\end{DoxyCompactItemize}

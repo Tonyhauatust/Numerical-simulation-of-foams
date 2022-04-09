@@ -1,0 +1,91 @@
+\doxysection{Integrator Class Reference}
+\label{classIntegrator}\index{Integrator@{Integrator}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Integrator}{p.}{classIntegrator} class is the base class for handling different numerical integrators for integrating equations of motion (e.\+g., N\+VE). This is an abstract class and its children will implement actual integrators. 
+
+Definition at line 54 of file integrator.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Integrator} (System\+Ptr sys, Messenger\+Ptr msg, Potential\+Ptr pot, Aligner\+Ptr align, Neighbour\+List\+Ptr nlist, Constrainer\+Ptr cons, Value\+Ptr temp, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classIntegrator_aafcdca198ea2dca2a77c7d48486e1a87}} 
+virtual void \textbf{ integrate} ()=0
+\begin{DoxyCompactList}\small\item\em Propagate system for a time step. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegrator_a189b2c95a7124e16db2066e79b6c66a4}} 
+string \textbf{ params\+\_\+ok} (\textbf{ pairs\+\_\+type} \&params)
+\begin{DoxyCompactList}\small\item\em Check if there are no illegal parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classIntegrator_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Pointer to the \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegrator_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Pointer to the messenger object. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegrator_a3564f52971277ca80a168760d59c0862}} 
+Potential\+Ptr \textbf{ m\+\_\+potential}
+\begin{DoxyCompactList}\small\item\em Pointer to the interaction handler. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegrator_a1a721172c9f36fc810b6faa9034052d2}} 
+Aligner\+Ptr \textbf{ m\+\_\+align}
+\begin{DoxyCompactList}\small\item\em Pointer to alignment handler. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegrator_a4e781f6afa8a44060341e9cc7428415c}} 
+Neighbour\+List\+Ptr \textbf{ m\+\_\+nlist}
+\begin{DoxyCompactList}\small\item\em Pointer to the neighbour list object. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegrator_ae989b997ce0121b297982cbeabbed7f3}} 
+Constrainer\+Ptr \textbf{ m\+\_\+constrainer}
+\begin{DoxyCompactList}\small\item\em Pointer to the handler for constraints. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegrator_aa424cd93be2f93d5f0e91d9f768c91e1}} 
+Value\+Ptr \textbf{ m\+\_\+temp}
+\begin{DoxyCompactList}\small\item\em Pointer to the handler of current value of temperature. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegrator_a67f6cc7fa80c9e446737863bd4fdc2d5}} 
+double \textbf{ m\+\_\+dt}
+\begin{DoxyCompactList}\small\item\em time step \end{DoxyCompactList}\item 
+\mbox{\label{classIntegrator_ac4f55b6ecfdaa526270a15c815b25ff2}} 
+string \textbf{ m\+\_\+group\+\_\+name}
+\begin{DoxyCompactList}\small\item\em Name of the group to apply this integrator to. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegrator_aebea9645ba54ffda78621a2c14cc5e52}} 
+vector$<$ string $>$ \textbf{ m\+\_\+known\+\_\+params}
+\begin{DoxyCompactList}\small\item\em Lists all known parameters accepted by a given integrator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classIntegrator_adf75e5776d08aa35dc88bce390a512e5}} 
+\index{Integrator@{Integrator}!Integrator@{Integrator}}
+\index{Integrator@{Integrator}!Integrator@{Integrator}}
+\doxysubsubsection{Integrator()}
+{\footnotesize\ttfamily \textbf{ Integrator} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Constrainer\+Ptr}]{cons,  }\item[{Value\+Ptr}]{temp,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to a \doxyref{System}{p.}{classSystem} object containing all particles \\
+\hline
+{\em msg} & Internal message handler \\
+\hline
+{\em pot} & Pairwise and external interaction handler \\
+\hline
+{\em align} & Pairwise and external alignment handler \\
+\hline
+{\em nlist} & Neighbour list object \\
+\hline
+{\em cons} & Enforces constraints \\
+\hline
+{\em temp} & Temperature control object \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file integrator.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ integrator.\+hpp}\end{DoxyCompactItemize}

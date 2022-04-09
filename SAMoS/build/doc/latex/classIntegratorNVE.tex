@@ -1,0 +1,95 @@
+\doxysection{Integrator\+N\+VE Class Reference}
+\label{classIntegratorNVE}\index{IntegratorNVE@{IntegratorNVE}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Integrator\+N\+VE}{p.}{classIntegratorNVE} class handles N\+VE dynamics. \begin{DoxyNote}{Note}
+No activity. Pure MD. 
+\end{DoxyNote}
+
+
+Definition at line 46 of file integrator\+\_\+nve.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Integrator\+N\+VE} (System\+Ptr sys, Messenger\+Ptr msg, Potential\+Ptr pot, Aligner\+Ptr align, Neighbour\+List\+Ptr nlist, Constrainer\+Ptr cons, Value\+Ptr temp, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ integrate} ()
+\begin{DoxyCompactList}\small\item\em Propagate system for a time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classIntegratorNVE_a0d62cbe84503629c62bc699fa709d531}} 
+double \textbf{ m\+\_\+limit}
+\begin{DoxyCompactList}\small\item\em If set, maximum amount particle is allowed to be displaced. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorNVE_ae7eb4e174315d90f1fcf5559547df508}} 
+double \textbf{ m\+\_\+theta\+\_\+limit}
+\begin{DoxyCompactList}\small\item\em If set, maximum angular displacement of the director. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorNVE_a363cf6276fcb96786bd920996bcf9e8b}} 
+bool \textbf{ m\+\_\+has\+\_\+limit}
+\begin{DoxyCompactList}\small\item\em Flag that determines if maximum particle displacement has been set. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorNVE_a18ffdc03d09a9c4ff42445e621bcda78}} 
+bool \textbf{ m\+\_\+has\+\_\+theta\+\_\+limit}
+\begin{DoxyCompactList}\small\item\em Flag that determines if maximum angular displacement of the particle has been set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classIntegratorNVE_ac459a12cbd13473f462e10415dbb7bab}} 
+\index{IntegratorNVE@{IntegratorNVE}!IntegratorNVE@{IntegratorNVE}}
+\index{IntegratorNVE@{IntegratorNVE}!IntegratorNVE@{IntegratorNVE}}
+\doxysubsubsection{IntegratorNVE()}
+{\footnotesize\ttfamily \textbf{ Integrator\+N\+VE} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Constrainer\+Ptr}]{cons,  }\item[{Value\+Ptr}]{temp,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to a \doxyref{System}{p.}{classSystem} object containing all particles \\
+\hline
+{\em msg} & Internal message handler \\
+\hline
+{\em pot} & Pairwise and external interaction handler \\
+\hline
+{\em align} & Pairwise and external alignment handler \\
+\hline
+{\em nlist} & Neighbour list object \\
+\hline
+{\em cons} & Enforces constraints to the manifold surface \\
+\hline
+{\em temp} & Temperature control object \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file integrator\+\_\+nve.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classIntegratorNVE_a611ba68b85e9a65f5d842f706de335fd}} 
+\index{IntegratorNVE@{IntegratorNVE}!integrate@{integrate}}
+\index{integrate@{integrate}!IntegratorNVE@{IntegratorNVE}}
+\doxysubsubsection{integrate()}
+{\footnotesize\ttfamily void integrate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Propagate system for a time step. 
+
+This is standard velocity Verlet N\+VE integrator. It has ability to limit maximum particle displacement which is useful for relaxation simulations intended to remove unphysical overlaps between particles. 
+
+Implements \textbf{ Integrator} \doxyref{}{p.}{classIntegrator_aafcdca198ea2dca2a77c7d48486e1a87}.
+
+
+
+Definition at line 37 of file integrator\+\_\+nve.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ integrator\+\_\+nve.\+hpp}\item 
+\textbf{ integrator\+\_\+nve.\+cpp}\end{DoxyCompactItemize}

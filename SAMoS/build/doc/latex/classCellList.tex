@@ -1,0 +1,142 @@
+\doxysection{Cell\+List Class Reference}
+\label{classCellList}\index{CellList@{CellList}}
+
+
+\doxysubsection{Detailed Description}
+Handles cell list in the system. For simplicity all cell have same dimensions (lx,ly,lz) and are given in 3 dimensions. 
+
+Definition at line 45 of file cell\+\_\+list.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Cell\+List} (System\+Ptr, Messenger\+Ptr, double)
+\begin{DoxyCompactList}\small\item\em Construct cell list. \end{DoxyCompactList}\item 
+int \textbf{ get\+\_\+cell\+\_\+idx} (const \textbf{ Particle} \&)
+\begin{DoxyCompactList}\small\item\em Get cell to which given particle belongs. \end{DoxyCompactList}\item 
+\mbox{\label{classCellList_a885808baa3d930eac7a825f7d49f73d7}} 
+int \textbf{ get\+\_\+size} ()
+\begin{DoxyCompactList}\small\item\em Return total number of cells. \end{DoxyCompactList}\item 
+\mbox{\label{classCellList_a7d23a2b85a22e303f3146cd9ad7ee93a}} 
+\textbf{ Cell} \& \textbf{ get\+\_\+cell} (int idx)
+\begin{DoxyCompactList}\small\item\em Return reference to a particular cell. \end{DoxyCompactList}\item 
+void \textbf{ add\+\_\+particle} (const \textbf{ Particle} \&p)
+\item 
+void \textbf{ populate} ()
+\begin{DoxyCompactList}\small\item\em Populates cell list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classCellList_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Pointer to the \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classCellList_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles messages sent to output. \end{DoxyCompactList}\item 
+\mbox{\label{classCellList_acb557b2eb88e596a01daccd1a41d9641}} 
+vector$<$ \textbf{ Cell} $>$ \textbf{ m\+\_\+cells}
+\begin{DoxyCompactList}\small\item\em Vector holding all cells in the system. \end{DoxyCompactList}\item 
+\mbox{\label{classCellList_a012b2bfbef5380cc57296def37a49a27}} 
+int \textbf{ m\+\_\+size}
+\begin{DoxyCompactList}\small\item\em \doxyref{Cell}{p.}{classCell} list size (number of cells) \end{DoxyCompactList}\item 
+\mbox{\label{classCellList_aa8e09f5834b3a43eb67b7e0b984c912b}} 
+double {\bfseries m\+\_\+nx}
+\item 
+\mbox{\label{classCellList_a78231258bb10e40eace634bbd7fcc753}} 
+double {\bfseries m\+\_\+ny}
+\item 
+\mbox{\label{classCellList_abd0d712c2ab99fc6f3cd9c0632f5a717}} 
+double \textbf{ m\+\_\+nz}
+\begin{DoxyCompactList}\small\item\em Number of cell is x, y, z direction. \end{DoxyCompactList}\item 
+\mbox{\label{classCellList_abaf51b5473ae5561b07f9518633e3e51}} 
+double {\bfseries m\+\_\+wx}
+\item 
+\mbox{\label{classCellList_a1040b6aa6c89d7484317ad1b8a50bcc3}} 
+double {\bfseries m\+\_\+wy}
+\item 
+\mbox{\label{classCellList_a414c13c16968a39b91f0dc0130bd0146}} 
+double \textbf{ m\+\_\+wz}
+\begin{DoxyCompactList}\small\item\em \doxyref{Cell}{p.}{classCell} width in the x, y, and z direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classCellList_a49e4d519ef2c9e3b1b0d0f7e4d2315e8}} 
+\index{CellList@{CellList}!CellList@{CellList}}
+\index{CellList@{CellList}!CellList@{CellList}}
+\doxysubsubsection{CellList()}
+{\footnotesize\ttfamily \textbf{ Cell\+List} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{double}]{cutoff }\end{DoxyParamCaption})}
+
+
+
+Construct cell list. 
+
+Construct cell list 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the system object \\
+\hline
+{\em msg} & Pointer to the messenger object \\
+\hline
+{\em cutoff} & cell size (currently all cells are cubic) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 37 of file cell\+\_\+list.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classCellList_a5119e969f4f2b022330b1a10660b2861}} 
+\index{CellList@{CellList}!add\_particle@{add\_particle}}
+\index{add\_particle@{add\_particle}!CellList@{CellList}}
+\doxysubsubsection{add\_particle()}
+{\footnotesize\ttfamily void add\+\_\+particle (\begin{DoxyParamCaption}\item[{const \textbf{ Particle} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add particle to the appropriate cell 
+\begin{DoxyParams}{Parameters}
+{\em p} & Reference to the particle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file cell\+\_\+list.\+hpp.
+
+\mbox{\label{classCellList_a128a02d8352e3878d30b32a12cd7d023}} 
+\index{CellList@{CellList}!get\_cell\_idx@{get\_cell\_idx}}
+\index{get\_cell\_idx@{get\_cell\_idx}!CellList@{CellList}}
+\doxysubsubsection{get\_cell\_idx()}
+{\footnotesize\ttfamily int get\+\_\+cell\+\_\+idx (\begin{DoxyParamCaption}\item[{const \textbf{ Particle} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Get cell to which given particle belongs. 
+
+Get cell to which given particle belongs 
+\begin{DoxyParams}{Parameters}
+{\em p} & Reference to the particle object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 72 of file cell\+\_\+list.\+cpp.
+
+\mbox{\label{classCellList_ac60a2762b92e3462f992c42a34b95102}} 
+\index{CellList@{CellList}!populate@{populate}}
+\index{populate@{populate}!CellList@{CellList}}
+\doxysubsubsection{populate()}
+{\footnotesize\ttfamily void populate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Populates cell list. 
+
+Populate cell list. 
+
+Definition at line 82 of file cell\+\_\+list.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ cell\+\_\+list.\+hpp}\item 
+\textbf{ cell\+\_\+list.\+cpp}\end{DoxyCompactItemize}

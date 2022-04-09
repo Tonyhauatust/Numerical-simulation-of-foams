@@ -1,0 +1,94 @@
+\doxysection{Pair\+Align Class Reference}
+\label{classPairAlign}\index{PairAlign@{PairAlign}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Align}{p.}{classPairAlign} is the base class (abstract) that handles all calls to the pair potential evaluations. Children of this class will implement actual force fields. 
+
+Definition at line 53 of file pair\+\_\+aligner.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Align} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairAlign_a754ef8deaf209da35ddfbb97484af90a}} 
+virtual void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&)=0
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise alignment ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairAlign_a892cfb41faafbd3ca658c7c36954915d}} 
+virtual bool \textbf{ need\+\_\+nlist} ()=0
+\begin{DoxyCompactList}\small\item\em Returns true if the specific pair alignment needs neighbour list. \end{DoxyCompactList}\item 
+\mbox{\label{classPairAlign_afa05c5b5b569afc655e786c460f0042c}} 
+virtual void \textbf{ compute} ()=0
+\begin{DoxyCompactList}\small\item\em Computes alignment torques for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairAlign_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Pointer to the \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classPairAlign_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles messages sent to output. \end{DoxyCompactList}\item 
+\mbox{\label{classPairAlign_a4e781f6afa8a44060341e9cc7428415c}} 
+Neighbour\+List\+Ptr \textbf{ m\+\_\+nlist}
+\begin{DoxyCompactList}\small\item\em Handles \doxyref{Neighbour\+List}{p.}{classNeighbourList} object. \end{DoxyCompactList}\item 
+\mbox{\label{classPairAlign_a5cbaca01dda145f8d3d036b2b31f5887}} 
+Pair\+Align\+Data \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em Handles specific parameters for a given pair. \end{DoxyCompactList}\item 
+\mbox{\label{classPairAlign_aea53ad04761d4054d7eced182658e9ed}} 
+bool \textbf{ m\+\_\+has\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em Flag that controls if pair parameters are set. \end{DoxyCompactList}\item 
+double \textbf{ m\+\_\+potential\+\_\+energy}
+\begin{DoxyCompactList}\small\item\em Total potential energy (. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairAlign_a8fb632325af60de642fe460ce6f3bb22}} 
+\index{PairAlign@{PairAlign}!PairAlign@{PairAlign}}
+\index{PairAlign@{PairAlign}!PairAlign@{PairAlign}}
+\doxysubsubsection{PairAlign()}
+{\footnotesize\ttfamily \textbf{ Pair\+Align} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file pair\+\_\+aligner.\+hpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classPairAlign_a20a4fa47856dfecbae0d29f4d552f35e}} 
+\index{PairAlign@{PairAlign}!m\_potential\_energy@{m\_potential\_energy}}
+\index{m\_potential\_energy@{m\_potential\_energy}!PairAlign@{PairAlign}}
+\doxysubsubsection{m\_potential\_energy}
+{\footnotesize\ttfamily double m\+\_\+potential\+\_\+energy\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Total potential energy (. 
+
+\begin{DoxyNote}{Note}
+Need some thinking on how to properly define it) 
+\end{DoxyNote}
+
+
+Definition at line 87 of file pair\+\_\+aligner.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+aligner.\+hpp}\end{DoxyCompactItemize}

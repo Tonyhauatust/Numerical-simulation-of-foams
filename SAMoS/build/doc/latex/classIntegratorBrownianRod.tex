@@ -1,0 +1,98 @@
+\doxysection{Integrator\+Brownian\+Rod Class Reference}
+\label{classIntegratorBrownianRod}\index{IntegratorBrownianRod@{IntegratorBrownianRod}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Integrator\+Brownian\+Rod}{p.}{classIntegratorBrownianRod} class handles Brownian dynamics of rods. 
+
+Definition at line 43 of file integrator\+\_\+brownian\+\_\+rod.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Integrator\+Brownian\+Rod} (System\+Ptr sys, Messenger\+Ptr msg, Potential\+Ptr pot, Aligner\+Ptr align, Neighbour\+List\+Ptr nlist, Constrainer\+Ptr cons, Value\+Ptr temp, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ integrate} ()
+\begin{DoxyCompactList}\small\item\em Propagate system for a time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classIntegratorBrownianRod_aaba456a057071541006327fc2025f5df}} 
+R\+N\+G\+Ptr \textbf{ m\+\_\+rng}
+\begin{DoxyCompactList}\small\item\em Random number generator. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorBrownianRod_a5f5e53325038c9f6de8371f20b1a3037}} 
+double \textbf{ m\+\_\+v0}
+\begin{DoxyCompactList}\small\item\em Magnitude of the active velocity. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorBrownianRod_a5ad7f6076cdd626e336793fc8d66d411}} 
+double \textbf{ m\+\_\+\+D0}
+\begin{DoxyCompactList}\small\item\em Bare diffusion constant. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorBrownianRod_aab2c5c19ce0129c00668a81878067d53}} 
+bool \textbf{ m\+\_\+nematic}
+\begin{DoxyCompactList}\small\item\em If true; assume that the system is nematic, and the velocity will switch direction randomly. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorBrownianRod_a20e609cde06e2483b34afc3856f895c5}} 
+bool \textbf{ m\+\_\+pos\+\_\+noise}
+\begin{DoxyCompactList}\small\item\em If true, add noise to the rod\textquotesingle{}s position. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorBrownianRod_aab221f1017e8431da2653dcdd348ed64}} 
+double \textbf{ m\+\_\+tau}
+\begin{DoxyCompactList}\small\item\em Time scale for the direction flip for nematic systems (flip with probability dt/tau) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classIntegratorBrownianRod_a61fda5516ed4eccee3e4ce4e92aa12fd}} 
+\index{IntegratorBrownianRod@{IntegratorBrownianRod}!IntegratorBrownianRod@{IntegratorBrownianRod}}
+\index{IntegratorBrownianRod@{IntegratorBrownianRod}!IntegratorBrownianRod@{IntegratorBrownianRod}}
+\doxysubsubsection{IntegratorBrownianRod()}
+{\footnotesize\ttfamily \textbf{ Integrator\+Brownian\+Rod} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Constrainer\+Ptr}]{cons,  }\item[{Value\+Ptr}]{temp,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to a \doxyref{System}{p.}{classSystem} object containing all particles \\
+\hline
+{\em msg} & Internal message handler \\
+\hline
+{\em pot} & Pairwise and external interaction handler \\
+\hline
+{\em align} & Pairwise and external alignment handler \\
+\hline
+{\em nlist} & Neighbour list object \\
+\hline
+{\em cons} & Enforces constraints to the manifold surface \\
+\hline
+{\em temp} & Temperature control object \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file integrator\+\_\+brownian\+\_\+rod.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classIntegratorBrownianRod_a611ba68b85e9a65f5d842f706de335fd}} 
+\index{IntegratorBrownianRod@{IntegratorBrownianRod}!integrate@{integrate}}
+\index{integrate@{integrate}!IntegratorBrownianRod@{IntegratorBrownianRod}}
+\doxysubsubsection{integrate()}
+{\footnotesize\ttfamily void integrate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Propagate system for a time step. 
+
+This function integrates equations of motion as introduced in the \char`\"{}\+Brownian dynamics of hard spherocylinders\char`\"{}, H. Loewen Phys. Rev. E 50, 1232 (1994) 
+
+Implements \textbf{ Integrator} \doxyref{}{p.}{classIntegrator_aafcdca198ea2dca2a77c7d48486e1a87}.
+
+
+
+Definition at line 36 of file integrator\+\_\+brownian\+\_\+rod.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ integrator\+\_\+brownian\+\_\+rod.\+hpp}\item 
+\textbf{ integrator\+\_\+brownian\+\_\+rod.\+cpp}\end{DoxyCompactItemize}

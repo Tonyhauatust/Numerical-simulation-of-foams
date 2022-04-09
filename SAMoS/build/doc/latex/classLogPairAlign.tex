@@ -1,0 +1,76 @@
+\doxysection{Log\+Pair\+Align Class Reference}
+\label{classLogPairAlign}\index{LogPairAlign@{LogPairAlign}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Log\+Pair\+Align}{p.}{classLogPairAlign} class. 
+
+Logs different types of pair energies 
+
+Definition at line 39 of file log\+\_\+pair\+\_\+align.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Log\+Pair\+Align} (System\+Ptr sys, Messenger\+Ptr msg, Potential\+Ptr pot, Aligner\+Ptr align, const string \&type)
+\item 
+string \textbf{ operator()} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classLogPairAlign_ae3eb294df365acc6b7465df91dfa863f}} 
+string \textbf{ m\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Pair energy type to log. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classLogPairAlign_a8242d58ee7983c5f893423319e747c43}} 
+\index{LogPairAlign@{LogPairAlign}!LogPairAlign@{LogPairAlign}}
+\index{LogPairAlign@{LogPairAlign}!LogPairAlign@{LogPairAlign}}
+\doxysubsubsection{LogPairAlign()}
+{\footnotesize\ttfamily \textbf{ Log\+Pair\+Align} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align,  }\item[{const string \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct \doxyref{Log}{p.}{classLog} object 
+\begin{DoxyParams}{Parameters}
+{\em sys} & pointer to a system object \\
+\hline
+{\em compute} & pointer to a compute object \\
+\hline
+{\em pot} & Interaction handler object \\
+\hline
+{\em align} & Alignment handler object \\
+\hline
+{\em type} & Type of the pair alignment to log (should match the pair\+\_\+align type) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file log\+\_\+pair\+\_\+align.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classLogPairAlign_a01cb7c8a5c573716a3ec79172f86a34a}} 
+\index{LogPairAlign@{LogPairAlign}!operator()@{operator()}}
+\index{operator()@{operator()}!LogPairAlign@{LogPairAlign}}
+\doxysubsubsection{operator()()}
+{\footnotesize\ttfamily string operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+current time step 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Log} \doxyref{}{p.}{classLog_ae3a376c50b5cd27cd9f7b850068b7dee}.
+
+
+
+Definition at line 54 of file log\+\_\+pair\+\_\+align.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ log\+\_\+pair\+\_\+align.\+hpp}\end{DoxyCompactItemize}

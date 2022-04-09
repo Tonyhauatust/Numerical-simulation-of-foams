@@ -1,0 +1,68 @@
+\doxysection{population\+\_\+grammar Class Reference}
+\label{classpopulation__grammar}\index{population\_grammar@{population\_grammar}}
+
+
+\doxysubsection{Detailed Description}
+This is a parser for parsing command that contain population control. Structurally, it is very similar to the command parsed (\begin{DoxySeeAlso}{See also}
+\doxyref{parse\+\_\+command.\+hpp}{p.}{parse__command_8hpp}) This parser extracts the \doxyref{population}{p.}{classpopulation__grammar_af05a9240f124a0fa5ead38c41c91001e} line type and returns it together with the list of parameters that will be parsed separately.
+\end{DoxySeeAlso}
+for example\+:
+
+population random \{ group=all; division\+\_\+rate=2.\+0; death\+\_\+rate = 0.\+5; freq = 100 \}
+
+This parser will extract the population type (in this case \char`\"{}random\char`\"{}) and return the rest of the line for post-\/processing.
+
+\begin{DoxyNote}{Note}
+Based on {\texttt{ http\+://www.\+boost.\+org/doc/libs/1\+\_\+53\+\_\+0/libs/spirit/repository/test/qi/distinct.\+cpp}} 
+\end{DoxyNote}
+
+
+Definition at line 58 of file parse\+\_\+population.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ population\+\_\+grammar} (\textbf{ Population\+Data} \&population\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classpopulation__grammar_af05a9240f124a0fa5ead38c41c91001e}} 
+qi\+::rule$<$ std\+::string\+::iterator, qi\+::space\+\_\+type $>$ \textbf{ population}
+\begin{DoxyCompactList}\small\item\em Rule for parsing pair population lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classpopulation__grammar_ad7c2d1baf366d5fe0029107ef0de1587}} 
+\index{population\_grammar@{population\_grammar}!population\_grammar@{population\_grammar}}
+\index{population\_grammar@{population\_grammar}!population\_grammar@{population\_grammar}}
+\doxysubsubsection{population\_grammar()}
+{\footnotesize\ttfamily \textbf{ population\+\_\+grammar} (\begin{DoxyParamCaption}\item[{\textbf{ Population\+Data} \&}]{population\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Handles random population control
+
+Handles density population control
+
+Handles particle growth
+
+Handles rod elongation population control
+
+Handles cell growth/division/death
+
+Handles actomyosin attachment/detachment
+
+Handles actomyosin Poisson attachment/detachment
+
+Handles actomyosin molecule detachment
+
+Handles actomyosin head detachment
+
+Handles region population control
+
+Definition at line 61 of file parse\+\_\+population.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ parse\+\_\+population.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,109 @@
+\doxysection{Integrator\+Actomyo Class Reference}
+\label{classIntegratorActomyo}\index{IntegratorActomyo@{IntegratorActomyo}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Integrator\+Actomyo}{p.}{classIntegratorActomyo} class handles dynamics of actomyosin system. 
+
+Definition at line 42 of file integrator\+\_\+actomyo.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Integrator\+Actomyo} (System\+Ptr sys, Messenger\+Ptr msg, Potential\+Ptr pot, Aligner\+Ptr align, Neighbour\+List\+Ptr nlist, Constrainer\+Ptr cons, Value\+Ptr temp, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ integrate} ()
+\begin{DoxyCompactList}\small\item\em Propagate system for a time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classIntegratorActomyo_aaba456a057071541006327fc2025f5df}} 
+R\+N\+G\+Ptr \textbf{ m\+\_\+rng}
+\begin{DoxyCompactList}\small\item\em Random number generator. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorActomyo_aec079f0fb2f4015b8c4eee42f6f9e612}} 
+double \textbf{ m\+\_\+zeta}
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+Friction\char`\"{}, prefactor for velocity \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorActomyo_a349917c962b1bd3860cbfed6541108f5}} 
+double \textbf{ m\+\_\+stoch\+\_\+coeff}
+\begin{DoxyCompactList}\small\item\em Factor for the stochastic part of the equation of motion ( $ = \nu \sqrt{dt} $) \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorActomyo_a1c016305564670ba9d11fd51aee8290f}} 
+double \textbf{ m\+\_\+f\+\_\+active}
+\begin{DoxyCompactList}\small\item\em strength of the active force acting on actin filament \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorActomyo_a523b66d0bf9315c625eb9921e3ba1a9e}} 
+double \textbf{ m\+\_\+D}
+\begin{DoxyCompactList}\small\item\em Diffusion coefficient. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorActomyo_abbd99222a54d31d2c55a2cc0d7c988e2}} 
+int \textbf{ m\+\_\+actin\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Type of the particles representing actin. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorActomyo_a041d4e1afe6ee19e4feaf3106822d2e3}} 
+int \textbf{ m\+\_\+mysoin\+\_\+site\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Type of the particles representing active site on myosin. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorActomyo_af604eeb3028465fcda9ac61a65c05816}} 
+double \textbf{ m\+\_\+active\+\_\+cut}
+\begin{DoxyCompactList}\small\item\em Cutoff for the range of active force. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classIntegratorActomyo_aeed3500f06b33543885dd03b84aed68e}} 
+\index{IntegratorActomyo@{IntegratorActomyo}!IntegratorActomyo@{IntegratorActomyo}}
+\index{IntegratorActomyo@{IntegratorActomyo}!IntegratorActomyo@{IntegratorActomyo}}
+\doxysubsubsection{IntegratorActomyo()}
+{\footnotesize\ttfamily \textbf{ Integrator\+Actomyo} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Constrainer\+Ptr}]{cons,  }\item[{Value\+Ptr}]{temp,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to a \doxyref{System}{p.}{classSystem} object containing all particles \\
+\hline
+{\em msg} & Internal message handler \\
+\hline
+{\em pot} & Pairwise and external interaction handler \\
+\hline
+{\em align} & Pairwise and external alignment handler \\
+\hline
+{\em nlist} & Neighbour list object \\
+\hline
+{\em cons} & Enforces constraints to the manifold surface \\
+\hline
+{\em temp} & Temperature control object \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file integrator\+\_\+actomyo.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classIntegratorActomyo_a611ba68b85e9a65f5d842f706de335fd}} 
+\index{IntegratorActomyo@{IntegratorActomyo}!integrate@{integrate}}
+\index{integrate@{integrate}!IntegratorActomyo@{IntegratorActomyo}}
+\doxysubsubsection{integrate()}
+{\footnotesize\ttfamily void integrate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Propagate system for a time step. 
+
+This function integrates equations of motion for the system of actin filaments and myosin motors. Force is computed in the standard fashion. However, in addition, if $ \vec F_m \cdot \vec \tau > 0 $, where $ \vec F_m $ is the total force on myosin bead closest to the actin bead and $ \tau $ if the tangent to the actin filament in the direction of the filament\textquotesingle{}s head, we add a force $ F_a $ to the filament bead in the direction of $ \tau $. \begin{DoxyNote}{Note}
+\+: For simplicity, we assume that actin filament beads have type 2. This is clearly a constraint, however, makes things much simpler to implement. 
+
+\+: In the current implementation, this integrator ignores groups 
+\end{DoxyNote}
+
+
+Implements \textbf{ Integrator} \doxyref{}{p.}{classIntegrator_aafcdca198ea2dca2a77c7d48486e1a87}.
+
+
+
+Definition at line 46 of file integrator\+\_\+actomyo.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ integrator\+\_\+actomyo.\+hpp}\item 
+\textbf{ integrator\+\_\+actomyo.\+cpp}\end{DoxyCompactItemize}

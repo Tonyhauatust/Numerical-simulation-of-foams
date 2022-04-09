@@ -1,0 +1,67 @@
+\doxysection{Pair\+Nematic\+Align Class Reference}
+\label{classPairNematicAlign}\index{PairNematicAlign@{PairNematicAlign}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Nematic\+Align}{p.}{classPairNematicAlign} implements the \char`\"{}nematic\char`\"{} type alignment between neighbouring particles. For all particles within the cutoff distance $ r_{cut} \left(\leq r_{nl}\right) $ ( $ r_{nl} $ being neighbour list cutoff distance) we compute torque on the particle as $ \vec \tau_i = 2 J \sum_j \left(\vec n_i\cdot\vec n_j\right)\vec n_i\times\vec n_j $, where $ J $ is the coupling constant and $ \vec n_j $ is director of j-\/th neighbour. 
+
+Definition at line 55 of file pair\+\_\+nematic\+\_\+aligner.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Nematic\+Align} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairNematicAlign_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise alignment ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairNematicAlign_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since MF alignment needs neighbour list. \end{DoxyCompactList}\item 
+\mbox{\label{classPairNematicAlign_a4993c97a669fa259c6574a18d547c117}} 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes \char`\"{}torques\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairNematicAlign_a9717caa31dfc2c4735c6a3926ebd17c9}} 
+double \textbf{ m\+\_\+J}
+\begin{DoxyCompactList}\small\item\em Coupling constant. \end{DoxyCompactList}\item 
+\mbox{\label{classPairNematicAlign_a53535f3d09f76a200e4a0b7f0909950d}} 
+double \textbf{ m\+\_\+rcut}
+\begin{DoxyCompactList}\small\item\em Cutoff distance (has to be less than neighbour list cutoff) \end{DoxyCompactList}\item 
+\mbox{\label{classPairNematicAlign_a08bf1695c70724c6c7daefffdb9772f9}} 
+\textbf{ Nematic\+Align\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairNematicAlign_a0c4e1980ae0f9cb6b381e0b329678efa}} 
+\index{PairNematicAlign@{PairNematicAlign}!PairNematicAlign@{PairNematicAlign}}
+\index{PairNematicAlign@{PairNematicAlign}!PairNematicAlign@{PairNematicAlign}}
+\doxysubsubsection{PairNematicAlign()}
+{\footnotesize\ttfamily \textbf{ Pair\+Nematic\+Align} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em param} & Contains information about all parameters (J and cutoff distance) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file pair\+\_\+nematic\+\_\+aligner.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+nematic\+\_\+aligner.\+hpp}\item 
+\textbf{ pair\+\_\+nematic\+\_\+aligner.\+cpp}\end{DoxyCompactItemize}

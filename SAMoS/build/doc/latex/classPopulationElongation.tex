@@ -1,0 +1,97 @@
+\doxysection{Population\+Elongation Class Reference}
+\label{classPopulationElongation}\index{PopulationElongation@{PopulationElongation}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Population\+Elongation}{p.}{classPopulationElongation} class handles very simple particle Elongation (change of the particle radius) 
+
+Definition at line 46 of file population\+\_\+elongation.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Population\+Elongation} (System\+Ptr sys, const Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPopulationElongation_ae83a8b8135072b6f0f0759f7772151d0}} 
+void \textbf{ divide} (int time)
+\begin{DoxyCompactList}\small\item\em \doxyref{Particle}{p.}{classParticle} division (emulates cell division) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationElongation_a915c988dc5f3382fbb35d6ecaf3f3249}} 
+void \textbf{ remove} (int time)
+\begin{DoxyCompactList}\small\item\em Remove particle (emulates cell death) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationElongation_a5934f681769b45fdb507ff6de08ba66d}} 
+void \textbf{ add} (int t)
+\begin{DoxyCompactList}\small\item\em Add particle (has no direct biological application) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationElongation_a4b50433a53d3510d2dc18a00cf4c994e}} 
+void \textbf{ grow} (int t)
+\begin{DoxyCompactList}\small\item\em Change particle radius. \end{DoxyCompactList}\item 
+void \textbf{ elongate} (int)
+\begin{DoxyCompactList}\small\item\em Change particle length. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPopulationElongation_a5d799e43f8852ddab3525d7402569a58}} 
+double \textbf{ m\+\_\+rescale}
+\begin{DoxyCompactList}\small\item\em Rescale particle radius by total of this amount. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationElongation_aacd5f3e4be2e804f47d15cfaac47f3cc}} 
+int \textbf{ m\+\_\+rescale\+\_\+steps}
+\begin{DoxyCompactList}\small\item\em Rescale particle radius over this many steps. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationElongation_aafb45512d1c0be65bb0c659adbb24b30}} 
+double \textbf{ m\+\_\+scale}
+\begin{DoxyCompactList}\small\item\em Rescale particle radius by this much in each step (=m\+\_\+rescale$\ast$$\ast$(m\+\_\+freq/m\+\_\+rescale\+\_\+steps)) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPopulationElongation_afd285768397e49e1316ffb14ea2b89b7}} 
+\index{PopulationElongation@{PopulationElongation}!PopulationElongation@{PopulationElongation}}
+\index{PopulationElongation@{PopulationElongation}!PopulationElongation@{PopulationElongation}}
+\doxysubsubsection{PopulationElongation()}
+{\footnotesize\ttfamily \textbf{ Population\+Elongation} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{const Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct \doxyref{Population\+Elongation}{p.}{classPopulationElongation} object 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Reference to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Reference to the system wide messenger \\
+\hline
+{\em param} & Reference to the parameters that control given population control \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file population\+\_\+elongation.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPopulationElongation_ab28433bc875e3c8c2537b2f089d963e2}} 
+\index{PopulationElongation@{PopulationElongation}!elongate@{elongate}}
+\index{elongate@{elongate}!PopulationElongation@{PopulationElongation}}
+\doxysubsubsection{elongate()}
+{\footnotesize\ttfamily void elongate (\begin{DoxyParamCaption}\item[{int}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Change particle length. 
+
+Grow (rescale) rod length by a given amount.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & current time step \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Population} \doxyref{}{p.}{classPopulation_afce7a6b3bd50502a81bb0b02c71c7cf0}.
+
+
+
+Definition at line 38 of file population\+\_\+elongation.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ population\+\_\+elongation.\+hpp}\item 
+\textbf{ population\+\_\+elongation.\+cpp}\end{DoxyCompactItemize}

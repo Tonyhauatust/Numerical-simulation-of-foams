@@ -1,0 +1,85 @@
+\doxysection{Pair\+Gaussian\+Potential Class Reference}
+\label{classPairGaussianPotential}\index{PairGaussianPotential@{PairGaussianPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Gaussian\+Potential}{p.}{classPairGaussianPotential} implements a potential with two Gaussians shifted with respect to each other $ U_{Gauss}\left(r_{ij}\right) = A e^{-\alpha(r-r_A)^2} + B e^{-\beta(r-r_B)} $, where $ A $ and $ B $ control strengths of two parts, $ \alpha $ and $ \beta $ their widths, and $ r_A $ and $ r_b $ position of the Gaussian peaks. 
+
+Definition at line 57 of file pair\+\_\+gaussian\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Gaussian\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairGaussianPotential_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairGaussianPotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since Gaussian potential needs neighbour list. \end{DoxyCompactList}\item 
+\mbox{\label{classPairGaussianPotential_a60f70115b851e412fc0973176c3226b1}} 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairGaussianPotential_a92d2bdec1a851c0796cdac03a9fb3ed7}} 
+double \textbf{ m\+\_\+A}
+\begin{DoxyCompactList}\small\item\em height of first potential \end{DoxyCompactList}\item 
+\mbox{\label{classPairGaussianPotential_a9a843d2fd51a6bf2eaa9190b3384a535}} 
+double \textbf{ m\+\_\+B}
+\begin{DoxyCompactList}\small\item\em height of second potential \end{DoxyCompactList}\item 
+\mbox{\label{classPairGaussianPotential_abc4e2a8e4e5c6923f00d9d20a7786312}} 
+double \textbf{ m\+\_\+alpha}
+\begin{DoxyCompactList}\small\item\em width of first potential \end{DoxyCompactList}\item 
+\mbox{\label{classPairGaussianPotential_a18c413a52e6391d131cff0bc1bd92a58}} 
+double \textbf{ m\+\_\+beta}
+\begin{DoxyCompactList}\small\item\em width of second potential \end{DoxyCompactList}\item 
+\mbox{\label{classPairGaussianPotential_a9a149b8f184bfdae4e471ae4558d9150}} 
+double \textbf{ m\+\_\+rA}
+\begin{DoxyCompactList}\small\item\em position of fist peak \end{DoxyCompactList}\item 
+\mbox{\label{classPairGaussianPotential_a749920ac89862cf8fd8d0a76b63905db}} 
+double \textbf{ m\+\_\+rB}
+\begin{DoxyCompactList}\small\item\em position of second peak \end{DoxyCompactList}\item 
+\mbox{\label{classPairGaussianPotential_a53535f3d09f76a200e4a0b7f0909950d}} 
+double \textbf{ m\+\_\+rcut}
+\begin{DoxyCompactList}\small\item\em cutoff distance \end{DoxyCompactList}\item 
+\mbox{\label{classPairGaussianPotential_a02dd8e3c500a55ee6d54387d198fbe5f}} 
+\textbf{ Gaussian\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairGaussianPotential_a668104a87e0322f84129799ad032af90}} 
+\index{PairGaussianPotential@{PairGaussianPotential}!PairGaussianPotential@{PairGaussianPotential}}
+\index{PairGaussianPotential@{PairGaussianPotential}!PairGaussianPotential@{PairGaussianPotential}}
+\doxysubsubsection{PairGaussianPotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+Gaussian\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in) \\
+\hline
+{\em param} & Contains information about all parameters (epsilon, sigma, and rcut) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file pair\+\_\+gaussian\+\_\+potential.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+gaussian\+\_\+potential.\+hpp}\item 
+\textbf{ pair\+\_\+gaussian\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

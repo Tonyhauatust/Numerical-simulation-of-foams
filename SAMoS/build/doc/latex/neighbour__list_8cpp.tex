@@ -1,0 +1,89 @@
+\doxysection{neighbour\+\_\+list.\+cpp File Reference}
+\label{neighbour__list_8cpp}\index{neighbour\_list.cpp@{neighbour\_list.cpp}}
+
+
+Definition of the \doxyref{Neighbour\+List}{p.}{classNeighbourList} class.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{neighbour__list_8cpp_ab0c79d039e058e272e02c86faed219ca}} 
+static int {\bfseries get\+\_\+opposite} (const Delaunay\+::\+Face\+\_\+handle f, const int i, const int j)
+\item 
+\mbox{\label{neighbour__list_8cpp_aac2f8b62b496d71c0e244e0bd4ca9e46}} 
+static void {\bfseries mark\+\_\+domains} (Delaunay \&ct, Delaunay\+::\+Face\+\_\+handle start, int index, list$<$ Delaunay\+::\+Edge $>$ \&border)
+\item 
+\mbox{\label{neighbour__list_8cpp_a20bf4b0ba187b8cae30e9dd932e6a35f}} 
+void {\bfseries mark\+\_\+domains} (Delaunay \&cdt)
+\item 
+double \textbf{ dot} (const \textbf{ Particle} \&p1, const \textbf{ Particle} \&p2, const \textbf{ Particle} \&p3)
+\begin{DoxyCompactList}\small\item\em Dot product between two vectors given by three particles. \end{DoxyCompactList}\item 
+void \textbf{ mirror} (const \textbf{ Particle} \&p1, const \textbf{ Particle} \&p2, const \textbf{ Particle} \&p3, double \&x, double \&y, double \&z)
+\begin{DoxyCompactList}\small\item\em Mirror image of a point with respect to an edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of the \doxyref{Neighbour\+List}{p.}{classNeighbourList} class. 
+
+\begin{DoxyAuthor}{Author}
+Rastko Sknepnek, {\texttt{ sknepnek@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+17-\/Oct-\/2013 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{neighbour__list_8cpp_a986d33b41c2b70ce020cf9af376910f8}} 
+\index{neighbour\_list.cpp@{neighbour\_list.cpp}!dot@{dot}}
+\index{dot@{dot}!neighbour\_list.cpp@{neighbour\_list.cpp}}
+\doxysubsubsection{dot()}
+{\footnotesize\ttfamily double dot (\begin{DoxyParamCaption}\item[{const \textbf{ Particle} \&}]{p1,  }\item[{const \textbf{ Particle} \&}]{p2,  }\item[{const \textbf{ Particle} \&}]{p3 }\end{DoxyParamCaption})}
+
+
+
+Dot product between two vectors given by three particles. 
+
+Auxiliary function for computing dot product between two vectors defined by three points. This is used to to determine if a particle needs to be mirrored when building the intial triangulation. 
+\begin{DoxyParams}{Parameters}
+{\em p1} & particle 1 \\
+\hline
+{\em p2} & particle 2 \\
+\hline
+{\em p3} & particle 3 Dot product is computed between vector (p2-\/p1) and vector (p3-\/p1) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 601 of file neighbour\+\_\+list.\+cpp.
+
+\mbox{\label{neighbour__list_8cpp_a24f02dda8752c4aa383e6b6ececfe131}} 
+\index{neighbour\_list.cpp@{neighbour\_list.cpp}!mirror@{mirror}}
+\index{mirror@{mirror}!neighbour\_list.cpp@{neighbour\_list.cpp}}
+\doxysubsubsection{mirror()}
+{\footnotesize\ttfamily void mirror (\begin{DoxyParamCaption}\item[{const \textbf{ Particle} \&}]{p1,  }\item[{const \textbf{ Particle} \&}]{p2,  }\item[{const \textbf{ Particle} \&}]{p3,  }\item[{double \&}]{x,  }\item[{double \&}]{y,  }\item[{double \&}]{z }\end{DoxyParamCaption})}
+
+
+
+Mirror image of a point with respect to an edge. 
+
+Auxiliary function for finding a mirror image of a point relative to the edge defined by two other points This is used to to determine the position of the mirrored particle that sits opposite to a boundary edge and has its associated angle being obtuse. 
+\begin{DoxyParams}{Parameters}
+{\em p1} & particle 1 (mirror this particle) \\
+\hline
+{\em p2} & particle 2 (with repsect to a line connecting this) \\
+\hline
+{\em p3} & particle 3 (and this particle) \\
+\hline
+{\em x} & x coordiante of the mirrored particle \\
+\hline
+{\em y} & y coordiante of the mirrored particle \\
+\hline
+{\em z} & z coordiante of the mirrored particle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 618 of file neighbour\+\_\+list.\+cpp.
+

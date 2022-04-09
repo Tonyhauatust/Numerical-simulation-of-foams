@@ -1,0 +1,76 @@
+\doxysection{Pair\+Active\+Nematic\+Potential Class Reference}
+\label{classPairActiveNematicPotential}\index{PairActiveNematicPotential@{PairActiveNematicPotential}}
+
+
+\doxysubsection{Detailed Description}
+\$.
+
+\begin{DoxyNote}{Note}
+\+: As many models under pair directory, this is really not a potential. 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\textbf{ Todo}]\+: Rename these directories to reflect the fact that many models are not really potentials. \end{DoxyRefDesc}
+
+
+Definition at line 54 of file pair\+\_\+active\+\_\+nematic\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Active\+Nematic\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairActiveNematicPotential_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairActiveNematicPotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since active potential needs neighbour list. \end{DoxyCompactList}\item 
+\mbox{\label{classPairActiveNematicPotential_a60f70115b851e412fc0973176c3226b1}} 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairActiveNematicPotential_abc4e2a8e4e5c6923f00d9d20a7786312}} 
+double \textbf{ m\+\_\+alpha}
+\begin{DoxyCompactList}\small\item\em contractile/extensile stress strength \end{DoxyCompactList}\item 
+\mbox{\label{classPairActiveNematicPotential_a53535f3d09f76a200e4a0b7f0909950d}} 
+double \textbf{ m\+\_\+rcut}
+\begin{DoxyCompactList}\small\item\em cutoff distance \end{DoxyCompactList}\item 
+\mbox{\label{classPairActiveNematicPotential_a6a3e6ed99548d50e9a9905b96836b9bf}} 
+\textbf{ Active\+Nematic\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairActiveNematicPotential_a7776649839c3122e13cf50f8ef0ee484}} 
+\index{PairActiveNematicPotential@{PairActiveNematicPotential}!PairActiveNematicPotential@{PairActiveNematicPotential}}
+\index{PairActiveNematicPotential@{PairActiveNematicPotential}!PairActiveNematicPotential@{PairActiveNematicPotential}}
+\doxysubsubsection{PairActiveNematicPotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+Active\+Nematic\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in) \\
+\hline
+{\em param} & Contains information about all parameters (alpha, sigma, and rcut) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file pair\+\_\+active\+\_\+nematic\+\_\+potential.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+active\+\_\+nematic\+\_\+potential.\+hpp}\item 
+\textbf{ pair\+\_\+active\+\_\+nematic\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,124 @@
+\doxysection{Pair\+Potential Class Reference}
+\label{classPairPotential}\index{PairPotential@{PairPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Potential}{p.}{classPairPotential} is the base class (abstract) that handles all calls to the pair potential evaluations. Children of this class will implement actual force fields. 
+
+Definition at line 52 of file pair\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairPotential_afed81141d576564772adfa10689caa11}} 
+virtual \textbf{ $\sim$\+Pair\+Potential} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_a754ef8deaf209da35ddfbb97484af90a}} 
+virtual void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&)=0
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_a3463b5040dfb6f646e76e56e6c19b9e3}} 
+virtual void \textbf{ set\+\_\+type\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&)
+\begin{DoxyCompactList}\small\item\em Set type parameters for each particle. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_a892cfb41faafbd3ca658c7c36954915d}} 
+virtual bool \textbf{ need\+\_\+nlist} ()=0
+\begin{DoxyCompactList}\small\item\em Returns true if the specific pair potential needs neighbour list. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_a47b59507485f0050f21b676fac26c071}} 
+virtual void \textbf{ compute} (double)=0
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_a189b2c95a7124e16db2066e79b6c66a4}} 
+string \textbf{ params\+\_\+ok} (\textbf{ pairs\+\_\+type} \&params)
+\begin{DoxyCompactList}\small\item\em Check if there are no illegal parameters. \end{DoxyCompactList}\item 
+void \textbf{ reset\+\_\+force\+\_\+types} (const string \&name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairPotential_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Pointer to the \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles messages sent to output. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_a4e781f6afa8a44060341e9cc7428415c}} 
+Neighbour\+List\+Ptr \textbf{ m\+\_\+nlist}
+\begin{DoxyCompactList}\small\item\em Handles \doxyref{Neighbour\+List}{p.}{classNeighbourList} object. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_a443e137e6bb64b87e232adee02e78108}} 
+Value\+Ptr \textbf{ m\+\_\+val}
+\begin{DoxyCompactList}\small\item\em \doxyref{Value}{p.}{classValue} object for phasing in particles. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_aea53ad04761d4054d7eced182658e9ed}} 
+bool \textbf{ m\+\_\+has\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em Flag that controls if pair parameters are set. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_a0aaaeec60ca81a77be92c9f9a0923c04}} 
+bool \textbf{ m\+\_\+shifted}
+\begin{DoxyCompactList}\small\item\em If true, potential is shifted at cutoff. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_a20a4fa47856dfecbae0d29f4d552f35e}} 
+double \textbf{ m\+\_\+potential\+\_\+energy}
+\begin{DoxyCompactList}\small\item\em Total potential energy. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_af0f9f3ef2234435a49825eb36825e258}} 
+bool \textbf{ m\+\_\+use\+\_\+particle\+\_\+radii}
+\begin{DoxyCompactList}\small\item\em If true, base potential ranges (if they exist) on particle radii. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_af2649acb555c523a1588c7b0644e0580}} 
+bool \textbf{ m\+\_\+phase\+\_\+in}
+\begin{DoxyCompactList}\small\item\em If true, gradually switch on potential for particles that are younger than a given age. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_a26fc995c920bda74422455df7b3150e8}} 
+bool \textbf{ m\+\_\+compute\+\_\+stress}
+\begin{DoxyCompactList}\small\item\em If true, compute stress tensor. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_a8db0c92c19a7ac3a0d50cccb83f29cf2}} 
+int \textbf{ m\+\_\+ntypes}
+\begin{DoxyCompactList}\small\item\em Total number of particle types in the system. \end{DoxyCompactList}\item 
+\mbox{\label{classPairPotential_aebea9645ba54ffda78621a2c14cc5e52}} 
+vector$<$ string $>$ \textbf{ m\+\_\+known\+\_\+params}
+\begin{DoxyCompactList}\small\item\em Lists all known parameters accepted by a given pair potential. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairPotential_a1a8c1ebe3a645bf63753e8dbb7796a26}} 
+\index{PairPotential@{PairPotential}!PairPotential@{PairPotential}}
+\index{PairPotential@{PairPotential}!PairPotential@{PairPotential}}
+\doxysubsubsection{PairPotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in). Line 340 of \doxyref{samos.\+cpp}{p.}{samos_8cpp}\+: The m\+\_\+val(val) is set with the number of time steps to phase in \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file pair\+\_\+potential.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPairPotential_aca6e7f8ecf3ec72dc05b68bf912a9d92}} 
+\index{PairPotential@{PairPotential}!reset\_force\_types@{reset\_force\_types}}
+\index{reset\_force\_types@{reset\_force\_types}!PairPotential@{PairPotential}}
+\doxysubsubsection{reset\_force\_types()}
+{\footnotesize\ttfamily void reset\+\_\+force\+\_\+types (\begin{DoxyParamCaption}\item[{const string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resets per particle force type 
+\begin{DoxyParams}{Parameters}
+{\em name} & force type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file pair\+\_\+potential.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+potential.\+hpp}\end{DoxyCompactItemize}

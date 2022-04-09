@@ -1,0 +1,63 @@
+\doxysection{External\+A\+J\+Polar\+Align Class Reference}
+\label{classExternalAJPolarAlign}\index{ExternalAJPolarAlign@{ExternalAJPolarAlign}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{External\+A\+J\+Polar\+Align}{p.}{classExternalAJPolarAlign} implements the active jamming type \char`\"{}polar\char`\"{} type alignment on a single particle. For all particles we compute torque on the particle as $ \vec \tau_i = -1/tau \vec n_i\times\vec v_i $, where $ tau $ is the coupling alignment time and $ \vec v_i $ is the velocity of the particle itself. 
+
+Definition at line 55 of file external\+\_\+ajpolar\+\_\+aligner.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ External\+A\+J\+Polar\+Align} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classExternalAJPolarAlign_a14df1e61054fb4091e9c480b4f4dfe57}} 
+void \textbf{ set\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&self\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for self alignment ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classExternalAJPolarAlign_a4993c97a669fa259c6574a18d547c117}} 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes \char`\"{}torques\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classExternalAJPolarAlign_aab221f1017e8431da2653dcdd348ed64}} 
+double \textbf{ m\+\_\+tau}
+\begin{DoxyCompactList}\small\item\em Coupling constant. \end{DoxyCompactList}\item 
+\mbox{\label{classExternalAJPolarAlign_a4d88c0943dd0b462e12a59833fe4021b}} 
+bool \textbf{ m\+\_\+normalise}
+\begin{DoxyCompactList}\small\item\em Whether to normalise the velocity in the alignment term. \end{DoxyCompactList}\item 
+\mbox{\label{classExternalAJPolarAlign_a66cc80a1616c2f6c82078d358d6e384b}} 
+\textbf{ Polar\+A\+J\+Align\+Parameters} $\ast$ \textbf{ m\+\_\+type\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classExternalAJPolarAlign_a3b27ce97aaf775c4c7d4324c2a7c1349}} 
+\index{ExternalAJPolarAlign@{ExternalAJPolarAlign}!ExternalAJPolarAlign@{ExternalAJPolarAlign}}
+\index{ExternalAJPolarAlign@{ExternalAJPolarAlign}!ExternalAJPolarAlign@{ExternalAJPolarAlign}}
+\doxysubsubsection{ExternalAJPolarAlign()}
+{\footnotesize\ttfamily \textbf{ External\+A\+J\+Polar\+Align} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file external\+\_\+ajpolar\+\_\+aligner.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ external\+\_\+ajpolar\+\_\+aligner.\+hpp}\item 
+\textbf{ external\+\_\+ajpolar\+\_\+aligner.\+cpp}\end{DoxyCompactItemize}

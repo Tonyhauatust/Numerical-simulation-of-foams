@@ -1,0 +1,104 @@
+\doxysection{Constraint\+Sphere Class Reference}
+\label{classConstraintSphere}\index{ConstraintSphere@{ConstraintSphere}}
+
+
+\doxysubsection{Detailed Description}
+Enforces all particles to be on the surface of a sphere of radius R centred at the origin. All velocities will point in the tangent direction. 
+
+Definition at line 48 of file constraint\+\_\+sphere.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Constraint\+Sphere} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ enforce} (\textbf{ Particle} \&)
+\begin{DoxyCompactList}\small\item\em Enforce constraint. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintSphere_a456cac7812f6819d976dca1e1c2ff45c}} 
+void \textbf{ compute\+\_\+normal} (\textbf{ Particle} \&p, double \&Nx, double \&Ny, double \&Nz)
+\begin{DoxyCompactList}\small\item\em Computes normal to the surface. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintSphere_a13e6067db87c4027f0e009da846451cf}} 
+void {\bfseries compute\+\_\+gradient} (\textbf{ Particle} \&p, double \&gx, double \&gy, double \&gz)
+\item 
+\mbox{\label{classConstraintSphere_aa3a67c1e6b300198e6830d66084b8af7}} 
+double {\bfseries constraint\+\_\+value} (\textbf{ Particle} \&p)
+\item 
+bool \textbf{ rescale} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classConstraintSphere_adf987a6a54ef79ed98867352c9f0b8b5}} 
+double \textbf{ m\+\_\+r}
+\begin{DoxyCompactList}\small\item\em Radius of the confining sphere. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classConstraintSphere_a6adb393822cb75d0137d3f2a2c7ed985}} 
+\index{ConstraintSphere@{ConstraintSphere}!ConstraintSphere@{ConstraintSphere}}
+\index{ConstraintSphere@{ConstraintSphere}!ConstraintSphere@{ConstraintSphere}}
+\doxysubsubsection{ConstraintSphere()}
+{\footnotesize\ttfamily \textbf{ Constraint\+Sphere} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em id} & unique constraint id \\
+\hline
+{\em sys} & pointer to the system object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & parameters that define the manifolds (e.\+g., sphere radius) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file constraint\+\_\+sphere.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classConstraintSphere_a9ed7e5d3cc625a705ba7d5677d649ced}} 
+\index{ConstraintSphere@{ConstraintSphere}!enforce@{enforce}}
+\index{enforce@{enforce}!ConstraintSphere@{ConstraintSphere}}
+\doxysubsubsection{enforce()}
+{\footnotesize\ttfamily void enforce (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Enforce constraint. 
+
+Force particle to be confined to the surface of the sphere and its velocity to be tangent to it. We assume that during the integration step particles do not move to much away from the surface and we project them down using simple radial projection. 
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxyref{Particle}{p.}{classParticle} which is to be projected onto the sphere \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \textbf{ Constraint} \doxyref{}{p.}{classConstraint_a9ed7e5d3cc625a705ba7d5677d649ced}.
+
+
+
+Definition at line 38 of file constraint\+\_\+sphere.\+cpp.
+
+\mbox{\label{classConstraintSphere_ac9709d92eab82a813488f353afc83e3f}} 
+\index{ConstraintSphere@{ConstraintSphere}!rescale@{rescale}}
+\index{rescale@{rescale}!ConstraintSphere@{ConstraintSphere}}
+\doxysubsubsection{rescale()}
+{\footnotesize\ttfamily bool rescale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Rescale sphere size and make sure that all particles are still on it. Rescaling is done only at certain steps and only if rescale factor is not equal to 1. 
+
+Reimplemented from \textbf{ Constraint} \doxyref{}{p.}{classConstraint}.
+
+
+
+Definition at line 87 of file constraint\+\_\+sphere.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ constraint\+\_\+sphere.\+hpp}\item 
+\textbf{ constraint\+\_\+sphere.\+cpp}\end{DoxyCompactItemize}

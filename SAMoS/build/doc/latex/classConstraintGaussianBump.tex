@@ -1,0 +1,140 @@
+\doxysection{Constraint\+Gaussian\+Bump Class Reference}
+\label{classConstraintGaussianBump}\index{ConstraintGaussianBump@{ConstraintGaussianBump}}
+
+
+\doxysubsection{Detailed Description}
+Enforces all particles to be on the surface of a Gaussian bump centred in the origin. Form of the bump is $ z(x,y)=A \exp\left(-\frac{x^2}{a^2}\right)\exp\left(-\frac{y^2}{b^2}\right) $, where parameter $ A $ controls hight of the bump and parameters $ a $ and $ b $ control the width of the bump in the x and y direction, respectively. 
+
+Definition at line 48 of file constraint\+\_\+gaussian\+\_\+bump.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Constraint\+Gaussian\+Bump} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ compute\+\_\+normal} (\textbf{ Particle} \&, double \&, double \&, double \&)
+\begin{DoxyCompactList}\small\item\em Computes normal to the surface. \end{DoxyCompactList}\item 
+void \textbf{ compute\+\_\+gradient} (\textbf{ Particle} \&, double \&, double \&, double \&)
+\item 
+double \textbf{ constraint\+\_\+value} (\textbf{ Particle} \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classConstraintGaussianBump_a92d2bdec1a851c0796cdac03a9fb3ed7}} 
+double \textbf{ m\+\_\+A}
+\begin{DoxyCompactList}\small\item\em Gaussian\+Bump height. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintGaussianBump_a9c41cdb9725c9ef90a5ef62f86390762}} 
+double \textbf{ m\+\_\+a}
+\begin{DoxyCompactList}\small\item\em Gaussian\+Bump width in x direction. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintGaussianBump_abd0a6fc00c328cbb23361e70bea2ed3b}} 
+double \textbf{ m\+\_\+b}
+\begin{DoxyCompactList}\small\item\em Gaussian\+Bump width in y direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classConstraintGaussianBump_afc035f6154f28ba4d9e6597d55fbda80}} 
+\index{ConstraintGaussianBump@{ConstraintGaussianBump}!ConstraintGaussianBump@{ConstraintGaussianBump}}
+\index{ConstraintGaussianBump@{ConstraintGaussianBump}!ConstraintGaussianBump@{ConstraintGaussianBump}}
+\doxysubsubsection{ConstraintGaussianBump()}
+{\footnotesize\ttfamily \textbf{ Constraint\+Gaussian\+Bump} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em id} & unique constraint id \\
+\hline
+{\em sys} & pointer to the system object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & parameters that define the manifolds (e.\+g., torus radius) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file constraint\+\_\+gaussian\+\_\+bump.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classConstraintGaussianBump_ab94012bbb0ddf61047baf7239047c33e}} 
+\index{ConstraintGaussianBump@{ConstraintGaussianBump}!compute\_gradient@{compute\_gradient}}
+\index{compute\_gradient@{compute\_gradient}!ConstraintGaussianBump@{ConstraintGaussianBump}}
+\doxysubsubsection{compute\_gradient()}
+{\footnotesize\ttfamily void compute\+\_\+gradient (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p,  }\item[{double \&}]{gx,  }\item[{double \&}]{gy,  }\item[{double \&}]{gz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Compute gradient at a point 
+\begin{DoxyParams}{Parameters}
+{\em p} & reference to a point \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Constraint} \doxyref{}{p.}{classConstraint}.
+
+
+
+Definition at line 58 of file constraint\+\_\+gaussian\+\_\+bump.\+cpp.
+
+\mbox{\label{classConstraintGaussianBump_a94d4a8015fc0ef8bad688629dbedc73f}} 
+\index{ConstraintGaussianBump@{ConstraintGaussianBump}!compute\_normal@{compute\_normal}}
+\index{compute\_normal@{compute\_normal}!ConstraintGaussianBump@{ConstraintGaussianBump}}
+\doxysubsubsection{compute\_normal()}
+{\footnotesize\ttfamily void compute\+\_\+normal (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p,  }\item[{double \&}]{Nx,  }\item[{double \&}]{Ny,  }\item[{double \&}]{Nz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes normal to the surface. 
+
+Compute normal to the surface at p
+
+Normal vector is computed as the normalized gradient vector at point p. Coordinates of gradient vector are given as\+:
+
+$ g_x = -\frac{2 A x e^{-\frac{x^2}{a^2}-\frac{y^2}{b^2}}}{a^2}, $ $ g_y = -\frac{2 A y e^{-\frac{x^2}{a^2}-\frac{y^2}{b^2}}}{b^2}, $ $ g_z = -1. $ ~\newline
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Reference to the particle object \\
+\hline
+{\em Nx} & x coordinate of the normal \\
+\hline
+{\em Ny} & y coordinate of the normal \\
+\hline
+{\em Nz} & z coordinate of the normal \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Constraint} \doxyref{}{p.}{classConstraint_afc39476dfa8d0d838cb2591f9706ad68}.
+
+
+
+Definition at line 47 of file constraint\+\_\+gaussian\+\_\+bump.\+cpp.
+
+\mbox{\label{classConstraintGaussianBump_a24e3c46930257513fdddee9dd485d2a6}} 
+\index{ConstraintGaussianBump@{ConstraintGaussianBump}!constraint\_value@{constraint\_value}}
+\index{constraint\_value@{constraint\_value}!ConstraintGaussianBump@{ConstraintGaussianBump}}
+\doxysubsubsection{constraint\_value()}
+{\footnotesize\ttfamily double constraint\+\_\+value (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Compute constraint value at particle p 
+\begin{DoxyParams}{Parameters}
+{\em p} & reference to the particle \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Constraint} \doxyref{}{p.}{classConstraint}.
+
+
+
+Definition at line 70 of file constraint\+\_\+gaussian\+\_\+bump.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ constraint\+\_\+gaussian\+\_\+bump.\+hpp}\item 
+\textbf{ constraint\+\_\+gaussian\+\_\+bump.\+cpp}\end{DoxyCompactItemize}

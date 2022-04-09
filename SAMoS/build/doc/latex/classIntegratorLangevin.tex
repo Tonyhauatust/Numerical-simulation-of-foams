@@ -1,0 +1,144 @@
+\doxysection{Integrator\+Langevin Class Reference}
+\label{classIntegratorLangevin}\index{IntegratorLangevin@{IntegratorLangevin}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Integrator\+Langevin}{p.}{classIntegratorLangevin} class implements Langevin dynamics for the particle position. \doxyref{Particle}{p.}{classParticle} director will not be integrated. 
+
+Definition at line 52 of file integrator\+\_\+langevin.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Integrator\+Langevin} (System\+Ptr sys, Messenger\+Ptr msg, Potential\+Ptr pot, Aligner\+Ptr align, Neighbour\+List\+Ptr nlist, Constrainer\+Ptr cons, Value\+Ptr temp, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classIntegratorLangevin_a611ba68b85e9a65f5d842f706de335fd}} 
+void \textbf{ integrate} ()
+\begin{DoxyCompactList}\small\item\em Propagate system for a time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ integrate\+\_\+baoab} ()
+\begin{DoxyCompactList}\small\item\em Integrate using B\+A\+O\+AB method (defualt) \end{DoxyCompactList}\item 
+void \textbf{ integrate\+\_\+spv} ()
+\begin{DoxyCompactList}\small\item\em Integrate using S\+PV method. \end{DoxyCompactList}\item 
+void \textbf{ integrate\+\_\+bbk} ()
+\begin{DoxyCompactList}\small\item\em Integrate using B\+BK method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classIntegratorLangevin_aaba456a057071541006327fc2025f5df}} 
+R\+N\+G\+Ptr \textbf{ m\+\_\+rng}
+\begin{DoxyCompactList}\small\item\em Random number generator. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorLangevin_a50241d462577efe591bbd456d0c0b015}} 
+double \textbf{ m\+\_\+gamma}
+\begin{DoxyCompactList}\small\item\em Friction constant. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorLangevin_a2df1f735aa0176ef77f9335541d646f8}} 
+string \textbf{ m\+\_\+method}
+\begin{DoxyCompactList}\small\item\em Specify integration method (B\+A\+O\+AB, S\+PV, or B\+BK) \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorLangevin_a4c28d4925e15283b38c6add865528f81}} 
+vector$<$ double $>$ \textbf{ m\+\_\+\+Rx}
+\begin{DoxyCompactList}\small\item\em Normally distributed random numbers for B\+BK integrator. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorLangevin_a67e015eeeeed25fd65d7a0b2c949d8d9}} 
+vector$<$ double $>$ \textbf{ m\+\_\+\+Ry}
+\begin{DoxyCompactList}\small\item\em Normally distributed random numbers for B\+BK integrator. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorLangevin_aac4c85746ce69c5bf18897e58d82c313}} 
+vector$<$ double $>$ \textbf{ m\+\_\+\+Rz}
+\begin{DoxyCompactList}\small\item\em Normally distributed random numbers for B\+BK integrator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classIntegratorLangevin_ab37f83783599b9e4a915a4025f15ee5d}} 
+\index{IntegratorLangevin@{IntegratorLangevin}!IntegratorLangevin@{IntegratorLangevin}}
+\index{IntegratorLangevin@{IntegratorLangevin}!IntegratorLangevin@{IntegratorLangevin}}
+\doxysubsubsection{IntegratorLangevin()}
+{\footnotesize\ttfamily \textbf{ Integrator\+Langevin} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Constrainer\+Ptr}]{cons,  }\item[{Value\+Ptr}]{temp,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to a \doxyref{System}{p.}{classSystem} object containing all particles \\
+\hline
+{\em msg} & Internal message handler \\
+\hline
+{\em pot} & Pairwise and external interaction handler \\
+\hline
+{\em align} & Pairwise and external alignment handler \\
+\hline
+{\em nlist} & Neighbour list object \\
+\hline
+{\em cons} & Enforces constraints to the manifold surface \\
+\hline
+{\em temp} & Temperature control object \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file integrator\+\_\+langevin.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classIntegratorLangevin_a29cab9f11de8e1f81e8faa240b4c12ff}} 
+\index{IntegratorLangevin@{IntegratorLangevin}!integrate\_baoab@{integrate\_baoab}}
+\index{integrate\_baoab@{integrate\_baoab}!IntegratorLangevin@{IntegratorLangevin}}
+\doxysubsubsection{integrate\_baoab()}
+{\footnotesize\ttfamily void integrate\+\_\+baoab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Integrate using B\+A\+O\+AB method (defualt) 
+
+Integrates stochastic equations of motion using Langevin dynamics. The implementation is based on the B\+A\+O\+AB algorithm in the book \char`\"{}\+Molecular Dynamics\+: With Deterministic and Stochastic Numerical Methods\char`\"{} by Ben Leimkuhler and Charles Matthews Interdisciplinary Applied Mathematics, Vol. 39, Springer (page 271) \begin{DoxyNote}{Note}
+This integrator applies only to the particle position and does not implement activity. In order to use activity, you should define, e.\+g. external self propulsion. ~\newline
+ 
+\end{DoxyNote}
+
+
+Definition at line 54 of file integrator\+\_\+langevin.\+cpp.
+
+\mbox{\label{classIntegratorLangevin_a0a9880a947cea17781a87954890df3f7}} 
+\index{IntegratorLangevin@{IntegratorLangevin}!integrate\_bbk@{integrate\_bbk}}
+\index{integrate\_bbk@{integrate\_bbk}!IntegratorLangevin@{IntegratorLangevin}}
+\doxysubsubsection{integrate\_bbk()}
+{\footnotesize\ttfamily void integrate\+\_\+bbk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Integrate using B\+BK method. 
+
+Integrates stochastic equations of motion using Langevin dynamics. The implementation is based on the B\+BK algorithm in the book \char`\"{}\+Molecular Dynamics\+: With Deterministic and Stochastic Numerical Methods\char`\"{} by Ben Leimkuhler and Charles Matthews Interdisciplinary Applied Mathematics, Vol. 39, Springer (page 273) \begin{DoxyNote}{Note}
+This integrator applies only to the particle position and does not implement activity. In order to use activity, you should define, e.\+g. external self propulsion. ~\newline
+ 
+\end{DoxyNote}
+
+
+Definition at line 193 of file integrator\+\_\+langevin.\+cpp.
+
+\mbox{\label{classIntegratorLangevin_a91c5ed5878b1a97072d9e1f4e0b68616}} 
+\index{IntegratorLangevin@{IntegratorLangevin}!integrate\_spv@{integrate\_spv}}
+\index{integrate\_spv@{integrate\_spv}!IntegratorLangevin@{IntegratorLangevin}}
+\doxysubsubsection{integrate\_spv()}
+{\footnotesize\ttfamily void integrate\+\_\+spv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Integrate using S\+PV method. 
+
+Integrates stochastic equations of motion using Langevin dynamics. The implementation is based on the S\+PV algorithm in the book \char`\"{}\+Molecular Dynamics\+: With Deterministic and Stochastic Numerical Methods\char`\"{} by Ben Leimkuhler and Charles Matthews Interdisciplinary Applied Mathematics, Vol. 39, Springer (page 272) \begin{DoxyNote}{Note}
+This integrator applies only to the particle position and does not implement activity. In order to use activity, you should define, e.\+g. external self propulsion. ~\newline
+ 
+\end{DoxyNote}
+
+
+Definition at line 128 of file integrator\+\_\+langevin.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ integrator\+\_\+langevin.\+hpp}\item 
+\textbf{ integrator\+\_\+langevin.\+cpp}\end{DoxyCompactItemize}

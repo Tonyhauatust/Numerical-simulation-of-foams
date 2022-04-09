@@ -1,0 +1,224 @@
+\doxysection{Vertex Struct Reference}
+\label{structVertex}\index{Vertex@{Vertex}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Vertex}{p.}{structVertex} class is a light-\/weight class that handles vertices in a mesh. A vertex can simply be a particle position or the position of the dual lattice in tissue models.
+
+This may apper as doubling of the data strucures, but gives us fexibilty to work with meshes that do not coincide with the lattice positions. 
+
+Definition at line 59 of file vertex.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vertex} (int \textbf{ id}, double x, double y, double \textbf{ z})
+\item 
+\textbf{ Vertex} (\textbf{ Particle} \&p)
+\item 
+void \textbf{ add\+\_\+neighbour} (int v)
+\item 
+void \textbf{ remove\+\_\+neighbour} (int v)
+\item 
+void \textbf{ add\+\_\+edge} (int e)
+\item 
+void \textbf{ remove\+\_\+edge} (int e)
+\item 
+void \textbf{ add\+\_\+face} (int f)
+\item 
+void \textbf{ remove\+\_\+face} (int f)
+\item 
+\mbox{\label{structVertex_aeff34242dbf0c8900d649ca11dde77a7}} 
+bool \textbf{ operator==} (int val)
+\begin{DoxyCompactList}\small\item\em Compare if the id of the vertex is equal to an integer value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{structVertex_a7441ef0865bcb3db9b8064dd7375c1ea}} 
+int \textbf{ id}
+\begin{DoxyCompactList}\small\item\em \doxyref{Vertex}{p.}{structVertex} id. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_ac765329451135abec74c45e1897abf26}} 
+int \textbf{ type}
+\begin{DoxyCompactList}\small\item\em \doxyref{Vertex}{p.}{structVertex} type. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_a1f0ec22af292376ea5a261b210cf85e0}} 
+\textbf{ Vector3d} \textbf{ r}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_a232a29288d73b503095737687534e4d6}} 
+\textbf{ Vector3d} \textbf{ N}
+\begin{DoxyCompactList}\small\item\em Normal to the surface. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_a14f94e529dff0b8bfba8e16fbe9755d6}} 
+int \textbf{ z}
+\begin{DoxyCompactList}\small\item\em Coordination number (number of neighbours) \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_ae77e5f5fd78ec284bf80fbcd81865dd3}} 
+int \textbf{ n\+\_\+edges}
+\begin{DoxyCompactList}\small\item\em Number of neighours this vertex has. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_a279f0685d30e9931d84b78c9f7a76d7f}} 
+int \textbf{ n\+\_\+faces}
+\begin{DoxyCompactList}\small\item\em Number of faces this vertex belongs to. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_ae517bffd82b9428b4f1d9500ea01c04f}} 
+double \textbf{ area}
+\begin{DoxyCompactList}\small\item\em Area of dual associated with the vertex. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_ae298052671e12940b102dbfcbbdf16e5}} 
+double \textbf{ perim}
+\begin{DoxyCompactList}\small\item\em Perimeter of dual associated with the vertex. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_a68f61635b8b4afe606ebf818e5b4b6d6}} 
+bool \textbf{ boundary}
+\begin{DoxyCompactList}\small\item\em If true, vertex is a boundary vertex. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_a40c532d6ba6706818b15b50db4a991fe}} 
+bool \textbf{ ordered}
+\begin{DoxyCompactList}\small\item\em If true, vertex star is ordered. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_a571d1b910d429b292be1f1c555733f62}} 
+bool \textbf{ attached}
+\begin{DoxyCompactList}\small\item\em If true, vertex is attached to a mesh. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_a454507306177ee327c2364248cdbb6b5}} 
+vector$<$ int $>$ \textbf{ neigh}
+\begin{DoxyCompactList}\small\item\em Contains indices of all neighbours. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_aa07c6d0a1ef66ed4ad551eba0bc512d7}} 
+vector$<$ int $>$ \textbf{ edges}
+\begin{DoxyCompactList}\small\item\em Contains indices of all edges that originate at this vertex. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_af8787d978105ef2e29605b99ea248bbf}} 
+vector$<$ int $>$ \textbf{ faces}
+\begin{DoxyCompactList}\small\item\em Contains indices of faces this vertex belongs to. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_a99bfaea7c0152605eb424a34b8085cd8}} 
+vector$<$ int $>$ \textbf{ dual}
+\begin{DoxyCompactList}\small\item\em Centres of all faces surrounding it, ordered counterclockwise. \end{DoxyCompactList}\item 
+\mbox{\label{structVertex_a0244065bbfcc08c7fe71f2b3fc2cbf48}} 
+vector$<$ int $>$ \textbf{ dual\+\_\+neighbour\+\_\+map}
+\begin{DoxyCompactList}\small\item\em Contains indices of vertices that correspond to a given dual (for tissue simulations) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{structVertex_a3540ade43598842768121f6f8ad06734}} 
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\doxysubsubsection{Vertex()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \textbf{ Vertex} (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a \doxyref{Vertex}{p.}{structVertex} object 
+\begin{DoxyParams}{Parameters}
+{\em id} & vertex id \\
+\hline
+{\em x} & x coordinate \\
+\hline
+{\em y} & x coordinate \\
+\hline
+{\em z} & x coordinate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 66 of file vertex.\+hpp.
+
+\mbox{\label{structVertex_a7b4b917ff7234dee01a23a8a02b21409}} 
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\doxysubsubsection{Vertex()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \textbf{ Vertex} (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constract from particle position 
+\begin{DoxyParams}{Parameters}
+{\em p} & particle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 79 of file vertex.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{structVertex_af63bc226a11f6c99a89227a0121e3ed0}} 
+\index{Vertex@{Vertex}!add\_edge@{add\_edge}}
+\index{add\_edge@{add\_edge}!Vertex@{Vertex}}
+\doxysubsubsection{add\_edge()}
+{\footnotesize\ttfamily void add\+\_\+edge (\begin{DoxyParamCaption}\item[{int}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add edge 
+\begin{DoxyParams}{Parameters}
+{\em e} & edge index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file vertex.\+hpp.
+
+\mbox{\label{structVertex_aa0cb58ee49fdeda20d21a42365f4beb7}} 
+\index{Vertex@{Vertex}!add\_face@{add\_face}}
+\index{add\_face@{add\_face}!Vertex@{Vertex}}
+\doxysubsubsection{add\_face()}
+{\footnotesize\ttfamily void add\+\_\+face (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add face 
+\begin{DoxyParams}{Parameters}
+{\em f} & face index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 146 of file vertex.\+hpp.
+
+\mbox{\label{structVertex_a506f665be7d54edce6bd906aa89da4ea}} 
+\index{Vertex@{Vertex}!add\_neighbour@{add\_neighbour}}
+\index{add\_neighbour@{add\_neighbour}!Vertex@{Vertex}}
+\doxysubsubsection{add\_neighbour()}
+{\footnotesize\ttfamily void add\+\_\+neighbour (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add neighbour 
+\begin{DoxyParams}{Parameters}
+{\em v} & neighbour index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 106 of file vertex.\+hpp.
+
+\mbox{\label{structVertex_a2d9c2dc3150dd17f83242ab437762597}} 
+\index{Vertex@{Vertex}!remove\_edge@{remove\_edge}}
+\index{remove\_edge@{remove\_edge}!Vertex@{Vertex}}
+\doxysubsubsection{remove\_edge()}
+{\footnotesize\ttfamily void remove\+\_\+edge (\begin{DoxyParamCaption}\item[{int}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Remove edge 
+\begin{DoxyParams}{Parameters}
+{\em e} & edge index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 134 of file vertex.\+hpp.
+
+\mbox{\label{structVertex_a4d21ccacbf23c7b695cd42a3675fed34}} 
+\index{Vertex@{Vertex}!remove\_face@{remove\_face}}
+\index{remove\_face@{remove\_face}!Vertex@{Vertex}}
+\doxysubsubsection{remove\_face()}
+{\footnotesize\ttfamily void remove\+\_\+face (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Remove face 
+\begin{DoxyParams}{Parameters}
+{\em f} & face index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 154 of file vertex.\+hpp.
+
+\mbox{\label{structVertex_a2e841a83bec52b667a0087fc5c2041b7}} 
+\index{Vertex@{Vertex}!remove\_neighbour@{remove\_neighbour}}
+\index{remove\_neighbour@{remove\_neighbour}!Vertex@{Vertex}}
+\doxysubsubsection{remove\_neighbour()}
+{\footnotesize\ttfamily void remove\+\_\+neighbour (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Remove neighbour 
+\begin{DoxyParams}{Parameters}
+{\em v} & neighbour index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 114 of file vertex.\+hpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ vertex.\+hpp}\end{DoxyCompactItemize}

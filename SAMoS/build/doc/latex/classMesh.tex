@@ -1,0 +1,870 @@
+\doxysection{Mesh Class Reference}
+\label{classMesh}\index{Mesh@{Mesh}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Mesh}{p.}{classMesh} class handles basic manipulations with meshes. 
+
+Definition at line 84 of file mesh.\+hpp.
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Compare\+Edge\+Lens}
+\begin{DoxyCompactList}\small\item\em Functor used to compare lengths of two edges. \end{DoxyCompactList}\item 
+struct \textbf{ Compare\+Radii}
+\begin{DoxyCompactList}\small\item\em Functor used to compare radii of circumscribed circles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classMesh_a2a23c7c0c4e0da252b7bc0e13b6f81d8}} 
+\textbf{ Mesh} ()
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{Mesh}{p.}{classMesh} object. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_af4b57d21919c42d55af03391f91a1c08}} 
+int \textbf{ size} ()
+\begin{DoxyCompactList}\small\item\em Get mesh size. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_a39b300c9caf45498df5e9d9e79b2726d}} 
+int \textbf{ nedges} ()
+\begin{DoxyCompactList}\small\item\em Get number of edges. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_a6c20e58b5ab4620ed3fa0906f938bcbe}} 
+int \textbf{ nfaces} ()
+\begin{DoxyCompactList}\small\item\em Get number of faces. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_a577295474de57b30da8ca5c3ee341669}} 
+vector$<$ \textbf{ Vertex} $>$ \& \textbf{ get\+\_\+vertices} ()
+\begin{DoxyCompactList}\small\item\em Get list of all vertices. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_ab7faaf05257746ccdba0624f92483e1c}} 
+vector$<$ \textbf{ Edge} $>$ \& \textbf{ get\+\_\+edges} ()
+\begin{DoxyCompactList}\small\item\em Get edge list. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_ad4f746e4e84e62f6a562f7fb038af386}} 
+vector$<$ \textbf{ Face} $>$ \& \textbf{ get\+\_\+faces} ()
+\begin{DoxyCompactList}\small\item\em Get list of faces. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_a1cbe02b74ef9c7bd7d7b1c802d781d03}} 
+map$<$ pair$<$ int, int $>$, int $>$ \& \textbf{ get\+\_\+edge\+\_\+face} ()
+\begin{DoxyCompactList}\small\item\em Get edge-\/face data structure. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_aaae5ac864c33d237725bcfcd30754f22}} 
+vector$<$ pair$<$ int, int $>$ $>$ \& \textbf{ get\+\_\+boundary} ()
+\begin{DoxyCompactList}\small\item\em Get the information about boundary vertex pairs. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_aefd926e178b07d35dd895e7755587d4b}} 
+double \textbf{ get\+\_\+max\+\_\+face\+\_\+perim} ()
+\begin{DoxyCompactList}\small\item\em Get maximum face perimeter. \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+max\+\_\+face\+\_\+perim} (double val)
+\item 
+void \textbf{ reset} ()
+\begin{DoxyCompactList}\small\item\em Resets the mesh. \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+circumcenter} (bool val)
+\item 
+void \textbf{ add\+\_\+vertex} (int vid, double x, double y, double z)
+\item 
+void \textbf{ add\+\_\+vertex} (\textbf{ Particle} \&p)
+\item 
+void \textbf{ add\+\_\+edge} (int, int)
+\begin{DoxyCompactList}\small\item\em Add an edge. \end{DoxyCompactList}\item 
+void \textbf{ generate\+\_\+faces} ()
+\begin{DoxyCompactList}\small\item\em Generate faces of the mesh. \end{DoxyCompactList}\item 
+void \textbf{ generate\+\_\+dual\+\_\+mesh} ()
+\begin{DoxyCompactList}\small\item\em Generate dual mesh. \end{DoxyCompactList}\item 
+void \textbf{ update\+\_\+dual\+\_\+mesh} ()
+\begin{DoxyCompactList}\small\item\em Update dual mesh. \end{DoxyCompactList}\item 
+void \textbf{ update} (\textbf{ Particle} \&p)
+\item 
+void \textbf{ postprocess} (bool)
+\begin{DoxyCompactList}\small\item\em Post-\/processes the mesh. \end{DoxyCompactList}\item 
+void \textbf{ compute\+\_\+centre} (int)
+\begin{DoxyCompactList}\small\item\em Compute face centre. \end{DoxyCompactList}\item 
+void \textbf{ compute\+\_\+angles} (int)
+\begin{DoxyCompactList}\small\item\em Compute face angles. \end{DoxyCompactList}\item 
+void \textbf{ order\+\_\+star} (int)
+\begin{DoxyCompactList}\small\item\em Order vertex star. \end{DoxyCompactList}\item 
+void \textbf{ order\+\_\+dual} (int)
+\begin{DoxyCompactList}\small\item\em Order dual star. \end{DoxyCompactList}\item 
+double \textbf{ dual\+\_\+area} (int)
+\begin{DoxyCompactList}\small\item\em Compute dual area. \end{DoxyCompactList}\item 
+double \textbf{ dual\+\_\+perimeter} (int)
+\begin{DoxyCompactList}\small\item\em Dual perimeter. \end{DoxyCompactList}\item 
+int \textbf{ opposite\+\_\+vertex} (int)
+\begin{DoxyCompactList}\small\item\em Opposite vertex. \end{DoxyCompactList}\item 
+void \textbf{ edge\+\_\+flip} (int)
+\begin{DoxyCompactList}\small\item\em Flip edge. \end{DoxyCompactList}\item 
+bool \textbf{ equiangulate} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Mesh}{p.}{classMesh} equiangulation. \end{DoxyCompactList}\item 
+void \textbf{ fc\+\_\+jacobian} (int)
+\begin{DoxyCompactList}\small\item\em \doxyref{Face}{p.}{structFace} centre Jacobian. \end{DoxyCompactList}\item 
+void \textbf{ update\+\_\+face\+\_\+properties} ()
+\begin{DoxyCompactList}\small\item\em Update face properties. \end{DoxyCompactList}\item 
+bool \textbf{ remove\+\_\+obtuse\+\_\+boundary} ()
+\begin{DoxyCompactList}\small\item\em Remove obtuse boundary faces. \end{DoxyCompactList}\item 
+vector$<$ \textbf{ Vector3d} $>$ \textbf{ fix\+\_\+obtuse\+\_\+boundary} ()
+\begin{DoxyCompactList}\small\item\em Fix obtuse boundary. \end{DoxyCompactList}\item 
+bool \textbf{ remove\+\_\+edge\+\_\+triangles} ()
+\begin{DoxyCompactList}\small\item\em Remove edge triangles. \end{DoxyCompactList}\item 
+bool \textbf{ is\+\_\+boundary\+\_\+vertex} (int v)
+\item 
+double \textbf{ circum\+\_\+radius} (int)
+\begin{DoxyCompactList}\small\item\em Compute radius of a circumscribed circle. \end{DoxyCompactList}\item 
+\textbf{ Plot\+Area} \& \textbf{ plot\+\_\+area} (bool)
+\begin{DoxyCompactList}\small\item\em Compute data for plotting polygons. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_a4fe705043bc7a2c4558d5b1b838a659e}} 
+bool \textbf{ has\+\_\+obtuse\+\_\+boundary} ()
+\begin{DoxyCompactList}\small\item\em Return true if the mesh has at least one obtuse boundary triangle. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_acb91bf2eec8b0068f18cd262850c86d6}} 
+bool \textbf{ has\+\_\+dangling\+\_\+vertices} ()
+\begin{DoxyCompactList}\small\item\em Return true if mesh has dangling vertices (vertices with coordination 2) \end{DoxyCompactList}\item 
+void \textbf{ debug\+\_\+dump} (const string \&)
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} mesh into off file for debugging purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ compute\+\_\+circumcentre} (int)
+\begin{DoxyCompactList}\small\item\em Compute face circumcentre. \end{DoxyCompactList}\item 
+void \textbf{ compute\+\_\+geometric\+\_\+centre} (int)
+\begin{DoxyCompactList}\small\item\em Compute face geometric centre. \end{DoxyCompactList}\item 
+bool \textbf{ remove\+\_\+edge\+\_\+pair} (int)
+\begin{DoxyCompactList}\small\item\em Remove pair of edges. \end{DoxyCompactList}\item 
+double \textbf{ face\+\_\+area} (int)
+\begin{DoxyCompactList}\small\item\em Compute face area. \end{DoxyCompactList}\item 
+void \textbf{ order\+\_\+boundary\+\_\+star} (int)
+\begin{DoxyCompactList}\small\item\em Order boundary star. \end{DoxyCompactList}\item 
+void \textbf{ remove\+\_\+edge} (int)
+\begin{DoxyCompactList}\small\item\em Remove edge. \end{DoxyCompactList}\item 
+void \textbf{ remove\+\_\+face} (int)
+\begin{DoxyCompactList}\small\item\em Remove face. \end{DoxyCompactList}\item 
+bool \textbf{ remove\+\_\+edge\+\_\+face} (int)
+\begin{DoxyCompactList}\small\item\em Remove edge face. \end{DoxyCompactList}\item 
+\textbf{ Vector3d} \textbf{ mirror\+\_\+vertex} (int)
+\begin{DoxyCompactList}\small\item\em Returns coordinates of the mirror image of a vertex opposite to a boundary edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classMesh_a012b2bfbef5380cc57296def37a49a27}} 
+int \textbf{ m\+\_\+size}
+\begin{DoxyCompactList}\small\item\em \doxyref{Mesh}{p.}{classMesh} size. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_a625bc8f2613679574f0799c4c7b5be1f}} 
+int \textbf{ m\+\_\+nedge}
+\begin{DoxyCompactList}\small\item\em Number of edges. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_aa12b67ac0aea002e9900aa4bd2287be8}} 
+int \textbf{ m\+\_\+nface}
+\begin{DoxyCompactList}\small\item\em Number of faces. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_ac3abf6cfc20cd95ef941f7ddf3d6f693}} 
+bool \textbf{ m\+\_\+is\+\_\+triangulation}
+\begin{DoxyCompactList}\small\item\em If true, all faces are triangles (allows more assumptions) \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_ab0e39c2ccb47d38be402809fc527ad52}} 
+double \textbf{ m\+\_\+max\+\_\+face\+\_\+perim}
+\begin{DoxyCompactList}\small\item\em If face perimeter is greater than this value, reject face and treat it as a hole. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_aa66639936f682dcb15d2541d4f2ae215}} 
+bool \textbf{ m\+\_\+circumcenter}
+\begin{DoxyCompactList}\small\item\em If true, compute face circumcenters. Otherwise compute geometric centre. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_a44000594f9c326878ff1888980062474}} 
+bool \textbf{ m\+\_\+has\+\_\+dangling}
+\begin{DoxyCompactList}\small\item\em If true, the mesh will have dangling vertices (i.\+e., vertices with only two neighbours) \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_ad2c1737057c40c523bf72f5917c2a450}} 
+vector$<$ \textbf{ Vertex} $>$ \textbf{ m\+\_\+vertices}
+\begin{DoxyCompactList}\small\item\em Contains all vertices. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_ab08ea2e8fced2a9ade9e4b4e969cc627}} 
+vector$<$ \textbf{ Edge} $>$ \textbf{ m\+\_\+edges}
+\begin{DoxyCompactList}\small\item\em Contains all edge. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_a6f0215aef23286e03f8109917b25e364}} 
+vector$<$ \textbf{ Face} $>$ \textbf{ m\+\_\+faces}
+\begin{DoxyCompactList}\small\item\em Contains all faces. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_a6df7a6448210af396a85f07072f9d403}} 
+map$<$ pair$<$ int, int $>$, int $>$ \textbf{ m\+\_\+edge\+\_\+map}
+\begin{DoxyCompactList}\small\item\em Relates vertex indices to edge ids. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_a7e83ff91d33352b0b258cd48eab167ef}} 
+map$<$ pair$<$ int, int $>$, int $>$ \textbf{ m\+\_\+edge\+\_\+face}
+\begin{DoxyCompactList}\small\item\em Relates pairs of faces to edges. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_ab8fc3828dfbc5ab810d5d280893375f9}} 
+vector$<$ pair$<$ int, int $>$ $>$ \textbf{ m\+\_\+boundary}
+\begin{DoxyCompactList}\small\item\em List of vertex pair that are on the boundary. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_acada4aefa4248f33ebf0486ba7a63605}} 
+vector$<$ int $>$ \textbf{ m\+\_\+boundary\+\_\+edges}
+\begin{DoxyCompactList}\small\item\em List of all edges that are at the boundary. \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_a85aebde6df1233cef4808d90cae12cd7}} 
+vector$<$ int $>$ \textbf{ m\+\_\+obtuse\+\_\+boundary}
+\begin{DoxyCompactList}\small\item\em List of all boundary edges that have obtuse angle opposite to them ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classMesh_a082eda2892fe376ca8800b55e8093721}} 
+\textbf{ Plot\+Area} \textbf{ m\+\_\+plot\+\_\+area}
+\begin{DoxyCompactList}\small\item\em Used to preapre polygonal data for plotting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classMesh_ab2defca8729818fe1f7db01b037a406f}} 
+\index{Mesh@{Mesh}!add\_edge@{add\_edge}}
+\index{add\_edge@{add\_edge}!Mesh@{Mesh}}
+\doxysubsubsection{add\_edge()}
+{\footnotesize\ttfamily void add\+\_\+edge (\begin{DoxyParamCaption}\item[{int}]{vi,  }\item[{int}]{vj }\end{DoxyParamCaption})}
+
+
+
+Add an edge. 
+
+Add and edge to the list of edges. \doxyref{Edge}{p.}{structEdge} is defined by the indices of two vertices that belong to it. We also populate the auxiliary data structure edge\+\_\+map that allows us to quickly search over vertex pairs. 
+\begin{DoxyParams}{Parameters}
+{\em vi} & index of the 1st vertex \\
+\hline
+{\em vj} & index of the 2nd vertex \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_aab5f13f415d023a2d5d73172381bec5e}} 
+\index{Mesh@{Mesh}!add\_vertex@{add\_vertex}}
+\index{add\_vertex@{add\_vertex}!Mesh@{Mesh}}
+\doxysubsubsection{add\_vertex()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void add\+\_\+vertex (\begin{DoxyParamCaption}\item[{int}]{vid,  }\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add a vertex 
+\begin{DoxyParams}{Parameters}
+{\em vid} & vertex id \\
+\hline
+{\em x} & x-\/coordinate \\
+\hline
+{\em y} & y-\/coordinate \\
+\hline
+{\em z} & z-\/coordinate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 140 of file mesh.\+hpp.
+
+\mbox{\label{classMesh_a9f844af11f0758adf30b4a8affbed61a}} 
+\index{Mesh@{Mesh}!add\_vertex@{add\_vertex}}
+\index{add\_vertex@{add\_vertex}!Mesh@{Mesh}}
+\doxysubsubsection{add\_vertex()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void add\+\_\+vertex (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add from particle 
+\begin{DoxyParams}{Parameters}
+{\em p} & particle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 148 of file mesh.\+hpp.
+
+\mbox{\label{classMesh_a65bf304e2d54419268be41314af8e6ea}} 
+\index{Mesh@{Mesh}!circum\_radius@{circum\_radius}}
+\index{circum\_radius@{circum\_radius}!Mesh@{Mesh}}
+\doxysubsubsection{circum\_radius()}
+{\footnotesize\ttfamily double circum\+\_\+radius (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})}
+
+
+
+Compute radius of a circumscribed circle. 
+
+Compute radius of a circumscribed circle 
+\begin{DoxyParams}{Parameters}
+{\em f} & face id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1007 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_ab6b1cd3a68e73f5966f81c092adfddbf}} 
+\index{Mesh@{Mesh}!compute\_angles@{compute\_angles}}
+\index{compute\_angles@{compute\_angles}!Mesh@{Mesh}}
+\doxysubsubsection{compute\_angles()}
+{\footnotesize\ttfamily void compute\+\_\+angles (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})}
+
+
+
+Compute face angles. 
+
+Computes cosines of interior angles at each vertex of the face. It assumes that vertices are ordered and computes the vertex angle as the angle between vectors along two edges meeting at the vertex. 
+\begin{DoxyParams}{Parameters}
+{\em f} & id of the face \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 235 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a7905dff6a7f10f9b08ad4c9449ca251b}} 
+\index{Mesh@{Mesh}!compute\_centre@{compute\_centre}}
+\index{compute\_centre@{compute\_centre}!Mesh@{Mesh}}
+\doxysubsubsection{compute\_centre()}
+{\footnotesize\ttfamily void compute\+\_\+centre (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})}
+
+
+
+Compute face centre. 
+
+Computes centre of a face. If the face is not triangle, compute geometric centre. If the face is a triangle, compute circumcenter or geometric center depending on the value of the m\+\_\+circumcenter flag. Always compute geometric centre for faces at the boundary. the \doxyref{Face}{p.}{structFace} object. 
+\begin{DoxyParams}{Parameters}
+{\em id} & of the face \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 216 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a0a2a67960447d2ea595ac4024a597f15}} 
+\index{Mesh@{Mesh}!compute\_circumcentre@{compute\_circumcentre}}
+\index{compute\_circumcentre@{compute\_circumcentre}!Mesh@{Mesh}}
+\doxysubsubsection{compute\_circumcentre()}
+{\footnotesize\ttfamily void compute\+\_\+circumcentre (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute face circumcentre. 
+
+Computes circumcentre of a face (assumes that face is a triangle). Coordinates are stored in the \doxyref{Face}{p.}{structFace} object. Formula for circumcentre is given as\+: Let $ \mathbf{A} $, $ \mathbf{B} $, and $ \mathbf{C} $ be 3-\/dimensional points, which form the vertices of a triangle. If we define, $ \mathbf{a} = \mathbf{A}-\mathbf{C}, $ and $ \mathbf{b} = \mathbf{B}-\mathbf{C}. $, the circumcentre is given as $ p_0 = \frac{(\left\|\mathbf{a}\right\|^2\mathbf{b}-\left\|\mathbf{b}\right\|^2\mathbf{a}) \times (\mathbf{a} \times \mathbf{b})} {2 \left\|\mathbf{a}\times\mathbf{b}\right\|^2} + \mathbf{C} $. 
+\begin{DoxyParams}{Parameters}
+{\em id} & of the face \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1180 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a7356efdc201cc436d477a63828135e3f}} 
+\index{Mesh@{Mesh}!compute\_geometric\_centre@{compute\_geometric\_centre}}
+\index{compute\_geometric\_centre@{compute\_geometric\_centre}!Mesh@{Mesh}}
+\doxysubsubsection{compute\_geometric\_centre()}
+{\footnotesize\ttfamily void compute\+\_\+geometric\+\_\+centre (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute face geometric centre. 
+
+Computes geometric centre of a face. Coordinates are stored in the \doxyref{Face}{p.}{structFace} object. 
+\begin{DoxyParams}{Parameters}
+{\em id} & of the face \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1209 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a6c82937ddc193bb0560c5e4fc82ee484}} 
+\index{Mesh@{Mesh}!debug\_dump@{debug\_dump}}
+\index{debug\_dump@{debug\_dump}!Mesh@{Mesh}}
+\doxysubsubsection{debug\_dump()}
+{\footnotesize\ttfamily void debug\+\_\+dump (\begin{DoxyParamCaption}\item[{const string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Dump}{p.}{classDump} mesh into off file for debugging purposes. 
+
+\doxyref{Dump}{p.}{classDump} entire mesh into an O\+FF file for debugging purposes. 
+\begin{DoxyParams}{Parameters}
+{\em name} & file name for output \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1676 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a7b7a392e0d080ae6691f617b8af7eba4}} 
+\index{Mesh@{Mesh}!dual\_area@{dual\_area}}
+\index{dual\_area@{dual\_area}!Mesh@{Mesh}}
+\doxysubsubsection{dual\_area()}
+{\footnotesize\ttfamily double dual\+\_\+area (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})}
+
+
+
+Compute dual area. 
+
+Compute dual area by using expression $ A_i = \frac{1}{2}\sum_{\mu}\left(\vec r_\mu\times\vec r_{\mu+1}\right)\cdot\vec n_i $ were $ \vec r_\mu $ is the coodinate of the cetre of face $ \mu $ and $ \vec n_i $ is the normal vector to the vertex. \begin{DoxyNote}{Note}
+We assume that faces are ordered, otherwise the result will be wrong. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em v} & vertex index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 461 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a566ae53eaf9526a707e9bc93de95a143}} 
+\index{Mesh@{Mesh}!dual\_perimeter@{dual\_perimeter}}
+\index{dual\_perimeter@{dual\_perimeter}!Mesh@{Mesh}}
+\doxysubsubsection{dual\_perimeter()}
+{\footnotesize\ttfamily double dual\+\_\+perimeter (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})}
+
+
+
+Dual perimeter. 
+
+Compute length of dual\textquotesingle{}s perimeter $ l_i = \sum_{\mu}\left|\vec r_\mu-\vec r_{\mu+1}\right| $ were $ \vec r_\mu $ is the coodinate of the cetre of face $ \mu $. \begin{DoxyNote}{Note}
+We assume that faces are ordered, otherwise the result will be wrong. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em v} & verex index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 509 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a649cd654d5ee058ab56019093dad2807}} 
+\index{Mesh@{Mesh}!edge\_flip@{edge\_flip}}
+\index{edge\_flip@{edge\_flip}!Mesh@{Mesh}}
+\doxysubsubsection{edge\_flip()}
+{\footnotesize\ttfamily void edge\+\_\+flip (\begin{DoxyParamCaption}\item[{int}]{e }\end{DoxyParamCaption})}
+
+
+
+Flip edge. 
+
+This is one of the simplest mesh moves that changes it topology. Namely we flip an edge (pair of half-\/edges) shred by two trangles. Needless to say, this move is only defined for triangulations. 
+\begin{DoxyParams}{Parameters}
+{\em e} & id of the half-\/edge to flip (its pair is also flipped) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 568 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a2d7120c8e0e984b47c1268e29a1c1748}} 
+\index{Mesh@{Mesh}!equiangulate@{equiangulate}}
+\index{equiangulate@{equiangulate}!Mesh@{Mesh}}
+\doxysubsubsection{equiangulate()}
+{\footnotesize\ttfamily bool equiangulate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Mesh}{p.}{classMesh} equiangulation. 
+
+Implements the equiangulation of the mesh. This is a procedure where all edges that have the sum of their opposing angles larger than pi flipped. This procedure is guaranteed to converge and at the end one recovers a Delaunday triangulation. 
+
+Definition at line 698 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a21942816c71364ec768f53dbadb081b5}} 
+\index{Mesh@{Mesh}!face\_area@{face\_area}}
+\index{face\_area@{face\_area}!Mesh@{Mesh}}
+\doxysubsubsection{face\_area()}
+{\footnotesize\ttfamily double face\+\_\+area (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute face area. 
+
+Compute ares of a face. 
+\begin{DoxyParams}{Parameters}
+{\em f} & face id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1407 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a54a67b5f2339ef0663134edf67af296e}} 
+\index{Mesh@{Mesh}!fc\_jacobian@{fc\_jacobian}}
+\index{fc\_jacobian@{fc\_jacobian}!Mesh@{Mesh}}
+\doxysubsubsection{fc\_jacobian()}
+{\footnotesize\ttfamily void fc\+\_\+jacobian (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Face}{p.}{structFace} centre Jacobian. 
+
+For a triangular mesh compute derivatives (gradients) of the position of the face centre with respect to the position of each individual triangle vertices. We assume that the face (triangle) is oriented counterclockwise. 
+\begin{DoxyParams}{Parameters}
+{\em f} & id of the face \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 741 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a0ecc042d623cc7b20d58e000f1fe4678}} 
+\index{Mesh@{Mesh}!fix\_obtuse\_boundary@{fix\_obtuse\_boundary}}
+\index{fix\_obtuse\_boundary@{fix\_obtuse\_boundary}!Mesh@{Mesh}}
+\doxysubsubsection{fix\_obtuse\_boundary()}
+{\footnotesize\ttfamily vector$<$ \textbf{ Vector3d} $>$ fix\+\_\+obtuse\+\_\+boundary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fix obtuse boundary. 
+
+Loop over all boundary edges. If the angle opposite to the boundary edge is obtuse, mirror the vertex belonging to the obtuse angle across the boundary and add two edges and one triangle. In the next step, equiangulation move will pick and flip this edge. This prevents sudden jumps in the force. This function returns list of newly added vertices, which will be used to add actual particles to the system. 
+
+Definition at line 890 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a0f56e8210c0c95583f00e3b6d19e4eb2}} 
+\index{Mesh@{Mesh}!generate\_dual\_mesh@{generate\_dual\_mesh}}
+\index{generate\_dual\_mesh@{generate\_dual\_mesh}!Mesh@{Mesh}}
+\doxysubsubsection{generate\_dual\_mesh()}
+{\footnotesize\ttfamily void generate\+\_\+dual\+\_\+mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generate dual mesh. 
+
+Genererate position of the dual vertices 
+
+Definition at line 137 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_ad70f392b7b15189d815748da83dc1e1b}} 
+\index{Mesh@{Mesh}!generate\_faces@{generate\_faces}}
+\index{generate\_faces@{generate\_faces}!Mesh@{Mesh}}
+\doxysubsubsection{generate\_faces()}
+{\footnotesize\ttfamily void generate\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generate faces of the mesh. 
+
+Generates faces from the edge information 
+
+Definition at line 76 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_abd0bc6d92da3e9bf3e7d2f9e6ec92e24}} 
+\index{Mesh@{Mesh}!is\_boundary\_vertex@{is\_boundary\_vertex}}
+\index{is\_boundary\_vertex@{is\_boundary\_vertex}!Mesh@{Mesh}}
+\doxysubsubsection{is\_boundary\_vertex()}
+{\footnotesize\ttfamily bool is\+\_\+boundary\+\_\+vertex (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return true if the vertex is a boundary vertex 
+\begin{DoxyParams}{Parameters}
+{\em v} & index of the vertex \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 221 of file mesh.\+hpp.
+
+\mbox{\label{classMesh_a7bc33f778dd2a5ade94d0ee691e79df3}} 
+\index{Mesh@{Mesh}!mirror\_vertex@{mirror\_vertex}}
+\index{mirror\_vertex@{mirror\_vertex}!Mesh@{Mesh}}
+\doxysubsubsection{mirror\_vertex()}
+{\footnotesize\ttfamily \textbf{ Vector3d} mirror\+\_\+vertex (\begin{DoxyParamCaption}\item[{int}]{edge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns coordinates of the mirror image of a vertex opposite to a boundary edge. 
+
+Compute coordinates of a vertex that is a mirror image (with respect to an edge) of a vertex opposite to a boundary edge edge.
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & index of the edge \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1659 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a7b4a029f6276b6a1d49e69d0de02c717}} 
+\index{Mesh@{Mesh}!opposite\_vertex@{opposite\_vertex}}
+\index{opposite\_vertex@{opposite\_vertex}!Mesh@{Mesh}}
+\doxysubsubsection{opposite\_vertex()}
+{\footnotesize\ttfamily int opposite\+\_\+vertex (\begin{DoxyParamCaption}\item[{int}]{e }\end{DoxyParamCaption})}
+
+
+
+Opposite vertex. 
+
+Return index of the vertex oposite to an edge. This only makes sense if the face is a triangle. If it is not, we throw a runtime error message. 
+\begin{DoxyParams}{Parameters}
+{\em e} & edge index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 547 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_aeea6ee0e83e06627a0713c75587f2536}} 
+\index{Mesh@{Mesh}!order\_boundary\_star@{order\_boundary\_star}}
+\index{order\_boundary\_star@{order\_boundary\_star}!Mesh@{Mesh}}
+\doxysubsubsection{order\_boundary\_star()}
+{\footnotesize\ttfamily void order\+\_\+boundary\+\_\+star (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Order boundary star. 
+
+This is an auxiliary private member function that ensures that the boundary star is ordered such that the \char`\"{}hole\char`\"{} face appears last in the list of all faces belonging to the vertex. 
+\begin{DoxyParams}{Parameters}
+{\em v} & vertex index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1432 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a444764777d67727eee8a2d9baab214e1}} 
+\index{Mesh@{Mesh}!order\_dual@{order\_dual}}
+\index{order\_dual@{order\_dual}!Mesh@{Mesh}}
+\doxysubsubsection{order\_dual()}
+{\footnotesize\ttfamily void order\+\_\+dual (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})}
+
+
+
+Order dual star. 
+
+Order dual vertices in the star. This is important as it may happen that triangles within the star become obtuse which may lead to wrong ordering of dual centres and areas and perimeters not being properly ordered. We need to check this after every time step. 
+\begin{DoxyParams}{Parameters}
+{\em v} & vertex id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 333 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_ab5e857823d97bc8b7bd5038304116e73}} 
+\index{Mesh@{Mesh}!order\_star@{order\_star}}
+\index{order\_star@{order\_star}!Mesh@{Mesh}}
+\doxysubsubsection{order\_star()}
+{\footnotesize\ttfamily void order\+\_\+star (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})}
+
+
+
+Order vertex star. 
+
+Order faces, edges and neighbours in the vertex star. 
+\begin{DoxyParams}{Parameters}
+{\em v} & vertex index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 257 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a14a4c61c9f3c4cd48833b29c0b703d54}} 
+\index{Mesh@{Mesh}!plot\_area@{plot\_area}}
+\index{plot\_area@{plot\_area}!Mesh@{Mesh}}
+\doxysubsubsection{plot\_area()}
+{\footnotesize\ttfamily \textbf{ Plot\+Area} \& plot\+\_\+area (\begin{DoxyParamCaption}\item[{bool}]{boundary }\end{DoxyParamCaption})}
+
+
+
+Compute data for plotting polygons. 
+
+This member function is used to produce data for plotting polygons into a V\+TK file. 
+\begin{DoxyParams}{Parameters}
+{\em boundary} & if true, include boundary vertices as well \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1024 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a5c8e81b762d9747e08e87cb334448c3f}} 
+\index{Mesh@{Mesh}!postprocess@{postprocess}}
+\index{postprocess@{postprocess}!Mesh@{Mesh}}
+\doxysubsubsection{postprocess()}
+{\footnotesize\ttfamily void postprocess (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+
+
+Post-\/processes the mesh. 
+
+Once the mesh is read in, we need to set things like boundary flags. 
+\begin{DoxyParams}{Parameters}
+{\em flag} & if true order vertex star \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 170 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a465d768fc92dfcb53c2e29d7cecb56a6}} 
+\index{Mesh@{Mesh}!remove\_edge@{remove\_edge}}
+\index{remove\_edge@{remove\_edge}!Mesh@{Mesh}}
+\doxysubsubsection{remove\_edge()}
+{\footnotesize\ttfamily void remove\+\_\+edge (\begin{DoxyParamCaption}\item[{int}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remove edge. 
+
+Remove a single edge and update lables of all affected vertices, edges and faces. \begin{DoxyNote}{Note}
+This function removes only one edge (N\+OT its pair!). Therefore, if called alone it will leave the mesh in an inconsistent state. Caller must assure that edges are always removed in pairs. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & index of the edge to be removed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1463 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_af72602c07b6749e1dc6153f3d1b14dfe}} 
+\index{Mesh@{Mesh}!remove\_edge\_face@{remove\_edge\_face}}
+\index{remove\_edge\_face@{remove\_edge\_face}!Mesh@{Mesh}}
+\doxysubsubsection{remove\_edge\_face()}
+{\footnotesize\ttfamily bool remove\+\_\+edge\+\_\+face (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remove edge face. 
+
+Remove edge face. This function is used in conjunction with remove\+\_\+edge\+\_\+triangles function to remove all triangles that live at the boundary and and have one of its vertices having only two neighbours. This situation leads to ill-\/defined angle deficits. 
+\begin{DoxyParams}{Parameters}
+{\em f} & id of the face to remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true is the face was removed 
+\end{DoxyReturn}
+
+
+Definition at line 1553 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a5826d5385e652624e02ec2a18f49674d}} 
+\index{Mesh@{Mesh}!remove\_edge\_pair@{remove\_edge\_pair}}
+\index{remove\_edge\_pair@{remove\_edge\_pair}!Mesh@{Mesh}}
+\doxysubsubsection{remove\_edge\_pair()}
+{\footnotesize\ttfamily bool remove\+\_\+edge\+\_\+pair (\begin{DoxyParamCaption}\item[{int}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remove pair of edges. 
+
+This is an auxiliary function used to remove a pair of edges. It updates the edge and vertex information, but leaves faces inconsistent. It is to be used in conjunction with the function the weeds out obtuse boundary faces. After its application, all faces have to be rebuilt. 
+\begin{DoxyParams}{Parameters}
+{\em e} & index of one of the edges \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1229 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a4fe355e811d603b7542403e8d7a942e5}} 
+\index{Mesh@{Mesh}!remove\_edge\_triangles@{remove\_edge\_triangles}}
+\index{remove\_edge\_triangles@{remove\_edge\_triangles}!Mesh@{Mesh}}
+\doxysubsubsection{remove\_edge\_triangles()}
+{\footnotesize\ttfamily bool remove\+\_\+edge\+\_\+triangles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove edge triangles. 
+
+Remove edge triangles. A triangle is considered an edge triangle if it has at least to of its edges with having boundary pairs. That is, if on of its vertices have only two neighbours. 
+
+Definition at line 986 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a00205ed80a14220b88ba0323f346a24c}} 
+\index{Mesh@{Mesh}!remove\_face@{remove\_face}}
+\index{remove\_face@{remove\_face}!Mesh@{Mesh}}
+\doxysubsubsection{remove\_face()}
+{\footnotesize\ttfamily void remove\+\_\+face (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remove face. 
+
+Remove a face from the mesh and update corresponding vertex, edge and face information. 
+\begin{DoxyParams}{Parameters}
+{\em f} & id of the face to be removed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1512 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a5fb750eee2e7799c37fad0d2703537ba}} 
+\index{Mesh@{Mesh}!remove\_obtuse\_boundary@{remove\_obtuse\_boundary}}
+\index{remove\_obtuse\_boundary@{remove\_obtuse\_boundary}!Mesh@{Mesh}}
+\doxysubsubsection{remove\_obtuse\_boundary()}
+{\footnotesize\ttfamily bool remove\+\_\+obtuse\+\_\+boundary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove obtuse boundary faces. 
+
+Loop over all boundary faces. If the face is obtuse, remove the edge boundary edge. This leaves the face information invalid. All faces need to be rebuilt. 
+
+Definition at line 867 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_ad20897c5c8bd47f5d4005989bead0e55}} 
+\index{Mesh@{Mesh}!reset@{reset}}
+\index{reset@{reset}!Mesh@{Mesh}}
+\doxysubsubsection{reset()}
+{\footnotesize\ttfamily void reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the mesh. 
+
+Clean up the entire mesh data structure. 
+
+Definition at line 48 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a7486c9251fccd28e767bef5987923ee0}} 
+\index{Mesh@{Mesh}!set\_circumcenter@{set\_circumcenter}}
+\index{set\_circumcenter@{set\_circumcenter}!Mesh@{Mesh}}
+\doxysubsubsection{set\_circumcenter()}
+{\footnotesize\ttfamily void set\+\_\+circumcenter (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the circumcenter flag 
+\begin{DoxyParams}{Parameters}
+{\em val} & value of the circumcenter flag \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file mesh.\+hpp.
+
+\mbox{\label{classMesh_a038522d3ed10baa0264f9e47d8e37c14}} 
+\index{Mesh@{Mesh}!set\_max\_face\_perim@{set\_max\_face\_perim}}
+\index{set\_max\_face\_perim@{set\_max\_face\_perim}!Mesh@{Mesh}}
+\doxysubsubsection{set\_max\_face\_perim()}
+{\footnotesize\ttfamily void set\+\_\+max\+\_\+face\+\_\+perim (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set value of the maximum face perimeter 
+\begin{DoxyParams}{Parameters}
+{\em val} & new value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file mesh.\+hpp.
+
+\mbox{\label{classMesh_ac3cd281282a7914df4620625de6473b4}} 
+\index{Mesh@{Mesh}!update@{update}}
+\index{update@{update}!Mesh@{Mesh}}
+\doxysubsubsection{update()}
+{\footnotesize\ttfamily void update (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Updates vertex positions 
+\begin{DoxyParams}{Parameters}
+{\em p} & particle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 168 of file mesh.\+hpp.
+
+\mbox{\label{classMesh_ae83a2fc6eb9b0420579925f631ae7aa8}} 
+\index{Mesh@{Mesh}!update\_dual\_mesh@{update\_dual\_mesh}}
+\index{update\_dual\_mesh@{update\_dual\_mesh}!Mesh@{Mesh}}
+\doxysubsubsection{update\_dual\_mesh()}
+{\footnotesize\ttfamily void update\+\_\+dual\+\_\+mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Update dual mesh. 
+
+Update position of the dual vertices as well as the cell centre Jacobian 
+
+Definition at line 151 of file mesh.\+cpp.
+
+\mbox{\label{classMesh_a1f041b1b8558def8fda9b1bb6c2a93b6}} 
+\index{Mesh@{Mesh}!update\_face\_properties@{update\_face\_properties}}
+\index{update\_face\_properties@{update\_face\_properties}!Mesh@{Mesh}}
+\doxysubsubsection{update\_face\_properties()}
+{\footnotesize\ttfamily void update\+\_\+face\+\_\+properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Update face properties. 
+
+This is an auxiliary member function that loops over all faces and updates its properties such as the boundary and obtuse flags. 
+
+Definition at line 842 of file mesh.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ mesh.\+hpp}\item 
+\textbf{ mesh.\+cpp}\end{DoxyCompactItemize}

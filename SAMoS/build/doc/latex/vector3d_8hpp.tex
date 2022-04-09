@@ -1,0 +1,83 @@
+\doxysection{vector3d.\+hpp File Reference}
+\label{vector3d_8hpp}\index{vector3d.hpp@{vector3d.hpp}}
+
+
+Declaration of \doxyref{Vector3d}{p.}{classVector3d} class.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Vector3d}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{vector3d_8hpp_aaf7d8807b4eb005d0d80bcda8a57777b}} 
+\textbf{ Vector3d} \textbf{ cross} (const \textbf{ Vector3d} \&v1, const \textbf{ Vector3d} \&v2)
+\begin{DoxyCompactList}\small\item\em Compute cross product between two vectors. \end{DoxyCompactList}\item 
+\mbox{\label{vector3d_8hpp_acb0514d02a999a4ac05c8d4d71c88d85}} 
+\textbf{ Vector3d} \textbf{ operator$\ast$} (const double c, const \textbf{ Vector3d} \&v)
+\begin{DoxyCompactList}\small\item\em Scale vector by a number. \end{DoxyCompactList}\item 
+\mbox{\label{vector3d_8hpp_acc0dd0abab81cb45f87400265bb7cb88}} 
+ostream \& \textbf{ operator$<$$<$} (ostream \&, const \textbf{ Vector3d} \&)
+\begin{DoxyCompactList}\small\item\em Output vector components. \end{DoxyCompactList}\item 
+\mbox{\label{vector3d_8hpp_a91bb9ce64aa1ee173a885a2f69c0d54e}} 
+double \textbf{ dot} (const \textbf{ Vector3d} \&, const \textbf{ Vector3d} \&)
+\begin{DoxyCompactList}\small\item\em Compute dot product between two vectors. \end{DoxyCompactList}\item 
+double \textbf{ angle} (\textbf{ Vector3d} \&, \textbf{ Vector3d} \&, const \textbf{ Vector3d} \&)
+\item 
+\textbf{ Vector3d} \textbf{ mirror} (\textbf{ Vector3d} \&, \textbf{ Vector3d} \&, \textbf{ Vector3d} \&)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of \doxyref{Vector3d}{p.}{classVector3d} class. 
+
+\begin{DoxyAuthor}{Author}
+Rastko Sknepnek, {\texttt{ sknepnek@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+18-\/Aug-\/2015 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{vector3d_8hpp_ac63500f071efe14c309fbf9ecc250b55}} 
+\index{vector3d.hpp@{vector3d.hpp}!angle@{angle}}
+\index{angle@{angle}!vector3d.hpp@{vector3d.hpp}}
+\doxysubsubsection{angle()}
+{\footnotesize\ttfamily double angle (\begin{DoxyParamCaption}\item[{\textbf{ Vector3d} \&}]{a,  }\item[{\textbf{ Vector3d} \&}]{b,  }\item[{const \textbf{ Vector3d} \&}]{N }\end{DoxyParamCaption})}
+
+Compute angle between two vectors. 3rd vector is used to get the right sign. It is normal to the surface at a given point of orgigin of two points. 
+\begin{DoxyParams}{Parameters}
+{\em a} & first vector \\
+\hline
+{\em b} & second vector \\
+\hline
+{\em N} & normal vector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file vector3d.\+cpp.
+
+\mbox{\label{vector3d_8hpp_a8a6b76878ce720eaa2f2bab1fc7dca7e}} 
+\index{vector3d.hpp@{vector3d.hpp}!mirror@{mirror}}
+\index{mirror@{mirror}!vector3d.hpp@{vector3d.hpp}}
+\doxysubsubsection{mirror()}
+{\footnotesize\ttfamily \textbf{ Vector3d} mirror (\begin{DoxyParamCaption}\item[{\textbf{ Vector3d} \&}]{P,  }\item[{\textbf{ Vector3d} \&}]{n,  }\item[{\textbf{ Vector3d} \&}]{Q }\end{DoxyParamCaption})}
+
+Mirror vector with respect to other vector 
+\begin{DoxyParams}{Parameters}
+{\em P} & position of the reference point \\
+\hline
+{\em n} & mirror with respect to this vector \\
+\hline
+{\em Q} & mirror this vector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 69 of file vector3d.\+cpp.
+

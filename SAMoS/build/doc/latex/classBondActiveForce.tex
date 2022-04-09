@@ -1,0 +1,66 @@
+\doxysection{Bond\+Active\+Force Class Reference}
+\label{classBondActiveForce}\index{BondActiveForce@{BondActiveForce}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Bond\+Active\+Force}{p.}{classBondActiveForce} implements actie force along the chain. Force is along the tangent of the chain, which is in this case along the bond. It is $ \vec F^{(i)}_{active} = f\vec\tau_i $ where $ f $ is the strength of the force and $ \tau_i = (\vec r_{i+1} - \vec r_i)/|\vec r_{i+1} - \vec r_i| $ is the direction force is pointing in (i.\+e. along the bond connecting beads $ \vec r_i $ and $ r_{i+j} $. \begin{DoxyNote}{Note}
+Both beads will get the same force (this is extrnal active force!) and the force on each bead will be sum of the forces acting on all bonds that are connected to it. 
+
+This class assumes that beads in consecutive bonds are ordered, i.\+e., that the chain has clearly defined head and the tail. 
+
+\doxyref{Potential}{p.}{classPotential} would here make very little sense, so we do not define it. 
+\end{DoxyNote}
+
+
+Definition at line 56 of file bond\+\_\+active\+\_\+force.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bond\+Active\+Force} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classBondActiveForce_a76015764bf09014d6a44bd67cf0037cd}} 
+void \textbf{ set\+\_\+bond\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&bond\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set parameters data for specific bond type ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classBondActiveForce_a4993c97a669fa259c6574a18d547c117}} 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classBondActiveForce_a5785d97bb1c17058be12aff097c9d7dd}} 
+double \textbf{ m\+\_\+f}
+\begin{DoxyCompactList}\small\item\em active force strength \end{DoxyCompactList}\item 
+\mbox{\label{classBondActiveForce_a511611c49fb06d7f478e613c0cecb0d7}} 
+\textbf{ Bond\+Active\+Parameters} $\ast$ \textbf{ m\+\_\+bond\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific bond parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classBondActiveForce_a1148914dc26b9936e85c0bb298ea2c20}} 
+\index{BondActiveForce@{BondActiveForce}!BondActiveForce@{BondActiveForce}}
+\index{BondActiveForce@{BondActiveForce}!BondActiveForce@{BondActiveForce}}
+\doxysubsubsection{BondActiveForce()}
+{\footnotesize\ttfamily \textbf{ Bond\+Active\+Force} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters (k and l0) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file bond\+\_\+active\+\_\+force.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ bond\+\_\+active\+\_\+force.\+hpp}\item 
+\textbf{ bond\+\_\+active\+\_\+force.\+cpp}\end{DoxyCompactItemize}

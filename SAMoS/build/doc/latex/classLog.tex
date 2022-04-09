@@ -1,0 +1,78 @@
+\doxysection{Log Class Reference}
+\label{classLog}\index{Log@{Log}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Log}{p.}{classLog} class. 
+
+This is the base abstract class for logs of different quantities. It provides an abstract virtual operator() that returns quantity converted to string. Children will implement it. 
+
+Definition at line 47 of file log.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Log} (System\+Ptr sys, Messenger\+Ptr msg, Potential\+Ptr pot, Aligner\+Ptr align)
+\item 
+virtual string \textbf{ operator()} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classLog_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Pointer to \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classLog_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles system wide messages. \end{DoxyCompactList}\item 
+\mbox{\label{classLog_a3564f52971277ca80a168760d59c0862}} 
+Potential\+Ptr \textbf{ m\+\_\+potential}
+\begin{DoxyCompactList}\small\item\em Pointer to the interaction handler. \end{DoxyCompactList}\item 
+\mbox{\label{classLog_ae00b1bd3e53e4cee65705f63a4d594c5}} 
+Aligner\+Ptr \textbf{ m\+\_\+aligner}
+\begin{DoxyCompactList}\small\item\em Pointer to the alignment handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classLog_ae0303b21f701f84113897a2ef12c09ed}} 
+\index{Log@{Log}!Log@{Log}}
+\index{Log@{Log}!Log@{Log}}
+\doxysubsubsection{Log()}
+{\footnotesize\ttfamily \textbf{ Log} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct \doxyref{Log}{p.}{classLog} object 
+\begin{DoxyParams}{Parameters}
+{\em sys} & pointer to a system object \\
+\hline
+{\em compute} & pointer to a compute object \\
+\hline
+{\em pot} & Interaction handler object \\
+\hline
+{\em align} & Alignment handler object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file log.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classLog_ae3a376c50b5cd27cd9f7b850068b7dee}} 
+\index{Log@{Log}!operator()@{operator()}}
+\index{operator()@{operator()}!Log@{Log}}
+\doxysubsubsection{operator()()}
+{\footnotesize\ttfamily virtual string operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Makes \doxyref{Log}{p.}{classLog} a functor \begin{DoxyReturn}{Returns}
+logged quantity 
+\end{DoxyReturn}
+
+
+Implemented in \textbf{ Log\+Vec\+Velocity} \doxyref{}{p.}{classLogVecVelocity_a01cb7c8a5c573716a3ec79172f86a34a}, \textbf{ Log\+Kinetic\+Eng} \doxyref{}{p.}{classLogKineticEng_a01cb7c8a5c573716a3ec79172f86a34a}, \textbf{ Log\+Velocity} \doxyref{}{p.}{classLogVelocity_a01cb7c8a5c573716a3ec79172f86a34a}, \textbf{ Log\+Angle\+Eng} \doxyref{}{p.}{classLogAngleEng_a01cb7c8a5c573716a3ec79172f86a34a}, \textbf{ Log\+Bond\+Eng} \doxyref{}{p.}{classLogBondEng_a01cb7c8a5c573716a3ec79172f86a34a}, \textbf{ Log\+External\+Eng} \doxyref{}{p.}{classLogExternalEng_a01cb7c8a5c573716a3ec79172f86a34a}, \textbf{ Log\+Pair\+Align} \doxyref{}{p.}{classLogPairAlign_a01cb7c8a5c573716a3ec79172f86a34a}, \textbf{ Log\+Pair\+Eng} \doxyref{}{p.}{classLogPairEng_a01cb7c8a5c573716a3ec79172f86a34a}, \textbf{ Log\+Area} \doxyref{}{p.}{classLogArea_a01cb7c8a5c573716a3ec79172f86a34a}, \textbf{ Log\+Perim} \doxyref{}{p.}{classLogPerim_a01cb7c8a5c573716a3ec79172f86a34a}, \textbf{ Log\+Size} \doxyref{}{p.}{classLogSize_a01cb7c8a5c573716a3ec79172f86a34a}, and \textbf{ Log\+Step} \doxyref{}{p.}{classLogStep_a01cb7c8a5c573716a3ec79172f86a34a}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ log.\+hpp}\end{DoxyCompactItemize}

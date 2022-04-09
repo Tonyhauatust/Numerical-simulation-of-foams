@@ -1,0 +1,80 @@
+\doxysection{vector3d.\+cpp File Reference}
+\label{vector3d_8cpp}\index{vector3d.cpp@{vector3d.cpp}}
+
+
+Definitions of \doxyref{Matrix3d}{p.}{classMatrix3d} class auxiliary functions.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{vector3d_8cpp_a090f336d6b00a3407e93d230d9440489}} 
+std\+::ostream \& \textbf{ operator$<$$<$} (std\+::ostream \&os, const \textbf{ Vector3d} \&v)
+\begin{DoxyCompactList}\small\item\em Output vector components. \end{DoxyCompactList}\item 
+\mbox{\label{vector3d_8cpp_a627c3125071483d2db0c75e6f69e25d1}} 
+double \textbf{ dot} (const \textbf{ Vector3d} \&v1, const \textbf{ Vector3d} \&v2)
+\begin{DoxyCompactList}\small\item\em Compute dot product between two vectors. \end{DoxyCompactList}\item 
+double \textbf{ angle} (\textbf{ Vector3d} \&a, \textbf{ Vector3d} \&b, const \textbf{ Vector3d} \&N)
+\item 
+\textbf{ Vector3d} \textbf{ mirror} (\textbf{ Vector3d} \&P, \textbf{ Vector3d} \&n, \textbf{ Vector3d} \&Q)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definitions of \doxyref{Matrix3d}{p.}{classMatrix3d} class auxiliary functions. 
+
+Definitions of \doxyref{Vector3d}{p.}{classVector3d} class auxiliary functions.
+
+\begin{DoxyAuthor}{Author}
+Rastko Sknepnek, {\texttt{ sknepnek@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+23-\/Mar-\/2016
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Rastko Sknepnek, {\texttt{ sknepnek@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+18-\/Aug-\/2015 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{vector3d_8cpp_ac0672ab66d8a9b7a93c1d41facd364b0}} 
+\index{vector3d.cpp@{vector3d.cpp}!angle@{angle}}
+\index{angle@{angle}!vector3d.cpp@{vector3d.cpp}}
+\doxysubsubsection{angle()}
+{\footnotesize\ttfamily double angle (\begin{DoxyParamCaption}\item[{\textbf{ Vector3d} \&}]{a,  }\item[{\textbf{ Vector3d} \&}]{b,  }\item[{const \textbf{ Vector3d} \&}]{N }\end{DoxyParamCaption})}
+
+Compute angle between two vectors. 3rd vector is used to get the right sign. It is normal to the surface at a given point of orgigin of two points. 
+\begin{DoxyParams}{Parameters}
+{\em a} & first vector \\
+\hline
+{\em b} & second vector \\
+\hline
+{\em N} & normal vector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file vector3d.\+cpp.
+
+\mbox{\label{vector3d_8cpp_a7ed7e03fc001fbd26c142674a8779c89}} 
+\index{vector3d.cpp@{vector3d.cpp}!mirror@{mirror}}
+\index{mirror@{mirror}!vector3d.cpp@{vector3d.cpp}}
+\doxysubsubsection{mirror()}
+{\footnotesize\ttfamily \textbf{ Vector3d} mirror (\begin{DoxyParamCaption}\item[{\textbf{ Vector3d} \&}]{P,  }\item[{\textbf{ Vector3d} \&}]{n,  }\item[{\textbf{ Vector3d} \&}]{Q }\end{DoxyParamCaption})}
+
+Mirror vector with respect to other vector 
+\begin{DoxyParams}{Parameters}
+{\em P} & position of the reference point \\
+\hline
+{\em n} & mirror with respect to this vector \\
+\hline
+{\em Q} & mirror this vector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 69 of file vector3d.\+cpp.
+

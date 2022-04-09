@@ -1,0 +1,63 @@
+\doxysection{External\+A\+J\+Nematic\+Align Class Reference}
+\label{classExternalAJNematicAlign}\index{ExternalAJNematicAlign@{ExternalAJNematicAlign}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{External\+A\+J\+Nematic\+Align}{p.}{classExternalAJNematicAlign} implements the active jamming type \char`\"{}nematic\char`\"{} type alignment on a single particle. For all particles we compute torque on the particle as $ \vec \tau_i = -1/tau \vec n_i\times\vec v_i $, where $ tau $ is the coupling alignment time and $ \vec v_i $ is the velocity of the particle itself. 
+
+Definition at line 54 of file external\+\_\+ajnematic\+\_\+aligner.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ External\+A\+J\+Nematic\+Align} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classExternalAJNematicAlign_a14df1e61054fb4091e9c480b4f4dfe57}} 
+void \textbf{ set\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&self\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for self alignment ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classExternalAJNematicAlign_a4993c97a669fa259c6574a18d547c117}} 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes \char`\"{}torques\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classExternalAJNematicAlign_aab221f1017e8431da2653dcdd348ed64}} 
+double \textbf{ m\+\_\+tau}
+\begin{DoxyCompactList}\small\item\em Coupling constant. \end{DoxyCompactList}\item 
+\mbox{\label{classExternalAJNematicAlign_a4d88c0943dd0b462e12a59833fe4021b}} 
+bool \textbf{ m\+\_\+normalise}
+\begin{DoxyCompactList}\small\item\em Whether to normalise the velocity in the alignment term. \end{DoxyCompactList}\item 
+\mbox{\label{classExternalAJNematicAlign_ac343d132592edd2807d595f71243e9aa}} 
+\textbf{ Nematic\+A\+J\+Align\+Parameters} $\ast$ \textbf{ m\+\_\+type\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classExternalAJNematicAlign_a60eb4527c6895e6d40849769289ac5ce}} 
+\index{ExternalAJNematicAlign@{ExternalAJNematicAlign}!ExternalAJNematicAlign@{ExternalAJNematicAlign}}
+\index{ExternalAJNematicAlign@{ExternalAJNematicAlign}!ExternalAJNematicAlign@{ExternalAJNematicAlign}}
+\doxysubsubsection{ExternalAJNematicAlign()}
+{\footnotesize\ttfamily \textbf{ External\+A\+J\+Nematic\+Align} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file external\+\_\+ajnematic\+\_\+aligner.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ external\+\_\+ajnematic\+\_\+aligner.\+hpp}\item 
+\textbf{ external\+\_\+ajnematic\+\_\+aligner.\+cpp}\end{DoxyCompactItemize}

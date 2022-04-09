@@ -1,0 +1,101 @@
+\doxysection{Integrator\+Sepulveda Class Reference}
+\label{classIntegratorSepulveda}\index{IntegratorSepulveda@{IntegratorSepulveda}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Integrator\+Sepulveda}{p.}{classIntegratorSepulveda} class implements Sepulveda dynamics for the particle position. \doxyref{Particle}{p.}{classParticle} director will not be integrated. refeference\+: N. Sepulveda, L. Petitjean, O. Cochet, E. Grasland-\/\+Mongrain, P. Silberzan V. Hakim, Collective \doxyref{Cell}{p.}{classCell} Motion in an Epithelial Sheet Can Be Quantitatively Described by a Stochastic Interacting \doxyref{Particle}{p.}{classParticle} Model, P\+LoS Comput Biol 9(3)\+: e1002944. 
+
+Definition at line 55 of file integrator\+\_\+sepulveda.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Integrator\+Sepulveda} (System\+Ptr sys, Messenger\+Ptr msg, Potential\+Ptr pot, Aligner\+Ptr align, Neighbour\+List\+Ptr nlist, Constrainer\+Ptr cons, Value\+Ptr temp, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ integrate} ()
+\begin{DoxyCompactList}\small\item\em Propagate system for a time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classIntegratorSepulveda_aaba456a057071541006327fc2025f5df}} 
+R\+N\+G\+Ptr \textbf{ m\+\_\+rng}
+\begin{DoxyCompactList}\small\item\em Random number generator. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorSepulveda_abc4e2a8e4e5c6923f00d9d20a7786312}} 
+double \textbf{ m\+\_\+alpha}
+\begin{DoxyCompactList}\small\item\em Friction constant. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorSepulveda_ac3dd97777097643fc2d2a4222085bb53}} 
+double \textbf{ m\+\_\+sigma}
+\begin{DoxyCompactList}\small\item\em Noise amplitude. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorSepulveda_aab221f1017e8431da2653dcdd348ed64}} 
+double \textbf{ m\+\_\+tau}
+\begin{DoxyCompactList}\small\item\em Correlation time. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorSepulveda_a4f3d95f0a8f11b4a64936432d918126a}} 
+vector$<$ double $>$ \textbf{ m\+\_\+eta\+\_\+x}
+\begin{DoxyCompactList}\small\item\em Normally distributed random numbers for B\+BK integrator. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorSepulveda_ad2b4ac426d989aafc5cd1ecda274024c}} 
+vector$<$ double $>$ \textbf{ m\+\_\+eta\+\_\+y}
+\begin{DoxyCompactList}\small\item\em Normally distributed random numbers for B\+BK integrator. \end{DoxyCompactList}\item 
+\mbox{\label{classIntegratorSepulveda_a436acb758b9df3c922703a11cb2b6d13}} 
+vector$<$ double $>$ \textbf{ m\+\_\+eta\+\_\+z}
+\begin{DoxyCompactList}\small\item\em Normally distributed random numbers for B\+BK integrator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classIntegratorSepulveda_a3b3e2c7990ff3a3452a237e91cb80199}} 
+\index{IntegratorSepulveda@{IntegratorSepulveda}!IntegratorSepulveda@{IntegratorSepulveda}}
+\index{IntegratorSepulveda@{IntegratorSepulveda}!IntegratorSepulveda@{IntegratorSepulveda}}
+\doxysubsubsection{IntegratorSepulveda()}
+{\footnotesize\ttfamily \textbf{ Integrator\+Sepulveda} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Potential\+Ptr}]{pot,  }\item[{Aligner\+Ptr}]{align,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Constrainer\+Ptr}]{cons,  }\item[{Value\+Ptr}]{temp,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to a \doxyref{System}{p.}{classSystem} object containing all particles \\
+\hline
+{\em msg} & Internal message handler \\
+\hline
+{\em pot} & Pairwise and external interaction handler \\
+\hline
+{\em align} & Pairwise and external alignment handler \\
+\hline
+{\em nlist} & Neighbour list object \\
+\hline
+{\em cons} & Enforces constraints to the manifold surface \\
+\hline
+{\em temp} & Temperature control object \\
+\hline
+{\em param} & Contains information about all parameters ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file integrator\+\_\+sepulveda.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classIntegratorSepulveda_a611ba68b85e9a65f5d842f706de335fd}} 
+\index{IntegratorSepulveda@{IntegratorSepulveda}!integrate@{integrate}}
+\index{integrate@{integrate}!IntegratorSepulveda@{IntegratorSepulveda}}
+\doxysubsubsection{integrate()}
+{\footnotesize\ttfamily void integrate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Propagate system for a time step. 
+
+This is standard velocity Verlet Sepulveda integrator. It has ability to limit maximum particle displacement which is useful for relaxation simulations intended to remove unphysical overlaps between particles. 
+
+Implements \textbf{ Integrator} \doxyref{}{p.}{classIntegrator_aafcdca198ea2dca2a77c7d48486e1a87}.
+
+
+
+Definition at line 37 of file integrator\+\_\+sepulveda.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+integrator\+\_\+sepulveda.\+hpp\item 
+\textbf{ integrator\+\_\+sepulveda.\+cpp}\end{DoxyCompactItemize}

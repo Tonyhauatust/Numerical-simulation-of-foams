@@ -1,0 +1,79 @@
+\doxysection{External\+Harmonic\+Potential Class Reference}
+\label{classExternalHarmonicPotential}\index{ExternalHarmonicPotential@{ExternalHarmonicPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{External\+Harmonic\+Potential}{p.}{classExternalHarmonicPotential} handles external harmonic potential with repsect to a plane parallel to the xy-\/plane. In other words, $ V_{harm}\left(r\right) = \frac{1}{2} k (z-z0)^2 $ and the force is $ \vec F = - k (z - z0) \vec e_z $, where $ k $ is the stiffness constant and $ z_0 $ is the position of the plane along the z-\/axis. 
+
+Definition at line 42 of file external\+\_\+harmonic\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ External\+Harmonic\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classExternalHarmonicPotential_a4ebbad499eb34059dbfb512fffc6336b}} 
+void \textbf{ set\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise interactions ~\newline
+ \end{DoxyCompactList}\item 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classExternalHarmonicPotential_aa7b89576372abc4d0bbf496467e872f7}} 
+double \textbf{ m\+\_\+k}
+\begin{DoxyCompactList}\small\item\em stiffness of external harmonic potential \end{DoxyCompactList}\item 
+\mbox{\label{classExternalHarmonicPotential_acd1f90b265f152a92e71e60e4ea6aabc}} 
+double \textbf{ m\+\_\+z0}
+\begin{DoxyCompactList}\small\item\em position of the zero of the potential \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classExternalHarmonicPotential_ac2696a1f38a825e7d965dc9bec42ec6e}} 
+\index{ExternalHarmonicPotential@{ExternalHarmonicPotential}!ExternalHarmonicPotential@{ExternalHarmonicPotential}}
+\index{ExternalHarmonicPotential@{ExternalHarmonicPotential}!ExternalHarmonicPotential@{ExternalHarmonicPotential}}
+\doxysubsubsection{ExternalHarmonicPotential()}
+{\footnotesize\ttfamily \textbf{ External\+Harmonic\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & Contains information about all parameters (harmonic strength) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file external\+\_\+harmonic\+\_\+potential.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classExternalHarmonicPotential_a4993c97a669fa259c6574a18d547c117}} 
+\index{ExternalHarmonicPotential@{ExternalHarmonicPotential}!compute@{compute}}
+\index{compute@{compute}!ExternalHarmonicPotential@{ExternalHarmonicPotential}}
+\doxysubsubsection{compute()}
+{\footnotesize\ttfamily void compute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes potentials and forces for all particles. 
+
+Apply external harmonic potential to all particles 
+
+Implements \textbf{ External\+Potential} \doxyref{}{p.}{classExternalPotential_afa05c5b5b569afc655e786c460f0042c}.
+
+
+
+Definition at line 33 of file external\+\_\+harmonic\+\_\+potential.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ external\+\_\+harmonic\+\_\+potential.\+hpp}\item 
+\textbf{ external\+\_\+harmonic\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

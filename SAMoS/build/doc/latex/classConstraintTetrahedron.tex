@@ -1,0 +1,147 @@
+\doxysection{Constraint\+Tetrahedron Class Reference}
+\label{classConstraintTetrahedron}\index{ConstraintTetrahedron@{ConstraintTetrahedron}}
+
+
+\doxysubsection{Detailed Description}
+Enforces all particles to move on a surface with tetragonal symmetry. This surface is generated as the equipotential surface of 4 unit charges placed at the corners of a tetrahedron. The user can control their separation and the level-\/set they wish to choose. 
+
+Definition at line 52 of file constraint\+\_\+tetrahedron.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Constraint\+Tetrahedron} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ compute\+\_\+normal} (\textbf{ Particle} \&, double \&, double \&, double \&)
+\begin{DoxyCompactList}\small\item\em Computes normal to the surface. \end{DoxyCompactList}\item 
+void \textbf{ compute\+\_\+gradient} (\textbf{ Particle} \&, double \&, double \&, double \&)
+\item 
+double \textbf{ constraint\+\_\+value} (\textbf{ Particle} \&)
+\item 
+bool \textbf{ rescale} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classConstraintTetrahedron_a6f23c653102aca46d97089671517cb18}} 
+double \textbf{ m\+\_\+s}
+\begin{DoxyCompactList}\small\item\em Tetrahedron size (essentially acts as the radius) \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintTetrahedron_af571e2fb313a55aae59a77a9d9324286}} 
+double \textbf{ m\+\_\+value}
+\begin{DoxyCompactList}\small\item\em Level set (value of the potential) \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintTetrahedron_adb2ee78d79210c357d0cc20a827f5429}} 
+\textbf{ Vector3d} \textbf{ m\+\_\+a1}
+\begin{DoxyCompactList}\small\item\em First vector of the four particles generating the surface. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintTetrahedron_a7166905440c0c73f93759838a8b70d54}} 
+\textbf{ Vector3d} \textbf{ m\+\_\+a2}
+\begin{DoxyCompactList}\small\item\em Second vector of the four particles generating the surface. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintTetrahedron_a400cf6eebcd4c8f40f53e295ee0a2ad7}} 
+\textbf{ Vector3d} \textbf{ m\+\_\+a3}
+\begin{DoxyCompactList}\small\item\em Third vector of the four particles generating the surface. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintTetrahedron_ae4b7cd6c579b59c52ecd78e05e3f9c76}} 
+\textbf{ Vector3d} \textbf{ m\+\_\+a4}
+\begin{DoxyCompactList}\small\item\em Fourth vector of the four particles generating the surface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classConstraintTetrahedron_abe1791df4c8bcc08dc4ea6710e2526db}} 
+\index{ConstraintTetrahedron@{ConstraintTetrahedron}!ConstraintTetrahedron@{ConstraintTetrahedron}}
+\index{ConstraintTetrahedron@{ConstraintTetrahedron}!ConstraintTetrahedron@{ConstraintTetrahedron}}
+\doxysubsubsection{ConstraintTetrahedron()}
+{\footnotesize\ttfamily \textbf{ Constraint\+Tetrahedron} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em id} & unique constraint id \\
+\hline
+{\em sys} & pointer to the system object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & parameters that define the manifolds (e.\+g., tetrahedron radius) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file constraint\+\_\+tetrahedron.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classConstraintTetrahedron_ab94012bbb0ddf61047baf7239047c33e}} 
+\index{ConstraintTetrahedron@{ConstraintTetrahedron}!compute\_gradient@{compute\_gradient}}
+\index{compute\_gradient@{compute\_gradient}!ConstraintTetrahedron@{ConstraintTetrahedron}}
+\doxysubsubsection{compute\_gradient()}
+{\footnotesize\ttfamily void compute\+\_\+gradient (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p,  }\item[{double \&}]{gx,  }\item[{double \&}]{gy,  }\item[{double \&}]{gz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Compute gradient at a point 
+\begin{DoxyParams}{Parameters}
+{\em p} & reference to a point \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Constraint} \doxyref{}{p.}{classConstraint}.
+
+
+
+Definition at line 46 of file constraint\+\_\+tetrahedron.\+cpp.
+
+\mbox{\label{classConstraintTetrahedron_a94d4a8015fc0ef8bad688629dbedc73f}} 
+\index{ConstraintTetrahedron@{ConstraintTetrahedron}!compute\_normal@{compute\_normal}}
+\index{compute\_normal@{compute\_normal}!ConstraintTetrahedron@{ConstraintTetrahedron}}
+\doxysubsubsection{compute\_normal()}
+{\footnotesize\ttfamily void compute\+\_\+normal (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p,  }\item[{double \&}]{Nx,  }\item[{double \&}]{Ny,  }\item[{double \&}]{Nz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes normal to the surface. 
+
+Compute normal to the surface at p 
+
+Implements \textbf{ Constraint} \doxyref{}{p.}{classConstraint_afc39476dfa8d0d838cb2591f9706ad68}.
+
+
+
+Definition at line 34 of file constraint\+\_\+tetrahedron.\+cpp.
+
+\mbox{\label{classConstraintTetrahedron_a24e3c46930257513fdddee9dd485d2a6}} 
+\index{ConstraintTetrahedron@{ConstraintTetrahedron}!constraint\_value@{constraint\_value}}
+\index{constraint\_value@{constraint\_value}!ConstraintTetrahedron@{ConstraintTetrahedron}}
+\doxysubsubsection{constraint\_value()}
+{\footnotesize\ttfamily double constraint\+\_\+value (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Compute constraint value at particle p The constraint is given as the equipotential surface of the potential $ V(\vec r) = \sum_{i=1}^{4}\frac{1}{|\vec r - \vec a_i|} $, where $ \vec a_i $ are position of the four unit charges generating the potential. 
+\begin{DoxyParams}{Parameters}
+{\em p} & reference to the particle \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Constraint} \doxyref{}{p.}{classConstraint}.
+
+
+
+Definition at line 70 of file constraint\+\_\+tetrahedron.\+cpp.
+
+\mbox{\label{classConstraintTetrahedron_ac9709d92eab82a813488f353afc83e3f}} 
+\index{ConstraintTetrahedron@{ConstraintTetrahedron}!rescale@{rescale}}
+\index{rescale@{rescale}!ConstraintTetrahedron@{ConstraintTetrahedron}}
+\doxysubsubsection{rescale()}
+{\footnotesize\ttfamily bool rescale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Rescale tetrahedron size and make sure that all particles are still on it. Rescaling is done only at certain steps and only if rescale factor is not equal to 1. 
+
+Reimplemented from \textbf{ Constraint} \doxyref{}{p.}{classConstraint}.
+
+
+
+Definition at line 88 of file constraint\+\_\+tetrahedron.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ constraint\+\_\+tetrahedron.\+hpp}\item 
+\textbf{ constraint\+\_\+tetrahedron.\+cpp}\end{DoxyCompactItemize}

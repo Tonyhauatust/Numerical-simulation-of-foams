@@ -1,0 +1,99 @@
+\doxysection{Pair\+Boundary\+Bending\+Potential Class Reference}
+\label{classPairBoundaryBendingPotential}\index{PairBoundaryBendingPotential@{PairBoundaryBendingPotential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Boundary\+Bending\+Potential}{p.}{classPairBoundaryBendingPotential} implements the bending penalty to bend the boundary of a cell patch. It depends on the mesh being present in the simulation. 
+
+Definition at line 51 of file pair\+\_\+boundary\+\_\+bending\+\_\+potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Boundary\+Bending\+Potential} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, Value\+Ptr val, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairBoundaryBendingPotential_a8ae624e02958174a29812ef91dc8c671}} 
+void \textbf{ set\+\_\+type\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set type parameters data for individual particles. \end{DoxyCompactList}\item 
+\mbox{\label{classPairBoundaryBendingPotential_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters. \end{DoxyCompactList}\item 
+\mbox{\label{classPairBoundaryBendingPotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since vertex-\/particle potential needs neighbour list. \end{DoxyCompactList}\item 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Computes potentials and forces for all particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairBoundaryBendingPotential_a23a29857799b0ff929d39d3df05469ba}} 
+double \textbf{ m\+\_\+kappa}
+\begin{DoxyCompactList}\small\item\em bending rigidity \end{DoxyCompactList}\item 
+\mbox{\label{classPairBoundaryBendingPotential_adf2e3b0afa701802c37c5268ab209c35}} 
+double \textbf{ m\+\_\+theta0}
+\begin{DoxyCompactList}\small\item\em native angle \end{DoxyCompactList}\item 
+\mbox{\label{classPairBoundaryBendingPotential_aa1902b5321b8dd0a4d8b168b50a37b29}} 
+bool \textbf{ m\+\_\+has\+\_\+part\+\_\+params}
+\begin{DoxyCompactList}\small\item\em true if type specific particle parameters are given \end{DoxyCompactList}\item 
+\mbox{\label{classPairBoundaryBendingPotential_accb948008745b08b53c5952690910bee}} 
+\textbf{ Boundary\+Bending\+Parameters} $\ast$ \textbf{ m\+\_\+particle\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific particle parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairBoundaryBendingPotential_a91bf95a7b3b9b9b79544db4108a0511c}} 
+\index{PairBoundaryBendingPotential@{PairBoundaryBendingPotential}!PairBoundaryBendingPotential@{PairBoundaryBendingPotential}}
+\index{PairBoundaryBendingPotential@{PairBoundaryBendingPotential}!PairBoundaryBendingPotential@{PairBoundaryBendingPotential}}
+\doxysubsubsection{PairBoundaryBendingPotential()}
+{\footnotesize\ttfamily \textbf{ Pair\+Boundary\+Bending\+Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{Value\+Ptr}]{val,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em val} & \doxyref{Value}{p.}{classValue} control object (for phasing in) \\
+\hline
+{\em param} & Contains information about all parameters (k) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file pair\+\_\+boundary\+\_\+bending\+\_\+potential.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPairBoundaryBendingPotential_a60f70115b851e412fc0973176c3226b1}} 
+\index{PairBoundaryBendingPotential@{PairBoundaryBendingPotential}!compute@{compute}}
+\index{compute@{compute}!PairBoundaryBendingPotential@{PairBoundaryBendingPotential}}
+\doxysubsubsection{compute()}
+{\footnotesize\ttfamily void compute (\begin{DoxyParamCaption}\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes potentials and forces for all particles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & time step sent by the integrator \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Pair\+Potential} \doxyref{}{p.}{classPairPotential_a47b59507485f0050f21b676fac26c071}.
+
+
+
+Definition at line 34 of file pair\+\_\+boundary\+\_\+bending\+\_\+potential.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+boundary\+\_\+bending\+\_\+potential.\+hpp}\item 
+\textbf{ pair\+\_\+boundary\+\_\+bending\+\_\+potential.\+cpp}\end{DoxyCompactItemize}

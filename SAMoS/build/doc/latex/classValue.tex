@@ -1,0 +1,57 @@
+\doxysection{Value Class Reference}
+\label{classValue}\index{Value@{Value}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Value}{p.}{classValue} class. 
+
+\doxyref{Value}{p.}{classValue} is the abstract class that provides interface for different forms of value interpolation. For example, its children can be used to get linear interpolation of the temperature between two preset values. 
+
+Definition at line 53 of file value.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Value} (Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classValue_a70bd3825479d1ed5f02564e3ed67e4ab}} 
+virtual double \textbf{ get\+\_\+val} (int)=0
+\begin{DoxyCompactList}\small\item\em Return current value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classValue_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles messages sent to output. \end{DoxyCompactList}\item 
+\mbox{\label{classValue_a9718e61f197f3f0b0cf55dc598d25a5a}} 
+double \textbf{ m\+\_\+min\+\_\+val}
+\begin{DoxyCompactList}\small\item\em Minimum parameter value. \end{DoxyCompactList}\item 
+\mbox{\label{classValue_a49eec59c156141678460b609b27e0d50}} 
+double \textbf{ m\+\_\+max\+\_\+val}
+\begin{DoxyCompactList}\small\item\em Maximum parameter value. \end{DoxyCompactList}\item 
+\mbox{\label{classValue_ad47f0852895f5f51eda1d2a58417a321}} 
+int \textbf{ m\+\_\+steps}
+\begin{DoxyCompactList}\small\item\em Number of steps between min and max values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classValue_a8eed9891763fa6474a00cc6b5fded58c}} 
+\index{Value@{Value}!Value@{Value}}
+\index{Value@{Value}!Value@{Value}}
+\doxysubsubsection{Value()}
+{\footnotesize\ttfamily \textbf{ Value} (\begin{DoxyParamCaption}\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct \doxyref{Value}{p.}{classValue} object 
+\begin{DoxyParams}{Parameters}
+{\em param} & list of parameters that are passed to the appropriate instance \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file value.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ value.\+hpp}\end{DoxyCompactItemize}

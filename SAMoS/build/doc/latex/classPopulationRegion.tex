@@ -1,0 +1,114 @@
+\doxysection{Population\+Region Class Reference}
+\label{classPopulationRegion}\index{PopulationRegion@{PopulationRegion}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Population\+Region}{p.}{classPopulationRegion} class handles removal of cells that are outside a given region of space. If coordinates of a cell fall outside the \char`\"{}allowed\char`\"{} region, the cell is marked for removal a removed from the system. Boundaries are updated accordingly. 
+
+Definition at line 47 of file population\+\_\+region.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Population\+Region} (System\+Ptr sys, const Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPopulationRegion_ae83a8b8135072b6f0f0759f7772151d0}} 
+void \textbf{ divide} (int time)
+\begin{DoxyCompactList}\small\item\em \doxyref{Particle}{p.}{classParticle} division (emulates Region division) \end{DoxyCompactList}\item 
+void \textbf{ remove} (int)
+\begin{DoxyCompactList}\small\item\em Remove particle (emulates Region death) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationRegion_a5934f681769b45fdb507ff6de08ba66d}} 
+void \textbf{ add} (int t)
+\begin{DoxyCompactList}\small\item\em Add particle (has no direct biological application) \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationRegion_a67f03cc5a7b9c63b9a7bb825fac4d943}} 
+void \textbf{ grow} (int time)
+\begin{DoxyCompactList}\small\item\em Change Region native area. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationRegion_af5d8f68d62cfe61b7b4b272d49351f95}} 
+void \textbf{ elongate} (int time)
+\begin{DoxyCompactList}\small\item\em Change particle length ( makes no sense here) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPopulationRegion_a03deb72acf423daabe3c6e7611ec7ecf}} 
+bool \textbf{ m\+\_\+has\+\_\+left\+\_\+bound}
+\begin{DoxyCompactList}\small\item\em If true, there is a left boundary beyond which cells are removed. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationRegion_a045059194901ec657a36ba4d11eea000}} 
+bool \textbf{ m\+\_\+has\+\_\+right\+\_\+bound}
+\begin{DoxyCompactList}\small\item\em If true, there is a right boundary beyond which cells are removed. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationRegion_a4d169b7664d9090a6b6dd923999b30c0}} 
+bool \textbf{ m\+\_\+has\+\_\+top\+\_\+bound}
+\begin{DoxyCompactList}\small\item\em If true, there is a top boundary beyond which cells are removed. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationRegion_aa8bfc98de1285bc941c20b2818e06490}} 
+bool \textbf{ m\+\_\+has\+\_\+bottom\+\_\+bound}
+\begin{DoxyCompactList}\small\item\em If true, there is a bottom boundary beyond which cells are removed. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationRegion_a0d8784443776cadc8126e1c1ae4ed3c6}} 
+double \textbf{ m\+\_\+xmin}
+\begin{DoxyCompactList}\small\item\em Remove all cells that have x coordinates less than this value. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationRegion_a90930b50d1376627dfab166dbf5ff041}} 
+double \textbf{ m\+\_\+xmax}
+\begin{DoxyCompactList}\small\item\em Remove all cells that have x coordinates greater than this value. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationRegion_a45df5e430db01bef3cd16cfdf592850b}} 
+double \textbf{ m\+\_\+ymin}
+\begin{DoxyCompactList}\small\item\em Remove all cells that have y coordinates less than this value. \end{DoxyCompactList}\item 
+\mbox{\label{classPopulationRegion_afae76f8b2df316a2d8c573ef01e69b24}} 
+double \textbf{ m\+\_\+ymax}
+\begin{DoxyCompactList}\small\item\em Remove all cells that have y coordinates greater than this value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPopulationRegion_a370b228888a81026108ee5cae61440ac}} 
+\index{PopulationRegion@{PopulationRegion}!PopulationRegion@{PopulationRegion}}
+\index{PopulationRegion@{PopulationRegion}!PopulationRegion@{PopulationRegion}}
+\doxysubsubsection{PopulationRegion()}
+{\footnotesize\ttfamily \textbf{ Population\+Region} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{const Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct \doxyref{Population\+Region}{p.}{classPopulationRegion} object 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Reference to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Reference to the system wide messenger \\
+\hline
+{\em param} & Reference to the parameters that control given population control \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file population\+\_\+region.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPopulationRegion_adf9b6188c8a543f82a7f5c02ee539008}} 
+\index{PopulationRegion@{PopulationRegion}!remove@{remove}}
+\index{remove@{remove}!PopulationRegion@{PopulationRegion}}
+\doxysubsubsection{remove()}
+{\footnotesize\ttfamily void remove (\begin{DoxyParamCaption}\item[{int}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Remove particle (emulates Region death) 
+
+Remove particle.
+
+Particles that are outside the \char`\"{}allowed\char`\"{} region are marked for removal and removed from the system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & current time step \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Population} \doxyref{}{p.}{classPopulation_aca9c16a0b1878f93ea5f10f9d61f2b9c}.
+
+
+
+Definition at line 41 of file population\+\_\+region.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ population\+\_\+region.\+hpp}\item 
+\textbf{ population\+\_\+region.\+cpp}\end{DoxyCompactItemize}

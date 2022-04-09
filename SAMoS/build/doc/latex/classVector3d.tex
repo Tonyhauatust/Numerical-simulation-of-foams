@@ -1,0 +1,101 @@
+\doxysection{Vector3d Class Reference}
+\label{classVector3d}\index{Vector3d@{Vector3d}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Vector3d}{p.}{classVector3d} class Handles vectors in 3d Eucledian space 
+
+Definition at line 41 of file vector3d.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classVector3d_abfdeb83f8ed66c25c22a76c41411b071}} 
+\textbf{ Vector3d} ()
+\begin{DoxyCompactList}\small\item\em Deault constructor. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_ae8010f0364acd34b098d03e5a09e91bd}} 
+\textbf{ Vector3d} (double \textbf{ x}, double \textbf{ y}, double \textbf{ z})
+\begin{DoxyCompactList}\small\item\em Constructor for a vector object. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_aebe9b2fef232810bbc04cc6a1496d730}} 
+\textbf{ Vector3d} (const \textbf{ Vector3d} \&v)
+\begin{DoxyCompactList}\small\item\em Copy constructor ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_a1736ea23e1558bdf175554b700f8ad99}} 
+\textbf{ Vector3d} \& \textbf{ operator=} (const \textbf{ Vector3d} \&rhs)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_a1aa3fca66edc937964219b8349848868}} 
+\textbf{ Vector3d} \textbf{ operator+} (const \textbf{ Vector3d} \&v)
+\begin{DoxyCompactList}\small\item\em Add two vectors. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_aed5e8d29804e2bb190f2c943105d67dc}} 
+\textbf{ Vector3d} \textbf{ operator-\/} (const \textbf{ Vector3d} \&v)
+\begin{DoxyCompactList}\small\item\em Subtract two vectors. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_a98716f718467c4575628e138812b6af3}} 
+\textbf{ Vector3d} \textbf{ operator-\/} (const \textbf{ Vector3d} \&v) const
+\begin{DoxyCompactList}\small\item\em Subtract two vectors (constant version) \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_abcfcaedcbde7061cd04066c15a704bf9}} 
+\textbf{ Vector3d} \textbf{ operator-\/} ()
+\begin{DoxyCompactList}\small\item\em Negate a vector. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_a7f92881d4e5a98cc6f88a854f633514e}} 
+\textbf{ Vector3d} \textbf{ operator$\ast$} (const double c)
+\begin{DoxyCompactList}\small\item\em Scale vector by a constant. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_ae65fc38f1d48993b339c18b561f79c75}} 
+bool \textbf{ operator==} (const \textbf{ Vector3d} \&v)
+\begin{DoxyCompactList}\small\item\em Test equality. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_adaf3da2d7a009668a1f1305d095eb3d1}} 
+\textbf{ Vector3d} \& \textbf{ operator+=} (const \textbf{ Vector3d} \&v)
+\begin{DoxyCompactList}\small\item\em Add vector to current vector. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_a1daa68dd7f4c5060ac2493e8c79bd479}} 
+\textbf{ Vector3d} \& \textbf{ operator-\/=} (const \textbf{ Vector3d} \&v)
+\begin{DoxyCompactList}\small\item\em Subtract vector from current vector. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_ad507dcf453f8c972ea34a3551b0f2f27}} 
+double \textbf{ dot} (const \textbf{ Vector3d} \&v)
+\begin{DoxyCompactList}\small\item\em Euclidean dot product with another vector. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_a458096d6074664002f34cae28eb045a3}} 
+\textbf{ Vector3d} \textbf{ cross} (const \textbf{ Vector3d} \&v)
+\begin{DoxyCompactList}\small\item\em Cross prduct with another vector. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_a2f58b1375fd3ad3124e7cbe80d6970ea}} 
+double \textbf{ len} ()
+\begin{DoxyCompactList}\small\item\em Vector length. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_ac39d2342c56760aa8481a07c8ee93bb4}} 
+double \textbf{ len2} ()
+\begin{DoxyCompactList}\small\item\em Vector length squared. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_a7f84a1dbc8c802c85d54c81b12d74678}} 
+void \textbf{ scale} (double s)
+\begin{DoxyCompactList}\small\item\em Rescale vactor. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_a6b6ad2ae5bdba5e6be63ea05d48005f6}} 
+\textbf{ Vector3d} \textbf{ scaled} (double s)
+\begin{DoxyCompactList}\small\item\em Return rescale vactor. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_acd0de676568888d848beb97dcc53ae47}} 
+void \textbf{ normalize} ()
+\begin{DoxyCompactList}\small\item\em Make the vector has unit lenght. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_adeb6b23cbd255f83e52372eca67e3fa1}} 
+\textbf{ Vector3d} \textbf{ unit} ()
+\begin{DoxyCompactList}\small\item\em Return unit vector in the direction of this vector. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_a53744219fec71acf0c3e3fc9239698c3}} 
+\textbf{ Vector3d} \textbf{ parallel\+\_\+projection} (const \textbf{ Vector3d} \&v)
+\begin{DoxyCompactList}\small\item\em Get the part of the vector parallel to a given vector. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_a3bd56d2d9d7d83147a648c6ea71c1f69}} 
+\textbf{ Vector3d} \textbf{ perp\+\_\+projection} (const \textbf{ Vector3d} \&v)
+\begin{DoxyCompactList}\small\item\em Get the part normal to a given vector. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_a503981d9a7dbde0518280a64cd85f38e}} 
+\textbf{ Vector3d} \textbf{ rotate} (const double phi, const \textbf{ Vector3d} \&v)
+\begin{DoxyCompactList}\small\item\em Rotate vector by $ \phi $ around another vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classVector3d_af88b946fb90d5f08b5fb740c70e98c10}} 
+double \textbf{ x}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_ab927965981178aa1fba979a37168db2a}} 
+double \textbf{ y}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classVector3d_ab3e6ed577a7c669c19de1f9c1b46c872}} 
+double \textbf{ z}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ vector3d.\+hpp}\end{DoxyCompactItemize}

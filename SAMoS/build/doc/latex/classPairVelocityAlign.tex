@@ -1,0 +1,70 @@
+\doxysection{Pair\+Velocity\+Align Class Reference}
+\label{classPairVelocityAlign}\index{PairVelocityAlign@{PairVelocityAlign}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Pair\+Velocity\+Align}{p.}{classPairVelocityAlign} implements the \char`\"{}velocity\char`\"{} type alignment between neighbouring particles. For all particles within the cutoff distance $ r_{cut} \left(\leq r_{nl}\right) $ ( $ r_{nl} $ being neighbour list cutoff distance) we compute torque on the particle as $ \vec \tau_i = 2 J \sum_j \left(\vec v_i\cdot\vec v_j\right)\vec v_i\times\vec v_j $ (for nematic coupling) and as $ \vec \tau_i = 2 J \sum_j \vec v_i\times\vec v_j $ (for polar case), where $ J $ is the coupling constant and $ \vec v_j $ is velocity of j-\/th neighbour. 
+
+Definition at line 57 of file pair\+\_\+velocity\+\_\+aligner.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pair\+Velocity\+Align} (System\+Ptr sys, Messenger\+Ptr msg, Neighbour\+List\+Ptr nlist, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classPairVelocityAlign_a0302c78366bdd6fb3c88fffbac99e453}} 
+void \textbf{ set\+\_\+pair\+\_\+parameters} (\textbf{ pairs\+\_\+type} \&pair\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Set pair parameters data for pairwise alignment ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\label{classPairVelocityAlign_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true since velocity alignment needs neighbour list. \end{DoxyCompactList}\item 
+\mbox{\label{classPairVelocityAlign_a4993c97a669fa259c6574a18d547c117}} 
+void \textbf{ compute} ()
+\begin{DoxyCompactList}\small\item\em Computes \char`\"{}torques\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPairVelocityAlign_a9717caa31dfc2c4735c6a3926ebd17c9}} 
+double \textbf{ m\+\_\+J}
+\begin{DoxyCompactList}\small\item\em Coupling constant. \end{DoxyCompactList}\item 
+\mbox{\label{classPairVelocityAlign_a53535f3d09f76a200e4a0b7f0909950d}} 
+double \textbf{ m\+\_\+rcut}
+\begin{DoxyCompactList}\small\item\em Cutoff distance (has to be less than neighbour list cutoff) \end{DoxyCompactList}\item 
+\mbox{\label{classPairVelocityAlign_aab2c5c19ce0129c00668a81878067d53}} 
+bool \textbf{ m\+\_\+nematic}
+\begin{DoxyCompactList}\small\item\em If true apply nematic ordering, otherwise, use polar alignment. \end{DoxyCompactList}\item 
+\mbox{\label{classPairVelocityAlign_a0773187a0ad084f19b5fe7ee95dbc8db}} 
+\textbf{ Velocity\+Align\+Parameters} $\ast$$\ast$ \textbf{ m\+\_\+pair\+\_\+params}
+\begin{DoxyCompactList}\small\item\em type specific pair parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPairVelocityAlign_a8a6becf787c3da2b00733b171f5d07ee}} 
+\index{PairVelocityAlign@{PairVelocityAlign}!PairVelocityAlign@{PairVelocityAlign}}
+\index{PairVelocityAlign@{PairVelocityAlign}!PairVelocityAlign@{PairVelocityAlign}}
+\doxysubsubsection{PairVelocityAlign()}
+{\footnotesize\ttfamily \textbf{ Pair\+Velocity\+Align} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{Neighbour\+List\+Ptr}]{nlist,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Pointer to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em nlist} & Pointer to the global neighbour list \\
+\hline
+{\em param} & Contains information about all parameters (J and cutoff distance) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 66 of file pair\+\_\+velocity\+\_\+aligner.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ pair\+\_\+velocity\+\_\+aligner.\+hpp}\item 
+\textbf{ pair\+\_\+velocity\+\_\+aligner.\+cpp}\end{DoxyCompactItemize}

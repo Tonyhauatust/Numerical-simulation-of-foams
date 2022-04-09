@@ -1,0 +1,147 @@
+\doxysection{Constraint\+Ellipsoid Class Reference}
+\label{classConstraintEllipsoid}\index{ConstraintEllipsoid@{ConstraintEllipsoid}}
+
+
+\doxysubsection{Detailed Description}
+Enforces all particles to be on the surface of an ellipsoid with parameters $ a $, $ b $ and $ c $ All velocities will point in the tangent direction. 
+
+Definition at line 48 of file constraint\+\_\+ellipsoid.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Constraint\+Ellipsoid} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ compute\+\_\+normal} (\textbf{ Particle} \&, double \&, double \&, double \&)
+\begin{DoxyCompactList}\small\item\em Computes normal to the surface. \end{DoxyCompactList}\item 
+void \textbf{ compute\+\_\+gradient} (\textbf{ Particle} \&, double \&, double \&, double \&)
+\item 
+double \textbf{ constraint\+\_\+value} (\textbf{ Particle} \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classConstraintEllipsoid_a9c41cdb9725c9ef90a5ef62f86390762}} 
+double \textbf{ m\+\_\+a}
+\begin{DoxyCompactList}\small\item\em Ellipsoid parameter a. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintEllipsoid_abd0a6fc00c328cbb23361e70bea2ed3b}} 
+double \textbf{ m\+\_\+b}
+\begin{DoxyCompactList}\small\item\em Ellipsoid parameter b. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintEllipsoid_ab8c0f924bf9d87eda52afa8270edd84c}} 
+double \textbf{ m\+\_\+c}
+\begin{DoxyCompactList}\small\item\em Ellipsoid parameter c. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classConstraintEllipsoid_aae6ef8759866c5adb6c8ab6b600164e8}} 
+\index{ConstraintEllipsoid@{ConstraintEllipsoid}!ConstraintEllipsoid@{ConstraintEllipsoid}}
+\index{ConstraintEllipsoid@{ConstraintEllipsoid}!ConstraintEllipsoid@{ConstraintEllipsoid}}
+\doxysubsubsection{ConstraintEllipsoid()}
+{\footnotesize\ttfamily \textbf{ Constraint\+Ellipsoid} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em id} & unique constraint id \\
+\hline
+{\em sys} & pointer to the system object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & parameters that define the manifolds ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file constraint\+\_\+ellipsoid.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classConstraintEllipsoid_ab94012bbb0ddf61047baf7239047c33e}} 
+\index{ConstraintEllipsoid@{ConstraintEllipsoid}!compute\_gradient@{compute\_gradient}}
+\index{compute\_gradient@{compute\_gradient}!ConstraintEllipsoid@{ConstraintEllipsoid}}
+\doxysubsubsection{compute\_gradient()}
+{\footnotesize\ttfamily void compute\+\_\+gradient (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p,  }\item[{double \&}]{gx,  }\item[{double \&}]{gy,  }\item[{double \&}]{gz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Computes gradient onto the surface 
+\begin{DoxyParams}{Parameters}
+{\em p} & Reference to the particle object \\
+\hline
+{\em gx} & x component of the gradient vector (returned) \\
+\hline
+{\em gy} & y component of the gradient vector (returned) \\
+\hline
+{\em gz} & z component of the gradient vector (returned) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Constraint} \doxyref{}{p.}{classConstraint}.
+
+
+
+Definition at line 61 of file constraint\+\_\+ellipsoid.\+cpp.
+
+\mbox{\label{classConstraintEllipsoid_a94d4a8015fc0ef8bad688629dbedc73f}} 
+\index{ConstraintEllipsoid@{ConstraintEllipsoid}!compute\_normal@{compute\_normal}}
+\index{compute\_normal@{compute\_normal}!ConstraintEllipsoid@{ConstraintEllipsoid}}
+\doxysubsubsection{compute\_normal()}
+{\footnotesize\ttfamily void compute\+\_\+normal (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p,  }\item[{double \&}]{Nx,  }\item[{double \&}]{Ny,  }\item[{double \&}]{Nz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes normal to the surface. 
+
+Compute normal to the surface at p
+
+Normal vector is computed as the normalized gradient vector at point p. Coordinates of gradient vector are given as\+:
+
+$ g_x = \frac{2x}{a^2}, $ $ g_y = \frac{2y}{b^2}, $ $ g_z = \frac{2z}{c^2}. $ ~\newline
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Reference to the particle object \\
+\hline
+{\em Nx} & x coordinate of the normal \\
+\hline
+{\em Ny} & y coordinate of the normal \\
+\hline
+{\em Nz} & z coordinate of the normal \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Constraint} \doxyref{}{p.}{classConstraint_afc39476dfa8d0d838cb2591f9706ad68}.
+
+
+
+Definition at line 47 of file constraint\+\_\+ellipsoid.\+cpp.
+
+\mbox{\label{classConstraintEllipsoid_a24e3c46930257513fdddee9dd485d2a6}} 
+\index{ConstraintEllipsoid@{ConstraintEllipsoid}!constraint\_value@{constraint\_value}}
+\index{constraint\_value@{constraint\_value}!ConstraintEllipsoid@{ConstraintEllipsoid}}
+\doxysubsubsection{constraint\_value()}
+{\footnotesize\ttfamily double constraint\+\_\+value (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Computes value of the ellipsoid constraint for particle 
+\begin{DoxyParams}{Parameters}
+{\em p} & reference to a particle \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Constraint} \doxyref{}{p.}{classConstraint}.
+
+
+
+Definition at line 72 of file constraint\+\_\+ellipsoid.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ constraint\+\_\+ellipsoid.\+hpp}\item 
+\textbf{ constraint\+\_\+ellipsoid.\+cpp}\end{DoxyCompactItemize}

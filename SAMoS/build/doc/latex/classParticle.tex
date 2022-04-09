@@ -1,0 +1,580 @@
+\doxysection{Particle Class Reference}
+\label{classParticle}\index{Particle@{Particle}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Particle}{p.}{classParticle} class This is a basic unit in the simulation. It contains relevant parameters that describe each active particle, such as its position, velocity, type, etc. \begin{DoxyNote}{Note}
+particle coordinates are given in the external, 3d Euclidean space. Its confinement to a given manifold (curved space) is enforced via constraints. 
+\end{DoxyNote}
+
+
+Definition at line 65 of file particle.\+hpp.
+
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classParticle_af88b946fb90d5f08b5fb740c70e98c10}} 
+double \textbf{ x}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_ab927965981178aa1fba979a37168db2a}} 
+double \textbf{ y}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_ab3e6ed577a7c669c19de1f9c1b46c872}} 
+double \textbf{ z}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a2d31cc80a747457c212675a58c68b2b1}} 
+double \textbf{ vx}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a42e75115788e629a258d041808d822a0}} 
+double \textbf{ vy}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a7eddee930e55c61ba8cd3506c1ac5fc1}} 
+double \textbf{ vz}
+\begin{DoxyCompactList}\small\item\em Components of the particle velocity. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_aa7e88347476ef454086e7c3cd9865460}} 
+double \textbf{ fx}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a03c4ce20c7e4b8c6d60a20b833be69fe}} 
+double \textbf{ fy}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a085f1708dcd98d63afb4f0b30341460e}} 
+double \textbf{ fz}
+\begin{DoxyCompactList}\small\item\em Components of the force acting on the particle. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a118782bd67b7035a559485bbc6c6a953}} 
+double \textbf{ tau\+\_\+x}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a41add5042c36262ebf340241d456bb7e}} 
+double \textbf{ tau\+\_\+y}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_aa04788dd5ed8460fb400d366012da4ae}} 
+double \textbf{ tau\+\_\+z}
+\begin{DoxyCompactList}\small\item\em Components of the vector that handles director updates (torque in a sense?) \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a74d07ed95c86939416c6a88f1daf8e1a}} 
+double \textbf{ nx}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a147a8b14bbd79c0f1a3457805e2065ba}} 
+double \textbf{ ny}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a463bf8b21578003b62221acf2e522134}} 
+double \textbf{ nz}
+\begin{DoxyCompactList}\small\item\em \doxyref{Particle}{p.}{classParticle} direction vector (not necessarily equal to velocity direction) \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a61990b7f5388ef0010c75a5d80f58da9}} 
+int \textbf{ ix}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a50a0ba985d76ed4ef72a025ada75a5f9}} 
+int \textbf{ iy}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a7a38348d8cc80d687ae1c4bad6d4da57}} 
+int \textbf{ iz}
+\begin{DoxyCompactList}\small\item\em Periodic box image flags (to enable unwrapping of particle coordinates) \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_aad0276482cf4993f44dc387807b3b05a}} 
+double \textbf{ Nx}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_ab5a39ae003c04ce7d1d5248418bb9521}} 
+double \textbf{ Ny}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_acaaa313159a9cadedb2e90be1b46e789}} 
+double \textbf{ Nz}
+\begin{DoxyCompactList}\small\item\em Normal to the contraint, used for mesh orientation in tissues. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_abfdb19c1952619455c435ed78f67ad7f}} 
+double \textbf{ s\+\_\+xx}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a4eedd437fed58848fc23b50abaea6ac1}} 
+double \textbf{ s\+\_\+xy}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a65e648ecf21c1150e1217981330c84a3}} 
+double \textbf{ s\+\_\+xz}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a8bb41d0fe63f01dd4359d762886130e9}} 
+double \textbf{ s\+\_\+yx}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a69e0ae168baaead6eaa08b00e4110d5b}} 
+double \textbf{ s\+\_\+yy}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_af6a11aa97c08cf292abb6aae29c17509}} 
+double \textbf{ s\+\_\+yz}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_ae519a303b52dd05c975724aef1981724}} 
+double \textbf{ s\+\_\+zx}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a099a71f978008d6d5e112953791fb959}} 
+double \textbf{ s\+\_\+zy}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_ad27552f4aaf99d429ff0c9583685dfc8}} 
+double \textbf{ s\+\_\+zz}
+\begin{DoxyCompactList}\small\item\em Components of the stress tensor. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a98ecc32b7ac0cf654d9f883cbe5cab35}} 
+double \textbf{ omega}
+\begin{DoxyCompactList}\small\item\em Magnitude of the angular velocity (in the direction of the normal to the surface) \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a1ee8d58aac49b258d938f5ec6a1a77f6}} 
+double \textbf{ age}
+\begin{DoxyCompactList}\small\item\em \doxyref{Particle}{p.}{classParticle} age (used when deciding to remove and split the particle) \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_ac397499fd221806aee050572fbe2655d}} 
+double \textbf{ A0}
+\begin{DoxyCompactList}\small\item\em Native area for cell simulations. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a68f61635b8b4afe606ebf818e5b4b6d6}} 
+bool \textbf{ boundary}
+\begin{DoxyCompactList}\small\item\em Flag used to distinguish particle at the boundary for tissue simulations. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a8455b2da3df5a2ab892644e7fc8f28b1}} 
+bool \textbf{ in\+\_\+tissue}
+\begin{DoxyCompactList}\small\item\em Flag used to distinguish particles that belong to a tissue (part of triangulation) and those that do not. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a927664680e619bfbc60fcbfe38836a4e}} 
+list$<$ string $>$ \textbf{ groups}
+\begin{DoxyCompactList}\small\item\em List of all groups particle belongs to. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a267f585c89e4022bdc78aa1b2836b14c}} 
+vector$<$ int $>$ \textbf{ bonds}
+\begin{DoxyCompactList}\small\item\em List of all bonds this particle belongs to. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_acdf485b438f6e829fb45cbc7ebc997a7}} 
+vector$<$ int $>$ \textbf{ angles}
+\begin{DoxyCompactList}\small\item\em List of all angles this particle belongs to. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_adde838605de5d5d4c2c7e28dfeb29d9a}} 
+vector$<$ int $>$ \textbf{ boundary\+\_\+neigh}
+\begin{DoxyCompactList}\small\item\em For a boundary particle (tissue simulation) list all its boundary neighbours. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_afaee20d5203338707c08a2a33adc6815}} 
+int \textbf{ coordination}
+\begin{DoxyCompactList}\small\item\em Keeps track of the number of neighbours. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a244bf42c46054cf1113be44d55f2156d}} 
+double \textbf{ mass}
+\begin{DoxyCompactList}\small\item\em \doxyref{Particle}{p.}{classParticle} mass. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a830d3d7c754b577c92b2e7727cc03db4}} 
+int \textbf{ molecule}
+\begin{DoxyCompactList}\small\item\em Id of of the \char`\"{}molecule\char`\"{} (collection of particles) this particle belongs to. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_aab426090511e6fb995e3c0de448b597a}} 
+int \textbf{ bind}
+\begin{DoxyCompactList}\small\item\em Next time step this particle will bind (for actomyosin simulations) \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_aa06a8fad4dbdde00aec5b61872dc1640}} 
+int \textbf{ unbind}
+\begin{DoxyCompactList}\small\item\em Next time step this particle will unbind (for actomyosin simulations) \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_aad966617e7e050bedbead762727808a5}} 
+int \textbf{ m\+\_\+id}
+\begin{DoxyCompactList}\small\item\em Unique id. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_ae1ab22a157092f6b1d057c2d414cf5b9}} 
+int \textbf{ m\+\_\+flag}
+\begin{DoxyCompactList}\small\item\em This is a unique id which does not change regardless of removal of old and addition of new particles (note\+: clumsy, needs redesign) \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a81dd7875a72cb82dfe9a5f6ad5357f53}} 
+int \textbf{ m\+\_\+parent}
+\begin{DoxyCompactList}\small\item\em Flag of the parent who gave birth to this particle; -\/1 if particle was 1st generation. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a99d221003a0e649cd2d3d68f62cefcca}} 
+int \textbf{ m\+\_\+type}
+\begin{DoxyCompactList}\small\item\em \doxyref{Particle}{p.}{classParticle} type. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_adf987a6a54ef79ed98867352c9f0b8b5}} 
+double \textbf{ m\+\_\+r}
+\begin{DoxyCompactList}\small\item\em \doxyref{Particle}{p.}{classParticle} radius. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a09803744c1e340cbf83d6ec51170d297}} 
+double \textbf{ m\+\_\+l}
+\begin{DoxyCompactList}\small\item\em Length (if particle is actually a rod) \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_ad387e97258039d6576a1bebb793e2324}} 
+double \textbf{ m\+\_\+\+A0}
+\begin{DoxyCompactList}\small\item\em Default native area. This one is set for the cell type and does not grow. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a81d9956fff1e2f71d0c1699493ebdf77}} 
+map$<$ string, double $>$ \textbf{ m\+\_\+pot\+\_\+eng}
+\begin{DoxyCompactList}\small\item\em Holds current value of the potential energy of a given type. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a78a8b782c76479ebfc1d27a52743accc}} 
+map$<$ string, double $>$ \textbf{ m\+\_\+align\+\_\+eng}
+\begin{DoxyCompactList}\small\item\em Holds alignment potential energy of a given type. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_a38f5dd0de2594f571fe0297422e8d5ca}} 
+map$<$ string, \textbf{ Force\+Type} $>$ \textbf{ m\+\_\+force\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Position in the embedding 3d flat space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Particle} (int id, int type, double r)
+\item 
+\mbox{\label{classParticle_aca375ea4fc5024c273f4a1261b7df850}} 
+double \textbf{ get\+\_\+\+A0} ()
+\begin{DoxyCompactList}\small\item\em Get the default native area. \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+id} (int id)
+\item 
+void \textbf{ set\+\_\+type} (int type)
+\item 
+void \textbf{ set\+\_\+radius} (double r)
+\item 
+void \textbf{ set\+\_\+default\+\_\+area} (double \textbf{ A0})
+\item 
+void \textbf{ scale\+\_\+radius} (double scale)
+\item 
+void \textbf{ set\+\_\+length} (double l)
+\item 
+void \textbf{ scale\+\_\+length} (double scale)
+\item 
+double \textbf{ get\+\_\+pot\+\_\+energy} (const string \&type)
+\item 
+void \textbf{ set\+\_\+pot\+\_\+energy} (const string \&type, double val)
+\item 
+void \textbf{ add\+\_\+pot\+\_\+energy} (const string \&type, double val)
+\item 
+double \textbf{ get\+\_\+align\+\_\+energy} (const string \&type)
+\item 
+void \textbf{ set\+\_\+align\+\_\+energy} (const string \&type, double val)
+\item 
+void \textbf{ add\+\_\+align\+\_\+energy} (const string \&type, double val)
+\item 
+void \textbf{ set\+\_\+flag} (int flag)
+\item 
+\mbox{\label{classParticle_ab7ef0ebd168409bd7ec24e85e98e6872}} 
+int \textbf{ get\+\_\+flag} () const
+\begin{DoxyCompactList}\small\item\em Get flag parameter. \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+parent} (int parent)
+\item 
+\mbox{\label{classParticle_abb3a888a2534a2893b000492081db523}} 
+int \textbf{ get\+\_\+parent} () const
+\begin{DoxyCompactList}\small\item\em Get parent parameter. \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+force\+\_\+type} (const string \&name, double \textbf{ fx}, double \textbf{ fy}, double \textbf{ fz})
+\item 
+void \textbf{ add\+\_\+force\+\_\+type} (const string \&name, double \textbf{ fx}, double \textbf{ fy}, double \textbf{ fz})
+\item 
+void \textbf{ get\+\_\+force\+\_\+type} (const string \&name, double \&\textbf{ fx}, double \&\textbf{ fy}, double \&\textbf{ fz})
+\item 
+void \textbf{ add\+\_\+group} (const string \&name)
+\item 
+\mbox{\label{classParticle_a1c35fbc1ddd76ea2a4bf3a3a0d90631c}} 
+void \textbf{ print\+\_\+groups} ()
+\begin{DoxyCompactList}\small\item\em Debugging output. \end{DoxyCompactList}\item 
+\mbox{\label{classParticle_adb562c677567851e214f2a4663cfd986}} 
+map$<$ string, \textbf{ Force\+Type} $>$ \& \textbf{ get\+\_\+force\+\_\+type} ()
+\begin{DoxyCompactList}\small\item\em Get the entire force type data structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classParticle_ace29ab5a6655e24dc9daec491b455bfb}} 
+\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\doxysubsubsection{Particle()}
+{\footnotesize\ttfamily \textbf{ Particle} (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{type,  }\item[{double}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a \doxyref{Particle}{p.}{classParticle} object 
+\begin{DoxyParams}{Parameters}
+{\em id} & particle id \\
+\hline
+{\em type} & particle type \\
+\hline
+{\em r} & particle radius \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 72 of file particle.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classParticle_ac3e2dc4b63ef223c1c0dea1092e2a920}} 
+\index{Particle@{Particle}!add\_align\_energy@{add\_align\_energy}}
+\index{add\_align\_energy@{add\_align\_energy}!Particle@{Particle}}
+\doxysubsubsection{add\_align\_energy()}
+{\footnotesize\ttfamily void add\+\_\+align\+\_\+energy (\begin{DoxyParamCaption}\item[{const string \&}]{type,  }\item[{double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add value of the alignment potential energy of a given type 
+\begin{DoxyParams}{Parameters}
+{\em type} & alignment potential energy type (such as \char`\"{}polar\char`\"{}) \\
+\hline
+{\em val} & value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 183 of file particle.\+hpp.
+
+\mbox{\label{classParticle_a9b31bc6f948510e4c5933dd3f9d214cb}} 
+\index{Particle@{Particle}!add\_force\_type@{add\_force\_type}}
+\index{add\_force\_type@{add\_force\_type}!Particle@{Particle}}
+\doxysubsubsection{add\_force\_type()}
+{\footnotesize\ttfamily void add\+\_\+force\+\_\+type (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{double}]{fx,  }\item[{double}]{fy,  }\item[{double}]{fz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds components of the force type 
+\begin{DoxyParams}{Parameters}
+{\em name} & force type \\
+\hline
+{\em fx} & x component of the force \\
+\hline
+{\em fy} & y component of the force \\
+\hline
+{\em fz} & z component of the force \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 219 of file particle.\+hpp.
+
+\mbox{\label{classParticle_a3afa48e98c95bb0cdefa31a4208069f6}} 
+\index{Particle@{Particle}!add\_group@{add\_group}}
+\index{add\_group@{add\_group}!Particle@{Particle}}
+\doxysubsubsection{add\_group()}
+{\footnotesize\ttfamily void add\+\_\+group (\begin{DoxyParamCaption}\item[{const string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add group name to the list of particle\textquotesingle{}s groups 
+\begin{DoxyParams}{Parameters}
+{\em name} & group name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 240 of file particle.\+hpp.
+
+\mbox{\label{classParticle_a301e70e9a8ab0b7f18bf444cb7f0e821}} 
+\index{Particle@{Particle}!add\_pot\_energy@{add\_pot\_energy}}
+\index{add\_pot\_energy@{add\_pot\_energy}!Particle@{Particle}}
+\doxysubsubsection{add\_pot\_energy()}
+{\footnotesize\ttfamily void add\+\_\+pot\+\_\+energy (\begin{DoxyParamCaption}\item[{const string \&}]{type,  }\item[{double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add value of the potential energy of a given type 
+\begin{DoxyParams}{Parameters}
+{\em type} & potential energy type (such as \char`\"{}soft\char`\"{}) \\
+\hline
+{\em val} & value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 157 of file particle.\+hpp.
+
+\mbox{\label{classParticle_a9033773bd56c53f160414f879f4b01c1}} 
+\index{Particle@{Particle}!get\_align\_energy@{get\_align\_energy}}
+\index{get\_align\_energy@{get\_align\_energy}!Particle@{Particle}}
+\doxysubsubsection{get\_align\_energy()}
+{\footnotesize\ttfamily double get\+\_\+align\+\_\+energy (\begin{DoxyParamCaption}\item[{const string \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return alignment potential energy of a given type 
+\begin{DoxyParams}{Parameters}
+{\em type} & alignment potential energy type to return ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 164 of file particle.\+hpp.
+
+\mbox{\label{classParticle_aaa1cce81c8f5b50e27a36c70ecadebdc}} 
+\index{Particle@{Particle}!get\_force\_type@{get\_force\_type}}
+\index{get\_force\_type@{get\_force\_type}!Particle@{Particle}}
+\doxysubsubsection{get\_force\_type()}
+{\footnotesize\ttfamily void get\+\_\+force\+\_\+type (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{double \&}]{fx,  }\item[{double \&}]{fy,  }\item[{double \&}]{fz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get values of force types 
+\begin{DoxyParams}{Parameters}
+{\em name} & force type \\
+\hline
+{\em fx} & x component of the force \\
+\hline
+{\em fy} & y component of the force \\
+\hline
+{\em fz} & z component of the force \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 231 of file particle.\+hpp.
+
+\mbox{\label{classParticle_a327132c10f5aa41804b6538d1c05583e}} 
+\index{Particle@{Particle}!get\_pot\_energy@{get\_pot\_energy}}
+\index{get\_pot\_energy@{get\_pot\_energy}!Particle@{Particle}}
+\doxysubsubsection{get\_pot\_energy()}
+{\footnotesize\ttfamily double get\+\_\+pot\+\_\+energy (\begin{DoxyParamCaption}\item[{const string \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return potential energy of a given type 
+\begin{DoxyParams}{Parameters}
+{\em type} & potential energy type to return ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 138 of file particle.\+hpp.
+
+\mbox{\label{classParticle_a25f77a73717fdff94c3e31839df78c81}} 
+\index{Particle@{Particle}!scale\_length@{scale\_length}}
+\index{scale\_length@{scale\_length}!Particle@{Particle}}
+\doxysubsubsection{scale\_length()}
+{\footnotesize\ttfamily void scale\+\_\+length (\begin{DoxyParamCaption}\item[{double}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Scale lenght of the paricle (rod) 
+\begin{DoxyParams}{Parameters}
+{\em scale} & scale factor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 134 of file particle.\+hpp.
+
+\mbox{\label{classParticle_af4866f90489042a802665484ef4078ca}} 
+\index{Particle@{Particle}!scale\_radius@{scale\_radius}}
+\index{scale\_radius@{scale\_radius}!Particle@{Particle}}
+\doxysubsubsection{scale\_radius()}
+{\footnotesize\ttfamily void scale\+\_\+radius (\begin{DoxyParamCaption}\item[{double}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Scale particle radius 
+\begin{DoxyParams}{Parameters}
+{\em scale} & scale factor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file particle.\+hpp.
+
+\mbox{\label{classParticle_a308cd9b629de88afcb9d186738028b2f}} 
+\index{Particle@{Particle}!set\_align\_energy@{set\_align\_energy}}
+\index{set\_align\_energy@{set\_align\_energy}!Particle@{Particle}}
+\doxysubsubsection{set\_align\_energy()}
+{\footnotesize\ttfamily void set\+\_\+align\+\_\+energy (\begin{DoxyParamCaption}\item[{const string \&}]{type,  }\item[{double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set value of the alignment potential energy of a given type 
+\begin{DoxyParams}{Parameters}
+{\em type} & alignment potential energy type (such as \char`\"{}polar\char`\"{}) \\
+\hline
+{\em val} & value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 175 of file particle.\+hpp.
+
+\mbox{\label{classParticle_a55bb82ba80a2b680332841acd9997bbf}} 
+\index{Particle@{Particle}!set\_default\_area@{set\_default\_area}}
+\index{set\_default\_area@{set\_default\_area}!Particle@{Particle}}
+\doxysubsubsection{set\_default\_area()}
+{\footnotesize\ttfamily void set\+\_\+default\+\_\+area (\begin{DoxyParamCaption}\item[{double}]{A0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set default native area 
+\begin{DoxyParams}{Parameters}
+{\em A0} & defualt native area. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 122 of file particle.\+hpp.
+
+\mbox{\label{classParticle_a41def08d3ecf9c9d6077efc7594555b3}} 
+\index{Particle@{Particle}!set\_flag@{set\_flag}}
+\index{set\_flag@{set\_flag}!Particle@{Particle}}
+\doxysubsubsection{set\_flag()}
+{\footnotesize\ttfamily void set\+\_\+flag (\begin{DoxyParamCaption}\item[{int}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set flag parameter 
+\begin{DoxyParams}{Parameters}
+{\em flag} & value of the flag ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 190 of file particle.\+hpp.
+
+\mbox{\label{classParticle_af640a83863955443f3fbf686c6113321}} 
+\index{Particle@{Particle}!set\_force\_type@{set\_force\_type}}
+\index{set\_force\_type@{set\_force\_type}!Particle@{Particle}}
+\doxysubsubsection{set\_force\_type()}
+{\footnotesize\ttfamily void set\+\_\+force\+\_\+type (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{double}]{fx,  }\item[{double}]{fy,  }\item[{double}]{fz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets components of the force type 
+\begin{DoxyParams}{Parameters}
+{\em name} & force type \\
+\hline
+{\em fx} & x component of the force \\
+\hline
+{\em fy} & y component of the force \\
+\hline
+{\em fz} & z component of the force \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 207 of file particle.\+hpp.
+
+\mbox{\label{classParticle_a6ff8f115eede06acb2c131ec56b3f3a4}} 
+\index{Particle@{Particle}!set\_id@{set\_id}}
+\index{set\_id@{set\_id}!Particle@{Particle}}
+\doxysubsubsection{set\_id()}
+{\footnotesize\ttfamily void set\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set id (for particle relabelling purposes) 
+\begin{DoxyParams}{Parameters}
+{\em id} & new id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 110 of file particle.\+hpp.
+
+\mbox{\label{classParticle_a9577d05890fab2198728d0ea20a85f02}} 
+\index{Particle@{Particle}!set\_length@{set\_length}}
+\index{set\_length@{set\_length}!Particle@{Particle}}
+\doxysubsubsection{set\_length()}
+{\footnotesize\ttfamily void set\+\_\+length (\begin{DoxyParamCaption}\item[{double}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set lenght (for group changes and birth/death) 
+\begin{DoxyParams}{Parameters}
+{\em l} & new length \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 130 of file particle.\+hpp.
+
+\mbox{\label{classParticle_a7cdd72b6a00edb4ed9c798c0e766e518}} 
+\index{Particle@{Particle}!set\_parent@{set\_parent}}
+\index{set\_parent@{set\_parent}!Particle@{Particle}}
+\doxysubsubsection{set\_parent()}
+{\footnotesize\ttfamily void set\+\_\+parent (\begin{DoxyParamCaption}\item[{int}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set parent parameter 
+\begin{DoxyParams}{Parameters}
+{\em parent} & value of the flag ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 197 of file particle.\+hpp.
+
+\mbox{\label{classParticle_a1df7180c1fb8089fbe354af1903144a5}} 
+\index{Particle@{Particle}!set\_pot\_energy@{set\_pot\_energy}}
+\index{set\_pot\_energy@{set\_pot\_energy}!Particle@{Particle}}
+\doxysubsubsection{set\_pot\_energy()}
+{\footnotesize\ttfamily void set\+\_\+pot\+\_\+energy (\begin{DoxyParamCaption}\item[{const string \&}]{type,  }\item[{double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set value of the potential energy of a given type 
+\begin{DoxyParams}{Parameters}
+{\em type} & potential energy type (such as \char`\"{}soft\char`\"{}) \\
+\hline
+{\em val} & value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 149 of file particle.\+hpp.
+
+\mbox{\label{classParticle_af802e2104bc0ab9575a198625cf98c66}} 
+\index{Particle@{Particle}!set\_radius@{set\_radius}}
+\index{set\_radius@{set\_radius}!Particle@{Particle}}
+\doxysubsubsection{set\_radius()}
+{\footnotesize\ttfamily void set\+\_\+radius (\begin{DoxyParamCaption}\item[{double}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set radius (for group changes and birth/death) 
+\begin{DoxyParams}{Parameters}
+{\em r} & new type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 118 of file particle.\+hpp.
+
+\mbox{\label{classParticle_a6c2997a9067e0bae7c072ee52160dddb}} 
+\index{Particle@{Particle}!set\_type@{set\_type}}
+\index{set\_type@{set\_type}!Particle@{Particle}}
+\doxysubsubsection{set\_type()}
+{\footnotesize\ttfamily void set\+\_\+type (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set type (for group changes and birth/death) 
+\begin{DoxyParams}{Parameters}
+{\em type} & new type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 114 of file particle.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ particle.\+hpp}\end{DoxyCompactItemize}

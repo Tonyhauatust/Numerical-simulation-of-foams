@@ -1,0 +1,224 @@
+\doxysection{Face Struct Reference}
+\label{structFace}\index{Face@{Face}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Face}{p.}{structFace} class keeps track of the face information in the mesh 
+
+Definition at line 58 of file face.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Face} (int \textbf{ id})
+\item 
+void \textbf{ add\+\_\+vertex} (int v)
+\item 
+void \textbf{ remove\+\_\+vertex} (int v)
+\item 
+void \textbf{ add\+\_\+edge} (int e)
+\item 
+void \textbf{ remove\+\_\+edge} (int e)
+\item 
+bool \textbf{ has\+\_\+vertex} (int v)
+\item 
+double \textbf{ get\+\_\+angle} (int v)
+\item 
+\textbf{ Matrix3d} \& \textbf{ get\+\_\+jacobian} (int v)
+\item 
+bool \textbf{ operator==} (int val)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{structFace_a7441ef0865bcb3db9b8064dd7375c1ea}} 
+int \textbf{ id}
+\begin{DoxyCompactList}\small\item\em \doxyref{Face}{p.}{structFace} id. \end{DoxyCompactList}\item 
+\mbox{\label{structFace_a28b921d19f2984f08a5367bd7135dd52}} 
+int \textbf{ n\+\_\+sides}
+\begin{DoxyCompactList}\small\item\em Number of sides. \end{DoxyCompactList}\item 
+\mbox{\label{structFace_a4bf7f4108c2ec5657e57cb716d8bade2}} 
+bool \textbf{ edge\+\_\+face}
+\begin{DoxyCompactList}\small\item\em \doxyref{Face}{p.}{structFace} is an edge face if all its edges are at the boundary. \end{DoxyCompactList}\item 
+\mbox{\label{structFace_a40c532d6ba6706818b15b50db4a991fe}} 
+bool \textbf{ ordered}
+\begin{DoxyCompactList}\small\item\em if true, vertices in the face are ordered \end{DoxyCompactList}\item 
+\mbox{\label{structFace_ac765329451135abec74c45e1897abf26}} 
+int \textbf{ type}
+\begin{DoxyCompactList}\small\item\em \doxyref{Face}{p.}{structFace} type. This is help determine parameters for interactions that depend in the dual vertex. \end{DoxyCompactList}\item 
+\mbox{\label{structFace_a71ec74820fd5988eb27e30e39695db22}} 
+bool \textbf{ is\+\_\+hole}
+\begin{DoxyCompactList}\small\item\em If true, this face is actually a hole. \end{DoxyCompactList}\item 
+\mbox{\label{structFace_a68f61635b8b4afe606ebf818e5b4b6d6}} 
+bool \textbf{ boundary}
+\begin{DoxyCompactList}\small\item\em \doxyref{Face}{p.}{structFace} is boundary is one of its edges is boundary. \end{DoxyCompactList}\item 
+\mbox{\label{structFace_a53e643a4783bd23e88af23a84dce393e}} 
+bool \textbf{ obtuse}
+\begin{DoxyCompactList}\small\item\em \doxyref{Face}{p.}{structFace} is obtuse if one of its angles is larger than pi/2. \end{DoxyCompactList}\item 
+\mbox{\label{structFace_ae517bffd82b9428b4f1d9500ea01c04f}} 
+double \textbf{ area}
+\begin{DoxyCompactList}\small\item\em Area of the face. \end{DoxyCompactList}\item 
+\mbox{\label{structFace_a3f67c53b80389c5f53961936edba04c9}} 
+double \textbf{ radius}
+\begin{DoxyCompactList}\small\item\em Radius of the circumscribed circle. \end{DoxyCompactList}\item 
+\mbox{\label{structFace_a0b076e1287c5cbb52d7c20ca133e37d2}} 
+\textbf{ Vector3d} \textbf{ rc}
+\begin{DoxyCompactList}\small\item\em Coordiantes of geometric centre of the face. \end{DoxyCompactList}\item 
+\mbox{\label{structFace_a47faf6c0b1aa9f03f0bb30c47ad3a7f6}} 
+vector$<$ int $>$ \textbf{ vertices}
+\begin{DoxyCompactList}\small\item\em Contains all vertices. \end{DoxyCompactList}\item 
+\mbox{\label{structFace_aa07c6d0a1ef66ed4ad551eba0bc512d7}} 
+vector$<$ int $>$ \textbf{ edges}
+\begin{DoxyCompactList}\small\item\em Contains all edges. \end{DoxyCompactList}\item 
+\mbox{\label{structFace_a0ee387d2fe1ad40af5ea5a938d98e41e}} 
+vector$<$ double $>$ \textbf{ angles}
+\begin{DoxyCompactList}\small\item\em Contains cosines of angles at each vertex (in radians) \end{DoxyCompactList}\item 
+\mbox{\label{structFace_a37b73ea48829818f35a9e10c626a49ca}} 
+vector$<$ \textbf{ Matrix3d} $>$ \textbf{ drcdr}
+\begin{DoxyCompactList}\small\item\em Contains derivatives of the face centres with respect to its vertices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{structFace_af5e2a801cf449be5af9a1b300d475a06}} 
+\index{Face@{Face}!Face@{Face}}
+\index{Face@{Face}!Face@{Face}}
+\doxysubsubsection{Face()}
+{\footnotesize\ttfamily \textbf{ Face} (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a \doxyref{Face}{p.}{structFace} object 
+\begin{DoxyParams}{Parameters}
+{\em id} & face id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file face.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{structFace_af63bc226a11f6c99a89227a0121e3ed0}} 
+\index{Face@{Face}!add\_edge@{add\_edge}}
+\index{add\_edge@{add\_edge}!Face@{Face}}
+\doxysubsubsection{add\_edge()}
+{\footnotesize\ttfamily void add\+\_\+edge (\begin{DoxyParamCaption}\item[{int}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add an edge 
+\begin{DoxyParams}{Parameters}
+{\em e} & edge index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file face.\+hpp.
+
+\mbox{\label{structFace_a646e271e8314a04458bd6f3b079c6ab5}} 
+\index{Face@{Face}!add\_vertex@{add\_vertex}}
+\index{add\_vertex@{add\_vertex}!Face@{Face}}
+\doxysubsubsection{add\_vertex()}
+{\footnotesize\ttfamily void add\+\_\+vertex (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add a vertex 
+\begin{DoxyParams}{Parameters}
+{\em v} & adds a vertex \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 85 of file face.\+hpp.
+
+\mbox{\label{structFace_a86b00c12ca92d36658b9986049dc4ff7}} 
+\index{Face@{Face}!get\_angle@{get\_angle}}
+\index{get\_angle@{get\_angle}!Face@{Face}}
+\doxysubsubsection{get\_angle()}
+{\footnotesize\ttfamily double get\+\_\+angle (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get angle at a vertex 
+\begin{DoxyParams}{Parameters}
+{\em v} & vertex index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 128 of file face.\+hpp.
+
+\mbox{\label{structFace_a43bb5c1967bd99af4a11bf1291886489}} 
+\index{Face@{Face}!get\_jacobian@{get\_jacobian}}
+\index{get\_jacobian@{get\_jacobian}!Face@{Face}}
+\doxysubsubsection{get\_jacobian()}
+{\footnotesize\ttfamily \textbf{ Matrix3d}\& get\+\_\+jacobian (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return Jacobian of the face centre with respect to a given vertex 
+\begin{DoxyParams}{Parameters}
+{\em v} & id of the vertex \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 139 of file face.\+hpp.
+
+\mbox{\label{structFace_a2721270c910829e4d0e1bd85a8bdd051}} 
+\index{Face@{Face}!has\_vertex@{has\_vertex}}
+\index{has\_vertex@{has\_vertex}!Face@{Face}}
+\doxysubsubsection{has\_vertex()}
+{\footnotesize\ttfamily bool has\+\_\+vertex (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if vertex belongs to the face 
+\begin{DoxyParams}{Parameters}
+{\em v} & vertex id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 121 of file face.\+hpp.
+
+\mbox{\label{structFace_aeff34242dbf0c8900d649ca11dde77a7}} 
+\index{Face@{Face}!operator==@{operator==}}
+\index{operator==@{operator==}!Face@{Face}}
+\doxysubsubsection{operator==()}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compare if the id of the face is equal to an integer value 
+\begin{DoxyParams}{Parameters}
+{\em val} & face index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 149 of file face.\+hpp.
+
+\mbox{\label{structFace_a2d9c2dc3150dd17f83242ab437762597}} 
+\index{Face@{Face}!remove\_edge@{remove\_edge}}
+\index{remove\_edge@{remove\_edge}!Face@{Face}}
+\doxysubsubsection{remove\_edge()}
+{\footnotesize\ttfamily void remove\+\_\+edge (\begin{DoxyParamCaption}\item[{int}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Remove an edge 
+\begin{DoxyParams}{Parameters}
+{\em e} & edge index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 112 of file face.\+hpp.
+
+\mbox{\label{structFace_a61df85f9afb2c05d6918963ef1ecc72b}} 
+\index{Face@{Face}!remove\_vertex@{remove\_vertex}}
+\index{remove\_vertex@{remove\_vertex}!Face@{Face}}
+\doxysubsubsection{remove\_vertex()}
+{\footnotesize\ttfamily void remove\+\_\+vertex (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Remove a vertex 
+\begin{DoxyParams}{Parameters}
+{\em v} & vertex index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 93 of file face.\+hpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ face.\+hpp}\end{DoxyCompactItemize}

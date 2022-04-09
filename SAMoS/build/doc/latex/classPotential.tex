@@ -1,0 +1,346 @@
+\doxysection{Potential Class Reference}
+\label{classPotential}\index{Potential@{Potential}}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Potential}{p.}{classPotential} class handles all potentials (pair interactions, external forces, bonds and angles) present in the system. All potentials are stored in two S\+TL maps which both have strings as keys while items are pointers (std shared\+\_\+ptr) to the \doxyref{Pair\+Potential}{p.}{classPairPotential} and \doxyref{External\+Potential}{p.}{classExternalPotential} abstract classes, respectively. The integrator part of the code calls member functions of this class to perform actual force and potential computations. 
+
+Definition at line 59 of file potential.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Potential} (System\+Ptr sys, const Messenger\+Ptr msg)
+\item 
+\mbox{\label{classPotential_a88b7e9130926caab2cfe52cc10300ebd}} 
+\textbf{ $\sim$\+Potential} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \textbf{ add\+\_\+pair\+\_\+potential} (const string \&name, Pair\+Potential\+Ptr pot)
+\item 
+void \textbf{ add\+\_\+external\+\_\+potential} (const string \&name, External\+Potential\+Ptr pot)
+\item 
+void \textbf{ add\+\_\+bond\+\_\+potential} (const string \&name, Bond\+Potential\+Ptr pot)
+\item 
+void \textbf{ add\+\_\+angle\+\_\+potential} (const string \&name, Angle\+Potential\+Ptr pot)
+\item 
+void \textbf{ add\+\_\+pair\+\_\+potential\+\_\+parameters} (const string \&name, \textbf{ pairs\+\_\+type} \&params)
+\item 
+void \textbf{ add\+\_\+pair\+\_\+type\+\_\+parameters} (const string \&name, \textbf{ pairs\+\_\+type} \&params)
+\item 
+void \textbf{ add\+\_\+external\+\_\+potential\+\_\+parameters} (const string \&name, \textbf{ pairs\+\_\+type} \&params)
+\item 
+void \textbf{ add\+\_\+bond\+\_\+potential\+\_\+parameters} (const string \&name, \textbf{ pairs\+\_\+type} \&params)
+\item 
+void \textbf{ add\+\_\+angle\+\_\+potential\+\_\+parameters} (const string \&name, \textbf{ pairs\+\_\+type} \&params)
+\item 
+double \textbf{ compute\+\_\+pair\+\_\+potential\+\_\+energy\+\_\+of\+\_\+type} (const string \&type)
+\item 
+double \textbf{ compute\+\_\+external\+\_\+potential\+\_\+energy\+\_\+of\+\_\+type} (const string \&type)
+\item 
+double \textbf{ compute\+\_\+bond\+\_\+potential\+\_\+energy\+\_\+of\+\_\+type} (const string \&type)
+\item 
+double \textbf{ compute\+\_\+angle\+\_\+potential\+\_\+energy\+\_\+of\+\_\+type} (const string \&type)
+\item 
+\mbox{\label{classPotential_a9f0347a8421957e05182c618f6ba30c5}} 
+bool \textbf{ need\+\_\+nlist} ()
+\begin{DoxyCompactList}\small\item\em Returns true if any of the potentials need neighbour list. \end{DoxyCompactList}\item 
+double \textbf{ compute\+\_\+potential\+\_\+energy} ()
+\item 
+void \textbf{ compute} (double)
+\begin{DoxyCompactList}\small\item\em Compute all forces and potentials in the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classPotential_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Contains pointer to the \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classPotential_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles messages sent to output. \end{DoxyCompactList}\item 
+\mbox{\label{classPotential_ad7fdcb7243825d141715c6234bda7fb4}} 
+Pair\+Pot\+Type \textbf{ m\+\_\+pair\+\_\+interactions}
+\begin{DoxyCompactList}\small\item\em Contains information about all pair interactions. \end{DoxyCompactList}\item 
+\mbox{\label{classPotential_a4046a930fa1fabfa3097546f27ec0bfc}} 
+Extern\+Pot\+Type \textbf{ m\+\_\+external\+\_\+potentials}
+\begin{DoxyCompactList}\small\item\em Contains information about all external forces. \end{DoxyCompactList}\item 
+\mbox{\label{classPotential_a0a82086f076f5402509df6e30c26d910}} 
+Bond\+Pot\+Type \textbf{ m\+\_\+bond}
+\begin{DoxyCompactList}\small\item\em Contains information about all bonds. \end{DoxyCompactList}\item 
+\mbox{\label{classPotential_ab68aca19ccb970f7e7fa96515addcaad}} 
+Angle\+Pot\+Type \textbf{ m\+\_\+angle}
+\begin{DoxyCompactList}\small\item\em Contains information about all angles. \end{DoxyCompactList}\item 
+\mbox{\label{classPotential_aa7ba9e816498a8b77d66bc83e6f51321}} 
+bool \textbf{ m\+\_\+need\+\_\+nlist}
+\begin{DoxyCompactList}\small\item\em If true, there are potentials that need neighbour list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPotential_ab711f04b9268595b045bac7c73f3c846}} 
+\index{Potential@{Potential}!Potential@{Potential}}
+\index{Potential@{Potential}!Potential@{Potential}}
+\doxysubsubsection{Potential()}
+{\footnotesize\ttfamily \textbf{ Potential} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{const Messenger\+Ptr}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct \doxyref{Potential}{p.}{classPotential} object 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Reference to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Reference to the system wide messenger \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 66 of file potential.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classPotential_adf8f05232f8d273f4ab46bb982c41999}} 
+\index{Potential@{Potential}!add\_angle\_potential@{add\_angle\_potential}}
+\index{add\_angle\_potential@{add\_angle\_potential}!Potential@{Potential}}
+\doxysubsubsection{add\_angle\_potential()}
+{\footnotesize\ttfamily void add\+\_\+angle\+\_\+potential (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{Angle\+Potential\+Ptr}]{pot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add angle potential to the list of all angle interactions 
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique name of the potential \\
+\hline
+{\em pot} & Pointer to the angle potential object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 110 of file potential.\+hpp.
+
+\mbox{\label{classPotential_a7592faca33d68d436677a37078e0056d}} 
+\index{Potential@{Potential}!add\_angle\_potential\_parameters@{add\_angle\_potential\_parameters}}
+\index{add\_angle\_potential\_parameters@{add\_angle\_potential\_parameters}!Potential@{Potential}}
+\doxysubsubsection{add\_angle\_potential\_parameters()}
+{\footnotesize\ttfamily void add\+\_\+angle\+\_\+potential\+\_\+parameters (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{\textbf{ pairs\+\_\+type} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add angle potential parameters 
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique name of the potential \\
+\hline
+{\em params} & maps with new potential parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 151 of file potential.\+hpp.
+
+\mbox{\label{classPotential_a30268e6b9de1b51d420501592218003c}} 
+\index{Potential@{Potential}!add\_bond\_potential@{add\_bond\_potential}}
+\index{add\_bond\_potential@{add\_bond\_potential}!Potential@{Potential}}
+\doxysubsubsection{add\_bond\_potential()}
+{\footnotesize\ttfamily void add\+\_\+bond\+\_\+potential (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{Bond\+Potential\+Ptr}]{pot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add bond potential to the list of all bond interactions 
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique name of the potential \\
+\hline
+{\em pot} & Pointer to the bond potential object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file potential.\+hpp.
+
+\mbox{\label{classPotential_ada73ad648f65a3981259b42bc164d9ad}} 
+\index{Potential@{Potential}!add\_bond\_potential\_parameters@{add\_bond\_potential\_parameters}}
+\index{add\_bond\_potential\_parameters@{add\_bond\_potential\_parameters}!Potential@{Potential}}
+\doxysubsubsection{add\_bond\_potential\_parameters()}
+{\footnotesize\ttfamily void add\+\_\+bond\+\_\+potential\+\_\+parameters (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{\textbf{ pairs\+\_\+type} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add bond potential parameters 
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique name of the potential \\
+\hline
+{\em params} & maps with new potential parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 143 of file potential.\+hpp.
+
+\mbox{\label{classPotential_aa2739074e6ecc643b7b958ba6ec79a8d}} 
+\index{Potential@{Potential}!add\_external\_potential@{add\_external\_potential}}
+\index{add\_external\_potential@{add\_external\_potential}!Potential@{Potential}}
+\doxysubsubsection{add\_external\_potential()}
+{\footnotesize\ttfamily void add\+\_\+external\+\_\+potential (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{External\+Potential\+Ptr}]{pot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add external potential to the list of all external potentials 
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique name of the potential \\
+\hline
+{\em pot} & Pointer to the external potential object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 92 of file potential.\+hpp.
+
+\mbox{\label{classPotential_ae37387fb3995ef2b9558050faac7a0ef}} 
+\index{Potential@{Potential}!add\_external\_potential\_parameters@{add\_external\_potential\_parameters}}
+\index{add\_external\_potential\_parameters@{add\_external\_potential\_parameters}!Potential@{Potential}}
+\doxysubsubsection{add\_external\_potential\_parameters()}
+{\footnotesize\ttfamily void add\+\_\+external\+\_\+potential\+\_\+parameters (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{\textbf{ pairs\+\_\+type} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add external potential parameters 
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique name of the potential \\
+\hline
+{\em params} & maps with new potential parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 135 of file potential.\+hpp.
+
+\mbox{\label{classPotential_a9c2142f98d36a7972de8ad16339ebc99}} 
+\index{Potential@{Potential}!add\_pair\_potential@{add\_pair\_potential}}
+\index{add\_pair\_potential@{add\_pair\_potential}!Potential@{Potential}}
+\doxysubsubsection{add\_pair\_potential()}
+{\footnotesize\ttfamily void add\+\_\+pair\+\_\+potential (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{Pair\+Potential\+Ptr}]{pot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add pair potential to the list of all pair interactions 
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique name of the potential \\
+\hline
+{\em pot} & Pointer to the pair potential object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file potential.\+hpp.
+
+\mbox{\label{classPotential_ae10effd9af7e5cfe6dc4891ea2b36e9d}} 
+\index{Potential@{Potential}!add\_pair\_potential\_parameters@{add\_pair\_potential\_parameters}}
+\index{add\_pair\_potential\_parameters@{add\_pair\_potential\_parameters}!Potential@{Potential}}
+\doxysubsubsection{add\_pair\_potential\_parameters()}
+{\footnotesize\ttfamily void add\+\_\+pair\+\_\+potential\+\_\+parameters (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{\textbf{ pairs\+\_\+type} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add pair potential parameters 
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique name of the potential \\
+\hline
+{\em params} & maps with new potential parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 119 of file potential.\+hpp.
+
+\mbox{\label{classPotential_af24d4b73c06cecc4a6413756024bcb1d}} 
+\index{Potential@{Potential}!add\_pair\_type\_parameters@{add\_pair\_type\_parameters}}
+\index{add\_pair\_type\_parameters@{add\_pair\_type\_parameters}!Potential@{Potential}}
+\doxysubsubsection{add\_pair\_type\_parameters()}
+{\footnotesize\ttfamily void add\+\_\+pair\+\_\+type\+\_\+parameters (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{\textbf{ pairs\+\_\+type} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add pair type parameters 
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique name of the potential \\
+\hline
+{\em params} & maps with new type parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file potential.\+hpp.
+
+\mbox{\label{classPotential_a60f70115b851e412fc0973176c3226b1}} 
+\index{Potential@{Potential}!compute@{compute}}
+\index{compute@{compute}!Potential@{Potential}}
+\doxysubsubsection{compute()}
+{\footnotesize\ttfamily void compute (\begin{DoxyParamCaption}\item[{double}]{dt }\end{DoxyParamCaption})}
+
+
+
+Compute all forces and potentials in the system. 
+
+Iterate over all pair and external potential and compute potential energies and forces 
+\begin{DoxyParams}{Parameters}
+{\em dt} & step size (used to phase in particles) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file potential.\+cpp.
+
+\mbox{\label{classPotential_a9ab9a07bfdd230f9c42ee5d79c77680b}} 
+\index{Potential@{Potential}!compute\_angle\_potential\_energy\_of\_type@{compute\_angle\_potential\_energy\_of\_type}}
+\index{compute\_angle\_potential\_energy\_of\_type@{compute\_angle\_potential\_energy\_of\_type}!Potential@{Potential}}
+\doxysubsubsection{compute\_angle\_potential\_energy\_of\_type()}
+{\footnotesize\ttfamily double compute\+\_\+angle\+\_\+potential\+\_\+energy\+\_\+of\+\_\+type (\begin{DoxyParamCaption}\item[{const string \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compute total angle potential energy of a given type (for measurement) 
+\begin{DoxyParams}{Parameters}
+{\em type} & angle potential type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 194 of file potential.\+hpp.
+
+\mbox{\label{classPotential_a6b406ee898c2f130d147d958c71e3513}} 
+\index{Potential@{Potential}!compute\_bond\_potential\_energy\_of\_type@{compute\_bond\_potential\_energy\_of\_type}}
+\index{compute\_bond\_potential\_energy\_of\_type@{compute\_bond\_potential\_energy\_of\_type}!Potential@{Potential}}
+\doxysubsubsection{compute\_bond\_potential\_energy\_of\_type()}
+{\footnotesize\ttfamily double compute\+\_\+bond\+\_\+potential\+\_\+energy\+\_\+of\+\_\+type (\begin{DoxyParamCaption}\item[{const string \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compute total bond potential energy of a given type (for measurement) 
+\begin{DoxyParams}{Parameters}
+{\em type} & bond potential type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 182 of file potential.\+hpp.
+
+\mbox{\label{classPotential_a29b51f49c8cb033b9e6c05030bcd944b}} 
+\index{Potential@{Potential}!compute\_external\_potential\_energy\_of\_type@{compute\_external\_potential\_energy\_of\_type}}
+\index{compute\_external\_potential\_energy\_of\_type@{compute\_external\_potential\_energy\_of\_type}!Potential@{Potential}}
+\doxysubsubsection{compute\_external\_potential\_energy\_of\_type()}
+{\footnotesize\ttfamily double compute\+\_\+external\+\_\+potential\+\_\+energy\+\_\+of\+\_\+type (\begin{DoxyParamCaption}\item[{const string \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compute total external potential energy of a given type (for measurement) 
+\begin{DoxyParams}{Parameters}
+{\em type} & pair potential type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 170 of file potential.\+hpp.
+
+\mbox{\label{classPotential_af5b8a606ab14937b78c3f7441148cd82}} 
+\index{Potential@{Potential}!compute\_pair\_potential\_energy\_of\_type@{compute\_pair\_potential\_energy\_of\_type}}
+\index{compute\_pair\_potential\_energy\_of\_type@{compute\_pair\_potential\_energy\_of\_type}!Potential@{Potential}}
+\doxysubsubsection{compute\_pair\_potential\_energy\_of\_type()}
+{\footnotesize\ttfamily double compute\+\_\+pair\+\_\+potential\+\_\+energy\+\_\+of\+\_\+type (\begin{DoxyParamCaption}\item[{const string \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compute total pair potential energy of a given type (for measurement) 
+\begin{DoxyParams}{Parameters}
+{\em type} & pair potential type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 158 of file potential.\+hpp.
+
+\mbox{\label{classPotential_a33c697897511a036012229cc3e5f3007}} 
+\index{Potential@{Potential}!compute\_potential\_energy@{compute\_potential\_energy}}
+\index{compute\_potential\_energy@{compute\_potential\_energy}!Potential@{Potential}}
+\doxysubsubsection{compute\_potential\_energy()}
+{\footnotesize\ttfamily double compute\+\_\+potential\+\_\+energy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Iterate over all pair, external, bond and angle force computes ~\newline
+ and calculate total potential energy of the system. 
+
+Definition at line 57 of file potential.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ potential.\+hpp}\item 
+\textbf{ potential.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,310 @@
+\doxysection{Neighbour\+List Class Reference}
+\label{classNeighbourList}\index{NeighbourList@{NeighbourList}}
+
+
+\doxysubsection{Detailed Description}
+This class handles neighbour lists for fast potential and force calculations. It is implemented as a vector of vectors (for performance). Since the system is on a curved surface it would be hard to make a general cell list. Therefore, we relay on the slower but generic N$^\wedge$2 list generation 
+
+Definition at line 115 of file neighbour\+\_\+list.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Neighbour\+List} (System\+Ptr sys, Messenger\+Ptr msg, double cutoff, double pad, \textbf{ pairs\+\_\+type} \&param)
+\item 
+\mbox{\label{classNeighbourList_aa854efde9d6d4868e94b3148f901c41e}} 
+\textbf{ $\sim$\+Neighbour\+List} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \textbf{ need\+\_\+update} (\textbf{ Particle} \&)
+\begin{DoxyCompactList}\small\item\em Check is neighbour list of the given particle needs update. \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_a370671bfbb9d33669f436e16c59bf454}} 
+bool \textbf{ has\+\_\+faces} ()
+\begin{DoxyCompactList}\small\item\em Returns true is faces list exists. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \& \textbf{ get\+\_\+neighbours} (int id)
+\item 
+vector$<$ int $>$ \& \textbf{ get\+\_\+contacts} (int id)
+\item 
+\mbox{\label{classNeighbourList_ab7b42689e0d635026d79c71b6ec1cf88}} 
+bool \textbf{ has\+\_\+contacts} ()
+\begin{DoxyCompactList}\small\item\em Check if contact list exists. \end{DoxyCompactList}\item 
+void \textbf{ rescale\+\_\+cutoff} (double scale)
+\item 
+void \textbf{ build} ()
+\begin{DoxyCompactList}\small\item\em Build neighbour list. \end{DoxyCompactList}\item 
+void \textbf{ build\+\_\+mesh} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ build\+\_\+nsq} (int)
+\begin{DoxyCompactList}\small\item\em Build with N$^\wedge$2 algorithm. \end{DoxyCompactList}\item 
+void \textbf{ build\+\_\+cell} ()
+\begin{DoxyCompactList}\small\item\em Build using cells list. \end{DoxyCompactList}\item 
+void \textbf{ build\+\_\+faces} (bool)
+\begin{DoxyCompactList}\small\item\em Build faces. \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_a82747c23bbf1c2109b69db02e0cd897e}} 
+void \textbf{ remove\+\_\+dangling} ()
+\begin{DoxyCompactList}\small\item\em Remove all edges that have two or less contacts. \end{DoxyCompactList}\item 
+void \textbf{ remove\+\_\+detached} ()
+\item 
+void \textbf{ debug\+\_\+dump} (const string \&)
+\begin{DoxyCompactList}\small\item\em \doxyref{Dump}{p.}{classDump} particles and connectivity into a M\+O\+L2 file for debugging. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classNeighbourList_a821de56dad758832ad08191d971fc248}} 
+System\+Ptr \textbf{ m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Pointer to the \doxyref{System}{p.}{classSystem} object. \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_aaec00605eeea6f73007578bc6076a889}} 
+Messenger\+Ptr \textbf{ m\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Handles messages sent to output. \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_ab6b20cff76bd05a21064c5a0aa8327fe}} 
+Cell\+List\+Ptr \textbf{ m\+\_\+cell\+\_\+list}
+\begin{DoxyCompactList}\small\item\em Pointer to the cell list. \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_a4ff1eb0367dbe492596e256778d73da6}} 
+vector$<$ vector$<$ int $>$ $>$ \textbf{ m\+\_\+list}
+\begin{DoxyCompactList}\small\item\em Holds the list for each particle. \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_a49c93233e43aa2fd68742fc660f62d06}} 
+vector$<$ \textbf{ Part\+Pos} $>$ \textbf{ m\+\_\+old\+\_\+state}
+\begin{DoxyCompactList}\small\item\em Coordinates of particles right after the build. \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_ac5c16fa9c72711a142717b38bb290286}} 
+double \textbf{ m\+\_\+cut}
+\begin{DoxyCompactList}\small\item\em List build cutoff distance. \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_a599d442ea3e2661bd711917d60a682df}} 
+double \textbf{ m\+\_\+pad}
+\begin{DoxyCompactList}\small\item\em Padding distance (m\+\_\+cut should be set to potential cutoff + m\+\_\+pad) \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_a64d614324a1b20d5d0908ca33b8b9b00}} 
+bool \textbf{ m\+\_\+use\+\_\+cell\+\_\+list}
+\begin{DoxyCompactList}\small\item\em If true, use cell list to speed up neighbour list builds. \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_adc9c4519ff730676e96c059ba37b5f7c}} 
+bool \textbf{ m\+\_\+triangulation}
+\begin{DoxyCompactList}\small\item\em If true, build Delaunay triangulation for faces. \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_afd2d04da591ed26a76d35e41040df6a9}} 
+double \textbf{ m\+\_\+max\+\_\+perim}
+\begin{DoxyCompactList}\small\item\em Maximum value of the perimeter beyond which face becomes a hole. \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_aa66639936f682dcb15d2541d4f2ae215}} 
+bool \textbf{ m\+\_\+circumcenter}
+\begin{DoxyCompactList}\small\item\em If true, use cell circumcenters when computing duals. \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_a6547636f3c0fe421b5013ce52007ff67}} 
+bool \textbf{ m\+\_\+disable\+\_\+nlist}
+\begin{DoxyCompactList}\small\item\em If true, neigbour list is not built (only used for cell simulations) \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_a56545596ed4a676c474bd0f060369a9f}} 
+bool \textbf{ m\+\_\+remove\+\_\+detached}
+\begin{DoxyCompactList}\small\item\em If true, remove detached particles (vertices) before rebuilding neighbour list (for cell simulations) \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_a0d5fd9de4f32212057bd0c66439d99d4}} 
+bool \textbf{ m\+\_\+static\+\_\+boundary}
+\begin{DoxyCompactList}\small\item\em If true, treat tissue boundary as static, i.\+e., do not add new boundary particles. \end{DoxyCompactList}\item 
+\mbox{\label{classNeighbourList_a836ea0e1c55a726bb6f6509c59830bb6}} 
+vector$<$ vector$<$ int $>$ $>$ \textbf{ m\+\_\+contact\+\_\+list}
+\begin{DoxyCompactList}\small\item\em Holds the contact list for each particle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classNeighbourList_a1fc3c68464c7dbffdca2df41fa8ff27c}} 
+\index{NeighbourList@{NeighbourList}!NeighbourList@{NeighbourList}}
+\index{NeighbourList@{NeighbourList}!NeighbourList@{NeighbourList}}
+\doxysubsubsection{NeighbourList()}
+{\footnotesize\ttfamily \textbf{ Neighbour\+List} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{double}]{cutoff,  }\item[{double}]{pad,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct \doxyref{Neighbour\+List}{p.}{classNeighbourList} object 
+\begin{DoxyParams}{Parameters}
+{\em sys} & Reference to the \doxyref{System}{p.}{classSystem} object \\
+\hline
+{\em msg} & Constant reference to the \doxyref{Messenger}{p.}{classMessenger} object \\
+\hline
+{\em cutoff} & Cutoff distance (should be set to potential cutoff distance + padding distance) \\
+\hline
+{\em pad} & Padding distance \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 124 of file neighbour\+\_\+list.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classNeighbourList_a7740c7ab195c03ac140f1f75f633470f}} 
+\index{NeighbourList@{NeighbourList}!build@{build}}
+\index{build@{build}!NeighbourList@{NeighbourList}}
+\doxysubsubsection{build()}
+{\footnotesize\ttfamily void build (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Build neighbour list. 
+
+Build neighbour list. 
+
+Definition at line 117 of file neighbour\+\_\+list.\+cpp.
+
+\mbox{\label{classNeighbourList_ac8fb69f34232ce3488dc5da22b5d5d0a}} 
+\index{NeighbourList@{NeighbourList}!build\_cell@{build\_cell}}
+\index{build\_cell@{build\_cell}!NeighbourList@{NeighbourList}}
+\doxysubsubsection{build\_cell()}
+{\footnotesize\ttfamily void build\+\_\+cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Build using cells list. 
+
+Build neighbour list using cell list. 
+
+Definition at line 216 of file neighbour\+\_\+list.\+cpp.
+
+\mbox{\label{classNeighbourList_a0fd007a90bfdcc2443c8506c491afe67}} 
+\index{NeighbourList@{NeighbourList}!build\_faces@{build\_faces}}
+\index{build\_faces@{build\_faces}!NeighbourList@{NeighbourList}}
+\doxysubsubsection{build\_faces()}
+{\footnotesize\ttfamily void build\+\_\+faces (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Build faces. 
+
+Build faces using contact network Assumes that contacts have been built. 
+\begin{DoxyParams}{Parameters}
+{\em flag} & if true do the postprocessing of the mesh \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 309 of file neighbour\+\_\+list.\+cpp.
+
+\mbox{\label{classNeighbourList_a42ac601cffff7ce9e79ad4acf4584fe8}} 
+\index{NeighbourList@{NeighbourList}!build\_mesh@{build\_mesh}}
+\index{build\_mesh@{build\_mesh}!NeighbourList@{NeighbourList}}
+\doxysubsubsection{build\_mesh()}
+{\footnotesize\ttfamily void build\+\_\+mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Build faces of the mesh from the particle locations 
+
+Definition at line 152 of file neighbour\+\_\+list.\+cpp.
+
+\mbox{\label{classNeighbourList_a3274f45cf36767e4575dfe7b84d76184}} 
+\index{NeighbourList@{NeighbourList}!build\_nsq@{build\_nsq}}
+\index{build\_nsq@{build\_nsq}!NeighbourList@{NeighbourList}}
+\doxysubsubsection{build\_nsq()}
+{\footnotesize\ttfamily void build\+\_\+nsq (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Build with N$^\wedge$2 algorithm. 
+
+Builds neighbour list using N$^\wedge$2 (all pairs algorithm). 
+\begin{DoxyParams}{Parameters}
+{\em i} & id of the particle for which to build the list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 178 of file neighbour\+\_\+list.\+cpp.
+
+\mbox{\label{classNeighbourList_a6c82937ddc193bb0560c5e4fc82ee484}} 
+\index{NeighbourList@{NeighbourList}!debug\_dump@{debug\_dump}}
+\index{debug\_dump@{debug\_dump}!NeighbourList@{NeighbourList}}
+\doxysubsubsection{debug\_dump()}
+{\footnotesize\ttfamily void debug\+\_\+dump (\begin{DoxyParamCaption}\item[{const string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxyref{Dump}{p.}{classDump} particles and connectivity into a M\+O\+L2 file for debugging. 
+
+\doxyref{Dump}{p.}{classDump} state of the system into a M\+O\+L2 file. Internal paricles will have type 1, boundary type 2 bonds insed will be type 1, and bonds on the boundary will be type 2. 
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the M\+O\+L2 file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 637 of file neighbour\+\_\+list.\+cpp.
+
+\mbox{\label{classNeighbourList_a7dabb9eb4c9a5598a937849a11fd4fc1}} 
+\index{NeighbourList@{NeighbourList}!get\_contacts@{get\_contacts}}
+\index{get\_contacts@{get\_contacts}!NeighbourList@{NeighbourList}}
+\doxysubsubsection{get\_contacts()}
+{\footnotesize\ttfamily vector$<$int$>$\& get\+\_\+contacts (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get contacts for a given particle 
+\begin{DoxyParams}{Parameters}
+{\em id} & \doxyref{Particle}{p.}{classParticle} id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the particle\textquotesingle{}s contact list 
+\end{DoxyReturn}
+
+
+Definition at line 242 of file neighbour\+\_\+list.\+hpp.
+
+\mbox{\label{classNeighbourList_a4c538345d803ce8d123b51fb26d06a00}} 
+\index{NeighbourList@{NeighbourList}!get\_neighbours@{get\_neighbours}}
+\index{get\_neighbours@{get\_neighbours}!NeighbourList@{NeighbourList}}
+\doxysubsubsection{get\_neighbours()}
+{\footnotesize\ttfamily vector$<$int$>$\& get\+\_\+neighbours (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get neighbour list for a give particle 
+\begin{DoxyParams}{Parameters}
+{\em id} & \doxyref{Particle}{p.}{classParticle} id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the particle\textquotesingle{}s neighbour list 
+\end{DoxyReturn}
+
+
+Definition at line 237 of file neighbour\+\_\+list.\+hpp.
+
+\mbox{\label{classNeighbourList_ad0cebd501bce6f3a76dda0bf231992ff}} 
+\index{NeighbourList@{NeighbourList}!need\_update@{need\_update}}
+\index{need\_update@{need\_update}!NeighbourList@{NeighbourList}}
+\doxysubsubsection{need\_update()}
+{\footnotesize\ttfamily bool need\+\_\+update (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Check is neighbour list of the given particle needs update. 
+
+Check is neighbour list of the given particle needs update 
+\begin{DoxyParams}{Parameters}
+{\em p} & particle to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the list needs update 
+\end{DoxyReturn}
+
+
+Definition at line 278 of file neighbour\+\_\+list.\+cpp.
+
+\mbox{\label{classNeighbourList_aab352cae2866d75a6ad6db47a73642e4}} 
+\index{NeighbourList@{NeighbourList}!remove\_detached@{remove\_detached}}
+\index{remove\_detached@{remove\_detached}!NeighbourList@{NeighbourList}}
+\doxysubsubsection{remove\_detached()}
+{\footnotesize\ttfamily void remove\+\_\+detached (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Loop over all vertices and remove particles that belong to cells that are detached from the rest of the tissue. This is clearly only possible if triangulation has been set, i.\+e., for tissue simulations. 
+
+Definition at line 558 of file neighbour\+\_\+list.\+cpp.
+
+\mbox{\label{classNeighbourList_a443730035d2ff630f9e6de963b0d4dda}} 
+\index{NeighbourList@{NeighbourList}!rescale\_cutoff@{rescale\_cutoff}}
+\index{rescale\_cutoff@{rescale\_cutoff}!NeighbourList@{NeighbourList}}
+\doxysubsubsection{rescale\_cutoff()}
+{\footnotesize\ttfamily void rescale\+\_\+cutoff (\begin{DoxyParamCaption}\item[{double}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Rescales neigbour list cutoff 
+\begin{DoxyParams}{Parameters}
+{\em scale} & scale factor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 252 of file neighbour\+\_\+list.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ neighbour\+\_\+list.\+hpp}\item 
+\textbf{ neighbour\+\_\+list.\+cpp}\end{DoxyCompactItemize}

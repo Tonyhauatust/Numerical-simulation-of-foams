@@ -1,0 +1,115 @@
+\doxysection{command\+\_\+grammar Class Reference}
+\label{classcommand__grammar}\index{command\_grammar@{command\_grammar}}
+
+
+\doxysubsection{Detailed Description}
+This is a simple parser for parsing commands in the control file of the code. The parser is based on Boost Spirit Qi library. This parser only extracts key word command from a single line in the control file. Syntax of the control file is\+:
+
+command [attribute] \{ [parameters] \}
+
+for example\+:
+
+pair\+\_\+potential lj \{ eps = 1.\+0; sigma = 1.\+0; r\+\_\+cut = 2.\+5; \}
+
+This parser will only extract the keyword (in this case \char`\"{}pair\+\_\+potential\char`\"{}) and return the rest of the line for post-\/processing.
+
+\begin{DoxyNote}{Note}
+Based on {\texttt{ http\+://www.\+boost.\+org/doc/libs/1\+\_\+53\+\_\+0/libs/spirit/repository/test/qi/distinct.\+cpp}} 
+\end{DoxyNote}
+
+
+Definition at line 61 of file parse\+\_\+command.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ command\+\_\+grammar} (\textbf{ Command\+Data} \&command\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classcommand__grammar_a646d3e791222af2cac63dea1c3a607d1}} 
+qi\+::rule$<$ std\+::string\+::iterator, qi\+::space\+\_\+type $>$ \textbf{ command}
+\begin{DoxyCompactList}\small\item\em Rule for parsing command lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classcommand__grammar_a33776c100b7cdd739a29bef85d24dcc5}} 
+\index{command\_grammar@{command\_grammar}!command\_grammar@{command\_grammar}}
+\index{command\_grammar@{command\_grammar}!command\_grammar@{command\_grammar}}
+\doxysubsubsection{command\_grammar()}
+{\footnotesize\ttfamily \textbf{ command\+\_\+grammar} (\begin{DoxyParamCaption}\item[{\textbf{ Command\+Data} \&}]{command\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Handles pair potential, such as Lennard-\/\+Jones or Coulomb
+
+Handles parameters for the pair potentials
+
+Handles parameters for the alignment
+
+Handles external potentials
+
+Handles parameters for external potentials
+
+Handles integrators (N\+VE, N\+TV, etc.)
+
+Handles input file.
+
+Handles constraints.
+
+Execute simulation.
+
+Handles various measurement logs.
+
+Handles coordinate dumps.
+
+Handles internal messages.
+
+Handles simulation box.
+
+Handles neighbour list.
+
+Handles pairwise alignment.
+
+Handles external alignment.
+
+Handles external alignment parameters.
+
+Handles particle groups.
+
+Handles disabling integrators.
+
+Handles population control.
+
+Handles zeroing momentum of a group of particles.
+
+Handles bond potentials.
+
+Handles bond potential parameters.
+
+Handles angle potentials.
+
+Handles angle potential parameters.
+
+Handles bonds file.
+
+Handles angles file.
+
+Handles cell boundary connectivity file.
+
+Handles number of types.
+
+Handles configuration file.
+
+Handles particle type parameters for the pair potentials
+
+Hangles global integrator step.
+
+Hangles global disable population command.
+
+Definition at line 64 of file parse\+\_\+command.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ parse\+\_\+command.\+hpp}\end{DoxyCompactItemize}

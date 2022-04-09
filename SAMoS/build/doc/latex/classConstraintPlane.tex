@@ -1,0 +1,192 @@
+\doxysection{Constraint\+Plane Class Reference}
+\label{classConstraintPlane}\index{ConstraintPlane@{ConstraintPlane}}
+
+
+\doxysubsection{Detailed Description}
+Enforces all particles to lay on the xy plane of size Lx x Ly Also makes sure periodic boundary conditions are enforced 
+
+Definition at line 46 of file constraint\+\_\+plane.\+hpp.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Constraint\+Plane} (System\+Ptr sys, Messenger\+Ptr msg, \textbf{ pairs\+\_\+type} \&param)
+\item 
+void \textbf{ enforce} (\textbf{ Particle} \&)
+\begin{DoxyCompactList}\small\item\em Enforce constraint. \end{DoxyCompactList}\item 
+void \textbf{ rotate\+\_\+director} (\textbf{ Particle} \&, double)
+\begin{DoxyCompactList}\small\item\em Rotate director around normal vector to the plane (z axis) \end{DoxyCompactList}\item 
+void \textbf{ rotate\+\_\+velocity} (\textbf{ Particle} \&, double)
+\begin{DoxyCompactList}\small\item\em Rotate velocity around normal vector to the plane (z axis) \end{DoxyCompactList}\item 
+double \textbf{ project\+\_\+torque} (\textbf{ Particle} \&)
+\begin{DoxyCompactList}\small\item\em Project torque onto normal vector to the plane (z axis) and return rotation angle change. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintPlane_a456cac7812f6819d976dca1e1c2ff45c}} 
+void \textbf{ compute\+\_\+normal} (\textbf{ Particle} \&p, double \&Nx, double \&Ny, double \&Nz)
+\begin{DoxyCompactList}\small\item\em Computes normal to the surface. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintPlane_a13e6067db87c4027f0e009da846451cf}} 
+void {\bfseries compute\+\_\+gradient} (\textbf{ Particle} \&p, double \&gx, double \&gy, double \&gz)
+\item 
+\mbox{\label{classConstraintPlane_aa3a67c1e6b300198e6830d66084b8af7}} 
+double {\bfseries constraint\+\_\+value} (\textbf{ Particle} \&p)
+\item 
+bool \textbf{ rescale} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classConstraintPlane_aef92f5b3d6c4851f4cd53c56426e76d5}} 
+bool \textbf{ m\+\_\+unlimited}
+\begin{DoxyCompactList}\small\item\em If true, ignore box boundary and low system to exapand freely. \end{DoxyCompactList}\item 
+\mbox{\label{classConstraintPlane_ad9febe517da6b541c7719cddbf972c2f}} 
+double \textbf{ m\+\_\+zpos}
+\begin{DoxyCompactList}\small\item\em Position (along z axis) of the constraint plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classConstraintPlane_af795d6ad7917ada9cef451d4916396ec}} 
+\index{ConstraintPlane@{ConstraintPlane}!ConstraintPlane@{ConstraintPlane}}
+\index{ConstraintPlane@{ConstraintPlane}!ConstraintPlane@{ConstraintPlane}}
+\doxysubsubsection{ConstraintPlane()}
+{\footnotesize\ttfamily \textbf{ Constraint\+Plane} (\begin{DoxyParamCaption}\item[{System\+Ptr}]{sys,  }\item[{Messenger\+Ptr}]{msg,  }\item[{\textbf{ pairs\+\_\+type} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em id} & unique constraint id \\
+\hline
+{\em sys} & pointer to the system object \\
+\hline
+{\em msg} & Pointer to the internal state messenger \\
+\hline
+{\em param} & parameters that define the manifolds (e.\+g., sphere radius) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file constraint\+\_\+plane.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classConstraintPlane_a9ed7e5d3cc625a705ba7d5677d649ced}} 
+\index{ConstraintPlane@{ConstraintPlane}!enforce@{enforce}}
+\index{enforce@{enforce}!ConstraintPlane@{ConstraintPlane}}
+\doxysubsubsection{enforce()}
+{\footnotesize\ttfamily void enforce (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Enforce constraint. 
+
+Force all particles to be confined to the surface of the xy plane by setting z = 0, vz = 0, fz = 0 
+\begin{DoxyParams}{Parameters}
+{\em p} & particle to project onto the sphere \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \textbf{ Constraint} \doxyref{}{p.}{classConstraint_a9ed7e5d3cc625a705ba7d5677d649ced}.
+
+
+
+Definition at line 36 of file constraint\+\_\+plane.\+cpp.
+
+\mbox{\label{classConstraintPlane_adf6535b1237c4ff7de92ab8d5402dd02}} 
+\index{ConstraintPlane@{ConstraintPlane}!project\_torque@{project\_torque}}
+\index{project\_torque@{project\_torque}!ConstraintPlane@{ConstraintPlane}}
+\doxysubsubsection{project\_torque()}
+{\footnotesize\ttfamily double project\+\_\+torque (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Project torque onto normal vector to the plane (z axis) and return rotation angle change. 
+
+Project particle torque onto the normal vector (z axis). The assumption here is that the particle\textquotesingle{}s director and velocity are all already in the xy plane and that it is constrained to the plane. 
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxyref{Particle}{p.}{classParticle} whose torque to project \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \textbf{ Constraint} \doxyref{}{p.}{classConstraint_adf6535b1237c4ff7de92ab8d5402dd02}.
+
+
+
+Definition at line 150 of file constraint\+\_\+plane.\+cpp.
+
+\mbox{\label{classConstraintPlane_ac9709d92eab82a813488f353afc83e3f}} 
+\index{ConstraintPlane@{ConstraintPlane}!rescale@{rescale}}
+\index{rescale@{rescale}!ConstraintPlane@{ConstraintPlane}}
+\doxysubsubsection{rescale()}
+{\footnotesize\ttfamily bool rescale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Rescale box size and make sure that all particles fit in it. Rescaling is done only at certain steps and only if rescale factor is not equal to 1. 
+
+Reimplemented from \textbf{ Constraint} \doxyref{}{p.}{classConstraint}.
+
+
+
+Definition at line 168 of file constraint\+\_\+plane.\+cpp.
+
+\mbox{\label{classConstraintPlane_afdcfa5fdcb29b99970d30f0690dcf3d2}} 
+\index{ConstraintPlane@{ConstraintPlane}!rotate\_director@{rotate\_director}}
+\index{rotate\_director@{rotate\_director}!ConstraintPlane@{ConstraintPlane}}
+\doxysubsubsection{rotate\_director()}
+{\footnotesize\ttfamily void rotate\+\_\+director (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p,  }\item[{double}]{phi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Rotate director around normal vector to the plane (z axis) 
+
+Rotate director of a particle around the normal vector (z axis) \begin{DoxyNote}{Note}
+This function assumes that the particle has already been projected onto the plane and that its director is also in plane 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxyref{Particle}{p.}{classParticle} whose velocity to rotate \\
+\hline
+{\em phi} & angle by which to rotate it \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \textbf{ Constraint} \doxyref{}{p.}{classConstraint_afdcfa5fdcb29b99970d30f0690dcf3d2}.
+
+
+
+Definition at line 97 of file constraint\+\_\+plane.\+cpp.
+
+\mbox{\label{classConstraintPlane_a2f5a47e9f95b0b06cbdb887b9e58d2dc}} 
+\index{ConstraintPlane@{ConstraintPlane}!rotate\_velocity@{rotate\_velocity}}
+\index{rotate\_velocity@{rotate\_velocity}!ConstraintPlane@{ConstraintPlane}}
+\doxysubsubsection{rotate\_velocity()}
+{\footnotesize\ttfamily void rotate\+\_\+velocity (\begin{DoxyParamCaption}\item[{\textbf{ Particle} \&}]{p,  }\item[{double}]{phi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Rotate velocity around normal vector to the plane (z axis) 
+
+Rotate velocity of a particle around the normal vector (z axis) \begin{DoxyNote}{Note}
+This function assumes that the particle has already been projected onto the plane and that its director is also in plane 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxyref{Particle}{p.}{classParticle} whose velocity to rotate \\
+\hline
+{\em phi} & angle by which to rotate it \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \textbf{ Constraint} \doxyref{}{p.}{classConstraint_a2f5a47e9f95b0b06cbdb887b9e58d2dc}.
+
+
+
+Definition at line 122 of file constraint\+\_\+plane.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ constraint\+\_\+plane.\+hpp}\item 
+\textbf{ constraint\+\_\+plane.\+cpp}\end{DoxyCompactItemize}
