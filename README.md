@@ -61,7 +61,7 @@ To run the first simulation with uniform pressure, git clone this repository to 
 
 * Modern C++ compiler supporting the C++11 standard
 * Boost libraries (1.48 or newer, in particular Spirit parser)
-* GNU Scientific Library (GSL) - version 1.13 or newer\
+* GNU Scientific Library (GSL) - version 1.13 or newer
 * CMake (2.8 or newer) - it is recommended to install ccmake GUI
 * Doxygen - optional but recommended (LaTeX support for building the PDF reference manual
 * VTK library (version 5 or 6)
