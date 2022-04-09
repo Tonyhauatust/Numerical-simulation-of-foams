@@ -81,3 +81,5 @@ You can try to compare this cells_fixed.conf with original.conf in this folder t
 After the execution you should be able to generate the same files as what is inside with_unfirom_pressure_executed.
 
 Open the the folder with_uniform_pressure in Paraview and execute the cell_..vtp and cell_dual_..vtp files for simulation.
+
+If you fail to generate files under with_uniform_pressure, just open the with_uniform_pressure_executed and execute the vtp files inside for simulation.
