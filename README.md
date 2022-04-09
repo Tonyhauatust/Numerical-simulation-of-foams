@@ -57,7 +57,14 @@ I run the simulation on a Ubuntu 20.04.4 LTS WSL machine
 
 Please refer to https://docs.microsoft.com/en-us/windows/wsl/install to install the WSL Ubuntu machine
 
-To run the first simulation with uniform pressure, git clone this repository and install the following programmes on your Ubuntu machine:
+To run the first simulation with uniform pressure, git clone this repository by
+```bash
+
+git clone https://github.com/Tonyhauatust/Numerical-simulation-of-foams.git
+
+```
+
+and then install the following programmes on your Ubuntu machine:
 
 * Modern C++ compiler supporting the C++11 standard
 * Boost libraries (1.48 or newer, in particular Spirit parser)
