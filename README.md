@@ -39,7 +39,7 @@ reference: https://github.com/sknepneklab/SAMoS
 ### **1. Bubble simulation with uniform pressure**
 ![uniform_pressure](output_uniform_pressure.gif)
 
-As we can see, the resulting configuration is a hexagonal honey-comb shape. There is a slight contraction of the whole configuration because the streched bubbles are returning to their native areas.
+As we can see, the resulting configuration is a hexagonal honey-comb shape. There is a slight contraction of the whole configuration because the stretched bubbles are returning to their native areas.
 
 The above simulation is made successful by deleting the area term in <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20E_{cell}=\sum_i^{N_{face}}[\frac{K_i}{2}(A_i-A_i^o)^2+\frac{\Gamma_i}{2}P_i^2]+\sum_{\mu,\nu}\Lambda_{\mu,\nu}l_{\mu,\nu}" />, and the white gaussian noise and the self-propulsion term in the equation of motion in Active Vertex Model. This is a reasonable approach because the cohesion term in energy exists even in real bubble. We also expect some frictional forces in real bubble simulation.
 
