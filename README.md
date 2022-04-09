@@ -17,6 +17,9 @@ The result of this minimized bubble configuration is called Plateau's Law, meani
 
 ![HoneyComb](https://media.npr.org/assets/img/2013/05/13/honeycomb-2_wide-49ae2c6ec87d4b4092881baf81e2de967926cba5.jpg)
 
-### 4. With pressure difference
+### 3. With pressure difference
 
+In this condition, our object is still to minimized the total length of bubbles. However, due to gas diffusion, some bubbles will shrink and some bubbles will enlarge. In particular, the law governing the bubble dynamic is called von Neumann's equation of diffusion, <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\frac{dA}{dt}=\frac{2\pi}{3}\gamma\kappa(n-6) " />. This equation elegantly shows that the change in bubble area is only related to its topological properties; bubble only with hexagonal shape(n=6) will not suffer from a change in shape, and hence is the most stable configuration.
+
+## Simulation result
 
