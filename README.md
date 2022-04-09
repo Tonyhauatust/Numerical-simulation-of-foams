@@ -1,4 +1,4 @@
-# Numerical simulation of bubbles where pressure difference across whole configuration is zero
+# Numerical simulation of bubbles by using Active Vertex Model
 
 ## **Project Intro**
 This project is for simulating two types of bubble conditions with and without pressure difference. To simulate the bubble condition with uniform pressure, we borrow an active vertex model numberical simulation from biological cell simulation. We also include a simulation with pressure difference a paper for comparison.
