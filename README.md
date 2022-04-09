@@ -81,7 +81,7 @@ You will also need to install Paraview on https://www.paraview.org/
 Then, cd into with_uniform_pressure and execute 
 
 ```bash
- ../SAMoS/build/samos cells_fixed.conf
+../SAMoS/build/samos cells_fixed.conf
 ```
 You can try to compare this cells_fixed.conf with original.conf in this folder to see how we can simulate foam by using a biological simulation of Active Vertex Model. The original.conf is from https://github.com/sknepneklab/SAMoS
 
