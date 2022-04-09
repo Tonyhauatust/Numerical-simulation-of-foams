@@ -1,0 +1,9 @@
+Firstly, the whole set-up did not assume that the cells must be in hexagone shape --> the outcome looks like hexagone as a result of energy minimization configuration!
+nu =0 (gaussian white noises acting on cells --> can be thought of as thermal random motion)
+alpha for self propulsion =0 --> bubbles do not move
+K for cell stiffness =0, so that the area term K(A-A_0)^2 vanishes ---> only minimizes the square of cell length --> resembling real bubble energy minimization
+when I try to lower the K for cells repulsion in experiment 9, the programme crashes at frame 29 --> possible reason --> if there is no repulsion between cells when they get too close, not physical!! This is why programme crashes.
+The whole set up now resembles energy minimization of real bubble 
+Observation: The distribution of area is a gaussian, but the standard deviation is very small; Peak at mean around 2.9
+(native area = 3.18) the area mean decreases from 2.94 to 2.91 and then fluctuates around this value. SD is around 0.40
+the min value and max value fluctuates around 2.2 and 3.6 respectively

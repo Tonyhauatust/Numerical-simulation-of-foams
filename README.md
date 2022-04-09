@@ -51,4 +51,32 @@ In this simulation, the author of the paper in the below referenced link has use
 reference: https://raw.githubusercontent.com/erleben/FOAM/master/doc/bondorf.17.master_thesis.pdf
 
 ## **Running the simulation and input parameters**
-To run the first simulation with uniform pressure, 
+
+I run the simulation on a Ubuntu 20.04.4 LTS WSL machine
+
+Please refer to https://docs.microsoft.com/en-us/windows/wsl/install to install the WSL Ubuntu machine
+
+To run the first simulation with uniform pressure, git clone this repository to your current user's home folder and install the following programmes on your Ubuntu machine:
+
+* Modern C++ compiler supporting the C++11 standard
+* Boost libraries (1.48 or newer, in particular Spirit parser)
+* GNU Scientific Library (GSL) - version 1.13 or newer\
+* CMake (2.8 or newer) - it is recommended to install ccmake GUI
+* Doxygen - optional but recommended (LaTeX support for building the PDF reference manual
+* VTK library (version 5 or 6)
+* CGAL library (version 4.3 or newer). NOTE: Code will fail to compile with CGAL 4.2 or older
+
+You may want to refer to https://github.com/sknepneklab/SAMoS and https://chaste.cs.ox.ac.uk/trac/wiki/InstallGuides/InstallGuide
+
+You will also need to install Paraview on https://www.paraview.org/
+
+Then, cd into with_uniform_pressure and execute 
+
+```bash
+~/SAMoS/build/samos cells_fixed.conf
+```
+You can try to compare this cells_fixed.conf with original.conf in this folder. The original.conf is from https://github.com/sknepneklab/SAMoS
+
+After the execution you should be able to generate the same files as what is inside with_unfirom_pressure_executed.
+
+Open the the folder with_uniform_pressure in Paraview and execute the cell_..vtp and cell_dual_..vtp files for simulation.
