@@ -30,3 +30,9 @@ In this condition, our object is still to minimized the total length of bubbles.
 As we can see, the resulting configuration is a hexagonal honey-comb shape. There is a slight contraction of the whole configuration because the streched bubbles are returning to their native areas.
 
 ### **2. Bubble simulation with pressure difference**
+![pressure_difference](output_pressure_difference.gif)
+
+In this simulation, the
+
+
+reference: https://raw.githubusercontent.com/erleben/FOAM/master/doc/bondorf.17.master_thesis.pdf
