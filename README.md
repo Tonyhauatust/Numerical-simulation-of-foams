@@ -21,7 +21,10 @@ The result of this minimized bubble configuration is called Plateau's Law, meani
 In this condition, our object is still to minimized the total length of bubbles. However, due to gas diffusion, some bubbles will shrink and some bubbles will enlarge. In particular, the law governing the bubble dynamic is called von Neumann's equation of diffusion, <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\frac{dA}{dt}=\frac{2\pi}{3}\gamma\kappa(n-6) " />. This equation elegantly shows that the change in bubble area is only related to its topological properties; bubble only with hexagonal shape(n=6) will not suffer from a change in shape, and hence is the most stable configuration.
 
 ### **4. Active Vertex Model**
+Active Vertex Model describes a mathematical model to simulate real cell movements. Particularly, we define an energy term for a cell as <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20E_{cell}=\sum_i^{N_{face}}[\frac{K_i}{2}(A_i-A_i^o)^2+\frac{\Gamma_i}{2}P_i^2]+\sum_{\mu,\nu}\Lambda_{\mu,\nu}l_{\mu,\nu}" />
+reference: ....
 
+Basically, the intuitive idea of the above equation is that cell is allowed to move free by inserting an area energy term<img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\frac{K_i}{2}(A_i-A_i^o)^2" />, and energy is related to the total length of cells(second term) and the cohesive force exerted by neighbouring cells(third term)
 ## **Simulation result**
 
 ### **1. Bubble simulation with uniform pressure**
@@ -32,7 +35,7 @@ As we can see, the resulting configuration is a hexagonal honey-comb shape. Ther
 ### **2. Bubble simulation with pressure difference**
 ![pressure_difference](output_pressure_difference.gif)
 
-In this simulation, the
+In this simulation, the author of the paper in the below referenced link has 
 
 
 reference: https://raw.githubusercontent.com/erleben/FOAM/master/doc/bondorf.17.master_thesis.pdf
