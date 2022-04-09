@@ -24,7 +24,7 @@ In this condition, our objective is still to minimize the total length of bubble
 ### **4. Active Vertex Model**
 Active Vertex Model describes a mathematical model to simulate real cell movements. Particularly, we define an energy term for a cell as <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20E_{cell}=\sum_i^{N_{face}}[\frac{K_i}{2}(A_i-A_i^o)^2+\frac{\Gamma_i}{2}P_i^2]+\sum_{\mu,\nu}\Lambda_{\mu,\nu}l_{\mu,\nu}" />
 
-Basically, the intuitive idea of the above equation is that cell is allowed to move free by inserting an area energy term <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\frac{K_i}{2}(A_i-A_i^o)^2" />, and energy is related to the total length of cells<img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\frac{\Gamma_i}{2}P_i^2]" /> and the cohesive force exerted by neighbouring cells <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\sum_{\mu,\nu}\Lambda_{\mu,\nu}l_{\mu,\nu}" />
+Basically, the intuitive idea of the above equation is that cell is allowed to move free by inserting an area energy term <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\frac{K_i}{2}(A_i-A_i^o)^2" />, and energy is related to the total length of cells<img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\frac{\Gamma_i}{2}P_i^2" /> and the cohesive force exerted by neighbouring cells <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\sum_{\mu,\nu}\Lambda_{\mu,\nu}l_{\mu,\nu}" />
 
 In addition, we also consider the motion of cell as 
 <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\gamma\frac{d\vec{r_{i}}}{dt}=\alpha\vec{n_{i}}+\vec{F_{i}}+\vec\nu_{i}(t)" />
