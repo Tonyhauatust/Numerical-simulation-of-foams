@@ -6,7 +6,7 @@ This project is for simulating two types of bubble conditions with and without p
 
 ### **1. Minimization of energy**
 Due to the surface tension in bubble films, bubble tries to contract towards its centre and hence minimizes its total length (or total surface area if we are considering 3D bubble). We can represent the total length of bubble as an energy term, and hence the problem reduces to the minimization of energy. Mathematically, it is to find a collection of bubbles <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\Omega_{Total}=\{\Omega_1,\Omega_2,...,\Omega_n\}" /> that fits <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20min\sum_{\Omega_i}L(\Omega_i)" />, where <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\Omega_i" /> represent bubble i, and <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20L(\Omega_i)" />represents the length of that bubble. 
-<img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20L(\Omega_i)" />
+
 ### **2. Without pressure difference**
 If pressure difference across bubbles is absent (i.e. whole bubble configuration has uniform pressure), we can assume that area of each bubble remains constant because there is no diffusion of gases across bubbles (The law governing gas diffusion in bubble is <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\frac{dA}{dt}=-\kappa\sum_{i}(p-p_i)l_i " />), meaning that the change in bubble area(diffusion of gas) is related to its pressure difference with respect to all its neighbouring bubbles.
 
