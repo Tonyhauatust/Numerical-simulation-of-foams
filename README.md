@@ -46,7 +46,7 @@ The above simulation is made successful by deleting the area term in <img src="h
 ### **2. Bubble simulation with pressure difference**
 ![pressure_difference](output_pressure_difference.gif)
 
-In this simulation, the author of the paper in the below referenced link has used grandient descent method to find a minimized total length of bubble configuration, subject to von Neumann's law of diffusion and Plateau's Law of 120 degree.
+In this simulation, the author of the paper in the below referenced link has used Newton step method to find a minimized total length of bubble configuration, subject to von Neumann's law of diffusion and Plateau's Law of 120 degree.
 
 
 reference: https://raw.githubusercontent.com/erleben/FOAM/master/doc/bondorf.17.master_thesis.pdf
