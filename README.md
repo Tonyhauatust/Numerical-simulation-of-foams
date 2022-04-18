@@ -11,7 +11,9 @@ and then cd
 ```bash
 cd ~/Numerical-simulation-of-foams/resource/
 ```
-Under the directory you can see some powerpoints related to this project, and a project report that illustrates this project in detail.
+Under the directory you can see some powerpoints related to this project
+
+There is also folder called project_report under this directory, where I have produced a project report using Rmarkdown. I compiled my Rmarkdown file using RStudio. You can learn how to write an academic report using LaTex and RMarkdown by looking into the .RMD file.
 
 ### **1. Minimization of energy**
 Due to the surface tension in bubble films, bubble tries to contract towards its centre and hence minimizes its total length (or total surface area if we are considering 3D bubble). We can represent the total length of bubble as an energy term, and hence the problem reduces to the minimization of energy. Mathematically, it is to find a collection of bubbles <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\Omega_{Total}=\{\Omega_1,\Omega_2,...,\Omega_n\}" /> that fits <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20min\sum_{\Omega_i}L(\Omega_i)" />, where <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20\Omega_i" /> represent bubble i, and <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20L(\Omega_i)" />represents the length of that bubble. 
