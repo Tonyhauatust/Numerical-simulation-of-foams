@@ -68,9 +68,7 @@ Please refer to https://docs.microsoft.com/en-us/windows/wsl/install to install 
 
 To run the first simulation with uniform pressure, git clone this repository by
 ```bash
-
 git clone https://github.com/Tonyhauatust/Numerical-simulation-of-foams.git
-
 ```
 
 and then install the following programmes on your Ubuntu machine:
