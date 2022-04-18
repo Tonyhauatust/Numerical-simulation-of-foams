@@ -1,0 +1,175 @@
+---
+geometry: margin=2.5cm 
+output: pdf_document
+header-includes:
+  - \usepackage[backend=bibtex,natbib=true,style=numeric,sorting=none]{biblatex}
+  - \addbibresource{references.bib}
+  - \usepackage{graphicx}
+  - \usepackage{blindtext}
+  - \usepackage{titling}
+fontsize: 12pt
+---
+\title{Project Report on Numerical Simulation of Foams}
+\author{Hau Pan\\Department of Physics, HKUST}
+\begin{titlingpage}
+    \maketitle
+    \begin{abstract}
+        Although foam is an everyday phenomenon, simulating it is particularly difficult because of many conditions and equations involved. However, the central principle behind foam formation is but the minimization of foam's total length. In this paper, we try to simulate a foam process without pressure difference by using a biological cell model Active Vertex Model. We then try to compare the result by introducing a simulation result for foam with pressure difference from another paper. We successfully demonstrate the difference between foam formation with and without pressure, i,e, the enlargement and shrinkage of bubble configuration, and identify several interesting observations from them. Besides, we have also included a biological cell simulation from the Active Vertex Model and compare it with the foam simulation without pressure differences for deeper insight.
+    \end{abstract}
+\end{titlingpage}
+
+
+# 1. Introduction and theory
+## 1.1 Motivation of this paper 
+
+  Foam is our daily experience because the ingredients to produce it, the surfactants, are found in common products like detergents and soaps. However, in the realm of physics, simulation of foam dynamics is challenging because of its continuous evolution, subjected to several external conditions that require sophisticated numerical methods. The simulation is a rewarding topic to dive in not only because it renders a deeper understanding into the mechanics of foam evolution, but also it highly resembles other natural phenomenon such as biological cell growth and death. Particularly, this paper tries to simulate foam dynamics by using an Active Vertex Model from biological cell simulation to show the similarities between cell organisation and foams. Therefore, in this paper, the principles behind foam formation will be firstly explored. Then, techniques behind the Active Vertex Model and how it can be fit into the simulation of foams will be discussed. Some simulation results from the Active Vertex Model and foams will be analysed. Finally, another foam simulation with a different model will be compared against to see the similarities and differences. Note that the the dimension of foam discussed in this paper is limited to 2-d case, where each bubble in the foam is separated from each other by a liquid layer called film. Yet, the result for 2-d case can be easily expanded into the 3-d bubbles that is commonly seen in daily life. 
+
+## 1.2 Principle behind foam formation
+  For a given foam configuration, there are a lot of individual bubbles separated by what is called films. A film is a thin water layer mixed with surfactants that give this film the property of surface tension. Note that surface tension has the unit of newton per metre. Hence, this surface tension gives the films a force to tighten itself. This points out the principle behind foam formation, that this force will try to *minimize the total length* of a foam configuration as a result of tightening itself.
+
+### a. Foam formatoin without pressure difference
+  If pressure difference across different bubbles is zero, individual bubbles will not change its area Specifically, the von Neumann's law for bubble diffusion states  that change in bubble area with respect to time is related to the sum of pressure difference of this bubble to all its neighbouring bubbles $(p-p_i)$ by: 
+\begin{equation}
+\tag{1}
+\frac{dA}{dt}= - \kappa\sum^n_i(p-p_i)l_i \label{eq:one}
+\end{equation}
+, where $\kappa$ is the diffusion constant of film liquid and $l_i$ the film length between this bubble and its neighbouring bubbles.
+
+  The problem of finding a foam configuration with minimized total length, subjected to constant area for each bubble, can be mathematically described as: 
+  \begin{equation}
+  \tag{2}
+    \begin{cases}
+      \min_{\Omega_i} & J(\Omega_i) \\
+      \text{subject to} & \int_{\Omega_i}dx=V_i, i=1,\cdots,n
+    \end{cases}  \label{eq:two}
+  \end{equation}
+  , where $J(\Omega_i)$ is the total length of the boundary for $n$ bubbles $\{\Omega_i\}^n_{i=1}$, with given areas for each bubble $V_1,\cdots,V_n=\int_{\Omega_n}dx$.
+
+  A Lagrangian for this problem is defined as well by introducing the Lagrangian multiplier $\lambda_i$: 
+\begin{equation}
+  \tag{3}
+   L(\Omega_i)=J(\Omega_i)+\sum^n_{i=1}\lambda_{i}\left(\int_{\Omega_i}dx-V_i\right) \label{eq:three}
+  \end{equation}
+  
+Hence, the condition in \eqref{eq:two} can be expressed as finding a set of foam configuration $\Omega_{i}$ such that:
+\begin{equation}
+\tag{4}
+\nabla{L(\Omega_i)}=0 \label{eq:four}
+\end{equation}
+
+Foam configuration satisfying \eqref{eq:four} follows Plateau's laws, one of which is important for simulation, that films between bubbles meet in threes at vertices with equal angles \cite{dynamics}. Hence, for a foam configuration without pressure difference, the minimized configuration gives a honey-comb shape where all the films *meet each other at $120^{\circ}$*. 
+
+### b. Foam formation with pressure difference
+
+However, it is possible that there is pressure difference across the foam configuration. Notably, pressure difference usually exists between the outer environment and the foam configuration. Therefore, it is worthwhile to look into the case with pressure difference. In the case with pressure difference, the formation process is still governed by \eqref{eq:two} and \eqref{eq:four}, i.e., finding a foam configuration that minimizes the total length. Yet, bubbles inside the foam configuration will change their size according to \eqref{eq:one} along the minimization process. In fact, \eqref{eq:one} can be rearranged into the following form that renders more insight into the problem:
+\begin{equation}
+\tag{5}
+\frac{dA}{dt}= \frac{2\pi}{3}\gamma\kappa(n-6)\label{eq:five}
+\end{equation}
+, where $\gamma$ is the surface tension of the film liquid medium, and $n$ the number of films a bubble possesses. 
+
+In essence, \eqref{eq:five} states that only bubble with number of films equal to six is stable, i.e., no change in area. If number of films is larger than six, the bubble will enlarge. Else, the bubble will shrink.
+
+## 1.3 Active Vertex Model
+
+In the Active Vertex Model proposed by \cite{SAMoS}, a biological cell organisation is represented by a Voronoi tessellation. Because each vertex in the Delaunay triangulation is the centre of the Voronoi tessellation, each biological cell can be represented by their respective vertex. The concepts are illustrated in detail in figure \ref{fig:voronoi}. An energy is defined for each cell, i.e., vertex, as: 
+\begin{equation}
+\tag{6}
+E_{vertex}=\sum^{N_{face}}_{i=1}\left[ \frac{K_i}{2}\left(A_{i}-A^{0}_{i}\right)^{2}+\frac{\Gamma_{i}}{2}P^{2}_{i}\right]+\sum_{\mu,\nu}\Lambda_{\mu\nu}l_{\mu\nu}\label{eq:six}
+\end{equation}
+, where $K_i$ is the cell stiffness, $A_i$ the cell area, $A^0_i$ the native cell area, $\Gamma_{i}$ the resistance to change cell perimeter, $P_i$ and $l_i$ the edge connecting the Voronoi mesh vertices $\mu$ and $\nu$(not the vertices in Delaunay triangulation, i.e., the cell centre in Voronoi tessellation, but the vertices in Voronoi tessellation), and $\Lambda_{\mu\nu}$ the resistance of changing the contact length between two neighbouring cells.
+
+In addition, the cells are also subjected to an equation of motion: 
+\begin{equation}
+\tag{7}
+\gamma\frac{d\vec{r_i}}{dt}=\alpha\vec{n_i}+\vec{F_i}+\vec{\nu_i}(t) \label{eq:seven}
+\end{equation}
+, where $\vec{r_i}$ is the position vector of cell vertex given in figure \ref{fig:voronoi}, $\vec{F_i}$ the total cohesive force exerted by neighbouring cells when cells are moving away from each other, $\gamma$ the friction coefficient of the cell medium, $\alpha$ a self propulsion constant for cell voluntary movement, $\vec{n_i}$ the direction of cell motion and $\vec{\nu_i}(t)$ positional noise that is typically thermal in nature.
+
+In short, this equation of motion describes a cell that experiences frictional force, some thermal vibrations, self-propulsion force and cohesive force exerted by neighbouring cells. 
+
+Overall, the Active Vertex Model tries to find a set of area $A_i$ and perimeter $P_i$ solution that minimizes the sum of \eqref{eq:six} for all cell vertices in a cell configuration:
+\begin{equation}
+\tag{8}
+\min_{A_{i}P_{i}}{E_{vertex}}
+\label{eq:eight}
+\end{equation}
+
+# 2. Methods used for the numerical simulation
+
+In this paper, foam formation process without pressure difference is simulated by modifying the Active Vertex Model in \cite{SAMoS}. Some cell simulations from the Active Vertex Model were also done for analysis. Besides, foam formation process with pressure difference simulation result is borrowed from paper \cite{quasi} for comparison. 
+
+In particular, the Active Vertex Model simulation in \cite{SAMoS} is written in C++ and Python. For this project, the simulation model is clone from its github repository to a WSL Linux Ubuntu 20.04.4 machine and compiled. The compiled model takes in a text file with input parameters and produces vtk files for visualization. This model employs the gradient descent method in search for a minimized configuration.
+
+The simulation model in \cite{quasi} is written in Python with a C++ extention library called OpenMesh. Each bubble is represented by a vertex in Delaunay triangulation that can store information of that cell, like pressure, area, perimeter etc in a python object called TriMesh. Each vertex is updated through some for loops until a minimized configuration is found. This model employs the newton step method in search for a minimized configuration.
+
+# 3. Results and discussion
+
+The simulation result for a biological cell configuration is shown in figure \ref{fig:biological_cell}. The simulation result for foam without pressure difference using the same Active Vertex Model is shown in figure \ref{fig:without_pressure_diff}. Note that the details of inputs for the simulation of biological cell can be viewed in \cite{SAMoS} under the directory ~/SAMoS/doc/tutorial/examples/cells_fixed/fixed.input in the github repository. Since comparison between simulation result is the main focus in this report, details of inputs are not stated here. For the simulation result without pressure difference, input parameters are identical to that of the biological cell in figure \ref{fig:biological_cell} except that for equation \eqref{eq:six}, $\frac{K_i}{2}\left(A_{i}-A^{0}_{i}\right)$ is cancelled out by setting $K_{i}=0$, and for equation \eqref{eq:seven}, $\alpha\vec{n_i}$ and $\vec{\nu_i}(t)$ are cancelled out by setting $\alpha$ and $\vec{\nu_i}(t)$ to zero. We expect that this will lead to a minimized configuration that satisfies the Plateau's laws as the problem now becomes: 
+\begin{equation}
+\tag{9}
+\min_{A_{i}P_{i}}{E_{vertex}}
+\label{eq:nine}
+\end{equation}
+, where
+\begin{equation}
+\tag{10}
+E_{vertex}=\sum^{N_{face}}_{i=1}\frac{\Gamma_{i}}{2}P^{2}_{i}+\sum_{\mu,\nu}\Lambda_{\mu\nu}l_{\mu\nu}\label{eq:ten}
+\end{equation}
+
+, and subjected to equation of motion: 
+\begin{equation}
+\tag{11}
+\gamma\frac{d\vec{r_i}}{dt}=\vec{F_i}
+\label{eq:eleven}
+\end{equation}
+because firstly, it is reasonable to expect the cohesive force between bubbles and some degree of resistance for bubbles to change its contact length. Resistance should also be present in real foam configuration. Secondly, by cancelling $\frac{K_i}{2}\left(A_{i}-A^{0}_{i}\right)$, cell areas are no longer allowed to change. As a result, \eqref{eq:nine} becomes the minimization of the total perimeters in cell configuration, which is the objective of \eqref{eq:two}.
+
+By looking into figure \ref{fig:without_pressure_diff}, there are few features that can be highlighted. Firstly, the configuration contains mostly hexagonal bubbles. Secondly, some bubbles have number of sides equal to five or seven. In the video comprising of frame 0 to frame 100 that is not included in this paper, it can be observed as well that whole foam configuration remains static from frame 2 onwards. This is an expected result for foam without pressure difference because a hexagonal configuration lets all films meet each other at $120^{\circ}$, which satisfies the Plateau's laws. The reason why the whole foam configuration is static after frame 2 is because the gradient descent search for minimized configuration has already converged after second iteration. The interesting observation that some bubbles have number of sides other than zero is not due to the search algorithm not fully converging to a minimized configuration. In fact, since the whole configuration is in a circular shape, it is impossible to fill up a circular configuration with hexagonal bubbles perfectly; there must be some holes that can only be filled up by bubbles with other shape. A quick count at figure \ref{fig:without_pressure_diff} shows that there are 121 pentagonal bubbles, 1340 hexagonal bubbles and 35 heptagonal bubbles. We expect if the configuration is changed into hexagonal and heptagonal shape, the numbers will change accordingly. For example, if the configuration becomes hexagonal, number of hexagonal bubbles may dominate and no other types of bubble will exist. 
+
+By looking into figure \ref{fig:biological_cell}, it can be seen that the arrangement of the configuration is uneven, and all bubbles are deformed with irregular number of sides. In the video that is not included in this paper, it is also observed that each cell move in a chaotic manner. This is a reasonable result because the self-propulsion force and random thermal noises will allow the cells to move continuously on its own. Added to it is the cohesive force exerted on bubbles when they are trying to separate from each other. This is why the resulting cells look deformed and irregular in shape. 
+
+Last but not least, a simulation from \cite{quasi} is shown in figure \ref{fig:with_pressure_diff}. The whole configuration was having no pressure difference initially. However, the outer environment is set to have a pressure difference with respect to the foam configuration. The figure shows bubbles with different number of sides. Plus, they also have different size. The video in \cite{quasi} for this simulation shows bubbles enlarging and shrinking continuously. At the last of the video, which is at frame 5000, bubbles were seen to keep shrinking and enlarging. However, hexagonal bubbles were dominant. Hence, we expect that this simulation will eventually evolve to what is observe in figure \ref{fig:without_pressure_diff}, it the simulation evolves long enough, as what is stated in \eqref{eq:five} that only hexagonal bubbles are stable.
+
+# 4. Conclusion
+In this paper, the principle behind bubble formation, i.e. to minimize the total length of a bubble configuration, is explained. We then explore how this principle works with cases with and without pressure difference, noting that if there is pressure difference, we expect the configuration to evolve to a honey-comb hexagonal configuration. However, if pressure difference exists, we expect bubbles to shrink and enlarge according to the von Neumann's law for bubble diffusion. We then explain the principle behind the Active Vertex Model for biological cell simulation, and how this can be used to simulate the foam formation without pressure difference. The result for foam simulation without pressure difference shows a hexagonal configuration that satisfies our prediction. We also compare the result for biological cell simulation and note its chaotic movement and irregular cell arrangement. Finally, we compare a simulation for foam with pressure difference with that without pressure difference, and note that bubbles enlarge and shrink accordingly. We also predict that this will eventually evolve to the same hexagonal configuration similar to the without pressure difference case. 
+
+
+From the results, we can see how similar the underlying principles between cells and foam can share. Given the fact there are many models for foam numerical simulation, we hope that this paper can offer insight for further research into biological cell movement, and as well offer better understanding into the principles behind foam formation.
+
+\newpage{%
+\printbibliography}
+
+\newpage{%
+\begin{figure}
+    \centering
+    \includegraphics[width=15cm,height=20cm,angle=0]{voronoi.png}
+    \caption{Two coordinate representations. This model tracks particles that correspond to cell centres (yellow spheres). Particle positions are denoted using latin indices. Particles form a Delaunay triangulation (blue lines). Dual of this triangulations is a Voronoi diagram, with each Voroni cell representing actual cell. Cell edges are marked with red lines. Vertices of the dual mesh are denoted by Greek indices.}\label{fig:voronoi}
+\end{figure}
+}
+
+\newpage{%
+\begin{figure}
+    \centering
+    \includegraphics[width=15cm,height=20cm,angle=0]{biological_cell.png}
+    \caption{Simulation result from Active Vertex Model for biological cell. The frame of this picture is at frame=100. Note that the white lines in the two figures are the Delaunay triangulation, and the blue lines are the Voronoi tesellation that represent individual cells. 
+}\label{fig:biological_cell}
+\end{figure}
+}
+
+\newpage{%
+\begin{figure}
+    \centering
+    \includegraphics[width=15cm,height=30cm,angle=0]{without_pressure_diff.png}
+    \caption{Simulation result from Active Vertex Model without pressure difference. The frame of this picture is at frame=100.Note that the white lines in the two figures are the Delaunay triangulation, and the blue lines are the Voronoi tesellation that represent individual cells. 
+}\label{fig:without_pressure_diff}
+\end{figure}
+}
+
+\newpage{%
+\begin{figure}
+    \centering
+    \includegraphics[width=15cm,height=30cm,angle=0]{with_pressure_difference.png}
+    \caption{Simulation result with pressure difference from \cite{quasi}. The frame shown here is 200}\label{fig:with_pressure_diff}
+\end{figure}
+}
