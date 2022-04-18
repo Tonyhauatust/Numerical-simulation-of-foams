@@ -9,7 +9,7 @@ git clone https://github.com/Tonyhauatust/Numerical-simulation-of-foams.git
 ```
 and then cd
 ```bash
-cd ~cd Numerical-simulation-of-foams/resource/
+cd ~/Numerical-simulation-of-foams/resource/
 ```
 Under the directory you can see some powerpoints related to this project, and a project report that illustrates this project in detail.
 
