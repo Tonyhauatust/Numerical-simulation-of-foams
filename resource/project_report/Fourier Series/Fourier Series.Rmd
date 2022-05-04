@@ -1,0 +1,47 @@
+---
+geometry: margin=2.5cm 
+output: pdf_document
+header-includes:
+  - \usepackage[backend=bibtex,natbib=true,style=numeric,sorting=none]{biblatex}
+  - \addbibresource{references.bib}
+  - \usepackage{graphicx}
+  - \usepackage{blindtext}
+  - \usepackage{titling}
+  - \usepackage{titlesec}
+fontsize: 12pt
+---
+\setcounter{page}{39}
+
+# 1. Introduction
+\vspace{-5mm}
+  It is a powerful mathematical fact that any periodic waveform can be expressed as an infinite sum of trigonometric functions that consist of a sine or cosine function and its successive harmonics. Because Fourier Series allows a signal to be decomposed to obtain its frequency components, one important  application for this technique in physics is to allow physicists to filter out characteristic components in a sound for analysis. 
+  
+  In this experiment, we have carried out two main experiments for Fourier series, namely Fourier synthesis and analysis of periodic waveforms using an analyzer. We have verified in our first experiment that different periodic waveforms can be produced by combining its sine and cosine components, that Gibbs phenomenon can cause overshoots in periodic waveforms, and that loudness, pitch and quality of musical tones are closely related to its harmonics. In our second experiment, we have successfully analysed a square wave's harmonics using different electronic filters, have analysed some taped musical audios their harmonics and concluded that higher harmonic components contribute little to quality of the audios. Finally, we have analysed a sine wave by using different electronic filters and observe some harmonics inside this wave.
+
+\vspace{-5mm}
+# 2. Results & Discussion
+\vspace{-5mm}
+In the Fourier synthesis experiment, we have carried out three tasks for it, namely producing different periodic waveforms according to Table 1 at page 11, analysis of Gibbs phenomenon and analysis of musical tones. In this experiment, we produced two types of periodic waveforms, i.e, a square wave and a triangular wave. Although we have successfully produced the two waves, we notice some difference between them. Notably, we have found that the triangular wave produced has a more recognizable shape than the square wave produced, as shown in Fig 1 and Fig 2 at page 33. This is because individual harmonics contribute differently to their resultant waveforms. As noted in Table 1 at page 32, the relative amplitudes for the higher harmonics for square wave is higher than that for the triangular wave, meaning that the higher harmonics are more important for the overall shape of the resultant wave. This explains their difference in shape of the waveform produced. 
+
+Next, we observe the Gibbs phenomenon in a square wave produced by a function generator. As stated by the Gibbs phenomenon theory in \cite{lecture_notes}, the periodic function produced by infinite partial sums of Fourier series converges to the actual function except at the discontinuity. The theory states that the discontinuity will converge to an overshoot of the actual function. Theoretically, the overshoot is equal to the difference of the discontinuity times a value of $0.089489872233\dots$, the derivation of which can be referred to \cite{lecture_notes}. By observing fig 3 at page 34, a square wave overshoot obtained in experiment, not only do we observe the overshoot at the discontinuity, but also we observe some 'bumps' between the left and right discontinuity. These bumps occurs because we are only combining the first few harmonics for  this square waveform. We expect that as we add more harmonics, these bumps will flatten out and becomes the one produced by a function generator in fig 2 at page 19. We note that the difference of discontinuity in Fig 3 at page 34 is the peak to peak voltage, which is $2.45 \pm 0.005\text{V}$. Hence, theoretically we expect the the overshoot to be $2.45\times0.0895=0.219 \pm0.0004 \text{V}$. However, we found that the overshoot in our experiment to be $587.5 \text{mV}$. This difference can be attributed to the fact the our waveform produced is only composed of first few harmonics,we expect the result to improve as we include more harmonic terms.
+
+Then, we carried out some analysis on the loudness, pitch and quality of some audios and discovered that a square wave among a sine and a triangular wave has the strongest loudness, pitch and quality. As shown in Table 1 at page 11, we notice that a square wave has the highest relative amplitudes for its harmonics. This explains why it has the strong characteristics because its harmonics contribute more to the overall sound wave produced, and hence offer more contrast between different harmonics for better quality.
+
+In the second experiment, we have analysed a square wave for its harmonics by using a band pass filter. However, as noted in fig 4 at page 36, we observe that the harmonics are distorted. This is because the amplitudes of the harmonics are quite small(especially for higher harmonics) and hence they are more susceptible to noises. We propose using higher amplitudes for input signals for a better harmonic analysis.
+
+After that, we analysed some musical tones including violin and piano using a band pass and low pass filter. We again extract its individual harmonics using a band pass filter and notice that the waves become increasingly distorted as the harmonics grow, as shown from fig 3 to fig 7 at page 20. This can be improved by using a higher amplitude for input signals if we want to better analyse the higher harmonics. We also note that as we remove the higher harmonics using a low pass filter, this cause negligible effect on the overall quality of the sound because the higher harmonics contribute little to the overall sound wave. 
+
+Finally, we used a low pass, high pass, band pass and a band reject filter to analyse a sine wave. Although the trend of the results obtained matches our expectation as shown from fig 2 to fig 5 at page 28, we note that there are some harmonic components even below the fundamental harmonic frequency. This maybe due to fact that the function generator is faulty and produces a signal with noises. Hence, this can be improved by introducing a more accurate modern function generator.
+
+\vspace{-2mm}
+
+# 3. Conclusion
+
+\vspace{-5mm}
+
+In summary, we see that we can produce periodic waveforms by combining individual sine and cosine harmonics according to Fourier Series. However, the quality of the waveforms produced is subjected to the number of harmonics we include, and that the quality increases as we include more harmonics. We also observe the Gibbs phenomenon in the periodic waveforms we produce, and conclude that the pitch, loudness and quality of a musical tone is related to its harmonics relative amplitudes. We have also analyse periodic waveforms and musical tones using different filters and observe their harmonics.  
+
+Through this experiment, we consolidate our skills to use instruments like oscilloscopes and function generators to analyse waveforms. Besides, we have also verified the Fourier Series theory by carrying out different experiments, which enables to have better knoweldge in the field of acoustics.
+
+\newpage{%
+\printbibliography}
